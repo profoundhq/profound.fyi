@@ -3,4 +3,5 @@
 .cache/
 .superpowers/
 .nwave/
+.playwright-mcp/
 .DS_Store
