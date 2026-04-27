@@ -1,33 +1,42 @@
 # profound.fyi
 
-Static site built with [Hugo](https://gohugo.io/) and the [hugo-paper](https://github.com/nanxiaobei/hugo-paper) theme. Deployed on Netlify.
+Static site built with [Eleventy](https://www.11ty.dev/) and IBM Plex Sans. Deployed on Netlify.
+
+Three content shapes:
+
+- **Standalone pages** (e.g. `/about/`)
+- **Posts** under `/posts/` — a blog
+- **Playbooks** under `/playbooks/<slug>/<page>/` — multi-page guides with sidebar navigation
 
 ## Local development
 
-Requires Hugo (extended) and Go.
+Requires Node 20 (use [nvm](https://github.com/nvm-sh/nvm) — `.nvmrc` pins the version).
 
 ```sh
-hugo server
+npm install
+npm run dev
 ```
 
-Site renders at `http://localhost:1313/`. Live reload is on by default.
+The site renders at `http://localhost:8080/` with live reload.
 
 ## Building
 
 ```sh
-hugo --gc --minify
+npm run build
 ```
 
-Output goes to `public/`.
+Output goes to `_site/`.
 
-## Updating the theme
+## Adding content
 
-```sh
-hugo mod get -u github.com/nanxiaobei/hugo-paper
-hugo mod tidy
-```
+| Where | What |
+| --- | --- |
+| `content/<slug>.md` | Standalone page at `/<slug>/` |
+| `content/posts/<slug>.md` | Blog post at `/posts/<slug>/` (needs `title` and `date`) |
+| `content/playbooks/<slug>/index.njk` | Playbook landing at `/playbooks/<slug>/` |
+| `content/playbooks/<slug>/<page>.md` | Playbook page at `/playbooks/<slug>/<page>/` (needs `title` and `order`) |
 
-Commit the resulting `go.mod`/`go.sum` changes.
+A new playbook needs its own `<slug>.11tydata.js` setting `tags: ["<slug>"]`, `playbook: "<slug>"`, and `playbookTitle: "..."`.
 
 ## Deployment
 
