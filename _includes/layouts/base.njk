@@ -4,10 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or "profound.fyi" }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
 </head>
 <body>
-  <header><a href="/">profound.fyi</a></header>
+  {% include "partials/site-header.njk" %}
   <main>{{ content | safe }}</main>
-  <footer>© 2026 Benedict Steele.</footer>
+  {% include "partials/site-footer.njk" %}
 </body>
 </html>

@@ -1,4 +1,6 @@
 export default function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy({ "css": "css" });
+
   return {
     dir: {
       input: "content",

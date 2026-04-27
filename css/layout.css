@@ -1,0 +1,49 @@
+.site-header {
+  border-bottom: 1px solid var(--colour-rule);
+  padding: var(--space-4) var(--space-5);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  align-items: baseline;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:first-child {
+  font-weight: 600;
+}
+
+.site-footer {
+  border-top: 1px solid var(--colour-rule);
+  padding: var(--space-5);
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+}
+
+main {
+  padding: var(--space-6) var(--space-5) var(--space-7);
+}
+
+.page, .post {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.playbook-layout {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: var(--space-7);
+  max-width: calc(16rem + 65ch + var(--space-7));
+  margin: 0 auto;
+}
+
+@media (max-width: 60em) {
+  .playbook-layout {
+    grid-template-columns: 1fr;
+  }
+}
