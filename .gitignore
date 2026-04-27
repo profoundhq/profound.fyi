@@ -1,4 +1,6 @@
-/public/
-/resources/
-.hugo_build.lock
+/_site/
+/node_modules/
+.cache/
+.superpowers/
+.nwave/
 .DS_Store
