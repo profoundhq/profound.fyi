@@ -36,7 +36,7 @@ Output goes to `_site/`.
 | `content/playbooks/<slug>/index.njk` | Playbook landing at `/playbooks/<slug>/` |
 | `content/playbooks/<slug>/<page>.md` | Playbook page at `/playbooks/<slug>/<page>/` (needs `title` and `order`) |
 
-A new playbook needs its own `<slug>.11tydata.js` setting `tags: ["<slug>"]`, `playbook: "<slug>"`, and `playbookTitle: "..."`.
+A new playbook needs its own `<slug>.11tydata.js` setting `playbook: "<slug>"` and `playbookTitle: "..."`. Tag each playbook page individually (`tags: ["<slug>"]` in each Markdown file's frontmatter) — *not* in `11tydata.js`, because Eleventy's default array deep-merge would prevent the landing page from opting out of the sibling collection.
 
 ## Deployment
 
