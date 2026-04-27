@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+---
+{% set siblings = collections[playbook] | sortByOrder %}
+<div class="playbook-layout">
+  {% include "partials/playbook-sidebar.njk" %}
+  <article class="playbook-page">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+
+    {% set previousPage = siblings | getPreviousCollectionItem %}
+    {% set nextPage = siblings | getNextCollectionItem %}
+    {% if previousPage or nextPage %}
+    <nav class="prev-next" aria-label="Playbook pages">
+      {% if previousPage %}
+        <a class="prev" href="{{ previousPage.url }}"><span class="label">Previous</span>{{ previousPage.data.title }}</a>
+      {% else %}<span class="prev"></span>{% endif %}
+      {% if nextPage %}
+        <a class="next" href="{{ nextPage.url }}"><span class="label">Next</span>{{ nextPage.data.title }}</a>
+      {% else %}<span class="next"></span>{% endif %}
+    </nav>
+    {% endif %}
+  </article>
+</div>

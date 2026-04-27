@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+title: Playbooks
+tags: []
+permalink: /playbooks/
+---
+<p>A collection of playbooks. Real content later.</p>
+
+<ul class="collection-list">
+{% for entry in collections.playbooks %}
+  <li>
+    <h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
+  </li>
+{% endfor %}
+</ul>

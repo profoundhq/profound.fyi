@@ -1,0 +1,13 @@
+---
+layout: layouts/page.njk
+title: The Advice Process
+permalink: /playbooks/advice-process/
+playbook: advice-process
+---
+<p>Placeholder landing page for The Advice Process playbook. Real content later.</p>
+
+<ul class="collection-list">
+{% for entry in collections["advice-process"] | sortByOrder %}
+  <li><h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,13 @@
+<aside class="playbook-sidebar">
+  <h3><a href="/playbooks/{{ playbook }}/">{{ playbookTitle }}</a></h3>
+  <ol>
+    {% for sibling in siblings %}
+      <li>
+        <a href="{{ sibling.url }}"
+           {% if sibling.url == page.url %}aria-current="page"{% endif %}>
+          {{ sibling.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</aside>
