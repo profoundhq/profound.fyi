@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <h1>{{ title }}</h1>
+  <p class="meta">{{ date | readableDate }}</p>
+  {{ content | safe }}
+
+  {% set previousPost = collections.posts | getPreviousCollectionItem %}
+  {% set nextPost = collections.posts | getNextCollectionItem %}
+  {% if previousPost or nextPost %}
+  <nav class="prev-next" aria-label="Posts">
+    {% if previousPost %}
+      <a class="prev" href="{{ previousPost.url }}"><span class="label">Newer</span>{{ previousPost.data.title }}</a>
+    {% else %}<span class="prev"></span>{% endif %}
+    {% if nextPost %}
+      <a class="next" href="{{ nextPost.url }}"><span class="label">Older</span>{{ nextPost.data.title }}</a>
+    {% else %}<span class="next"></span>{% endif %}
+  </nav>
+  {% endif %}
+</article>
