@@ -1,0 +1,15 @@
+{
+  "name": "profound-fyi",
+  "version": "1.0.0",
+  "description": "Static site for profound.fyi",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
