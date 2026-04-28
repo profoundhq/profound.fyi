@@ -1,6 +1,9 @@
 ---
 layout: layouts/page.njk
 title: profound.fyi
+showTitle: false
 ---
 
-Placeholder home page. Real content later.
+> A system cannot understand itself. The transformation requires a view from outside.
+>
+> — W. Edwards Deming
