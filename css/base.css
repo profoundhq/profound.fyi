@@ -9,6 +9,9 @@ body {
   color: var(--colour-fg);
   background: var(--colour-bg);
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
 }
 

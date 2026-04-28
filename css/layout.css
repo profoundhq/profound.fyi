@@ -62,6 +62,8 @@
 }
 
 main {
+  flex: 1;
+  width: 100%;
   padding: var(--space-6) var(--space-5) var(--space-7);
   max-width: var(--page-max);
   margin-inline: auto;
