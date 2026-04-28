@@ -1,7 +1,11 @@
 <aside class="playbook-sidebar">
   <h3><a href="/playbooks/{{ playbook }}/">{{ playbookTitle }}</a></h3>
+
+  {% set framework = siblings | filterBySection("framework") %}
+  {% set artefacts = siblings | filterBySection("artefacts") %}
+
   <ol>
-    {% for sibling in siblings %}
+    {% for sibling in framework %}
       <li>
         <a href="{{ sibling.url }}"
            {% if sibling.url == page.url %}aria-current="page"{% endif %}>
@@ -10,4 +14,22 @@
       </li>
     {% endfor %}
   </ol>
+
+  {% if artefacts | length %}
+  {% set artefactsUrl = "/playbooks/" + playbook + "/artefacts/" %}
+  <h4 class="playbook-sidebar-group">
+    <a href="{{ artefactsUrl }}"
+       {% if page.url == artefactsUrl %}aria-current="page"{% endif %}>Artefacts</a>
+  </h4>
+  <ol>
+    {% for sibling in artefacts %}
+      <li>
+        <a href="{{ sibling.url }}"
+           {% if sibling.url == page.url %}aria-current="page"{% endif %}>
+          {{ sibling.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
 </aside>

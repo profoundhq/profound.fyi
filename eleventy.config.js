@@ -14,6 +14,10 @@ export default function (eleventyConfig) {
     return [...collection].sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
   });
 
+  eleventyConfig.addFilter("filterBySection", (collection, section) => {
+    return collection.filter((item) => (item.data.section || "framework") === section);
+  });
+
   eleventyConfig.addCollection("playbooks", (collectionApi) => {
     return collectionApi
       .getFilteredByGlob("content/playbooks/*/index.*")
