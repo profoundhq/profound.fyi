@@ -21,6 +21,7 @@
 
   /* Measure */
   --measure: 65ch;
+  --page-max: 76rem;
 
   /* Spacing scale */
   --space-1: 0.25rem;

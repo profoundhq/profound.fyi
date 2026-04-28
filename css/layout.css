@@ -3,11 +3,18 @@
   padding: var(--space-4) var(--space-5);
 }
 
+.site-inner {
+  max-width: var(--page-max);
+  margin-inline: auto;
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-5);
   align-items: baseline;
+  max-width: var(--page-max);
+  margin-inline: auto;
 }
 
 .site-nav a {
@@ -27,6 +34,8 @@
 
 main {
   padding: var(--space-6) var(--space-5) var(--space-7);
+  max-width: var(--page-max);
+  margin-inline: auto;
 }
 
 .page, .post {
