@@ -11,4 +11,4 @@ The instruments are sensemaking tools, not dashboards. They produce conversation
 
 The collection draws on Deming, Team Topologies, DORA, the Improvement Kata, and the wider sociotechnical tradition. It is opinionated. New material is added when it has proven itself in practice.
 
-Maintained by Benedict Steele.
+Maintained by [Benedict Steele](https://www.linkedin.com/in/benedictsteele/).

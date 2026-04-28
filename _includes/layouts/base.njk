@@ -11,10 +11,44 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
+  {% if site.gaId %}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      personalization_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('profound-consent') === 'granted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          analytics_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          personalization_storage: 'granted'
+        });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', '{{ site.gaId }}');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
+  {% endif %}
 </head>
 <body>
   {% include "partials/site-header.njk" %}
   <main>{{ content | safe }}</main>
   {% include "partials/site-footer.njk" %}
+  {% if site.gaId %}
+  {% include "partials/consent-banner.njk" %}
+  <script src="/js/consent.js" defer></script>
+  {% endif %}
 </body>
 </html>
