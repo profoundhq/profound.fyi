@@ -61,3 +61,26 @@ hr {
 }
 
 img { max-width: 100%; height: auto; }
+
+table {
+  width: 100%;
+  margin: 0 0 var(--space-5);
+  border-collapse: collapse;
+  font-size: var(--type-small);
+  line-height: 1.5;
+}
+
+th, td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--colour-rule);
+}
+
+th:first-child, td:first-child { padding-left: 0; }
+th:last-child, td:last-child { padding-right: 0; }
+
+th {
+  font-weight: 600;
+  border-bottom: 2px solid var(--colour-fg);
+}
