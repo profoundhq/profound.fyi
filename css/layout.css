@@ -12,7 +12,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-5);
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
   max-width: var(--page-max);
   margin-inline: auto;
 }
@@ -21,12 +22,40 @@
   text-decoration: none;
 }
 
-.site-nav a:first-child {
+.site-nav-links {
+  display: flex;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: inherit;
+}
+
+.site-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--colour-fg);
+  color: var(--colour-bg);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.site-wordmark {
+  font-variant-caps: all-small-caps;
   font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 .site-footer {
-  border-top: 1px solid var(--colour-rule);
   padding: var(--space-5);
   color: var(--colour-muted);
   font-size: var(--type-small);
@@ -40,7 +69,6 @@ main {
 
 .page, .post {
   max-width: var(--measure);
-  margin: 0 auto;
 }
 
 .playbook-layout {
@@ -48,7 +76,6 @@ main {
   grid-template-columns: 16rem 1fr;
   gap: var(--space-7);
   max-width: calc(16rem + 65ch + var(--space-7));
-  margin: 0 auto;
 }
 
 @media (max-width: 60em) {

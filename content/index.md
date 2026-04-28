@@ -1,6 +1,6 @@
 ---
 layout: layouts/page.njk
-title: profound.fyi
+title: Profound
 showTitle: false
 ---
 
