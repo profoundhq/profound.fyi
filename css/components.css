@@ -38,6 +38,12 @@
   font-weight: 600;
 }
 
+.license-notice {
+  margin-top: var(--space-6);
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+}
+
 .prev-next {
   display: flex;
   justify-content: space-between;
