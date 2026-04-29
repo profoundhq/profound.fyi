@@ -1,6 +1,7 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "css": "css" });
   eleventyConfig.addPassthroughCopy({ "js": "js" });
+  eleventyConfig.addPassthroughCopy({ "images": "images" });
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Intl.DateTimeFormat("en-GB", {
