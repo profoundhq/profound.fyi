@@ -10,6 +10,18 @@ export default function (eleventyConfig) {
     }).format(dateObj);
   });
 
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return new Date(dateObj).toISOString().split("T")[0];
+  });
+
+  eleventyConfig.addCollection("sitemapPages", (collectionApi) => {
+    return collectionApi.getAll().filter((item) => {
+      if (!item.url) return false;
+      if (item.url === "/sitemap.xml" || item.url === "/robots.txt") return false;
+      return true;
+    });
+  });
+
   eleventyConfig.addFilter("sortByOrder", (collection) => {
     return [...collection].sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
   });

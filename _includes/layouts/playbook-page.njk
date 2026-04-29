@@ -6,6 +6,7 @@ layout: layouts/base.njk
   {% include "partials/playbook-sidebar.njk" %}
   <article class="playbook-page">
     <h1>{{ title }}</h1>
+    {% if updated %}<p class="entry-meta">Last updated {{ updated | readableDate }}</p>{% endif %}
     {{ content | safe }}
 
     {% set previousPage = siblings | getPreviousCollectionItem %}
