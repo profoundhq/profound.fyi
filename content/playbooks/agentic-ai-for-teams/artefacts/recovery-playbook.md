@@ -2,6 +2,7 @@
 title: "Recovery Playbook"
 order: 120
 section: artefacts
+updated: 2026-04-21
 tags:
   - agentic-ai-for-teams
 ---

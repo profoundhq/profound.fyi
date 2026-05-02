@@ -1,6 +1,7 @@
 ---
 title: "Specification-Driven Development"
 order: 45
+updated: 2026-05-02
 tags:
   - agentic-ai-for-teams
 ---

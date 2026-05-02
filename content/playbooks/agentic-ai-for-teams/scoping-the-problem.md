@@ -1,6 +1,7 @@
 ---
 title: "Scoping the Problem"
 order: 20
+updated: 2026-04-21
 tags:
   - agentic-ai-for-teams
 ---

@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: About
+updated: 2026-05-02
 ---
 
 Profound is a collection of playbooks and instruments for understanding a system of work.

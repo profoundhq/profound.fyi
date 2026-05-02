@@ -2,6 +2,7 @@
 title: "Underwriting Pack"
 order: 110
 section: artefacts
+updated: 2026-04-21
 tags:
   - agentic-ai-for-teams
 ---

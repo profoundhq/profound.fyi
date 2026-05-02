@@ -3,5 +3,6 @@ layout: layouts/base.njk
 ---
 <article class="page">
   {% if showTitle != false %}<h1>{{ title }}</h1>{% endif %}
+  {% if updated %}<p class="entry-meta">Last updated {{ updated | readableDate }}</p>{% endif %}
   {{ content | safe }}
 </article>

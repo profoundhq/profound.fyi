@@ -1,6 +1,7 @@
 ---
 title: "The Core Thesis"
 order: 10
+updated: 2026-04-21
 tags:
   - agentic-ai-for-teams
 ---

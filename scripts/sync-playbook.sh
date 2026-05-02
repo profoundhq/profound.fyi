@@ -94,19 +94,36 @@ write_file() {
   local dst="$2"
   local section="${3:-}"
   local order_offset="${4:-0}"
+  local order_override="${5:-}"
+  local title_override="${6:-}"
 
-  local title
-  title=$(extract_field "title" "$src")
+  # Detect whether the source has frontmatter (first non-empty line is `---`)
+  local has_fm
+  has_fm=$(awk 'NF{print (/^---[[:space:]]*$/ ? "yes" : "no"); exit}' "$src")
+
+  local title order_from_fm updated
+  if [ "$has_fm" = "yes" ]; then
+    title=$(extract_field "title" "$src")
+    order_from_fm=$(extract_order "$src")
+    updated=$(extract_field "date" "$src")
+  fi
+
+  if [ -n "$title_override" ]; then
+    title="$title_override"
+  fi
+
   if [ -z "$title" ]; then
     title=$(basename "$src" .md | sed -E 's/^[0-9]+-//; s/-/ /g')
     title="$(printf '%s' "$title" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
-    echo "  [warn] no title in $(basename "$src"); using \"$title\"" >&2
+    if [ "$has_fm" = "yes" ]; then
+      echo "  [warn] no title in $(basename "$src"); using \"$title\"" >&2
+    fi
   fi
 
-  local order_from_fm
-  order_from_fm=$(extract_order "$src")
   local order
-  if [ -n "$order_from_fm" ]; then
+  if [ -n "$order_override" ]; then
+    order="$order_override"
+  elif [ -n "$order_from_fm" ]; then
     order=$((10#$order_from_fm + order_offset))
   else
     local base
@@ -118,17 +135,27 @@ write_file() {
     fi
   fi
 
+  # Default updated to today if not in source (e.g., CHANGELOG with no frontmatter)
+  if [ -z "$updated" ]; then
+    updated=$(date +%Y-%m-%d)
+  fi
+
   {
     echo "---"
     echo "title: \"$title\""
     echo "order: $order"
     [ -n "$section" ] && echo "section: $section"
+    echo "updated: $updated"
     echo "tags:"
     echo "  - $SLUG"
     echo "---"
     echo ""
-    awk 'BEGIN{n=0} /^---[[:space:]]*$/{n++; next} n>=2{print}' "$src" \
-      | sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g'
+    if [ "$has_fm" = "yes" ]; then
+      awk 'BEGIN{n=0} /^---[[:space:]]*$/{n++; next} n>=2{print}' "$src" \
+        | sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g'
+    else
+      sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g' "$src"
+    fi
   } > "$dst"
 
   sed -i.bak -E \
@@ -150,10 +177,10 @@ shopt -s nullglob
 for src in "$SRC"/*.md; do
   base=$(basename "$src" .md)
   [ "$base" = "_index" ] && continue
-  # Skip vault utility files (case-insensitive match)
+  # Skip vault utility files (case-insensitive match). CHANGELOG is content.
   lowered=$(printf '%s' "$base" | tr '[:upper:]' '[:lower:]')
   case "$lowered" in
-    readme|changelog|notes|todo|license)
+    readme|notes|todo|license)
       echo "  [skip] $base.md (utility file)"
       continue
       ;;
@@ -164,6 +191,8 @@ for src in "$SRC"/*.md; do
   else
     slug_part="$base"
   fi
+  # Slugs must be lowercase for URL hygiene
+  slug_part=$(printf '%s' "$slug_part" | tr '[:upper:]' '[:lower:]')
 
   write_file "$src" "$DST/$slug_part.md" "" 0
 done

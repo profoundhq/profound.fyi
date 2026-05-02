@@ -1,6 +1,7 @@
 ---
 title: "Six Principles for Adoption"
 order: 70
+updated: 2026-04-21
 tags:
   - agentic-ai-for-teams
 ---

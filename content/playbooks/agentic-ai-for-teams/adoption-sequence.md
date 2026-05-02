@@ -1,6 +1,7 @@
 ---
 title: "The Adoption Sequence"
 order: 40
+updated: 2026-05-02
 tags:
   - agentic-ai-for-teams
 ---

@@ -1,6 +1,7 @@
 ---
 title: "The Management Question"
 order: 60
+updated: 2026-04-21
 tags:
   - agentic-ai-for-teams
 ---
