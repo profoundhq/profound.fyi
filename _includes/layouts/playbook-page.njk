@@ -21,11 +21,11 @@ layout: layouts/base.njk
     </nav>
     {% endif %}
 
+    {% if updated %}<p class="entry-meta">Last updated {{ updated | readableDate }}</p>{% endif %}
     {% if license %}
     <p class="license-notice">
       Licensed under <a href="{{ license.url }}" rel="license noopener noreferrer">{{ license.name }}</a>.
     </p>
     {% endif %}
-    {% if updated %}<p class="entry-meta">Last updated {{ updated | readableDate }}</p>{% endif %}
   </article>
 </div>
