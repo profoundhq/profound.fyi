@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 <article class="post">
   <h1>{{ title }}</h1>
-  <p class="meta">{{ date | readableDate }}{% if updated and updated | htmlDateString != date | htmlDateString %} · last updated {{ updated | readableDate }}{% endif %}</p>
+  <p class="meta">{{ date | readableDate }}</p>
   {{ content | safe }}
 
   {% set previousPost = collections.posts | getPreviousCollectionItem %}
@@ -17,5 +17,8 @@ layout: layouts/base.njk
       <a class="next" href="{{ nextPost.url }}"><span class="label">Older</span>{{ nextPost.data.title }}</a>
     {% else %}<span class="next"></span>{% endif %}
   </nav>
+  {% endif %}
+  {% if updated and updated | htmlDateString != date | htmlDateString %}
+  <p class="entry-meta">Last updated {{ updated | readableDate }}</p>
   {% endif %}
 </article>

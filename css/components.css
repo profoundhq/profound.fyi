@@ -92,12 +92,19 @@
   margin-top: var(--space-1);
 }
 
-.post .meta,
-.entry-meta {
+.post .meta {
   color: var(--colour-muted);
   font-size: var(--type-small);
   margin-top: calc(-1 * var(--space-3));
   margin-bottom: var(--space-5);
+}
+
+.entry-meta {
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+  text-align: right;
+  margin-top: var(--space-6);
+  margin-bottom: 0;
 }
 
 /* Lead quote - when a page opens with a blockquote, treat it as the hero. */
