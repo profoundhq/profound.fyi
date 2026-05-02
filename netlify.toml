@@ -5,3 +5,9 @@
 [build.environment]
   NODE_VERSION = "20"
   GA_ID = "G-91HQ81WR67"
+
+[[redirects]]
+  from = "https://profoundfyi.netlify.app/*"
+  to = "https://profound.fyi/:splat"
+  status = 301
+  force = true
