@@ -6,96 +6,139 @@ tags:
 ---
 
 
-Agentic AI does not just change how developers write code. It changes how every role on the team operates. The pattern across all roles is consistent: execution gets agent-assisted or agent-performed, while judgment, taste, and direction-setting remain irreducibly human.
+# Role Positions
 
-For each role, three categories of work:
+Agentic AI changes how every role on the team operates. But the practice is emergent. Nobody has yet produced the definitive account of how roles reshape around agentic workflows - the equivalent of Kniberg and Ivarsson's description of Spotify's squad model, derived from observation of what actually works at scale.
+
+What we can identify are the **forces** acting on each role: durable pressures that every team will face regardless of tooling, industry, or organisational context. What we cannot yet prescribe are the structural answers. Those will emerge differently in every organisation, and teams that adopt someone else's role template without running their own experiments will repeat the cargo-culting pattern that made "the Spotify Model" a cautionary tale.
+
+This section describes forces, poses diagnostic questions, and flags anti-patterns that are already visible. It does not prescribe target-state role definitions.
+
+## A thinking tool: amplified, automated, irreducibly human
+
+For any role, three categories of work shift under Agentic AI:
 
 - **Amplified by AI:** work the human still does, but faster and with better inputs because agents assist.
 - **Automated by AI:** work the human should let go of, because agents can do it adequately, and the human's time is better spent elsewhere.
-- **Irreducibly human:** work that requires judgment under ambiguity, ethical reasoning, political navigation, or taste. This is where the role's value concentrates.
+- **Automated but load-bearing for learning:** work the agent handles well, but that previously served a developmental function. Losing it is an efficiency gain and a capability risk simultaneously.
 
-## The specification lifecycle as a role model
+Teams should map their own roles through this lens rather than adopting a generic classification. The third category - automated but load-bearing for learning - is the one most teams miss, and where the most damage accumulates silently.
 
-The specification hierarchy described in Part [SDD] gives the team its primary artefact. But an artefact without clear ownership is an artefact that drifts. Each role has a named responsibility in the specification lifecycle:
+## The specification lifecycle as connective tissue
 
-|Stage|Activity|Primary responsibility|Supporting|
-|---|---|---|---|
-|**Surface**|Structured conversations (Example Mapping or equivalent) that surface assumptions through concrete examples|Product Manager initiates and facilitates|Engineering, quality coach, design|
-|**Specify**|Translate shared understanding into executable BDD scenarios and architectural contracts|Senior engineer (contracts), Product Manager + engineering collaboratively (BDD)|Quality coach reviews for edge-case coverage|
-|**Implement**|Agent generates code and TDD-level tests against the spec hierarchy|Agent, supervised by engineer|-|
-|**Verify**|Confirm agent output satisfies specs; mutation testing; independent oracle tests on critical paths|Engineer (routine), quality coach (oracle tests, mutation gates)|-|
-|**Evolve**|Update specs when test failures, production incidents, or user research reveal gaps|Whoever identifies the gap initiates; spec layer owner approves|Retrospective standing question: has the spec drifted from current understanding?|
+However roles evolve, the specification hierarchy described in the Specification-Driven Development section gives the team its primary shared artefact. An artefact without clear ownership drifts. As roles change, teams should ensure every stage of this lifecycle has a named owner:
 
-This lifecycle is the connective tissue between roles. A team where the Product Manager writes acceptance criteria in isolation, the engineering team writes contracts in isolation, and nobody reviews the joins between them is a team whose spec hierarchy will contradict itself within weeks.
+|Stage|Activity|Questions to ask|
+|---|---|---|
+|**Surface**|Structured conversations (Example Mapping or equivalent) that surface assumptions through concrete examples|Who initiates these? Who has the domain knowledge to challenge assumptions? Is this happening at the right cadence for your agent-assisted delivery speed?|
+|**Specify**|Translate shared understanding into executable BDD scenarios and architectural contracts|Who authors each spec layer? Are the people writing specs the ones who understand the domain, or the ones who understand the tooling? What happens when those are different people?|
+|**Implement**|Agent generates code and TDD-level tests against the spec hierarchy|What level of supervision does your team's current capability require? How do you know?|
+|**Verify**|Confirm agent output satisfies specs; mutation testing; independent oracle tests on critical paths|Who verifies that agent-generated tests aren't simply confirming the agent's own assumptions? Is anyone checking for what the spec didn't anticipate?|
+|**Evolve**|Update specs when test failures, production incidents, or user research reveal gaps|Who owns this? Does it actually happen, or do specs rot? Is there a standing retrospective question about spec drift?|
 
-## Product management
+## Forces acting on product management
 
-**Amplified:** Research synthesis, competitor analysis, option generation, metric tracking, experiment design. Agents can process more user research, generate more strategic options, and monitor more signals than a human Product Manager alone.
+**The core pressure:** When development speed is no longer the constraint, specification quality becomes the bottleneck. The product manager's ability to express intent as precise, falsifiable behavioural statements - rather than aspirational narratives - determines how effectively agents can work.
 
-**Automated:** Routine prioritisation, status communication, requirement documentation, backlog grooming. These are necessary activities that consume Product Manager time without requiring Product Manager judgment. Agents can handle them.
+**The XP analogy:** This resembles the XP on-site customer role, but operating at a cadence that may exceed what any individual can sustain. Whether this is the right framing, or whether the specification responsibility distributes differently in practice, is an open question.
 
-**Irreducibly human:** Stakeholder negotiation, ethical judgment, strategic framing, saying no, navigating ambiguity when the data is inconclusive, deciding between competing goods when there is no objectively correct answer. An agent can synthesise user research brilliantly. It cannot decide whether to prioritise the feature that retains existing customers or the one that opens a new market segment when the CEO wants both, and the board wants neither.
+**Diagnostic questions for your team:**
 
-**The specification responsibility.** The Product Manager's primary contribution to the specification lifecycle is at the Surface stage. They initiate and facilitate Example Mapping sessions (or equivalent structured conversations) that turn vague requirements into concrete examples, rules, and open questions. This is the XP on-site customer role, operating at agent speed. Their output is not a requirements document - it is a set of behavioural constraints precise enough that an agent can implement against them without asking clarifying questions mid-session.
+- Can your product manager express acceptance criteria as concrete examples with rules and edge cases, or do they write narrative requirements that engineers must interpret?
+- When the agent asks no clarifying questions mid-session (because it cannot), does the specification contain enough information for the output to be correct? If not, where does the gap sit?
+- Is specification work consuming more PM time than your current capacity allows? If so, does that mean you need more PMs, or that the specification responsibility needs to be shared differently?
+- Are your product managers bottlenecking delivery at the specification stage? How would you know?
 
-This is a meaningful redefinition of the Product Manager role. Not every Product Manager can do this today. The skill is closer to test-thinking than to traditional product management: expressing intent as falsifiable behavioural statements rather than aspirational narratives. PMs who can do it become the highest-leverage role on an agentic team. PMs who cannot become a bottleneck at the specification stage, and the team compensates by having engineers write specs the Product Manager should own - which produces technically precise but domain-impoverished specifications.
+**Anti-patterns already visible:**
 
-## Engineering: senior
+- Engineers writing specs the product manager should own, producing technically precise but domain-impoverished specifications.
+- Product managers continuing to write aspirational user stories while agents need falsifiable behavioural constraints, creating a translation layer that adds latency and loses fidelity.
+- Treating specification writing as a one-time activity rather than a continuous practice that evolves with production feedback.
 
-**Amplified:** Architecture exploration, trade-off analysis, system design, cross-team coordination. Agents can generate more options, model more scenarios, and surface more consequences than a senior engineer working alone.
+## Forces acting on senior engineers
 
-**Automated:** Routine implementation, boilerplate, standard pattern application, documentation generation. These follow established patterns that agents can apply reliably.
+**The core pressure:** If agents write most of the code, the senior engineer's value shifts from implementation skill to architectural judgment and specification quality. Review shifts from "is this code correct line by line?" to "does this system express the right intent, at the right boundaries, with the right constraints?"
 
-**Irreducibly human:** Architectural judgment - knowing which patterns fit which contexts, when to deviate from convention, when a technically elegant solution is organisationally wrong. Evaluating agent output against intent rather than correctness: code can be correct and still be the wrong solution.
+**The review question:** At volume, line-by-line code review of agent output is neither feasible nor useful. But what replaces it? Spec review is a candidate - get the spec right and the generated code follows. Contract review is another - ensure boundaries and invariants hold. Observable behaviour verification is a third. Your team needs to discover which combination works for your context, codebase, and risk profile.
 
-**The specification responsibility.** Senior engineers author and maintain the top layer of the spec hierarchy: architectural contracts, OpenAPI definitions, system-level invariants, and integration boundaries. These change infrequently and carry the highest consequence when wrong. The senior also coaches specification quality across the team - reviewing BDD scenarios not just for correctness but for precision, completeness, and appropriate granularity.
+**Diagnostic questions for your team:**
 
-**The review shift.** If an agent writes 80% of the code, line-by-line review is neither feasible nor useful at volume. Review shifts from "is this code correct?" to "does this code express the right intent correctly?" The senior reviews specs (do they specify the right behaviour?), contracts (do they express the right boundaries?), and observable behaviour (does the system do what it should?). In a spec-driven workflow, the most important review is spec review, not code review. Getting the spec right means the generated code is right. Getting the spec wrong means no amount of code review will fix the fundamental problem.
+- What percentage of your senior engineers' time is spent on implementation versus architectural judgment and specification work? How is that ratio changing?
+- When you review agent-generated code, what are you actually checking? Is that the most valuable use of review time?
+- Can your seniors articulate system-level invariants and architectural contracts precisely enough for agents to respect them? Or are these implicit knowledge that agents cannot access?
+- Are your seniors coaching specification quality across the team, or is that assumed to happen?
 
-## Engineering: junior
+**Anti-patterns already visible:**
 
-**Amplified:** Access to explanations, code review feedback, pattern recognition, exposure to more codebases and approaches. Juniors paired with agents can encounter a wider range of problems and solutions than traditional apprenticeship provides.
+- Seniors spending review time on generated code style rather than structural correctness and intent alignment.
+- Architectural decisions remaining implicit in seniors' heads rather than being expressed as contracts that constrain agent output.
+- Treating agent-generated code as equivalent to human-authored code for review purposes, rather than developing review practices appropriate to machine-generated output at scale.
 
-**Automated:** Boilerplate writing, routine debugging, syntax lookup, documentation reading. These are activities that juniors traditionally learned through but that are also time-consuming and often frustrating.
+## Forces acting on junior engineers
 
-**Irreducibly human:** Judgment, taste, systems thinking, understanding _why_ things are the way they are rather than just _what_ they are. Knowing when to override the agent. Knowing when the agent's suggestion is technically correct but architecturally wrong. Knowing when to push back on a product decision. These develop through experience, mentorship, and reflection, not through faster code production.
+**The core pressure:** Juniors traditionally learned through doing the work that agents now handle. Writing boilerplate teaches what the boilerplate is for. Debugging teaches how systems fail. Manual testing teaches how users interact with software. If agents handle all of that, the apprenticeship pathway breaks.
 
-**The apprenticeship redesign.** Juniors learn through doing the work that agents now handle. Writing boilerplate teaches you what the boilerplate is for. Debugging teaches you how systems fail. If agents handle all of that, juniors skip the apprenticeship and arrive at senior responsibilities without the tacit knowledge that makes senior judgment possible.
+This is not an argument against agents for juniors. It is a recognition that the learning pathway needs deliberate redesign.
 
-This is not an argument against agents for juniors. It is an argument for redesigning the apprenticeship. The XP-aligned response is pairing: the junior pairs with the agent while a senior observes and coaches. The senior's job is not to write code or even to review code. It is to help the junior understand why the agent made the choices it did, when to override the agent, and how to evaluate agent output critically.
+**The apprenticeship hypothesis:** One candidate model is XP-style pairing: the junior pairs with the agent while a senior observes and coaches. The senior's job is to help the junior understand why the agent made the choices it did, when to override it, and how to evaluate output critically. This is theoretically grounded in XP pairing practices, but whether it works at the pace and scale of agentic development is unproven. Teams adopting this pattern should treat it as an experiment with explicit success criteria.
 
-**The specification responsibility.** The junior's learning pathway runs through the specification lifecycle. They participate in Example Mapping sessions - not as observers, but as contributors learning to surface assumptions, think in edge cases, and express intent precisely. This is the highest-value human skill in an agentic context, and it is learned through participating in structured specification conversations, not through pairing with an agent alone. The agent teaches implementation patterns. The specification session teaches domain thinking. Both are necessary; the second is harder to acquire and easier to neglect.
+**Diagnostic questions for your team:**
 
-**The career ladder question.** If agents compress the time between "cannot code" and "can produce working software," but do not compress the time needed to develop judgment, taste, and systems thinking, then the junior-to-senior pipeline gets longer in terms of what matters (judgment) while looking shorter in terms of output (code). Organisations must resist the temptation to treat someone who produces senior-level output with agent assistance as actually senior. The output is a product of the agent's capability, not the developer's judgment. Seniority is about judgment, not output.
+- How do your junior engineers currently learn? Map the specific activities. Which ones are being displaced by agents?
+- What compensating practices have you introduced? If the answer is "none," you have a capability pipeline problem that will manifest in 18–24 months.
+- Can your juniors articulate _why_ agent-generated code is structured the way it is, or do they only know _that_ it works?
+- Are your juniors participating in specification conversations (Example Mapping, edge-case analysis), or are they only interacting with agents at the implementation layer?
 
-## Quality coach
+**Anti-patterns already visible:**
 
-**The role transformation.** QA as a separate verification function existed because of a handoff model - developers write, testers verify. If specifications are precise enough to constrain agents, and agents generate both implementation and tests from those specs, then the verification function is embedded in the process. The standalone QA role dissolves. The quality _function_ does not - it moves.
+- Treating someone who produces senior-level output with agent assistance as actually senior. The output reflects the agent's capability, not the developer's judgment. Seniority is about judgment, not output.
+- Juniors accepting agent output uncritically because they lack the experience to evaluate it.
+- Eliminating "junior work" without replacing the learning function that work served.
 
-In Team Topologies terms, this is a shift from being embedded in a stream-aligned team to operating as an enabling team function. The quality coach is not doing the work. They are building the capability for others to do it.
+**The career ladder question:** If agents compress the time between "cannot code" and "can produce working software," but do not compress the time needed to develop judgment, taste, and systems thinking, then the junior-to-senior pipeline gets longer in terms of what matters while looking shorter in terms of output. Organisations must build career progression around judgment development, not output volume.
 
-**The three coaching domains:**
+## Forces acting on quality
 
-_Specification quality._ The quality coach teaches teams to write specs that actually constrain agent output. They facilitate edge-case thinking, challenge assumptions in Example Mapping sessions, and review BDD scenarios for gaps. This maps directly to skills QA professionals already have - they think in failure modes, boundary conditions, and adversarial inputs. The difference is that they are teaching teams to express these as specs upfront rather than catching them as defects afterwards.
+**The core pressure:** QA as a separate verification function existed because of a handoff model - developers write, testers verify. If specifications are precise enough to constrain agents, and agents generate both implementation and tests from those specs, then the standalone verification role dissolves. The quality _function_ does not. It relocates.
 
-_Eval design._ For systems with non-deterministic components, someone needs to design evaluation criteria - relevance thresholds, safety constraints, consistency measures, regression baselines. This is adjacent to traditional test design but conceptually different: "Is this output acceptable?" rather than "Does this output match?" QA professionals are well-positioned for this but need upskilling in statistical evaluation methods and LLM-specific quality dimensions.
+**Three domains where quality expertise remains essential:**
 
-_Production observability._ Quality does not end at deployment. The quality coach helps teams define what to monitor and how to detect quality failures that specs did not anticipate. This is the "catching what wasn't specified" function, relocated from pre-deployment testing to production monitoring. It connects directly to the sensing framework (DORA metrics, cognitive load, eNPS, CSAT) and to the spec evolution practice: production quality signals feed back into spec updates.
+_Specification quality._ Someone needs to teach teams to write specs that actually constrain agent output - to think in failure modes, boundary conditions, and adversarial inputs. QA professionals already have these skills. The shift is applying them to specs upfront rather than catching defects afterwards.
 
-**The honest trajectory.** At low maturity, teams desperately need this coaching. The quality coach is the most valuable enabling function on an agentic team that is learning to specify rather than implement. At high maturity, teams have internalised specification thinking, edge-case discipline, and eval design as standing capabilities. The coaching function has succeeded itself out of existence - or, more precisely, it has been absorbed into how the team works. This is the natural arc of any enabling team function, and it is more respectful to QA professionals to say this honestly than to offer "coach" as a permanent landing pad. The skills remain valuable; the dedicated role is transitional.
+_Eval design._ For non-deterministic systems, someone designs evaluation criteria - relevance thresholds, safety constraints, consistency measures, regression baselines. This is adjacent to traditional test design but conceptually different: "Is this output acceptable?" rather than "Does this output match?"
 
-**The specification responsibility.** In the verification stage, the quality coach owns independent oracle tests on critical paths and maintains mutation testing as a standing quality gate. These checks ensure the agent's self-authored tests have not drifted toward confirming its own output. In the evolve stage, the quality coach is often the person who notices that the spec hierarchy has drifted from the team's actual understanding, because noticing that gap is precisely what QA professionals have always done, just against code rather than specs.
+_Production observability._ Catching what the spec didn't anticipate, relocated from pre-deployment testing to production monitoring. This connects to spec evolution: production quality signals feed back into spec updates.
 
-## Design
+**The honest trajectory.** In Team Topologies terms, this is a shift from embedded stream-aligned function to enabling function. The enabling function's natural arc is to succeed itself out of existence as teams internalise the capability. Acknowledging this openly is more respectful to QA professionals than offering "coach" as a permanent landing pad while privately knowing the role is transitional.
 
-**Amplified:** Prototyping, design system application, responsive layout generation, accessibility checking, and visual asset production. Agents can produce more design artefacts faster and with greater consistency.
+**Diagnostic questions for your team:**
 
-**Automated:** Production design within established systems, icon generation, spacing and alignment work, design documentation, and component library maintenance. These follow the rules that agents can apply reliably.
+- Who currently owns edge-case thinking on your team? Is it a named responsibility or assumed?
+- Are agent-generated tests being independently validated, or are they confirming the agent's own assumptions?
+- Do you have evaluation criteria for non-deterministic agent outputs? Who designed them?
+- Where does production quality feedback enter your specification lifecycle? If it doesn't, your specs are decaying.
 
-**Irreducibly human:** Defining what "right" looks like. Evaluating whether a system holds together at a level above individual artefacts. Making aesthetic judgments that balance user needs, brand identity, and emotional resonance. Understanding what a user needs versus what they say they want.
+## Forces acting on design
 
-An agent can design a good screen. It may even maintain design system coherence better than a human across hundreds of screens, because it does not get tired or inconsistent. The designer's contribution shifts from making things look right to defining what right looks like and evaluating system-level coherence.
+**The core pressure:** Agents can produce design artefacts at volume and maintain design system coherence better than humans across hundreds of screens. The designer's contribution shifts from making things look right to defining what right looks like.
 
-**The specification responsibility.** Design specifies _experience_ intent, distinct from the behavioural intent that Product Manager and engineering specify. A BDD scenario says "when the user submits the form, the system confirms the booking." It says nothing about whether the confirmation feels reassuring, whether the error state is recoverable without anxiety, or whether the flow respects the user's mental model of the process. Design specifications - whether expressed as interaction patterns, design tokens, accessibility constraints, or annotated prototypes - are a parallel layer in the spec hierarchy that agents need just as much as they need behavioural specs. Teams that specify behaviour without specifying experience get functionally correct software that nobody wants to use.
+**The specification gap:** A BDD scenario says "when the user submits the form, the system confirms the booking." It says nothing about whether the confirmation feels reassuring, whether the error state is recoverable without anxiety, or whether the flow respects the user's mental model. Design specifications - interaction patterns, design tokens, accessibility constraints, annotated prototypes - are a parallel layer in the spec hierarchy that agents need just as much as behavioural specs. Teams that specify behaviour without specifying experience get functionally correct software that nobody wants to use.
 
-**The service design exception.** Service design is closer to organisational design than visual design. It involves understanding systems of human behaviour, institutional constraints, and cross-channel journeys. This gets more human with Agentic AI, not less. The tools can help map and visualise services, but the judgment about how services should work for people in complex institutional contexts remains deeply human.
+**Service design as a distinct force:** Service design is closer to organisational design than to visual design. It involves understanding systems of human behaviour, institutional constraints, and cross-channel journeys. This work gets more human with Agentic AI, not less.
+
+**Diagnostic questions for your team:**
+
+- Do your agents receive design specifications alongside behavioural specifications? If not, what governs the experience quality of agent-generated interfaces?
+- Is your design system expressed in tokens and constraints that agents can consume, or in guidelines that require human interpretation?
+- Who evaluates system-level design coherence across agent-generated artefacts?
+
+## Using this section
+
+This section is a diagnostic tool, not a blueprint. The recommended approach:
+
+1. **Map forces to your context.** Which pressures are you already feeling? Which haven't arrived yet?
+2. **Run the diagnostic questions.** Identify where your team has gaps, implicit ownership, or missing compensating practices.
+3. **Design experiments.** Use the Improvement Kata pattern: define a target condition for role capability, understand the current condition, identify obstacles, run small experiments, measure results.
+4. **Share what you learn.** The descriptive case studies that will eventually define how roles work in agentic teams will come from practitioners documenting their experiments, not from consultants prescribing answers.
+
+The forces described here are durable. The structural answers are not yet known. Teams that acknowledge this distinction will adapt faster than teams that adopt a template.

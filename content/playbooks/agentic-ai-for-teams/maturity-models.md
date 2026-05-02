@@ -6,6 +6,8 @@ tags:
 ---
 
 
+# Maturity Models
+
 Agentic AI adoption operates at three distinct levels that interact but are not the same thing: individual practitioner adoption, team-level modes and practices, and organisational readiness. A highly capable individual developer using agents in an organisationally immature context is a liability. An organisationally mature context with individually inexperienced developers is an opportunity. And between the two sits the team, where most of the practical work of adoption is actually done, and where many failures that look individual or organisational are, in fact, team-level.
 
 The individual-stage framing is adapted from Steve Yegge's "Evolution of the Programmer" and Daniel Jones's "11 Stages of Agentic Coding," reframed for the organisational-readiness purpose of this framework. The team-level framing follows a descriptive rather than progressive pattern, structurally similar to Team Topologies' use of team types and interaction modes rather than a maturity ladder.
@@ -13,6 +15,8 @@ The individual-stage framing is adapted from Steve Yegge's "Evolution of the Pro
 ## Individual adoption: eleven stages
 
 Individual developers adopt agentic tooling through a progression of increasing trust and autonomy. This progression is not linear for every person, but the stages are recognisable, and the sequence is broadly consistent.
+
+These eleven stages span the full spectrum from non-agentic tool use through to building custom agent orchestration systems. Stages 1 through 3 are pre-agentic: the AI operates as a tool that the developer controls directly, with no autonomous action. Stage 4 is the threshold where agency begins - the AI proposes multi-step actions and the developer's role begins to shift from author to supervisor. The distinction matters because organisations that have adopted stages 1–3 have adopted AI-assisted development, not Agentic AI. The challenges, risks, and organisational requirements are qualitatively different from stage 4 onward.
 
 **Stage 1: Copy/paste from a chat app.** The developer uses ChatGPT, Claude, or similar as an external reference. They copy code snippets into their editor. AI is a search engine replacement, not a collaborator.
 
@@ -32,27 +36,27 @@ Individual developers adopt agentic tooling through a progression of increasing 
 
 **Stage 9: Background agents with notification.** Agents run independently and notify the developer of results. The developer is no longer continuously monitoring. Trust is high, and guardrails must be robust.
 
-**Stage 10: Using a software factory.** The developer works within a structured multi-agent framework (such as nWave) where specialised agents handle different phases of the development lifecycle. Human checkpoints exist between phases, but execution within phases is autonomous.
+**Stage 10: Using a software factory.** The developer works within a structured multi-agent framework where specialised agents handle different phases of the development lifecycle. Human checkpoints exist between phases, but execution within phases is autonomous.
 
 **Stage 11: Building software factories.** The developer designs and builds custom agent-orchestration systems (Steve Yegge's Gas Town is a working public example). This is operating-system-level thinking applied to agentic development.
 
 ### Tiers
 
-These eleven stages group into five tiers that reflect qualitatively different relationships between the developer and AI:
+These eleven stages group into five tiers. The first tier is explicitly pre-agentic - it describes AI-assisted development, not agentic development. The remaining four tiers represent progressively deeper agency.
 
-**Novice (stages 1-4):** AI is a tool on the desk. The developer does the work, with AI providing suggestions. No trust delegation occurs.
+**Pre-agentic (stages 1–3):** AI is a tool on the desk. The developer does all the work; AI provides suggestions, completions, and explanations. No trust delegation occurs. No autonomous action is taken. This is where most developers and organisations currently operate, and it does not require the engineering guardrails or organisational readiness that later tiers demand. Calling this "Agentic AI adoption" is premature - it is AI-assisted development, and the organisational risks are correspondingly lower.
 
-**Beginner (stages 5-6):** AI becomes the primary worker in some contexts, but the human approves every action. Trust is growing but bounded by explicit approval gates.
+**Supervised agentic (stages 4–6):** AI proposes autonomous actions - multi-file changes, project-wide refactors - but the human approves every action before it executes. Trust is growing but bounded by explicit approval gates. This is the threshold where engineering foundations (tests, CI/CD, observability) begin to matter: the agent can now propose changes that, if approved carelessly, have consequences beyond a single line.
 
-**Competent (stages 7-8):** The developer delegates execution to agents and reviews output rather than approving steps. This requires genuine confidence in guardrails. The transition from beginner to competent is the most consequential shift for most developers and teams.
+**Autonomous agentic (stages 7–8):** The developer delegates execution to agents and reviews output rather than approving steps. This requires genuine confidence in guardrails. The transition from supervised to autonomous is the most consequential shift for most developers and teams - it is the point where the organisation's engineering maturity becomes the binding constraint on safe adoption.
 
-**Advanced (stages 9-10):** The developer orchestrates multiple agents, either manually or through pre-built tooling. The human role is direction, evaluation, and exception handling.
+**Orchestrated agentic (stages 9–10):** The developer orchestrates multiple agents, either manually or through pre-built tooling. The human role is direction, evaluation, and exception handling.
 
-**Cutting edge (stage 11):** The developer is building the orchestration layer itself, shaping how agents work together for their specific context.
+**System-building (stage 11):** The developer is building the orchestration layer itself, shaping how agents work together for their specific context.
 
 ### The critical transition
 
-The most important transition is between beginner and competent: from manual approvals to skipped permissions. This is where most individuals stall, and where most organisations should focus their enablement effort.
+The most important transition is between supervised and autonomous agentic: from manual approvals to skipped permissions. This is where most individuals stall, and where most organisations should focus their enablement effort.
 
 Moving to skipped permissions requires three things: test coverage sufficient to catch agent errors before they reach production, CI/CD maturity sufficient to gate deployment on those tests, and observability sufficient to detect problems that tests miss. Without all three, skipping permissions is gambling. With all three, it is a reasonable extension of trust based on engineering evidence.
 
@@ -70,7 +74,7 @@ Four modes describe the qualitative shape of a team's relationship with agents. 
 
 **Shared-context.** The team operates a shared substrate for agents: shared CLAUDE.md or equivalent, shared spec hierarchy, shared prompt library, shared architectural context. Agents are still invoked individually, but they work from a common knowledge base that reflects the team's collective understanding. This mode requires the team to agree on what belongs in the shared context and to maintain it over time.
 
-**Pair-with-agent.** Agents become a third party in pair programming. The pair - two humans and an agent, or a junior with an agent under senior observation - becomes the unit of work. This is the XP-aligned response to the apprenticeship problem described in Part 5, named here as a team mode. It is particularly suited to teams with mixed experience levels.
+**Pair-with-agent.** Agents become a third party in pair programming. The pair - two humans and an agent, or a junior with an agent under senior observation - becomes the unit of work. This is the XP-aligned response to the apprenticeship problem described in Part 6, named here as a team mode. It is particularly suited to teams with mixed experience levels.
 
 **Orchestrated multi-agent.** The team runs multiple agents in parallel against a shared spec hierarchy, with explicit coordination mechanisms: work partitioning, merge protocols, shared state management, and review queues. The team's primary activity shifts from authoring code to orchestrating agents and reviewing their output. This mode is where team-level capability most strongly meets its organisational-infrastructure ceiling.
 
@@ -94,7 +98,9 @@ Six practices describe the specific behaviours that constitute good team-level a
 
 While individual adoption tracks how a developer relates to agents, and team-level modes describe how the team coordinates, organisational maturity tracks whether the organisation can support and benefit from that adoption.
 
-**Stage 1: Minimal or no AI.** Autocomplete, occasional chat questions. AI is a novelty, not a workflow. No organisational stance on AI use. *I asked Co-Pilot.*
+As with individual adoption, the early organisational stages describe AI-assisted rather than agentic maturity. Stages 1 and 2 cover organisations where AI is present but operating without autonomy. Stage 3 is the threshold where agency begins - agents operate autonomously within bounded scope. Organisations at stages 1–2 are managing an AI-assisted workflow, not an agentic one, and the governance, safety, and readiness requirements differ accordingly.
+
+**Stage 1: Minimal or no AI.** Autocomplete, occasional chat questions. AI is a novelty, not a workflow. No organisational stance on AI use. _I asked Co-Pilot._
 
 **Stage 2: Supervised AI assistant.** AI agents are in use, but every action needs human approval. High friction, limited trust. The organisation may have policies about AI use, but they are primarily restrictive.
 

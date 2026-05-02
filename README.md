@@ -38,6 +38,25 @@ Output goes to `_site/`.
 
 A new playbook needs its own `<slug>.11tydata.js` setting `playbook: "<slug>"` and `playbookTitle: "..."`. Tag each playbook page individually (`tags: ["<slug>"]` in each Markdown file's frontmatter) — *not* in `11tydata.js`, because Eleventy's default array deep-merge would prevent the landing page from opting out of the sibling collection.
 
+## Syncing a playbook from Obsidian
+
+Playbook content is authored in a separate Obsidian vault and synced into the repo with:
+
+```sh
+scripts/sync-playbook.sh <slug> <source-path>
+```
+
+Example:
+
+```sh
+scripts/sync-playbook.sh agentic-ai-for-teams \
+  "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Steeley/Blogs/Agentic AI for Teams"
+```
+
+The script wipes existing `.md` files under `content/playbooks/<slug>/`, copies each source `.md` with frontmatter rewritten to our schema, applies text transforms (em-dash → hyphen, "agentic AI" → "Agentic AI"), and rewrites cross-reference URLs. It preserves `11tydata.js` and the hand-authored `index.njk` landings, and skips utility files (`README.md`, `CHANGELOG.md`, etc.) at the top level. After running, review the diff with `git status` / `git diff` before committing.
+
+The sync is one-way: edits made directly in the repo will be overwritten on the next sync, so author in Obsidian.
+
 ## Deployment
 
 Netlify builds on every push to `main`. Configuration is in `netlify.toml`.
