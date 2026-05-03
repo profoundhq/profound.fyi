@@ -6,4 +6,5 @@ export default {
   url: process.env.URL || "https://profound.fyi",
   locale: "en_GB",
   gaId: process.env.GA_ID || "",
+  currentYear: new Date().getFullYear(),
 };

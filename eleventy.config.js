@@ -15,6 +15,21 @@ export default function (eleventyConfig) {
     return new Date(dateObj).toISOString().split("T")[0];
   });
 
+  eleventyConfig.addFilter("toRoman", (num) => {
+    const numerals = [
+      ["M", 1000], ["CM", 900], ["D", 500], ["CD", 400],
+      ["C", 100], ["XC", 90], ["L", 50], ["XL", 40],
+      ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1],
+    ];
+    let n = Math.floor(Number(num));
+    if (!Number.isFinite(n) || n <= 0) return String(num);
+    let out = "";
+    for (const [symbol, value] of numerals) {
+      while (n >= value) { out += symbol; n -= value; }
+    }
+    return out;
+  });
+
   eleventyConfig.addCollection("sitemapPages", (collectionApi) => {
     return collectionApi.getAll().filter((item) => {
       if (!item.url) return false;
