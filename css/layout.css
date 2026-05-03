@@ -61,6 +61,13 @@
   font-size: var(--type-small);
 }
 
+.site-footer .site-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  justify-content: space-between;
+}
+
 main {
   flex: 1;
   width: 100%;
