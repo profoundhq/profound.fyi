@@ -1,0 +1,71 @@
+---
+layout: layouts/page.njk
+title: "Communication styles"
+description: "A short self-assessment for finding your communication style on the Open/Direct quadrant. Adapted from the Platinum Rule by Tony Alessandra."
+permalink: /tools/communication-styles/
+---
+
+<section class="cs-intro">
+  <p>Eighteen pairs of statements. For each pair, choose the position that best describes you. It takes about three minutes. Your result places you on an Open/Guarded by Direct/Indirect quadrant and names your dominant style.</p>
+  <p class="cs-credit">Adapted from the Platinum Rule communication-styles model by Tony Alessandra. Source: <a href="https://ogefacultymentoring.web.unc.edu/wp-content/uploads/sites/11490/2016/09/Communucation-Styles-Inventory.pdf">UNC OGE Faculty Mentoring handout</a>.</p>
+</section>
+
+<p class="cs-restore-prompt" hidden><a href="#" data-cs-restore>Restore your last answers</a></p>
+
+<form id="cs-form" class="cs-form" novalidate>
+  <ol class="cs-items">
+    {% set rows = [
+      { id: 1,  left: "I'm usually open to getting to know people personally and establishing relationships with them.", right: "I'm not usually open to getting to know people personally and establishing relationships with them." },
+      { id: 2,  left: "I usually react slowly and deliberately.", right: "I usually react quickly and spontaneously." },
+      { id: 3,  left: "I'm usually guarded about other people's use of my time.", right: "I'm usually open to other people's use of my time." },
+      { id: 4,  left: "I usually introduce myself at social gatherings.", right: "I usually wait for others to introduce themselves to me at social gatherings." },
+      { id: 5,  left: "I usually focus my conversations on the interests of the people involved, even if that means straying from the business or subject at hand.", right: "I usually focus my conversations on the tasks, issues, business, or subject at hand." },
+      { id: 6,  left: "I'm usually not assertive, and I can be patient with a slow pace.", right: "I'm usually assertive, and at times I can be impatient with a slow pace." },
+      { id: 7,  left: "I usually make decisions based on facts or evidence.", right: "I usually make decisions on feelings, experiences, or relationships." },
+      { id: 8,  left: "I usually contribute frequently to group conversations.", right: "I usually contribute infrequently to group conversations." },
+      { id: 9,  left: "I usually prefer to work with and through others, providing support when possible.", right: "I usually prefer to work independently or dictate the conditions in terms of how others are involved." },
+      { id: 10, left: "I usually ask questions or speak tentatively and indirectly.", right: "I usually make emphatic statements or directly express opinions." },
+      { id: 11, left: "I usually focus primarily on ideas, concepts, or results.", right: "I usually focus primarily on persons, interactions, and feelings." },
+      { id: 12, left: "I usually use gestures, facial expression, and voice intonation to emphasise points.", right: "I usually do not use gestures, facial expression, and voice intonation to emphasise points." },
+      { id: 13, left: "I usually accept others' points of view (ideas, feelings, and concerns).", right: "I usually don't accept others' points of view (ideas, feelings, and concerns)." },
+      { id: 14, left: "I usually respond to risk and change in a cautious or predictable manner.", right: "I usually respond to risk and change in a dynamic or unpredictable manner." },
+      { id: 15, left: "I usually prefer to keep personal feelings and thoughts private, sharing only when I wish to do so.", right: "I usually find it natural and easy to share and discuss my feelings with others." },
+      { id: 16, left: "I usually seek out new or different experiences and situations.", right: "I usually choose known or similar situations and relationships." },
+      { id: 17, left: "I'm usually responsive to others' agenda, interests, and concerns.", right: "I'm usually directed toward my own agendas, interests, and concerns." },
+      { id: 18, left: "I usually respond to conflict slowly and indirectly.", right: "I usually respond to conflict quickly and directly." }
+    ] %}
+    {% for row in rows %}
+      <li class="cs-item">
+        <fieldset>
+          <legend class="visually-hidden">Item {{ row.id }}: {{ row.left }} vs {{ row.right }}</legend>
+          <p class="cs-statement cs-statement-left">{{ row.left }}</p>
+          <div class="cs-scale" role="radiogroup" aria-label="Item {{ row.id }} scale">
+            {% for pos in [0, 1, 2, 3] %}
+              <label class="cs-scale-option">
+                <input type="radio" name="q{{ row.id }}" value="{{ pos }}">
+                <span class="visually-hidden">
+                  {%- if pos == 0 %}Strongly agrees with: {{ row.left }}{% endif -%}
+                  {%- if pos == 1 %}Leans toward: {{ row.left }}{% endif -%}
+                  {%- if pos == 2 %}Leans toward: {{ row.right }}{% endif -%}
+                  {%- if pos == 3 %}Strongly agrees with: {{ row.right }}{% endif -%}
+                </span>
+                <span class="cs-scale-dot" aria-hidden="true"></span>
+              </label>
+            {% endfor %}
+          </div>
+          <p class="cs-statement cs-statement-right">{{ row.right }}</p>
+        </fieldset>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <div class="cs-form-footer">
+    <p class="cs-counter" aria-live="polite"><span data-cs-counter>0</span> of 18 answered</p>
+    <button type="submit" class="cs-submit" data-cs-submit disabled aria-describedby="cs-submit-help">See your style</button>
+    <p id="cs-submit-help" class="cs-submit-help">Answer all 18 items to see your result.</p>
+  </div>
+</form>
+
+<section id="cs-results" class="cs-results" aria-live="polite" hidden></section>
+
+<script type="module" src="/js/communication-styles/app.js"></script>
