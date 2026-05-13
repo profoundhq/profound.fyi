@@ -180,3 +180,253 @@
   opacity: 0.85;
   border-color: var(--colour-fg);
 }
+
+/* Communication styles tool ---------------------------------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cs-intro {
+  max-width: var(--measure);
+  margin-bottom: var(--space-6);
+}
+
+.cs-credit {
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+}
+
+.cs-restore-prompt {
+  margin-bottom: var(--space-5);
+  font-size: var(--type-small);
+}
+
+.cs-form {
+  margin: 0 0 var(--space-7);
+}
+
+.cs-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.cs-item fieldset {
+  border: 1px solid var(--colour-rule);
+  border-radius: 4px;
+  padding: var(--space-4);
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 720px) {
+  .cs-item fieldset {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .cs-statement-right { text-align: right; }
+}
+
+.cs-statement {
+  margin: 0;
+  font-size: var(--type-small);
+  color: var(--colour-fg);
+}
+
+.cs-scale {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  padding: var(--space-2) 0;
+}
+
+.cs-scale-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.cs-scale-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cs-scale-dot {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--colour-fg);
+  background: var(--colour-bg);
+  transition: background-color 120ms ease;
+}
+
+.cs-scale-option input[type="radio"]:checked + .cs-scale-dot {
+  background: var(--colour-fg);
+}
+
+.cs-scale-option input[type="radio"]:focus-visible + .cs-scale-dot {
+  outline: 2px solid var(--colour-fg);
+  outline-offset: 3px;
+}
+
+.cs-form-footer {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.cs-counter {
+  margin: 0;
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
+.cs-submit {
+  appearance: none;
+  background: var(--colour-fg);
+  color: var(--colour-bg);
+  border: 0;
+  padding: var(--space-3) var(--space-5);
+  font: inherit;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cs-submit[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cs-submit-help {
+  margin: 0;
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
+.cs-results {
+  border-top: 1px solid var(--colour-rule);
+  padding-top: var(--space-6);
+  margin-top: var(--space-7);
+}
+
+.cs-quadrant {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  margin: var(--space-5) 0;
+  color: var(--colour-fg);
+  aspect-ratio: 1 / 1;
+}
+
+.cs-quad-label {
+  font-size: 4px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  fill: currentColor;
+}
+
+.cs-quad-axis {
+  font-size: 3px;
+  font-family: var(--font-sans);
+  fill: currentColor;
+  opacity: 0.6;
+}
+
+.cs-quad-dot {
+  fill: var(--colour-fg);
+  stroke: var(--colour-bg);
+  stroke-width: 0.6;
+}
+
+.cs-subscores {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+  max-width: 28rem;
+}
+
+.cs-subscore {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto;
+  gap: var(--space-2);
+  font-size: var(--type-small);
+}
+
+.cs-subscore dt { font-weight: 600; }
+.cs-subscore dd { margin: 0; }
+
+.cs-subscore-bar {
+  grid-column: 1 / -1;
+  height: 4px;
+  background: var(--colour-rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cs-subscore-bar span {
+  display: block;
+  height: 100%;
+  background: var(--colour-fg);
+}
+
+.cs-style-cards {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  margin: var(--space-6) 0;
+}
+
+@media (min-width: 720px) {
+  .cs-style-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+.cs-style-card {
+  border: 1px solid var(--colour-rule);
+  border-radius: 4px;
+  padding: var(--space-4);
+}
+
+.cs-style-card h3 { margin-top: 0; }
+
+.cs-style-card-mine {
+  border-color: var(--colour-fg);
+  background: var(--colour-code-bg);
+}
+
+.cs-mine-badge {
+  font-size: var(--type-small);
+  font-weight: 400;
+  color: var(--colour-muted);
+  margin-left: var(--space-2);
+}
+
+.cs-portrait {
+  font-style: italic;
+  color: var(--colour-muted);
+}
+
+.cs-actions {
+  margin-top: var(--space-5);
+}
