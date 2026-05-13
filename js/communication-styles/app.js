@@ -224,6 +224,19 @@ function renderResults(target, totals, style) {
 
   const actions = el("p", { class: "cs-actions" });
   const reset = el("a", { href: "#", "data-cs-reset": "", text: "Start over" });
+  reset.addEventListener("click", (e) => {
+    e.preventDefault();
+    const form = document.getElementById("cs-form");
+    form.reset();
+    clearUrl();
+    clearStorage();
+    target.hidden = true;
+    clearChildren(target);
+    const restorePrompt = document.querySelector(".cs-restore-prompt");
+    if (restorePrompt) restorePrompt.hidden = true;
+    updateCounter(form);
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   actions.appendChild(reset);
   target.appendChild(actions);
 
