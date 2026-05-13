@@ -72,7 +72,7 @@ The two axes (Open vs Guarded, Direct vs Indirect) determine the named style:
 
 ### Ties
 
-If `Open == Guarded` or `Direct == Indirect`, do not pick arbitrarily. The result names the boundary explicitly, e.g. "You sit on the line between Director and Socialiser", and shows both adjacent style cards as primary. This reads as honest and is useful in workshop debriefs.
+With 9 items contributing 0–3 each per axis, axis totals always sum to 27. A tie would require both halves at 13.5, which is impossible from integer input. The scoring code includes defensive tie branches (and the result UI is wired to display "X / Y") but those branches are currently unreachable from real input. Kept in case the inventory grows or the scale changes.
 
 ## Result visualisation
 

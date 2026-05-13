@@ -34,3 +34,34 @@ test("all-three answers: open=12, guarded=15, direct=15, indirect=12", () => {
   assert.equal(r.direct, 15);
   assert.equal(r.indirect, 12);
 });
+
+import { determineStyle } from "../../js/communication-styles/scoring.js";
+
+test("Open + Direct => Socialiser", () => {
+  const s = determineStyle({ open: 20, guarded: 7, direct: 20, indirect: 7 });
+  assert.deepEqual(s, { style: "Socialiser", openAxis: "open", directAxis: "direct", tieOpenGuarded: false, tieDirectIndirect: false });
+});
+
+test("Guarded + Indirect => Thinker", () => {
+  assert.equal(determineStyle({ open: 7, guarded: 20, direct: 7, indirect: 20 }).style, "Thinker");
+});
+
+test("Open + Indirect => Relater", () => {
+  assert.equal(determineStyle({ open: 20, guarded: 7, direct: 7, indirect: 20 }).style, "Relater");
+});
+
+test("Guarded + Direct => Director", () => {
+  assert.equal(determineStyle({ open: 7, guarded: 20, direct: 20, indirect: 7 }).style, "Director");
+});
+
+test("Open == Guarded tie names both adjacent styles", () => {
+  const s = determineStyle({ open: 13.5, guarded: 13.5, direct: 20, indirect: 7 });
+  assert.equal(s.tieOpenGuarded, true);
+  assert.equal(s.style, "Director / Socialiser");
+});
+
+test("Direct == Indirect tie names both adjacent styles", () => {
+  const s = determineStyle({ open: 20, guarded: 7, direct: 13.5, indirect: 13.5 });
+  assert.equal(s.tieDirectIndirect, true);
+  assert.equal(s.style, "Relater / Socialiser");
+});

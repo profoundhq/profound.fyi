@@ -31,3 +31,30 @@ export function scoreInventory(answers) {
   }
   return totals;
 }
+
+const STYLE_MAP = {
+  "open|direct":      "Socialiser",
+  "open|indirect":    "Relater",
+  "guarded|direct":   "Director",
+  "guarded|indirect": "Thinker",
+};
+
+export function determineStyle(totals) {
+  const tieOpenGuarded    = totals.open === totals.guarded;
+  const tieDirectIndirect = totals.direct === totals.indirect;
+  const openAxis   = totals.open   >= totals.guarded  ? "open"   : "guarded";
+  const directAxis = totals.direct >= totals.indirect ? "direct" : "indirect";
+
+  let style;
+  if (tieOpenGuarded && tieDirectIndirect) {
+    style = "All four styles in balance";
+  } else if (tieOpenGuarded) {
+    style = `${STYLE_MAP[`guarded|${directAxis}`]} / ${STYLE_MAP[`open|${directAxis}`]}`;
+  } else if (tieDirectIndirect) {
+    style = `${STYLE_MAP[`${openAxis}|indirect`]} / ${STYLE_MAP[`${openAxis}|direct`]}`;
+  } else {
+    style = STYLE_MAP[`${openAxis}|${directAxis}`];
+  }
+
+  return { style, openAxis, directAxis, tieOpenGuarded, tieDirectIndirect };
+}
