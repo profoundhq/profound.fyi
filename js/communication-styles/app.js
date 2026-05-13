@@ -26,6 +26,46 @@ const STYLE_COPY = {
   }
 };
 
+// --- Storage helpers ------------------------------------------------------
+
+function storageAvailable() {
+  try {
+    const k = "__cs_test__";
+    window.localStorage.setItem(k, "1");
+    window.localStorage.removeItem(k);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function saveAnswers(answers) {
+  if (!storageAvailable()) return;
+  window.localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify({ answers, computedAt: new Date().toISOString() })
+  );
+}
+
+function loadAnswers() {
+  if (!storageAvailable()) return null;
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed.answers) || parsed.answers.length !== 18) return null;
+    if (!parsed.answers.every((n) => Number.isInteger(n) && n >= 0 && n <= 3)) return null;
+    return parsed.answers;
+  } catch {
+    return null;
+  }
+}
+
+function clearStorage() {
+  if (!storageAvailable()) return;
+  window.localStorage.removeItem(STORAGE_KEY);
+}
+
 // --- Form state -----------------------------------------------------------
 
 function readAnswersFromForm(form) {
@@ -213,6 +253,7 @@ function submitFlow(form, resultsEl) {
   const totals = scoreInventory(answers);
   const style = determineStyle(totals);
   writeUrl(answers);
+  saveAnswers(answers);
   renderResults(resultsEl, totals, style);
 }
 
@@ -221,6 +262,7 @@ function submitFlow(form, resultsEl) {
 function init() {
   const form = document.getElementById("cs-form");
   const resultsEl = document.getElementById("cs-results");
+  const restorePrompt = document.querySelector(".cs-restore-prompt");
   if (!form || !resultsEl) return;
 
   form.addEventListener("change", () => updateCounter(form));
@@ -235,6 +277,16 @@ function init() {
     const totals = scoreInventory(urlAnswers);
     const style = determineStyle(totals);
     renderResults(resultsEl, totals, style);
+  } else if (restorePrompt && loadAnswers()) {
+    restorePrompt.hidden = false;
+    restorePrompt.querySelector("[data-cs-restore]").addEventListener("click", (e) => {
+      e.preventDefault();
+      const saved = loadAnswers();
+      if (!saved) return;
+      setAnswersOnForm(form, saved);
+      updateCounter(form);
+      restorePrompt.hidden = true;
+    });
   }
 
   updateCounter(form);
