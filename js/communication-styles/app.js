@@ -191,6 +191,20 @@ function renderResults(target, totals, style) {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// --- URL helpers ----------------------------------------------------------
+
+function writeUrl(answers) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("a", encodeAnswers(answers));
+  window.history.replaceState({}, "", url);
+}
+
+function clearUrl() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("a");
+  window.history.replaceState({}, "", url);
+}
+
 // --- Submit flow ----------------------------------------------------------
 
 function submitFlow(form, resultsEl) {
@@ -198,6 +212,7 @@ function submitFlow(form, resultsEl) {
   if (countAnswered(answers) < 18) return;
   const totals = scoreInventory(answers);
   const style = determineStyle(totals);
+  writeUrl(answers);
   renderResults(resultsEl, totals, style);
 }
 
@@ -207,11 +222,21 @@ function init() {
   const form = document.getElementById("cs-form");
   const resultsEl = document.getElementById("cs-results");
   if (!form || !resultsEl) return;
+
   form.addEventListener("change", () => updateCounter(form));
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     submitFlow(form, resultsEl);
   });
+
+  const urlAnswers = decodeAnswers(new URL(window.location.href).searchParams.get("a"));
+  if (urlAnswers) {
+    setAnswersOnForm(form, urlAnswers);
+    const totals = scoreInventory(urlAnswers);
+    const style = determineStyle(totals);
+    renderResults(resultsEl, totals, style);
+  }
+
   updateCounter(form);
 }
 
