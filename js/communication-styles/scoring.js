@@ -58,3 +58,14 @@ export function determineStyle(totals) {
 
   return { style, openAxis, directAxis, tieOpenGuarded, tieDirectIndirect };
 }
+
+export function encodeAnswers(answers) {
+  return answers.map((n) => String(n)).join("");
+}
+
+export function decodeAnswers(str) {
+  if (typeof str !== "string") return null;
+  if (str.length !== 18) return null;
+  if (!/^[0-3]{18}$/.test(str)) return null;
+  return str.split("").map(Number);
+}

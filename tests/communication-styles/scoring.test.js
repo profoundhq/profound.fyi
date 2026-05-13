@@ -65,3 +65,34 @@ test("Direct == Indirect tie names both adjacent styles", () => {
   assert.equal(s.tieDirectIndirect, true);
   assert.equal(s.style, "Relater / Socialiser");
 });
+
+import { encodeAnswers, decodeAnswers } from "../../js/communication-styles/scoring.js";
+
+test("encodeAnswers produces an 18-char digit string", () => {
+  const answers = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1];
+  assert.equal(encodeAnswers(answers), "012301230123012301");
+});
+
+test("decodeAnswers parses a valid encoding", () => {
+  assert.deepEqual(
+    decodeAnswers("012301230123012301"),
+    [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1]
+  );
+});
+
+test("decodeAnswers returns null for wrong length", () => {
+  assert.equal(decodeAnswers("01230"), null);
+});
+
+test("decodeAnswers returns null for out-of-range digits", () => {
+  assert.equal(decodeAnswers("412301230123012301"), null);
+});
+
+test("decodeAnswers returns null for non-digit characters", () => {
+  assert.equal(decodeAnswers("a12301230123012301"), null);
+});
+
+test("decodeAnswers returns null for null/undefined", () => {
+  assert.equal(decodeAnswers(null), null);
+  assert.equal(decodeAnswers(undefined), null);
+});
