@@ -17,7 +17,7 @@ const STYLE_COPY = {
   Director: {
     portrait: "Decisive, results-focused, comfortable taking charge.",
     bestAt: "Cutting through ambiguity, holding the line on outcomes, moving fast.",
-    flexToward: "When working with a Director, be brief, be clear, and lead with results. Skip the small talk; bring options, not open questions."
+    flexToward: "When working with a Director, be brief, be clear, and lead with results. Skip the small talk — bring options, not open questions."
   },
   Thinker: {
     portrait: "Analytical, precise, motivated by accuracy and quality.",
@@ -125,7 +125,7 @@ function clearChildren(node) {
 
 // --- Render: quadrant -----------------------------------------------------
 
-function buildQuadrant(totals) {
+function buildQuadrant(totals, style) {
   const x = (totals.direct - totals.indirect) / 27;
   const y = (totals.open - totals.guarded) / 27;
   const cx = (50 + x * 45).toFixed(2);
@@ -148,7 +148,9 @@ function buildQuadrant(totals) {
   root.appendChild(svg("text", { x: "96", y: "96", class: "cs-quad-label", "text-anchor": "end", text: "Director" }));
   root.appendChild(svg("text", { x: "50", y: "99", class: "cs-quad-axis", "text-anchor": "middle", text: "Direct →" }));
   root.appendChild(svg("text", { x: "50", y: "3",  class: "cs-quad-axis", "text-anchor": "middle", text: "↑ Open" }));
-  root.appendChild(svg("circle", { cx, cy, r: "2.2", class: "cs-quad-dot" }));
+  const dot = svg("circle", { cx, cy, r: "2.2", class: "cs-quad-dot" });
+  dot.appendChild(svg("title", { text: `${style.style} — ${cx}% across, ${cy}% down` }));
+  root.appendChild(dot);
   return root;
 }
 
@@ -218,7 +220,7 @@ function renderResults(target, totals, style) {
   clearChildren(target);
 
   target.appendChild(el("h2", { text: `Your style: ${style.style}` }));
-  target.appendChild(buildQuadrant(totals));
+  target.appendChild(buildQuadrant(totals, style));
   target.appendChild(buildSubscores(totals));
   target.appendChild(buildStyleCards(style));
 
