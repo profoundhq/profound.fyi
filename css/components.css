@@ -279,11 +279,11 @@
   transition: background-color 120ms ease;
 }
 
-.cs-scale-option input[type="radio"]:checked + .cs-scale-dot {
+.cs-scale-option input[type="radio"]:checked ~ .cs-scale-dot {
   background: var(--colour-fg);
 }
 
-.cs-scale-option input[type="radio"]:focus-visible + .cs-scale-dot {
+.cs-scale-option input[type="radio"]:focus-visible ~ .cs-scale-dot {
   outline: 2px solid var(--colour-fg);
   outline-offset: 3px;
 }
