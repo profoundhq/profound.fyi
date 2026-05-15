@@ -5,24 +5,36 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 
 const STYLE_COPY = {
   Socialiser: {
+    display: "Promoter/Socialiser",
     portrait: "Outgoing, enthusiastic, energised by people and possibilities.",
+    selfBestAt: "Generating ideas, building rapport quickly, painting a vision that pulls people in.",
+    selfPrefer: "Conversation, recognition, and room to think out loud. People who match your energy, let you brainstorm, and remember the social side of the work.",
     bestAt: "Generating excitement, building rapport quickly, painting a vision.",
-    flexToward: "When working with a Socialiser, allow time for stories and social warmth before driving to the task. Recognise their contribution out loud."
+    flexToward: "When working with a Promoter/Socialiser, allow time for stories and social warmth before driving to the task. Recognise their contribution out loud."
   },
   Relater: {
+    display: "Supporter/Relater",
     portrait: "Warm, steady, attentive to feelings and group harmony.",
+    selfBestAt: "Listening carefully, building trust, holding the team together when things get hard.",
+    selfPrefer: "A steady pace and time to think before deciding. People who lead with relationships, recognise effort, and avoid pushing for fast decisions.",
     bestAt: "Listening, supporting others, holding the team together under pressure.",
-    flexToward: "When working with a Relater, slow down and signal that you care about the people involved, not just the outcome. Avoid pushing for fast decisions."
+    flexToward: "When working with a Supporter/Relater, slow down and signal that you care about the people involved, not just the outcome. Avoid pushing for fast decisions."
   },
   Director: {
+    display: "Controller/Director",
     portrait: "Decisive, results-focused, comfortable taking charge.",
+    selfBestAt: "Cutting through ambiguity, holding the line on outcomes, moving fast, delegating clearly.",
+    selfPrefer: "Brevity and clarity. Options rather than open questions. People who get to the point and let you lead.",
     bestAt: "Cutting through ambiguity, holding the line on outcomes, moving fast.",
-    flexToward: "When working with a Director, be brief, be clear, and lead with results. Skip the small talk — bring options, not open questions."
+    flexToward: "When working with a Controller/Director, be brief, be clear, and lead with results. Skip the small talk — bring options, not open questions."
   },
   Thinker: {
+    display: "Analyser/Thinker",
     portrait: "Analytical, precise, motivated by accuracy and quality.",
+    selfBestAt: "Structuring complex problems, spotting flaws, planning thoroughly, building things that hold up.",
+    selfPrefer: "Evidence and time to digest. Space to think things through on your own. People who respect detail and don't rush you into decisions.",
     bestAt: "Spotting flaws, structuring complex problems, building things that hold up.",
-    flexToward: "When working with a Thinker, bring evidence, give them time to digest, and respect their need for detail. Don't rush them into a decision."
+    flexToward: "When working with an Analyser/Thinker, bring evidence, give them time to digest, and respect their need for detail. Don't rush them into a decision."
   }
 };
 
@@ -148,8 +160,11 @@ function buildQuadrant(totals, style) {
   root.appendChild(svg("text", { x: "96", y: "96", class: "cs-quad-label", "text-anchor": "end", text: "Director" }));
   root.appendChild(svg("text", { x: "50", y: "99", class: "cs-quad-axis", "text-anchor": "middle", text: "Direct →" }));
   root.appendChild(svg("text", { x: "50", y: "3",  class: "cs-quad-axis", "text-anchor": "middle", text: "↑ Open" }));
+  const dotName = [...new Set(style.style.split(" / "))]
+    .map((n) => (STYLE_COPY[n] && STYLE_COPY[n].display) || n)
+    .join(" or ");
   const dot = svg("circle", { cx, cy, r: "2.2", class: "cs-quad-dot" });
-  dot.appendChild(svg("title", { text: `${style.style} — ${cx}% across, ${cy}% down` }));
+  dot.appendChild(svg("title", { text: `${dotName} — ${cx}% across, ${cy}% down` }));
   root.appendChild(dot);
   return root;
 }
@@ -193,7 +208,7 @@ function buildOtherStyles(userStyles) {
     const copy = STYLE_COPY[name];
     if (!copy) continue;
     const card = el("article", { class: "cs-style-card" });
-    card.appendChild(el("h3", { text: name }));
+    card.appendChild(el("h3", { text: copy.display }));
     card.appendChild(el("p", { class: "cs-portrait", text: copy.portrait }));
 
     const best = el("p");
@@ -218,23 +233,26 @@ function renderResults(target, totals, style) {
   clearChildren(target);
 
   const userStyles = new Set(style.style.split(" / "));
+  const displayNames = [...userStyles]
+    .map((n) => (STYLE_COPY[n] && STYLE_COPY[n].display) || n)
+    .join(" or ");
 
-  target.appendChild(el("h2", { text: style.style }));
+  target.appendChild(el("h2", { text: `You are a ${displayNames}` }));
   for (const name of userStyles) {
     const copy = STYLE_COPY[name];
     if (!copy) continue;
-    if (userStyles.size > 1) target.appendChild(el("h3", { text: name }));
+    if (userStyles.size > 1) target.appendChild(el("h3", { text: copy.display }));
     target.appendChild(el("p", { class: "cs-lead-portrait", text: copy.portrait }));
 
     const best = el("p");
-    best.appendChild(el("strong", { text: "At their best: " }));
-    best.appendChild(document.createTextNode(copy.bestAt));
+    best.appendChild(el("strong", { text: "At your best: " }));
+    best.appendChild(document.createTextNode(copy.selfBestAt));
     target.appendChild(best);
 
-    const flex = el("p");
-    flex.appendChild(el("strong", { text: "How to flex toward this style: " }));
-    flex.appendChild(document.createTextNode(copy.flexToward));
-    target.appendChild(flex);
+    const prefer = el("p");
+    prefer.appendChild(el("strong", { text: "What you prefer: " }));
+    prefer.appendChild(document.createTextNode(copy.selfPrefer));
+    target.appendChild(prefer);
   }
 
   target.appendChild(buildQuadrant(totals, style));
