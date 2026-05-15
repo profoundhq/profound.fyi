@@ -234,6 +234,7 @@ function renderResults(target, totals, style) {
     clearStorage();
     target.hidden = true;
     clearChildren(target);
+    form.hidden = false;
     const restorePrompt = document.querySelector(".cs-restore-prompt");
     if (restorePrompt) restorePrompt.hidden = true;
     updateCounter(form);
@@ -241,6 +242,11 @@ function renderResults(target, totals, style) {
   });
   actions.appendChild(reset);
   target.appendChild(actions);
+
+  const form = document.getElementById("cs-form");
+  if (form) form.hidden = true;
+  const restorePrompt = document.querySelector(".cs-restore-prompt");
+  if (restorePrompt) restorePrompt.hidden = true;
 
   target.hidden = false;
   target.scrollIntoView({ behavior: "smooth", block: "start" });
