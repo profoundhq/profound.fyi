@@ -225,6 +225,16 @@ function renderResults(target, totals, style) {
     if (!copy) continue;
     if (userStyles.size > 1) target.appendChild(el("h3", { text: name }));
     target.appendChild(el("p", { class: "cs-lead-portrait", text: copy.portrait }));
+
+    const best = el("p");
+    best.appendChild(el("strong", { text: "At their best: " }));
+    best.appendChild(document.createTextNode(copy.bestAt));
+    target.appendChild(best);
+
+    const flex = el("p");
+    flex.appendChild(el("strong", { text: "How to flex toward this style: " }));
+    flex.appendChild(document.createTextNode(copy.flexToward));
+    target.appendChild(flex);
   }
 
   target.appendChild(buildQuadrant(totals, style));
