@@ -52,6 +52,12 @@ export default function (eleventyConfig) {
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
   });
 
+  eleventyConfig.addCollection("tools", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("content/tools/*.njk")
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+  });
+
   return {
     dir: {
       input: "content",
