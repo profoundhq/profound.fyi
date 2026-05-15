@@ -178,25 +178,22 @@ function buildSubscores(totals) {
   return list;
 }
 
-// --- Render: style cards --------------------------------------------------
+// --- Render: other-styles disclosure --------------------------------------
 
-function buildStyleCards(style) {
+function buildOtherStyles(userStyles) {
   const order = ["Socialiser", "Relater", "Director", "Thinker"];
-  const userStyles = new Set(style.style.split(" / "));
-  const wrap = el("div", { class: "cs-style-cards" });
+  const others = order.filter((n) => !userStyles.has(n));
+  if (others.length === 0) return null;
 
-  for (const name of order) {
+  const details = el("details", { class: "cs-other-styles" });
+  details.appendChild(el("summary", { text: "See the other styles and how to flex toward them" }));
+
+  const wrap = el("div", { class: "cs-style-cards" });
+  for (const name of others) {
     const copy = STYLE_COPY[name];
     if (!copy) continue;
-    const isUser = userStyles.has(name);
-    const card = el("article", { class: isUser ? "cs-style-card cs-style-card-mine" : "cs-style-card" });
-
-    const heading = el("h3", { text: name });
-    if (isUser) {
-      heading.appendChild(document.createTextNode(" "));
-      heading.appendChild(el("span", { class: "cs-mine-badge", text: "your style" }));
-    }
-    card.appendChild(heading);
+    const card = el("article", { class: "cs-style-card" });
+    card.appendChild(el("h3", { text: name }));
     card.appendChild(el("p", { class: "cs-portrait", text: copy.portrait }));
 
     const best = el("p");
@@ -211,7 +208,8 @@ function buildStyleCards(style) {
 
     wrap.appendChild(card);
   }
-  return wrap;
+  details.appendChild(wrap);
+  return details;
 }
 
 // --- Render: full results -------------------------------------------------
@@ -219,10 +217,21 @@ function buildStyleCards(style) {
 function renderResults(target, totals, style) {
   clearChildren(target);
 
-  target.appendChild(el("h2", { text: `Your style: ${style.style}` }));
+  const userStyles = new Set(style.style.split(" / "));
+
+  target.appendChild(el("h2", { text: style.style }));
+  for (const name of userStyles) {
+    const copy = STYLE_COPY[name];
+    if (!copy) continue;
+    if (userStyles.size > 1) target.appendChild(el("h3", { text: name }));
+    target.appendChild(el("p", { class: "cs-lead-portrait", text: copy.portrait }));
+  }
+
   target.appendChild(buildQuadrant(totals, style));
   target.appendChild(buildSubscores(totals));
-  target.appendChild(buildStyleCards(style));
+
+  const otherStyles = buildOtherStyles(userStyles);
+  if (otherStyles) target.appendChild(otherStyles);
 
   const actions = el("p", { class: "cs-actions" });
   const reset = el("a", { href: "#", "data-cs-reset": "", text: "Start over" });
@@ -235,6 +244,8 @@ function renderResults(target, totals, style) {
     target.hidden = true;
     clearChildren(target);
     form.hidden = false;
+    const intro = document.querySelector(".cs-intro");
+    if (intro) intro.hidden = false;
     const restorePrompt = document.querySelector(".cs-restore-prompt");
     if (restorePrompt) restorePrompt.hidden = true;
     updateCounter(form);
@@ -245,6 +256,8 @@ function renderResults(target, totals, style) {
 
   const form = document.getElementById("cs-form");
   if (form) form.hidden = true;
+  const intro = document.querySelector(".cs-intro");
+  if (intro) intro.hidden = true;
   const restorePrompt = document.querySelector(".cs-restore-prompt");
   if (restorePrompt) restorePrompt.hidden = true;
 

@@ -427,6 +427,24 @@
   color: var(--colour-muted);
 }
 
+.cs-lead-portrait {
+  font-size: var(--type-large, 1.25rem);
+  line-height: 1.5;
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+.cs-other-styles {
+  margin-top: var(--space-6);
+  border-top: 1px solid var(--colour-rule);
+  padding-top: var(--space-4);
+}
+
+.cs-other-styles > summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: var(--space-2) 0;
+}
+
 .cs-actions {
   margin-top: var(--space-5);
 }
