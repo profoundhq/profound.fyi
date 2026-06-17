@@ -4,8 +4,6 @@ title: Bio
 permalink: /bio/
 ---
 
-Benedict Steele is Chief Delivery Officer at Armakuni. He works on software delivery, organisational design, platform thinking, and sociotechnical systems.
+Chief Delivery Officer at Armakuni. Software delivery, organisational design, platform thinking, sociotechnical systems.
 
-This page is finding its shape. A fuller version is on the way.
-
-In the meantime, find him on [LinkedIn](https://www.linkedin.com/in/benedictsteele/).
+Fuller bio later. For now: [LinkedIn](https://www.linkedin.com/in/benedictsteele/).
