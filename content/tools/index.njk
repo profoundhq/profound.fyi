@@ -5,11 +5,11 @@ tags: []
 eleventyExcludeFromCollections: true
 permalink: /tools/
 ---
-<p>Small, focused tools you can take in a few minutes. Useful for solo reflection or as a starting point for workshop conversations.</p>
+<p class="section-intro">Small, focused tools you can take in a few minutes. Useful for solo reflection or as a starting point for workshop conversations.</p>
 
-<ul class="collection-list">
+<ul class="tools-grid">
 {% for entry in collections.tools %}
-  <li>
+  <li class="tools-grid-card">
     <h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
     {% if entry.data.description %}<p>{{ entry.data.description }}</p>{% endif %}
   </li>

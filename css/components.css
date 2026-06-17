@@ -559,3 +559,45 @@
   gap: var(--space-3);
   font-size: var(--type-small);
 }
+
+/* Tools index grid --------------------------------------------------------- */
+
+.tools-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  margin: var(--space-4) 0 0;
+  max-width: var(--measure);
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tools-grid-card {
+  border: 1px solid var(--colour-rule);
+  border-radius: 4px;
+  padding: var(--space-4);
+}
+
+.tools-grid-card h2 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-large);
+}
+
+.tools-grid-card h2 a {
+  text-decoration: none;
+}
+
+.tools-grid-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.tools-grid-card p {
+  margin: 0;
+  color: var(--colour-fg);
+}
