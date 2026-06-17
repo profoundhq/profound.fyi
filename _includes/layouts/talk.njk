@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+<article class="talk">
+  <h1>{{ title }}</h1>
+  <p class="meta">
+    {% if venue %}{{ venue }} · {% endif %}{{ date | readableDate }}
+  </p>
+  {% if slides or video or recording %}
+  <ul class="talk-links">
+    {% if slides %}<li><a href="{{ slides }}">Slides</a></li>{% endif %}
+    {% if video %}<li><a href="{{ video }}">Video</a></li>{% endif %}
+    {% if recording %}<li><a href="{{ recording }}">Recording</a></li>{% endif %}
+  </ul>
+  {% endif %}
+  {{ content | safe }}
+  <p class="entry-meta"><a href="/talks/">All talks</a></p>
+</article>
