@@ -1,0 +1,35 @@
+---
+layout: layouts/page.njk
+title: Talks
+tags: []
+eleventyExcludeFromCollections: true
+permalink: /talks/
+---
+<p class="section-intro">Talks given at conferences, meetups, and inside organisations. Slides and recordings where available.</p>
+
+<div class="talks-list">
+{% for group in collections.talks | reverse | groupByYear %}
+  <h2 class="talks-list-year">{{ group[0] }}</h2>
+  <ul class="collection-list-reset">
+  {% for entry in group[1] %}
+    <li class="talks-list-entry">
+      <h3>
+        {% if entry.url %}<a href="{{ entry.url }}">{{ entry.data.title }}</a>
+        {% else %}{{ entry.data.title }}{% endif %}
+      </h3>
+      <p class="meta">
+        {% if entry.data.venue %}{{ entry.data.venue }} · {% endif %}{{ entry.data.date | readableDate }}
+      </p>
+      {% if entry.data.summary %}<p class="summary">{{ entry.data.summary }}</p>{% endif %}
+      {% if entry.data.slides or entry.data.video or entry.data.recording %}
+      <ul class="talks-list-entry-links">
+        {% if entry.data.slides %}<li><a href="{{ entry.data.slides }}">Slides</a></li>{% endif %}
+        {% if entry.data.video %}<li><a href="{{ entry.data.video }}">Video</a></li>{% endif %}
+        {% if entry.data.recording %}<li><a href="{{ entry.data.recording }}">Recording</a></li>{% endif %}
+      </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+</div>
