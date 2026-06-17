@@ -2,10 +2,12 @@
 
 Static site built with [Eleventy](https://www.11ty.dev/) and IBM Plex Sans. Deployed on Netlify.
 
-Three content shapes:
+Content shapes:
 
-- **Standalone pages** (e.g. `/about/`)
-- **Posts** under `/posts/` — a blog
+- **Standalone pages** (e.g. `/about/`, `/bio/`, `/reading/`)
+- **Writing** under `/writing/` — essays
+- **Talks** under `/talks/` — talks given at conferences, meetups, and inside organisations
+- **Tools** under `/tools/` — small, focused instruments
 - **Playbooks** under `/playbooks/<slug>/<page>/` — multi-page guides with sidebar navigation
 
 ## Local development
@@ -32,7 +34,8 @@ Output goes to `_site/`.
 | Where | What |
 | --- | --- |
 | `content/<slug>.md` | Standalone page at `/<slug>/` |
-| `content/posts/<slug>.md` | Blog post at `/posts/<slug>/` (needs `title` and `date`) |
+| `content/writing/<slug>.md` | Essay at `/writing/<slug>/` (needs `title` and `date`; optional `summary`) |
+| `content/talks/<slug>.md` | Talk at `/talks/<slug>/` (needs `title` and `date`; optional `venue`, `summary`, `slides`, `video`, `recording`; set `permalink: false` for talks that should appear only on the index without their own page) |
 | `content/playbooks/<slug>/index.njk` | Playbook landing at `/playbooks/<slug>/` |
 | `content/playbooks/<slug>/<page>.md` | Playbook page at `/playbooks/<slug>/<page>/` (needs `title` and `order`) |
 

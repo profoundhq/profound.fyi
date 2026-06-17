@@ -76,7 +76,7 @@ main {
   margin-inline: auto;
 }
 
-.page, .post {
+.page, .writing, .talk {
   max-width: var(--measure);
 }
 
