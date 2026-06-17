@@ -1,0 +1,17 @@
+---
+layout: layouts/page.njk
+title: Writing
+tags: []
+eleventyExcludeFromCollections: true
+permalink: /writing/
+---
+<p class="section-intro">Essays on systems of work, organisational design, and the practices that travel.</p>
+
+<ul class="collection-list">
+{% for entry in collections.writing | reverse %}
+  <li>
+    <h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
+    <p class="meta">{{ entry.data.date | readableDate }}</p>
+  </li>
+{% endfor %}
+</ul>
