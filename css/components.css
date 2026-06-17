@@ -601,3 +601,39 @@
   margin: 0;
   color: var(--colour-fg);
 }
+
+/* About page pointers ------------------------------------------------------ */
+
+.about-pointers {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  margin: var(--space-7) 0 0;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--colour-rule);
+  max-width: var(--measure);
+}
+
+@media (min-width: 720px) {
+  .about-pointers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-pointer h2 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-large);
+}
+
+.about-pointer h2 a {
+  text-decoration: none;
+}
+
+.about-pointer h2 a:hover {
+  text-decoration: underline;
+}
+
+.about-pointer p {
+  margin: 0;
+  color: var(--colour-fg);
+}
