@@ -46,6 +46,16 @@ export default function (eleventyConfig) {
     return collection.filter((item) => (item.data.section || "framework") === section);
   });
 
+  eleventyConfig.addFilter("groupByYear", (collection) => {
+    const groups = new Map();
+    for (const item of collection) {
+      const y = String(item.date.getFullYear());
+      if (!groups.has(y)) groups.set(y, []);
+      groups.get(y).push(item);
+    }
+    return [...groups.entries()].sort((a, b) => Number(b[0]) - Number(a[0]));
+  });
+
   eleventyConfig.addCollection("playbooks", (collectionApi) => {
     return collectionApi
       .getFilteredByGlob("content/playbooks/*/index.*")

@@ -456,3 +456,50 @@
   margin: 0 0 var(--space-6);
   color: var(--colour-fg);
 }
+
+/* Writing index list ------------------------------------------------------- */
+
+.writing-list {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.writing-list-year {
+  font-size: var(--type-base);
+  color: var(--colour-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+.writing-list-year:first-of-type {
+  margin-top: 0;
+}
+
+.writing-list-entry {
+  border-bottom: 1px solid var(--colour-rule);
+  padding: var(--space-4) 0;
+}
+
+.writing-list-entry h3 {
+  margin: 0;
+  font-size: var(--type-large);
+}
+
+.writing-list-entry .meta {
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+  margin-top: var(--space-1);
+}
+
+.writing-list-entry .summary {
+  margin: var(--space-2) 0 0;
+  color: var(--colour-fg);
+}
+
+.collection-list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
