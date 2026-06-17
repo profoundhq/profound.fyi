@@ -448,3 +448,11 @@
 .cs-actions {
   margin-top: var(--space-5);
 }
+
+/* Section index intro paragraph -------------------------------------------- */
+
+.section-intro {
+  max-width: var(--measure);
+  margin: 0 0 var(--space-6);
+  color: var(--colour-fg);
+}
