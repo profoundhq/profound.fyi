@@ -15,7 +15,7 @@ footer: profound.fyi
 
 # Agentic AI for Teams
 
-Adoption is a delivery capability problem, not a tooling problem
+Adopting agents is a delivery capability problem first
 
 ---
 
