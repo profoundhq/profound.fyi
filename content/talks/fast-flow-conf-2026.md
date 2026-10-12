@@ -4,7 +4,7 @@ date: 2026-10-13
 venue: Fast Flow Conference 2026
 summary: Our story so far. What we found when Team Topologies vocabulary got ahead of the foundations it assumes, and what we're building now.
 # Speaker Deck embed ID: the last part of the player URL in Share → Embed (speakerdeck.com/player/<id>).
-speakerdeck: "b0a5fa95bc394fb0bf710b781cc29e55"
+speakerdeck: "13dd8300b8d74edf8c1e173ed46651cf"
 speakers:
   - name: Matt Doherty
     url: https://www.linkedin.com/in/mattdoc30/
