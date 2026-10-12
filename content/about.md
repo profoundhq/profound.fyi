@@ -1,18 +1,18 @@
 ---
 layout: layouts/page.njk
 title: About
-updated: 2026-06-17
+updated: 2026-10-12
 ---
 
-Profound is a collection of playbooks, instruments, talks, and writing on systems of work.
+Profound is a collection of playbooks, tools, talks, and writing on systems of work.
 
 Most organisations cannot describe how they actually deliver value, only how they think they do. The work here is for closing that gap.
 
-Playbooks describe practices that have travelled well across contexts. Instruments are sensemaking tools that produce conversations, not scores. The writing draws on Deming, Team Topologies, DORA, the Improvement Kata, and the wider sociotechnical tradition. Talks are where ideas first get tested.
+The playbooks are guides to practices that have worked in more than one organisation. The tools, like [Communication styles](/tools/communication-styles/), help a team talk about how it works. Most of the ideas come from Deming, Team Topologies, DORA, and the Improvement Kata. Some get tried out in talks first.
 
 It is opinionated. New material is added when it has proven itself in practice.
 
-Maintained by [Benedict Steele](https://www.linkedin.com/in/benedictsteele/), Chief Delivery Officer at Armakuni.
+Maintained by [Benedict Steele](https://www.linkedin.com/in/benedictsteele/).
 
 <div class="about-pointers">
   <div class="about-pointer">
