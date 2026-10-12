@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Demand is demonstrably there, the pull of your solution is strong in conversation, and people still do not switch. Trials stall before adoption. The team's response so far has been to add more pull, with more features and louder messaging, and it is not working.
 
 **The action:** Work on the other two forces instead. Find the anxieties about the new solution and the habits binding people to the present, from real stories, then dismantle them directly in the offer: migration done for them, trials that carry no commitment, guarantees, and removal of whatever the switch leaves behind. Reducing friction is a product decision, and often a cheaper one than adding capability.

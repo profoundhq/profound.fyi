@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Growth has stalled and every plan is a share fight against entrenched competitors. The market looks saturated when measured by current buyers of the category. Winning a point of share costs more each quarter.
 
 **The action:** Look for people who hold the job but hire nothing, or hire a clumsy workaround, because the current solutions demand too much money, skill, access, or time. Design for the barrier that keeps them out rather than for the feature race among existing buyers. Good enough for the excluded beats better for the served.

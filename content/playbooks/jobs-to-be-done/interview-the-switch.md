@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** People are buying, churning, or ignoring your product and the usual research is not explaining why. Feature requests conflict. Surveys report preferences that behaviour contradicts. You have real customers who recently started or stopped using the product, and nobody has asked them what actually happened.
 
 **The action:** Interview recent switchers about the specific event, not their opinions. Walk the timeline backwards from the moment of purchase or cancellation: first thought, passive looking, active looking, the deciding moment. Draw out the four forces at work in the switch: the push of the current situation, the pull of the new solution, the anxiety about change, and the habit of the present. One real story, fully excavated, beats twenty stated preferences.

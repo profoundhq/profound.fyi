@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Roadmap conversations happen entirely in feature language. The team can describe what the product does but struggles to say what progress the customer is trying to make. Competitor analysis only lists products in the same category, and nobody has asked what else customers hire for the same job.
 
 **The action:** Write the job statement with no mention of the product, the technology, or the category. Verb, object of the verb, context. Test it by asking whether the statement was true before the product existed and would remain true if the product disappeared. Then list everything customers currently hire to get that job done, including doing nothing.

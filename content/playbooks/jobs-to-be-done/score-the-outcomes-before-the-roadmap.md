@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Prioritisation is settled by the loudest voice, the biggest customer, or the most recent escalation. The backlog is long, conviction is high on all sides, and nobody can say which improvements the job executor would actually value.
 
 **The action:** Gather the outcomes people use to judge whether the job is going well, stated as measurable improvements free of any solution. Have job executors rate each for importance and for how well current solutions satisfy it. Point the roadmap at the outcomes that are important and poorly served, and starve the ones that are already overserved.

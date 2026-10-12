@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Personas built on demographics or firmographics are failing to predict behaviour. The same persona buys enthusiastically in one situation and ignores the product in another. Marketing and product are targeting who the customer is when the variation is driven by the situation the customer is in.
 
 **The action:** Re-cut the segmentation by circumstance. Group customers by the struggling moment that triggers the job, drawing on real switching stories rather than attribute data. Give each segment a name that describes the situation, not the person. Then check each product decision against a situation, asking which struggling moment it serves.

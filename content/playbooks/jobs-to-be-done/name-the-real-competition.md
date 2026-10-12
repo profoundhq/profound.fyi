@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Competitive analysis lists only products in your category, yet deals are lost to no decision, budgets drain to unrelated purchases, and positioning against the named rivals moves nothing. The category defines the competitor set and the customer plainly does not agree.
 
 **The action:** Derive the competitor set from switching stories rather than from the category. List everything people actually hire for the job, including workarounds, other budget lines, and doing nothing at all. Position and design against what the customer would genuinely use instead, and let the category list go.

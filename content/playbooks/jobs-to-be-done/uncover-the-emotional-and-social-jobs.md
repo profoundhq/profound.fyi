@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** The product meets its functional spec, the price is right, and sales or adoption still stall. Objections sound irrational or keep changing. Prospects go quiet at the decision point rather than at evaluation.
 
 **The action:** Go back to the switching stories and probe what people were feeling and who was watching. Every job carries functional, emotional, and social dimensions, and the stall usually lives in the second two. Name the anxieties out loud, then address them in the offer itself rather than in the product backlog.

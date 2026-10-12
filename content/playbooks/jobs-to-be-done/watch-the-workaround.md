@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** Usage data shows the product being used in ways nobody designed for. Support tickets describe elaborate hacks. Customers export to spreadsheets, chain tools together, or misuse a feature at scale, and the team's instinct is to call it edge-case behaviour.
 
 **The action:** Go and watch the workaround happen where it happens. Treat compensating behaviour as the most honest signal of an underserved job, because people improvising under their own effort are demonstrating demand no survey can fake. Trace what job the hack serves before deciding whether to absorb it into the product.

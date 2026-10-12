@@ -7,10 +7,6 @@ tags:
 ---
 
 
-**Status:** candidate
-**Owner:** Benedict
-**Last tested:** not yet, external provenance only
-
 **When:** A technology shift has the organisation in reactive mode. The roadmap thrashes with each announcement, strategy documents age in weeks, and the debate is entirely about the new technology rather than about customers.
 
 **The action:** Restate the strategy at the level of the job, which does not change, rather than the solution, which does. Then evaluate each new technology as a candidate hire for the old job: does it serve the underserved outcomes better, cheaper, or for people currently excluded. The job gives the stable reference point that makes a fast-moving landscape assessable at all.
