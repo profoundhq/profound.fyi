@@ -8,7 +8,7 @@ permalink: /talks/
 
 ## Upcoming
 
-Fast Flow Conference 2026
+[Fast Flow Conference 2026](/talks/fast-flow-conf-2026/): Unstuck, with Matt Doherty
 
 ## Past
 

@@ -27,7 +27,7 @@ Eleventy 3 (ESM, Nunjucks) static site. Layout in `eleventy.config.js`:
 | --- | --- | --- | --- |
 | Standalone page | `content/<slug>.md` → `/<slug>/` | `layouts/page.njk` | e.g. `content/about.md`, `content/bio.md`, `content/reading.md` |
 | Writing | `content/writing/<slug>.md` → `/writing/<slug>/` | `layouts/writing.njk` (via `writing.11tydata.js`) | needs `title` + `date`; optional `summary` |
-| Talk | `content/talks/<slug>.md` → `/talks/<slug>/` | `layouts/talk.njk` (via `talks.11tydata.js`) | needs `title` + `date`; optional `venue`, `summary`, `slides`, `video`, `recording`; set `permalink: false` to appear only on the index without its own page |
+| Talk | `content/talks/<slug>.md` → `/talks/<slug>/` | `layouts/talk.njk` (via `talks.11tydata.js`) | needs `title` + `date`; optional `venue`, `summary`, `slides`, `video`, `recording`, `speakerdeck` (embed ID, renders the player), `speakers` (list of `name` + optional `url`, shown above the deck); set `permalink: false` to appear only on the index without its own page |
 | Playbook page | `content/playbooks/<slug>/<page>.md` → `/playbooks/<slug>/<page>/` | `layouts/playbook-page.njk` (via `playbooks.11tydata.js`) | needs `title` + `order`; tag each page individually with `tags: ["<slug>"]` |
 
 `content/playbooks/<slug>/index.njk` is the hand-authored landing page (not a Markdown page) and sets `permalink: /playbooks/<slug>/`.

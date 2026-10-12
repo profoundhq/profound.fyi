@@ -1,0 +1,29 @@
+---
+title: "Unstuck: Laying the Foundations for Fast Flow in a Public Sector Regulator"
+date: 2026-10-13
+venue: Fast Flow Conference 2026
+summary: Our story so far. What we found when Team Topologies vocabulary got ahead of the foundations it assumes, and what we're building now.
+# Speaker Deck embed ID: the last part of the player URL in Share → Embed (speakerdeck.com/player/<id>).
+speakerdeck: "b0a5fa95bc394fb0bf710b781cc29e55"
+speakers:
+  - name: Matt Doherty
+    url: https://www.linkedin.com/in/mattdoc30/
+  - name: Benedict Steele
+    url: https://www.linkedin.com/in/benedictsteele/
+---
+
+## Abstract
+
+A couple of years ago, we (a public sector regulator) read Team Topologies. Ran the workshops. Fell in love with the book. Teams identified themselves as stream-aligned, platform, and enabling. We had the labels, the energy, and the intent.
+
+Despite early success, the flow didn't scale.
+
+Like many organisations, we started by adopting the vocabulary of Team Topologies, before fully understanding the organisational foundations it assumes are already in place: clear service boundaries, meaningful measurement, teams empowered to make local decisions, and governance that enables rather than controls change. We had team types on paper, but work still flowed through committees, dependencies still blocked delivery, and teams were stuck.
+
+Come and hear how we used a structured discovery process, workshops, mapping, and lunch-and-learns to understand our current reality and help ourselves become unstuck.
+
+What this surfaced was uncomfortable, but necessary. Teams were collaborative and committed, but operating inside a system that constrained their ability to deliver. The gap wasn't a mindset – it was environmental.
+
+We'll share what we found, what we got wrong in our first couple of years, and what we're building now: a service landscape that gives teams clear ownership, a stewardship model across product, delivery, and engineering, reformed change governance, and the measurement foundations we should have started with.
+
+This talk is for anyone who's read the book, done the team typing exercise, and is wondering why it hasn't clicked yet.

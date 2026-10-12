@@ -6,12 +6,20 @@ layout: layouts/base.njk
   <p class="meta">
     {% if venue %}{{ venue }} · {% endif %}{{ date | readableDate }}
   </p>
+  {% if speakers %}
+  <p class="talk-speakers">With {% for speaker in speakers %}{% if not loop.first %}{% if loop.last %} and {% else %}, {% endif %}{% endif %}{% if speaker.url %}<a href="{{ speaker.url }}">{{ speaker.name }}</a>{% else %}{{ speaker.name }}{% endif %}{% endfor %}.</p>
+  {% endif %}
   {% if slides or video or recording %}
   <ul class="talk-links">
     {% if slides %}<li><a href="{{ slides }}">Slides</a></li>{% endif %}
     {% if video %}<li><a href="{{ video }}">Video</a></li>{% endif %}
     {% if recording %}<li><a href="{{ recording }}">Recording</a></li>{% endif %}
   </ul>
+  {% endif %}
+  {% if speakerdeck %}
+  <div class="talk-embed">
+    <iframe src="https://speakerdeck.com/player/{{ speakerdeck }}" title="Slides: {{ title }}" allowfullscreen loading="lazy"></iframe>
+  </div>
   {% endif %}
   {{ content | safe }}
   <p class="entry-meta"><a href="/talks/">All talks</a></p>
