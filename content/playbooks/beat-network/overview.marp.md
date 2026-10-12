@@ -90,10 +90,7 @@ The two meet on a regular cadence, fortnightly in most contexts.
 
 ## Gates mark where one change depends on another
 
-A product operating model adoption might run three sets of changes: Topology, Sensing, and Capability.
-
-- The pilot team cannot claim faster delivery without a sensing baseline
-- Coaching cannot start until a pilot team exists
+![w:880](/images/playbooks/beat-network/beat-network-worked-example.svg)
 
 Getting gates wrong is how programmes produce activity without progress.
 

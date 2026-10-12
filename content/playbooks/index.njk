@@ -5,12 +5,13 @@ tags: []
 eleventyExcludeFromCollections: true
 permalink: /playbooks/
 ---
-<p>Playbooks are guides to practices that have worked in more than one organisation. Each one explains the practice, gives you the tools to use it, and says how strong the evidence is.</p>
+<p class="section-intro">Playbooks are guides to practices that have worked in more than one organisation. Each one explains the practice, gives you the tools to use it, and says how strong the evidence is.</p>
 
-<ul class="collection-list">
+<ul class="tools-grid">
 {% for entry in collections.playbooks %}
-  <li>
+  <li class="tools-grid-card">
     <h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
+    {% if entry.data.description %}<p>{{ entry.data.description }}</p>{% endif %}
   </li>
 {% endfor %}
 </ul>
