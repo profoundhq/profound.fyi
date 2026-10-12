@@ -4,9 +4,8 @@ title: Gilb's Law
 tier: Saying
 slug: gilbs-law
 related: [goodharts-law, the-mcnamara-fallacy, vanity-vs-actionable-metrics]
+front: "Anything you need to measure can be measured in some way that is better than not measuring it at all."
 ---
-
-Anything you need to measure can be measured in some way that is better than not measuring it at all.
 
 **How to use it.** When someone says "you can't measure that", treat it as the start of the conversation. A rough measure with known limitations beats a confident guess with hidden ones.
 

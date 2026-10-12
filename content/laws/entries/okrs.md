@@ -4,9 +4,8 @@ title: OKRs (Objectives and Key Results)
 tier: Pattern
 slug: okrs
 related: [goodharts-law, outcome-over-output]
+front: "A method for aligning effort. Objectives describe what to achieve. Key Results describe how you would know."
 ---
-
-A method for aligning effort. Objectives describe what to achieve. Key Results describe how you would know.
 
 **How to use it.** Use them to make alignment visible across an organisation. Three to five objectives per team per cycle. Key Results that are measurable and ambitious. Read Goodhart's Law before setting them. The moment they become compensation triggers, the measurements distort.
 

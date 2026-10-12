@@ -4,9 +4,8 @@ title: Sociotechnical Systems
 tier: Principle
 slug: sociotechnical-systems
 related: [conways-law, team-topologies, the-fifth-discipline]
+front: "Work systems have a technical subsystem and a social subsystem. Both must be designed together. Optimising one without the other produces worse outcomes than balancing both."
 ---
-
-Work systems have a technical subsystem and a social subsystem. Both must be designed together. Optimising one without the other produces worse outcomes than balancing both.
 
 **How to use it.** When changing how work gets done, look at both halves. New tooling without changes to roles and rewards fails. New team structure without changes to tools and information flow fails. Tavistock's original insight applies wherever humans use systems to do work, software included.
 

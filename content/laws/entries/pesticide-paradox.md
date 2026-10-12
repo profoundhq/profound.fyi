@@ -4,9 +4,8 @@ title: Pesticide Paradox
 tier: Saying
 slug: pesticide-paradox
 related: [testing-pyramid, test-driven-development]
+front: "Running the same tests over and over catches the same bugs. Different bugs go unnoticed."
 ---
-
-Running the same tests over and over catches the same bugs. Different bugs go unnoticed.
 
 **How to use it.** Pair your regular test suite with other methods, such as mutation testing, exploratory testing, and deliberate failures. Different methods find different problems.
 

@@ -4,9 +4,8 @@ title: Broken Windows
 tier: Saying
 slug: broken-windows
 related: [technical-debt]
+front: "Visible mess invites more mess."
 ---
-
-Visible mess invites more mess.
 
 **How to use it.** Fix small things visibly. Tolerated mess teaches the next person what is acceptable.
 

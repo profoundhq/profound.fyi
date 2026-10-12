@@ -4,9 +4,8 @@ title: Test-Driven Development
 tier: Practice
 slug: test-driven-development
 related: [continuous-integration, becks-four-rules-of-simple-design, testing-pyramid]
+front: "Write the test first. Write only enough code to make it pass. Refactor. Repeat."
 ---
-
-Write the test first. Write only enough code to make it pass. Refactor. Repeat.
 
 **How to use it.** The discipline is in the order: test first, code second, refactor third. Done well, it produces code that is testable by construction and design that emerges through pressure.
 

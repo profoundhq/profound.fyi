@@ -4,9 +4,8 @@ title: The Innovator's Dilemma
 tier: Pattern
 slug: the-innovators-dilemma
 related: [crossing-the-chasm, jobs-to-be-done, the-future-is-already-here]
+front: "Successful companies fail at disruptive innovation precisely because they listen to their best customers and protect their existing business."
 ---
-
-Successful companies fail at disruptive innovation precisely because they listen to their best customers and protect their existing business.
 
 **How to use it.** When considering a small, low-margin, unfamiliar opportunity that your current customers do not want, take it more seriously than you naturally would. The threats that look small and unprofitable now are the ones that displace incumbents later.
 

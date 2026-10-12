@@ -4,9 +4,8 @@ title: Second-System Effect
 tier: Pattern
 slug: second-system-effect
 related: [galls-law]
+front: "The replacement for a successful small system tends to be over-built."
 ---
-
-The replacement for a successful small system tends to be over-built.
 
 **How to use it.** On any rewrite, list every feature you plan to include. Ask which ones would survive a serious "do we really need this" review. Most will not.
 

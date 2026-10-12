@@ -4,9 +4,8 @@ title: Metcalfe's Law
 tier: Pattern
 slug: metcalfes-law
 related: [crossing-the-chasm]
+front: "The value of a network grows with roughly the square of the number of users."
 ---
-
-The value of a network grows with roughly the square of the number of users.
 
 **How to use it.** As a rough prior on network effects. Small additions to a small network are minor. Small additions to a large network are not. Use it to argue for getting to scale rather than holding steady.
 

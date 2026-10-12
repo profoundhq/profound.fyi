@@ -4,9 +4,8 @@ title: CAP Theorem
 tier: Law
 slug: cap-theorem
 related: [two-generals-problem, flp-impossibility, fallacies-of-distributed-computing]
+front: "When part of a distributed system is cut off, you must choose between consistent data and available service."
 ---
-
-When part of a distributed system is cut off, you must choose between consistent data and available service.
 
 **How to use it.** The trade-off only matters when the connection between your machines breaks. Decide what your system should do *during* a break. Normal running does not force the choice.
 

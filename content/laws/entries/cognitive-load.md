@@ -4,9 +4,8 @@ title: Cognitive Load
 tier: Principle
 slug: cognitive-load
 related: [team-topologies, psychological-safety, ashbys-law-of-requisite-variety]
+front: "The mental effort needed to understand or change a system. There is a fixed budget per person and per team."
 ---
-
-The mental effort needed to understand or change a system. There is a fixed budget per person and per team.
 
 **How to use it.** When teams slow down, look for new sources of load: new services to remember, new tools, new domains. Speed problems are often load problems in disguise.
 

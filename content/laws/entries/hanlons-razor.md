@@ -4,9 +4,8 @@ title: Hanlon's Razor
 tier: Saying
 slug: hanlons-razor
 related: [the-new-view, just-culture]
+front: "Do not assume someone is being malicious if carelessness explains it."
 ---
-
-Do not assume someone is being malicious if carelessness explains it.
 
 **How to use it.** In incident reviews, look for an explanation in the system before looking for a villain. It is almost always more accurate.
 

@@ -2,18 +2,27 @@
 layout: layouts/base.njk
 ---
 {% set tierSlug = (tier | lower) + "s" %}
+{% set icon = slug | lawIcon %}
 <article class="page laws law-entry">
   <p class="laws-crumb"><a href="/laws/">Laws of Software Engineering</a> · <a href="/laws/tiers/{{ tierSlug }}/">{{ tier }}</a></p>
-  <h1>{{ title }}</h1>
-  <div class="law-body">
-    {{ content | safe }}
+
+  <div class="law-pair">
+    <section class="law-face law-face-front">
+      {% if icon %}<img class="law-icon" src="{{ icon }}" alt="" width="72" height="72">{% else %}<span class="law-icon law-icon-letter" aria-hidden="true">{{ title | first }}</span>{% endif %}
+      <p class="law-card-tier">{{ tier }}</p>
+      <h1>{{ title }}</h1>
+      {% if front %}<p class="law-front">{{ front }}</p>{% endif %}
+    </section>
+    <section class="law-face law-face-back">
+      {{ content | safe }}
+    </section>
   </div>
 
   {% set relatedEntries = collections.laws | lawsBySlug(related) %}
   {% if relatedEntries | length %}
   <h2>Related</h2>
-  <ul>
-    {% for entry in relatedEntries %}<li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>{% endfor %}
+  <ul class="law-grid">
+    {% for entry in relatedEntries %}{% include "partials/law-card.njk" %}{% endfor %}
   </ul>
   {% endif %}
 
@@ -24,4 +33,6 @@ layout: layouts/base.njk
     {% for cluster in inClusters %}<li><a href="{{ cluster.url }}">{{ cluster.data.title }}</a>{% if cluster.data.tagline %} - {{ cluster.data.tagline }}{% endif %}</li>{% endfor %}
   </ul>
   {% endif %}
+
+  <p>{% set label = "Draw another card" %}{% include "partials/law-draw.njk" %}</p>
 </article>

@@ -4,9 +4,8 @@ title: Conway's Law
 tier: Pattern
 slug: conways-law
 related: [team-topologies, sociotechnical-systems, cognitive-load]
+front: "The shape of your software ends up matching the shape of how your teams talk to each other."
 ---
-
-The shape of your software ends up matching the shape of how your teams talk to each other.
 
 **How to use it.** If you want loosely connected services, build loosely connected teams first. Design the organisation for the architecture you want.
 

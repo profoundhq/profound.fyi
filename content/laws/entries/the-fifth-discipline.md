@@ -4,9 +4,8 @@ title: The Fifth Discipline
 tier: Framework
 slug: the-fifth-discipline
 related: [demings-system-of-profound-knowledge, sociotechnical-systems, system-dynamics]
+front: "Systems thinking, personal mastery, mental models, shared vision, and team learning. The five disciplines of an organisation that can learn."
 ---
-
-Systems thinking, personal mastery, mental models, shared vision, and team learning. The five disciplines of an organisation that can learn.
 
 **How to use it.** Use systems thinking as the integrative one. The others reinforce it. Look for the recurring patterns, such as limits to growth, shifting the burden, and the tragedy of the commons. They explain why obvious fixes do not work.
 

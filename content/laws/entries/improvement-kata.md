@@ -4,9 +4,8 @@ title: Improvement Kata
 tier: Framework
 slug: improvement-kata
 related: [demings-system-of-profound-knowledge, feedback-loops, build-measure-learn]
+front: "A four-step pattern for getting better at anything. Understand the direction. Grasp the current condition. Set the next target condition. Run experiments toward it."
 ---
-
-A four-step pattern for getting better at anything. Understand the direction. Grasp the current condition. Set the next target condition. Run experiments toward it.
 
 **How to use it.** Use it when "we should improve" keeps not happening. The kata makes improvement small, regular, and concrete. What matters is the daily rhythm of trying, observing, and adjusting.
 

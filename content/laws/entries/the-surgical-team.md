@@ -4,9 +4,8 @@ title: The Surgical Team
 tier: Pattern
 slug: the-surgical-team
 related: [brookss-law, conceptual-integrity, dunbars-number]
+front: "A small team of high-talent specialists, organised around a chief programmer, outperforms a larger mixed team on coherent work."
 ---
-
-A small team of high-talent specialists, organised around a chief programmer, outperforms a larger mixed team on coherent work.
 
 **How to use it.** For work that demands conceptual integrity, prefer fewer, stronger people. The chief programmer makes the decisions. Specialists support the role rather than vote with it. Use it for design-heavy work. It does not suit parallel feature delivery.
 

@@ -667,10 +667,135 @@
   margin-bottom: var(--space-2);
 }
 
-/* The card's front: one line that states the idea */
-.law-body > p:first-child {
+/* Laws pages can be wider than the text measure so card grids have room.
+   Prose inside them keeps to the measure. */
+.page.laws {
+  max-width: var(--page-max);
+}
+
+.page.laws > :not(.law-grid, .law-pair) {
+  max-width: var(--measure);
+}
+
+/* Cards, after the printed deck: icon, tier, name, and the one-line front */
+.law-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.law-card a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-4);
+  border: 1px solid var(--colour-rule);
+  border-radius: 10px;
+  color: var(--colour-fg);
+  text-decoration: none;
+}
+
+.law-card a:hover {
+  border-color: var(--colour-fg);
+}
+
+.law-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.law-icon-letter {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--colour-fg);
+  color: var(--colour-bg);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.law-card-tier {
+  margin: var(--space-2) 0 0;
+  color: var(--colour-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.law-card-title {
   font-size: var(--type-large);
-  line-height: 1.4;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.law-card-front {
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+  line-height: 1.45;
+}
+
+/* Entry pages: the card's front and back side by side */
+.law-pair {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+@media (min-width: 48em) {
+  .law-pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.law-face {
+  padding: var(--space-5);
+  border: 1px solid var(--colour-rule);
+  border-radius: 12px;
+}
+
+.law-face-front .law-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.law-face-front h1 {
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.law-front {
+  font-size: var(--type-large);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.law-face-back > :first-child {
+  margin-top: 0;
+}
+
+.law-face-back > :last-child {
+  margin-bottom: 0;
+}
+
+.law-draw {
+  font: inherit;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--colour-fg);
+  border-radius: 999px;
+  background: var(--colour-bg);
+  color: var(--colour-fg);
+  cursor: pointer;
+}
+
+.law-draw:hover {
+  background: var(--colour-fg);
+  color: var(--colour-bg);
 }
 
 /* Slide decks (Marp) ------------------------------------------------------ */

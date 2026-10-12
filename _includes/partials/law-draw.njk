@@ -1,0 +1,13 @@
+{# "Draw a card": jumps to a random law. Hidden until the script runs. #}
+<button type="button" class="law-draw" hidden data-urls='{{ collections.laws | lawUrls }}'>{{ label or "Draw a card" }}</button>
+<script>
+  (function () {
+    var button = document.currentScript.previousElementSibling;
+    var urls = JSON.parse(button.dataset.urls);
+    button.hidden = false;
+    button.addEventListener('click', function () {
+      var others = urls.filter(function (url) { return url !== location.pathname; });
+      location.href = others[Math.floor(Math.random() * others.length)];
+    });
+  })();
+</script>

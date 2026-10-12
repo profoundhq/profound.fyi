@@ -4,9 +4,8 @@ title: Psychological Safety
 tier: Principle
 slug: psychological-safety
 related: [westrums-typology, blameless-retrospectives, just-culture]
+front: "The shared belief that you can speak up, ask questions, admit mistakes, and disagree without being punished or humiliated."
 ---
-
-The shared belief that you can speak up, ask questions, admit mistakes, and disagree without being punished or humiliated.
 
 **How to use it.** Leaders build it by how they react when bad news arrives. What they say in all-hands meetings counts for little. Reward the person who raised the problem. Treat questions as a sign of engagement.
 

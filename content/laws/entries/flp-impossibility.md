@@ -4,9 +4,8 @@ title: FLP Impossibility
 tier: Law
 slug: flp-impossibility
 related: [cap-theorem, two-generals-problem]
+front: "In a distributed system where any one node might fail, you cannot guarantee that all working nodes will agree on a value within a fixed time."
 ---
-
-In a distributed system where any one node might fail, you cannot guarantee that all working nodes will agree on a value within a fixed time.
 
 **How to use it.** Every consensus system (Raft, Paxos, blockchains) makes a trade. Usually it gives up the time guarantee. Know which one your tools have given up before you build on them.
 

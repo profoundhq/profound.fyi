@@ -4,9 +4,8 @@ title: The Peter Principle
 tier: Pattern
 slug: the-peter-principle
 related: [hackmans-five-conditions-for-effective-teams]
+front: "People get promoted to the level at which they stop being competent, and then they stay there."
 ---
-
-People get promoted to the level at which they stop being competent, and then they stay there.
 
 **How to use it.** When designing career paths, separate "good at the job" from "good at managing people doing the job". A great engineer is not automatically a great engineering manager. Make the parallel track real, so it never feels like a consolation prize.
 

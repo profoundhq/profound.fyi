@@ -4,9 +4,8 @@ title: The Lindy Effect
 tier: Pattern
 slug: the-lindy-effect
 related: [hype-cycle-amaras-law]
+front: "The longer something has been around, the longer it is likely to stay around."
 ---
-
-The longer something has been around, the longer it is likely to stay around.
 
 **How to use it.** A reasonable starting bias for technology choices. Boring technology is boring for a reason.
 

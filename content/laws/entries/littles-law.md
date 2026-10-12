@@ -4,9 +4,8 @@ title: Little's Law
 tier: Law
 slug: littles-law
 related: [cost-of-delay, theory-of-constraints]
+front: "Things sitting in the system = how often they arrive × how long they stay."
 ---
-
-Things sitting in the system = how often they arrive × how long they stay.
 
 **How to use it.** When the team says "we are too busy", measure three things: how much work is in progress, how fast it is finishing, and how long each piece takes. One of the three has to change. The maths is fixed.
 

@@ -4,9 +4,8 @@ title: Mob Programming
 tier: Practice
 slug: mob-programming
 related: [pair-programming, bus-factor]
+front: "The whole team, one keyboard, one piece of work. The driver types. The navigators direct. Roles rotate frequently."
 ---
-
-The whole team, one keyboard, one piece of work. The driver types. The navigators direct. Roles rotate frequently.
 
 **How to use it.** Use it for work that needs deep team alignment, such as architectural decisions, gnarly bugs, or onboarding into a new domain. The benefit is shared understanding more than throughput.
 

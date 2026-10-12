@@ -4,9 +4,8 @@ title: Fail-Safe Defaults
 tier: Principle
 slug: fail-safe-defaults
 related: [least-privilege, defence-in-depth]
+front: "When something goes wrong or is unspecified, the system should refuse access."
 ---
-
-When something goes wrong or is unspecified, the system should refuse access.
 
 **How to use it.** Default to deny, and grant access only by explicit rule. The opposite (default allow with an explicit deny list) is how forgotten endpoints leak data.
 

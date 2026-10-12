@@ -4,9 +4,8 @@ title: Just Culture
 tier: Saying
 slug: just-culture
 related: [blameless-retrospectives, the-new-view, psychological-safety]
+front: "A culture that holds people accountable for the work they did, while looking honestly at the system that shaped the choices they had."
 ---
-
-A culture that holds people accountable for the work they did, while looking honestly at the system that shaped the choices they had.
 
 **How to use it.** When an incident happens, ask two questions in sequence. First: was the action reasonable given what the person knew at the time? Second: what does the system need to change so the next person does not face the same trap? Both questions are necessary.
 

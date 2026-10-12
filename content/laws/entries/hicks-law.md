@@ -4,9 +4,8 @@ title: Hick's Law
 tier: Principle
 slug: hicks-law
 related: [principle-of-least-astonishment, cognitive-load]
+front: "The time it takes to make a decision grows with the number of options."
 ---
-
-The time it takes to make a decision grows with the number of options.
 
 **How to use it.** Reduce options to speed decisions. Apply it to user interfaces, command-line tools, configuration files, API surfaces, and meeting agendas. Three good options beat ten okay ones.
 

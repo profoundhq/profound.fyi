@@ -1,0 +1,10 @@
+{# One law as a card face, linking to its page. Expects `entry`. #}
+<li class="law-card">
+  <a href="{{ entry.url }}">
+    {% set icon = entry.data.slug | lawIcon %}
+    {% if icon %}<img class="law-icon" src="{{ icon }}" alt="" width="48" height="48" loading="lazy">{% else %}<span class="law-icon law-icon-letter" aria-hidden="true">{{ entry.data.title | first }}</span>{% endif %}
+    <span class="law-card-tier">{{ entry.data.tier }}</span>
+    <span class="law-card-title">{{ entry.data.title }}</span>
+    {% if entry.data.front %}<span class="law-card-front">{{ entry.data.front }}</span>{% endif %}
+  </a>
+</li>

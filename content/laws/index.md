@@ -31,7 +31,6 @@ The tiers sort entries by how strong the evidence is. The clusters cut across th
 - [The Code Design cluster](/laws/clusters/code-design/) - *How to write code that survives change.*
 - [The Brooks cluster](/laws/clusters/brooks/) - *One author whose work shapes most of the field.*
 
-
 ## Also
 
 - [The Fallen](/laws/fallen/) - concepts considered and not included

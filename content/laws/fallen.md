@@ -6,8 +6,6 @@ slug: fallen
 
 Concepts and practices considered for the index and left out. Seeing what was left out shows what the index is for.
 
-
-
 **Considered and not included:**
 
 - **The Phoenix Project** (Kim, novel). The thinking is already carried by Three Ways, DORA, Theory of Constraints, and Improvement Kata. The narrative is good, but the framework is derivative.
@@ -27,4 +25,4 @@ Concepts and practices considered for the index and left out. Seeing what was le
 - **Law of Unintended Consequences.** True, but too general to say anything useful.
 - **Cunningham's Law.** A joke about social dynamics.
 
-Concepts join this list when they are considered and left out. 
+Concepts join this list when they are considered and left out.

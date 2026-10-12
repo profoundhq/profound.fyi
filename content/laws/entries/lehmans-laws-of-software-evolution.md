@@ -4,9 +4,8 @@ title: Lehman's Laws of Software Evolution
 tier: Principle
 slug: lehmans-laws-of-software-evolution
 related: [technical-debt, pace-layers]
+front: "Software that is being used must keep changing or it goes stale. Without effort, it gets more complicated over time."
 ---
-
-Software that is being used must keep changing or it goes stale. Without effort, it gets more complicated over time.
 
 **How to use it.** Treat ongoing maintenance as the normal state of software. New work is the rare exception. Plan for entropy.
 

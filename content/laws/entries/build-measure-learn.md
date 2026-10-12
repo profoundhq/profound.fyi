@@ -4,9 +4,8 @@ title: Build-Measure-Learn
 tier: Pattern
 slug: build-measure-learn
 related: [feedback-loops, outcome-over-output, cost-of-delay]
+front: "Build the smallest thing that tests your idea. Measure what happens. Learn what to do next."
 ---
-
-Build the smallest thing that tests your idea. Measure what happens. Learn what to do next.
 
 **How to use it.** Use it when you do not know what to build. Make each loop small enough to fit inside one of your real planning cycles. A loop delivers learning, and the artefact is how you get it.
 

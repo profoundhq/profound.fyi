@@ -99,6 +99,23 @@ export default function (eleventyConfig) {
     (slugs || []).map((slug) => collection.find((item) => item.data.slug === slug)).filter(Boolean),
   );
 
+  // A tier's entries: the tier page's own order first, then any others in the tier
+  eleventyConfig.addFilter("lawsForTier", (collection, tier, slugs = []) => {
+    const listed = (slugs || []).map((slug) => collection.find((item) => item.data.slug === slug)).filter(Boolean);
+    const rest = collection
+      .filter((item) => item.data.tier === tier && !listed.includes(item))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title));
+    return [...listed, ...rest];
+  });
+
+  // JSON list of law URLs, for the "Draw a card" button
+  eleventyConfig.addFilter("lawUrls", (collection) => JSON.stringify(collection.map((item) => item.url)));
+
+  // Icon for a law, extracted from the printed deck, if it has one
+  eleventyConfig.addFilter("lawIcon", (slug) =>
+    fs.existsSync(`images/laws/${slug}.svg`) ? `/images/laws/${slug}.svg` : "",
+  );
+
   // Clusters whose `entries` include this slug
   eleventyConfig.addFilter("clustersFor", (clusters, slug) =>
     clusters.filter((cluster) => (cluster.data.entries || []).includes(slug)),

@@ -4,9 +4,8 @@ title: Ashby's Law of Requisite Variety
 tier: Law
 slug: ashbys-law-of-requisite-variety
 related: [beers-viable-system-model, cognitive-load, sociotechnical-systems]
+front: "Only variety can absorb variety. A controller must be able to handle at least as many distinct states as the system it is trying to control."
 ---
-
-Only variety can absorb variety. A controller must be able to handle at least as many distinct states as the system it is trying to control.
 
 **How to use it.** When a team keeps being surprised by what its system does, the team has less variety than the system. Either reduce the system's variety (simpler, fewer states, less coupling) or increase the team's (more skills, more monitoring, better models).
 

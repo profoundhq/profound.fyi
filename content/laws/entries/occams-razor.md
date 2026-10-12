@@ -4,9 +4,8 @@ title: Occam's Razor
 tier: Saying
 slug: occams-razor
 related: [hanlons-razor]
+front: "The simplest explanation is usually the right one."
 ---
-
-The simplest explanation is usually the right one.
 
 **How to use it.** In debugging, look at what changed recently before blaming something exotic.
 

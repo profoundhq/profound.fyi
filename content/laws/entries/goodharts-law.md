@@ -4,9 +4,8 @@ title: Goodhart's Law
 tier: Pattern
 slug: goodharts-law
 related: [gilbs-law, vanity-vs-actionable-metrics, dora-accelerate-findings]
+front: "Once a measurement becomes a target, it stops being a useful measurement."
 ---
-
-Once a measurement becomes a target, it stops being a useful measurement.
 
 **How to use it.** Keep diagnostic measurements separate from goals. The DORA numbers are diagnostic. Set team goals as outcomes, and keep the diagnostics for diagnosis.
 

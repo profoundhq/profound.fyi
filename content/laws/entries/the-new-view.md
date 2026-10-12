@@ -4,9 +4,8 @@ title: The New View (Dekker)
 tier: Saying
 slug: the-new-view
 related: [blameless-retrospectives, just-culture]
+front: "Human error is not a cause of failure. It is a symptom of trouble deeper in the system."
 ---
-
-Human error is not a cause of failure. It is a symptom of trouble deeper in the system.
 
 **How to use it.** When investigating an incident, do not stop at "they pressed the wrong button". Ask why pressing the wrong button was easy, why nothing caught it, why the right button looked the same. The button is the surface. The system is the story.
 

@@ -5,4 +5,12 @@ layout: layouts/base.njk
   <p class="laws-crumb"><a href="/laws/">Laws of Software Engineering</a></p>
   <h1>{{ title }}</h1>
   {{ content | safe }}
+
+  {% if entries %}
+  {% set cards = collections.laws | lawsBySlug(entries) %}
+  {% if tier %}{% set cards = collections.laws | lawsForTier(tier, entries) %}{% endif %}
+  <ul class="law-grid">
+    {% for entry in cards %}{% include "partials/law-card.njk" %}{% endfor %}
+  </ul>
+  {% endif %}
 </article>

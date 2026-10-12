@@ -4,9 +4,8 @@ title: Continuous Integration
 tier: Practice
 slug: continuous-integration
 related: [trunk-based-development, continuous-delivery, test-driven-development]
+front: "Every change is merged to a shared trunk at least daily, with automated verification."
 ---
-
-Every change is merged to a shared trunk at least daily, with automated verification.
 
 **How to use it.** The discipline is the daily merge. The build server only supports it. Long-lived branches are the problem CI was invented to solve. If changes take a day to integrate, you are doing scheduled integration with a CI server attached.
 

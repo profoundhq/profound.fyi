@@ -4,9 +4,8 @@ title: Pair Programming
 tier: Practice
 slug: pair-programming
 related: [mob-programming, bus-factor]
+front: "Two people, one keyboard, one piece of work. They swap roles regularly."
 ---
-
-Two people, one keyboard, one piece of work. They swap roles regularly.
 
 **How to use it.** Use it for non-trivial work that needs careful thinking, knowledge transfer, or onboarding. The two people should be of comparable engagement, if not skill. The keyboard rotates. The conversation matters more than the typing.
 

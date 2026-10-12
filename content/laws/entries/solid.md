@@ -4,9 +4,8 @@ title: SOLID
 tier: Principle
 slug: solid
 related: [becks-four-rules-of-simple-design, conceptual-integrity]
+front: "Five rules for designing object-oriented code: each class does one thing, code should be open to extension but closed to modification, subclasses should be substitutable, interfaces should be small, and code should depend on abstractions rather than specifics."
 ---
-
-Five rules for designing object-oriented code: each class does one thing, code should be open to extension but closed to modification, subclasses should be substitutable, interfaces should be small, and code should depend on abstractions rather than specifics.
 
 **How to use it.** The first and last rules carry most of the weight. Apply them at the boundaries between modules. There is no need to apply them inside every class.
 

@@ -4,9 +4,8 @@ title: The Map Is Not the Territory
 tier: Saying
 slug: the-map-is-not-the-territory
 related: [wardley-mapping, observability]
+front: "Your model of the system is not the system."
 ---
-
-Your model of the system is not the system.
 
 **How to use it.** When the architecture diagram and production disagree, production is right. Update the diagram.
 

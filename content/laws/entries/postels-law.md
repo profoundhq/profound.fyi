@@ -4,9 +4,8 @@ title: Postel's Law
 tier: Principle
 slug: postels-law
 related: [hyrums-law, bounded-contexts]
+front: "Be strict about what you send. Be flexible about what you accept. *This advice is now contested.*"
 ---
-
-Be strict about what you send. Be flexible about what you accept. *This advice is now contested.*
 
 **How to use it.** In modern systems, prefer being strict in both directions. Flexibility was right for the early internet. It is mostly wrong now.
 

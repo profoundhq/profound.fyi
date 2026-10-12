@@ -4,9 +4,8 @@ title: Pareto Principle (80/20)
 tier: Pattern
 slug: pareto-principle
 related: [theory-of-constraints]
+front: "About 80% of effects come from about 20% of causes."
 ---
-
-About 80% of effects come from about 20% of causes.
 
 **How to use it.** Useful for prioritising. Find the 20% that causes most of your problems. Fix that first.
 

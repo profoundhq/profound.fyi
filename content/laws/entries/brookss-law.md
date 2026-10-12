@@ -4,9 +4,8 @@ title: Brooks's Law
 tier: Pattern
 slug: brookss-law
 related: [no-silver-bullet, conceptual-integrity, the-surgical-team]
+front: "Adding people to a late project makes it later."
 ---
-
-Adding people to a late project makes it later.
 
 **How to use it.** It holds when work is tightly connected and bringing people up to speed is expensive. It matters less when teams have clear boundaries, work asynchronously, and document well.
 

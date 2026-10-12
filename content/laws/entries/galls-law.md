@@ -4,9 +4,8 @@ title: Gall's Law
 tier: Pattern
 slug: galls-law
 related: [second-system-effect, build-measure-learn]
+front: "Complicated systems that work always grew out of simple systems that worked."
 ---
-
-Complicated systems that work always grew out of simple systems that worked.
 
 **How to use it.** Ship the smallest version that works. Let it grow under real use. Resist the grand design upfront.
 

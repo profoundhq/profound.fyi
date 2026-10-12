@@ -4,4 +4,5 @@ layout: layouts/base.njk
 <article class="page laws">
   <h1>{{ title }}</h1>
   {{ content | safe }}
+  <p>{% include "partials/law-draw.njk" %}</p>
 </article>

@@ -4,9 +4,8 @@ title: Confirmation Bias
 tier: Saying
 slug: confirmation-bias
 related: [inversion, pre-mortem]
+front: "You see what you expect to see."
 ---
-
-You see what you expect to see.
 
 **How to use it.** In incident analysis, write down what *would* prove you wrong. Ask "what would change my mind?" before you decide.
 

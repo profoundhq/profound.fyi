@@ -4,9 +4,8 @@ title: Principle of Least Astonishment
 tier: Principle
 slug: principle-of-least-astonishment
 related: [hicks-law, ubiquitous-language]
+front: "Software should behave the way someone familiar with it would expect."
 ---
-
-Software should behave the way someone familiar with it would expect.
 
 **How to use it.** When reviewers say "wait, what?", the design is wrong. The reviewer is the measuring instrument.
 
