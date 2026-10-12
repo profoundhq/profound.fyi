@@ -8,7 +8,7 @@ tags:
 ---
 
 
-**Six well-known "playbooks" and playbook-adjacent documents run through the [Is It a Playbook](/playbooks/creating-playbooks/artefacts/is-it-a-playbook/) test. The label is doing marketing work in most of them, and the failures are more instructive than the passes.**
+**Five well-known "playbooks" and playbook-adjacent documents run through the [Is It a Playbook](/playbooks/creating-playbooks/artefacts/is-it-a-playbook/) test. The label is doing marketing work in most of them, and the failures are more instructive than the passes.**
 
 Each example gets the five questions, a verdict from the neighbour table, and the lesson it carries for anyone building a collection. The point is not to score points off other people's documents. It is that the test only earns trust by being run in public on things readers already know.
 
@@ -86,21 +86,6 @@ Guidance helping teams create and run public services that meet the Service Stan
 **Verdict:** a manual plus a standard. Fails the verb test. Not a playbook and not pretending hard.
 
 **The lesson:** this is the broadcast antipattern made to work, and the honest account carries a tension. GDS's stated intent is trust and discretion: their guidance model starts with the why so experts can stop early, offers a range of models rather than one implementation, and explicitly rejects the manual being assessment-prep, on the argument that if you build a great service the assessment takes care of itself. The mechanism that drives engagement is still the gate. Both are true at once: the intent is pull, the teeth are push, and the combination works in a context where thousands of teams must clear a common bar. It would suffocate a context where local variation is the engine of improvement. The broadcast antipattern is an antipattern for playbooks, not a universal law of guidance.
-
-
-## Public Digital's recommendations to Cambridge Assessment
-
-A different kind of entry: not a playbook but advice about building one, from a consultancy with GDS heritage. Running advice through the test shows what the advisor's implicit definition is.
-
-1. **Decomposes into plays?** The advice itself is four recommendations with concrete moves, closer to plays than most of the survey. The playbook it describes is defined as "a guide, or manual", which fails the definitional question before the test starts.
-2. **Says when each applies?** No. The recommendations are presented as universal.
-3. **Says when not to?** No, and one recommendation needed it badly. "Broaden the scope" to governance, values and behaviours, HR, finance, comms, and procurement is the everything playbook antipattern, recommended in writing. It also folds values into the same artefact as practice, which is the culture and practice conflation.
-4. **Observable signals?** One good one: if someone asks the same question twice, write about it. A real demand signal with a real threshold.
-5. **Judgement required?** Yes throughout.
-
-**Verdict:** good manual-building advice with no extraction discipline and no scope brake. "Give people permission to write about how they're working" produces the espoused playbook unless something forces the writing toward what actually happened.
-
-**The lesson:** the advice is strongest exactly where this collection was weakest, authorship as an organisational commitment, and weakest exactly where this collection is strongest, the definition of a play and the discipline of when not to codify. Three candidate plays were extracted from it, marked as candidates because the instances behind them belong to someone else.
 
 
 ## What the survey shows
