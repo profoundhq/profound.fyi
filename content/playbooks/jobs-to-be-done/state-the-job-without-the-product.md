@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When the job is trivial and fully known, as in commodity or compliance work where the buyer's progress is not in question. When the team is using the exercise to relitigate a decision already made on other grounds, since a job statement is an instrument for discovery, not a debating trophy.
 
-**Instance:** External. Ulwick's account of the Cordis angioplasty work, in which restating the market around the job of restoring blood flow rather than around catheter features reordered the product line and its share. No first-hand instance yet. This play has not earned provisional status.
+**Instance:** Ulwick's account of the Cordis angioplasty work, in which restating the market around the job of restoring blood flow rather than around catheter features reordered the product line and its share.

@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When people are not switching because the pull is genuinely absent, since removing friction from a journey nobody wants to take achieves nothing. When the anxiety is a correct read of a real product gap.
 
-**Instance:** External. The same Re-Wired Group mattress corpus behind Interview the switch, where a completed sale hinged on anxieties beside the product itself, including what would happen to the old mattress. The purchase closed when the switch got easier, and the mattress got no better. No first-hand instance yet.
+**Instance:** The same Re-Wired Group mattress corpus behind Interview the switch, where a completed sale hinged on anxieties beside the product itself, including what would happen to the old mattress. The purchase closed when the switch got easier, and the mattress got no better.

@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When there is no switching behaviour to study, as in a genuinely novel category with no incumbents and no workarounds. When the question is usability rather than demand, since a switch interview explains why people hire a product, not whether they can operate it. When you need statistical confidence across a population rather than causal depth in a handful of cases.
 
-**Instance:** External. The Re-Wired Group's mattress interviews, reported by Moesta and Klement, in which walking one buyer back through a single purchase surfaced the push, pull, anxiety, and habit forces that stated-preference research had missed. No first-hand instance yet. This play has not earned provisional status.
+**Instance:** The Re-Wired Group's mattress interviews, reported by Moesta and Klement, in which walking one buyer back through a single purchase surfaced the push, pull, anxiety, and habit forces that stated-preference research had missed.

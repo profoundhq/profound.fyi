@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When you have no story evidence and would be inventing an emotional narrative to fit a stall better explained by function or price. When the anxiety is rational and the honest response is fixing the product rather than reassuring around it.
 
-**Instance:** External. The Detroit condo builder in Christensen and Moesta's account, where downsizers stalled not on the units but on the anxiety of leaving a life behind, crystallised in the dining room table. Solving for the move itself, with storage and moving services, grew sales in a falling market. No first-hand instance yet.
+**Instance:** The Detroit condo builder in Christensen and Moesta's account, where downsizers stalled not on the units but on the anxiety of leaving a life behind, crystallised in the dining room table. Solving for the move itself, with storage and moving services, grew sales in a falling market.

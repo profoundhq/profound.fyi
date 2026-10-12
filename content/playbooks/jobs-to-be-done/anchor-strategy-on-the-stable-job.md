@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When the job itself is disappearing, because regulation, demography, or upstream change is removing the struggle, and the stable anchor would hold you to a sinking point. When the organisation uses the stability of the job as cover for ignoring a genuinely better hire.
 
-**Instance:** External. Levitt's quarter-inch hole, the acknowledged ancestor, carried forward in Ulwick's argument that jobs stay stable while solutions change, with music listening as the canonical run: the job constant across formats from vinyl to streaming while every solution along the way was disrupted. No first-hand instance yet.
+**Instance:** Levitt's quarter-inch hole, the acknowledged ancestor, carried forward in Ulwick's argument that jobs stay stable while solutions change, with music listening as the canonical run: the job constant across formats from vinyl to streaming while every solution along the way was disrupted.

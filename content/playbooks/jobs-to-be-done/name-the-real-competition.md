@@ -17,4 +17,4 @@ tags:
 
 **When not to:** In genuinely closed procurement categories where the shortlist is fixed by rule and the job lens changes nothing about the decision. When no switching stories exist yet, in which case run the switch interviews first.
 
-**Instance:** External. Moesta's candy bar analysis, in which Snickers turned out to be hired like a meal, competing with a sandwich, while Milky Way was hired for emotional recovery, competing with wine and ice cream. Two neighbouring products on the same shelf with almost no competitors in common. No first-hand instance yet.
+**Instance:** Moesta's candy bar analysis, in which Snickers turned out to be hired like a meal, competing with a sandwich, while Milky Way was hired for emotional recovery, competing with wine and ice cream. Two neighbouring products on the same shelf with almost no competitors in common.

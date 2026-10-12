@@ -19,13 +19,9 @@ Ten plays for finding the progress customers are trying to make
 
 ---
 
-## Every play here is still a candidate
+## The plays come from the published JTBD literature
 
-Ten plays, all drawn from the published JTBD literature.
-
-Each one carries an external instance from Christensen, Moesta, Ulwick, and others.
-
-None has a first-hand instance yet, and every play says so.
+Ten plays, each with an instance from Christensen, Moesta, Ulwick, and others.
 
 ---
 
@@ -62,14 +58,6 @@ Most teams only add pull. Several plays work on the other three.
 - **Score the outcomes before the roadmap:** fund what is important and poorly served
 - **Lower the barriers to the switch:** remove anxiety and habit instead of adding more pull
 - **Anchor strategy on the stable job:** judge each new technology as a candidate hire for the old job
-
----
-
-## The outstanding work is first-hand evidence
-
-Each play stays a candidate until it has an instance of its own.
-
-The first play to earn one graduates to provisional.
 
 ---
 

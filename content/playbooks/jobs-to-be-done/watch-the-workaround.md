@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When the workaround belongs to a handful of power users whose job does not generalise, since paving every desire path builds a maze. When observation would breach trust or confidentiality that matters more than the insight.
 
-**Instance:** External. Intuit's follow-me-home practice, through which watching Quicken customers revealed a large share running businesses on a personal finance tool, a workaround that became QuickBooks. No first-hand instance yet.
+**Instance:** Intuit's follow-me-home practice, through which watching Quicken customers revealed a large share running businesses on a personal finance tool, a workaround that became QuickBooks.

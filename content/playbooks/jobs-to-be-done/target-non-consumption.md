@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When apparent non-consumption is actually absence of the job, since no amount of accessibility creates a struggle that does not exist. When the barrier is structural and immovable, as with regulation or physics, rather than cost, skill, or access.
 
-**Instance:** External. Christensen's transistor radio account, in which Sony served teenagers who could never have bought a tabletop radio, trading fidelity for portability and price, and grew the market from people the incumbents did not count. No first-hand instance yet.
+**Instance:** Christensen's transistor radio account, in which Sony served teenagers who could never have bought a tabletop radio, trading fidelity for portability and price, and grew the market from people the incumbents did not count.

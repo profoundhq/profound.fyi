@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When demographics genuinely gate the job, as in regulated, age-restricted, or geography-bound markets where who the customer is determines what they can hire. When there is no behavioural variation to explain, since a re-segmentation exercise without an anomaly is theatre. When the switching stories that would ground the segments have not been gathered, in which case run the switch interviews first.
 
-**Instance:** External. Christensen and Moesta's milkshake study, in which morning commuters and afternoon parents bought the same product for different jobs, and segmenting by situation rather than demographic changed what improvement meant. No first-hand instance yet. This play has not earned provisional status.
+**Instance:** Christensen and Moesta's milkshake study, in which morning commuters and afternoon parents bought the same product for different jobs, and segmenting by situation rather than demographic changed what improvement meant.

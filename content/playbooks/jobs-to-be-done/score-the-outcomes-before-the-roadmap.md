@@ -17,4 +17,4 @@ tags:
 
 **When not to:** When the population of job executors is too small or too novel to survey and deep interviews are the honest instrument. When the team would treat the scores as an oracle, since a ranked list wielded without judgement is the procedure trap wearing numbers.
 
-**Instance:** External. Ulwick's Bosch account, where outcome scoring for tradespeople using circular saws surfaced underserved outcomes the feature race had ignored, and the resulting CS20 succeeded in a crowded market. No first-hand instance yet.
+**Instance:** Ulwick's Bosch account, where outcome scoring for tradespeople using circular saws surfaced underserved outcomes the feature race had ignored, and the resulting CS20 succeeded in a crowded market.
