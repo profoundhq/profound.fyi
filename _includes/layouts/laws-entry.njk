@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+{% set tierSlug = (tier | lower) + "s" %}
+<article class="page laws law-entry">
+  <p class="laws-crumb"><a href="/laws/">Laws of Software Engineering</a> · <a href="/laws/tiers/{{ tierSlug }}/">{{ tier }}</a></p>
+  <h1>{{ title }}</h1>
+  <div class="law-body">
+    {{ content | safe }}
+  </div>
+
+  {% set relatedEntries = collections.laws | lawsBySlug(related) %}
+  {% if relatedEntries | length %}
+  <h2>Related</h2>
+  <ul>
+    {% for entry in relatedEntries %}<li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% set inClusters = collections.lawClusters | clustersFor(slug) %}
+  {% if inClusters | length %}
+  <h2>Clusters</h2>
+  <ul>
+    {% for cluster in inClusters %}<li><a href="{{ cluster.url }}">{{ cluster.data.title }}</a>{% if cluster.data.tagline %} - {{ cluster.data.tagline }}{% endif %}</li>{% endfor %}
+  </ul>
+  {% endif %}
+</article>

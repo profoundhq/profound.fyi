@@ -659,6 +659,20 @@
   color: var(--colour-fg);
 }
 
+/* Software Laws ----------------------------------------------------------- */
+
+.laws-crumb {
+  color: var(--colour-muted);
+  font-size: var(--type-small);
+  margin-bottom: var(--space-2);
+}
+
+/* The card's front: one line that states the idea */
+.law-body > p:first-child {
+  font-size: var(--type-large);
+  line-height: 1.4;
+}
+
 /* Slide decks (Marp) ------------------------------------------------------ */
 
 .deck-page {

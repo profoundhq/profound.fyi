@@ -89,6 +89,21 @@ export default function (eleventyConfig) {
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
   });
 
+  // Software Laws (content/laws/, synced by scripts/sync-laws.sh)
+  eleventyConfig.addCollection("lawClusters", (collectionApi) =>
+    collectionApi.getFilteredByGlob("content/laws/clusters/*.md"),
+  );
+
+  // Entries matching a list of slugs, in the list's order
+  eleventyConfig.addFilter("lawsBySlug", (collection, slugs) =>
+    (slugs || []).map((slug) => collection.find((item) => item.data.slug === slug)).filter(Boolean),
+  );
+
+  // Clusters whose `entries` include this slug
+  eleventyConfig.addFilter("clustersFor", (clusters, slug) =>
+    clusters.filter((cluster) => (cluster.data.entries || []).includes(slug)),
+  );
+
   // Slide decks: layouts/deck.njk passes the raw Markdown here, with the
   // Marp directives Eleventy has already taken out of the frontmatter.
   eleventyConfig.addFilter("marp", renderMarp);

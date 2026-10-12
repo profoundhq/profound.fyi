@@ -1,0 +1,21 @@
+---
+layout: layouts/laws-page.njk
+title: The Measurement cluster
+slug: measurement
+tagline: "How to measure without breaking the things you measure."
+entries: [dora-accelerate-findings, goodharts-law, gilbs-law, the-mcnamara-fallacy, vanity-vs-actionable-metrics, leading-and-lagging-indicators]
+---
+
+*How to measure without breaking the things you measure.*
+
+- [DORA / Accelerate](/laws/dora-accelerate-findings/)
+- [Goodhart's Law](/laws/goodharts-law/)
+- [Gilb's Law](/laws/gilbs-law/)
+- [The McNamara Fallacy](/laws/the-mcnamara-fallacy/)
+- [Vanity vs Actionable Metrics](/laws/vanity-vs-actionable-metrics/)
+- [Leading and Lagging Indicators](/laws/leading-and-lagging-indicators/)
+
+
+### Why these together
+
+A measurement programme that holds these together can survive scrutiny. One that misses any of them is for show. Goodhart says do not target. Gilb says measure even when hard. McNamara says do not ignore what is hard to measure. Vanity vs Actionable says measure things that change decisions. DORA is the proof that all of this can be done well. Leading and Lagging Indicators is the design discipline that makes it work.

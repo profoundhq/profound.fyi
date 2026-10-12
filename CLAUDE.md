@@ -8,6 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build` — produces static output in `_site/`
 - `npm run clean` — removes `_site/`
 - `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
+- `scripts/sync-laws.sh [source-path]` — sync Software Laws from the vault (`Projects/Profound/Software Laws`) into `content/laws/` (one-way). Maps layouts to the `laws-*` layouts and drops the `## Front`/`## Back` card headings
 - `npm test` — Node test runner over `tests/`
 
 Node 20 is required (`.nvmrc`). Netlify builds on push to `main` (`netlify.toml`).
@@ -30,6 +31,7 @@ Eleventy 3 (ESM, Nunjucks) static site. Layout in `eleventy.config.js`:
 | Writing | `content/writing/<slug>.md` → `/writing/<slug>/` | `layouts/writing.njk` (via `writing.11tydata.js`) | needs `title` + `date`; optional `summary` |
 | Talk | `content/talks/<slug>.md` → `/talks/<slug>/` | `layouts/talk.njk` (via `talks.11tydata.js`) | needs `title` + `date`; optional `venue`, `summary`, `slides`, `video`, `recording`, `speakerdeck` (embed ID, renders the player), `speakers` (list of `name` + optional `url`, shown above the deck); set `permalink: false` to appear only on the index without its own page |
 | Playbook page | `content/playbooks/<slug>/<page>.md` → `/playbooks/<slug>/<page>/` | `layouts/playbook-page.njk` (via `playbooks.11tydata.js`) | needs `title` + `order`; tag each page individually with `tags: ["<slug>"]` |
+| Law entry | `content/laws/entries/<slug>.md` → `/laws/<slug>/` | `layouts/laws-entry.njk` | synced, not hand-edited; needs `title`, `slug`, `tier` (Law, Principle, Pattern, Practice, Saying, Framework); optional `related: [slugs]`. Tier pages (`content/laws/tiers/`) and cluster pages (`content/laws/clusters/`, with `entries: [slugs]`) use `layouts/laws-page.njk` |
 | Slide deck | `content/playbooks/<slug>/<name>.marp.md` → set `permalink` | `layouts/deck.njk` (set in frontmatter) | Marp Markdown, `---` between slides; needs `title`, `marp: true`, `templateEngineOverride: md`, and `tags: []` to stay out of the sidebar; optional `paginate`, `size`, `header`, `footer`, `math` |
 
 `content/playbooks/<slug>/index.njk` is the hand-authored landing page (not a Markdown page) and sets `permalink: /playbooks/<slug>/`.
