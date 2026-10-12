@@ -658,3 +658,168 @@
   margin: 0;
   color: var(--colour-fg);
 }
+
+/* Slide decks (Marp) ------------------------------------------------------ */
+
+.deck-page {
+  max-width: 60rem;
+}
+
+.deck-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-5);
+}
+
+.deck-header .entry-meta {
+  flex-basis: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.deck-present {
+  font: inherit;
+  font-size: var(--type-small);
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--colour-fg);
+  border-radius: 999px;
+  background: var(--colour-bg);
+  color: var(--colour-fg);
+  cursor: pointer;
+}
+
+.deck-present:hover {
+  background: var(--colour-fg);
+  color: var(--colour-bg);
+}
+
+.deck svg[data-marpit-svg] {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: var(--space-5);
+  box-shadow: 0 0 0 1px var(--colour-rule);
+}
+
+.deck.is-presenting {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  cursor: pointer;
+}
+
+.deck.is-presenting .marpit {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.deck.is-presenting svg[data-marpit-svg] {
+  display: none;
+  margin: 0;
+  box-shadow: none;
+  width: 100%;
+  height: 100%;
+}
+
+.deck.is-presenting svg[data-marpit-svg].is-current {
+  display: block;
+}
+
+/* Inline deck viewer ({% marpDeck %}): a row of slides that scrolls and
+   swipes without JavaScript. js/deck.js adds the buttons and counter. */
+.deck-viewer {
+  margin: var(--space-5) 0;
+}
+
+.deck-inline .marpit {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  box-shadow: 0 0 0 1px var(--colour-rule);
+}
+
+.deck-inline .marpit::-webkit-scrollbar {
+  display: none;
+}
+
+.deck-inline svg[data-marpit-svg] {
+  flex: 0 0 100%;
+  margin: 0;
+  box-shadow: none;
+  scroll-snap-align: start;
+}
+
+.deck-inline:focus-visible {
+  outline: 2px solid var(--colour-fg);
+  outline-offset: 4px;
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
+.deck-controls .deck-prev,
+.deck-controls .deck-next {
+  font: inherit;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--colour-rule);
+  border-radius: 999px;
+  background: var(--colour-bg);
+  color: var(--colour-fg);
+  cursor: pointer;
+}
+
+.deck-controls .deck-prev:disabled,
+.deck-controls .deck-next:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.deck-controls .deck-present {
+  margin-left: auto;
+}
+
+/* Printing a deck gives one slide per landscape page, so "Save as PDF"
+   produces a usable handout. */
+@page slide {
+  size: 1280px 720px;
+  margin: 0;
+}
+
+@media print {
+  body:has(.deck-page) :is(.site-header, .site-footer, .consent-banner, .deck-header, .deck-page > .entry-meta, .license-notice) {
+    display: none;
+  }
+
+  body:has(.deck-page),
+  body:has(.deck-page) main,
+  .deck-page {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .deck-page .deck svg[data-marpit-svg] {
+    page: slide;
+    break-after: page;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    print-color-adjust: exact;
+  }
+}

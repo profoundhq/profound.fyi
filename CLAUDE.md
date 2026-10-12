@@ -7,7 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run dev` — Eleventy dev server with live reload at `http://localhost:8080/`
 - `npm run build` — produces static output in `_site/`
 - `npm run clean` — removes `_site/`
-- `scripts/sync-playbook.sh <slug> <source-path>` — sync a playbook from an external Obsidian vault into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync)
+- `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
+- `npm test` — Node test runner over `tests/`
 
 Node 20 is required (`.nvmrc`). Netlify builds on push to `main` (`netlify.toml`).
 
@@ -29,6 +30,7 @@ Eleventy 3 (ESM, Nunjucks) static site. Layout in `eleventy.config.js`:
 | Writing | `content/writing/<slug>.md` → `/writing/<slug>/` | `layouts/writing.njk` (via `writing.11tydata.js`) | needs `title` + `date`; optional `summary` |
 | Talk | `content/talks/<slug>.md` → `/talks/<slug>/` | `layouts/talk.njk` (via `talks.11tydata.js`) | needs `title` + `date`; optional `venue`, `summary`, `slides`, `video`, `recording`, `speakerdeck` (embed ID, renders the player), `speakers` (list of `name` + optional `url`, shown above the deck); set `permalink: false` to appear only on the index without its own page |
 | Playbook page | `content/playbooks/<slug>/<page>.md` → `/playbooks/<slug>/<page>/` | `layouts/playbook-page.njk` (via `playbooks.11tydata.js`) | needs `title` + `order`; tag each page individually with `tags: ["<slug>"]` |
+| Slide deck | `content/playbooks/<slug>/<name>.marp.md` → set `permalink` | `layouts/deck.njk` (set in frontmatter) | Marp Markdown, `---` between slides; needs `title`, `marp: true`, `templateEngineOverride: md`, and `tags: []` to stay out of the sidebar; optional `paginate`, `size`, `header`, `footer`, `math` |
 
 `content/playbooks/<slug>/index.njk` is the hand-authored landing page (not a Markdown page) and sets `permalink: /playbooks/<slug>/`.
 
@@ -51,6 +53,8 @@ export default {
 ### Custom Eleventy bits (in `eleventy.config.js`)
 
 - Filters: `readableDate`, `htmlDateString`, `toRoman`, `sortByOrder`, `filterBySection`, `groupByYear` (returns `[[year, entries], ...]` sorted year-descending; used by the writing and talks indexes)
+- `marp` filter: renders a deck's raw Markdown (`page.rawInput`) with `@marp-team/marp-core` and the `profound` theme in `_includes/marp/profound.css`. It is a filter rather than a template format because Eleventy's built-in `md` claims `*.marp.md` first. Present mode is `js/deck.js`
+- `marpDeck` shortcode: `{% marpDeck "content/playbooks/<slug>/<name>.marp.md", "/playbooks/<slug>/<name>/" %}` embeds a deck inline on another Nunjucks page as a slide viewer (scrolls and swipes without JS, `js/deck.js` adds buttons, counter, and present mode). Print styles apply only on a deck's own page
 - Collections: `sitemapPages` (everything with a URL except `sitemap.xml`/`robots.txt`), `playbooks` (sorted by `order` from each `index.*`), `tools` (sorted by `order` from each `.njk`)
 - Tag-based collections (auto-built from `tags: [...]` in 11tydata files): `writing`, `talks`
 

@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+<article class="deck-page" data-deck>
+  <header class="deck-header">
+    {% if playbook %}<p class="entry-meta"><a href="/playbooks/{{ playbook }}/">{{ playbookTitle }}</a></p>{% endif %}
+    <h1>{{ title }}</h1>
+    <button type="button" class="deck-present" hidden>Present</button>
+  </header>
+
+  <div class="deck" tabindex="-1">
+    {{ page.rawInput | marp({ theme: theme, paginate: paginate, size: size, header: header, footer: footer, math: math }) | safe }}
+  </div>
+
+  {% if updated %}<p class="entry-meta">Last updated {{ updated | readableDate }}</p>{% endif %}
+  {% if license %}
+  <p class="license-notice">
+    Licensed under <a href="{{ license.url }}" rel="license noopener noreferrer">{{ license.name }}</a>.
+  </p>
+  {% endif %}
+</article>
+<script src="/js/deck.js" defer></script>

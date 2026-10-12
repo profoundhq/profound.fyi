@@ -3,46 +3,65 @@
 # Run from the project root.
 #
 # Usage:
-#   scripts/sync-playbook.sh <slug> <source-path>
+#   scripts/sync-playbook.sh <slug> <source-path> [attachments-path]
+#
+# attachments-path is where Obsidian keeps images (defaults to source-path).
 #
 # Example:
 #   scripts/sync-playbook.sh agentic-ai-for-teams \
-#     "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Steeley/Blogs/Agentic AI for Teams"
+#     "$HOME/Obsidian/Steeley/Blogs/Agentic AI for Teams"
 #
 # What it does:
 #   - Wipes existing .md files under content/playbooks/<slug>/ (preserves
-#     11tydata.js files and hand-authored .njk landings).
-#   - For each source .md (skipping _index.md), writes a transformed copy:
-#       slug   - derived from filename, NN- prefix stripped
-#       title  - read from source frontmatter
-#       order  - read from source frontmatter `order:`, or derived from the
-#                NN- prefix * 10 if absent. Artefacts get +100 offset.
+#     11tydata.js files, hand-authored .njk landings and .marp.md decks).
+#   - For each source .md (skipping index notes), writes a transformed copy:
+#       slug   - derived from filename, "NN-" or "NN " prefix stripped, then
+#                lowercased with spaces and punctuation as hyphens
+#       title  - read from source frontmatter, else the note's leading H1
+#       order  - read from source frontmatter `order:`, else the NN prefix * 10,
+#                else the note's position in the index note's links * 10.
+#                Artefacts get +100 offset.
 #       tags   - [<playbook-slug>]
-#       section - "artefacts" for files inside artefacts/, otherwise omitted
+#       section - "artefacts" for files inside artefacts/, or whose source
+#                 permalink contains /artefacts/, otherwise omitted
+#   - Drops a leading H1, since the layout renders the title.
 #   - Body transforms: em-dash -> hyphen, "agentic AI" -> "Agentic AI".
 #   - URL rewrites: /framework/NN-slug/ -> /playbooks/<slug>/slug/,
 #     /artefacts/x/ -> /playbooks/<slug>/artefacts/x/.
+#   - Obsidian syntax (scripts/obsidian-links.mjs): [[wikilinks]] become
+#     site links, and ![[image.png]] embeds and relative Markdown images are
+#     copied into images/playbooks/<slug>/. Unresolved links are warned about
+#     and left as plain text.
 #   - Prints git status afterwards so you can review the diff.
 #
 # What it does NOT do:
-#   - Touch 11tydata.js, .njk landings, or anything outside content/playbooks/<slug>/.
-#   - Sync _index.md files. Landings are hand-managed (curated HTML lists).
+#   - Touch 11tydata.js, .njk landings, or anything outside content/playbooks/<slug>/
+#     and images/playbooks/<slug>/.
+#   - Sync index notes (_index.md, index.md, 00-index.md, "01 Index.md").
+#     Landings are hand-managed (curated HTML lists).
 
 set -euo pipefail
 
 if [ "$#" -lt 2 ]; then
   cat <<USAGE >&2
-Usage: $0 <slug> <source-path>
+Usage: $0 <slug> <source-path> [attachments-path]
 USAGE
   exit 1
 fi
 
 SLUG="$1"
 SRC="$2"
+ATTACHMENTS="${3:-$SRC}"
 DST="content/playbooks/$SLUG"
+IMAGES="images/playbooks/$SLUG"
 
 if [ ! -d "$SRC" ]; then
   echo "Source not found: $SRC" >&2
+  exit 1
+fi
+
+if [ ! -d "$ATTACHMENTS" ]; then
+  echo "Attachments not found: $ATTACHMENTS" >&2
   exit 1
 fi
 
@@ -89,6 +108,50 @@ extract_order() {
   fi
 }
 
+# Split a basename into its numeric prefix (may be empty) and URL slug.
+# "02 The Core Thesis" -> "02" "the-core-thesis"; "primitives" -> "" "primitives"
+split_basename() {
+  local base="$1" num="" rest="$1"
+  if [[ "$base" =~ ^([0-9]+)[-\ ](.+)$ ]]; then
+    num="${BASH_REMATCH[1]}"
+    rest="${BASH_REMATCH[2]}"
+  fi
+  rest=$(printf '%s' "$rest" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
+  printf '%s\n%s\n' "$num" "$rest"
+}
+
+is_index_slug() {
+  [ "$1" = "index" ] || [ "$1" = "_index" ]
+}
+
+# Slugs of the notes the index note links to, in link order. Used to order
+# notes that have neither an `order:` field nor a numeric prefix.
+INDEX_ORDER=()
+load_index_order() {
+  local f base slug
+  for f in "$SRC"/*.md; do
+    base=$(basename "$f" .md)
+    slug=$(split_basename "$base" | sed -n 2p)
+    is_index_slug "$slug" || [ "$base" = "_index" ] || continue
+    while IFS= read -r target; do
+      target="${target%/}"
+      target="${target##*/}"
+      target="${target%.md}"
+      INDEX_ORDER+=("$(split_basename "$target" | sed -n 2p)")
+    done < <(grep -oE '\]\([^)#]+|\[\[[^]|#]+' "$f" | sed -E 's/^\]\(//; s/^\[\[//')
+  done
+}
+
+index_position() {
+  local i
+  for i in "${!INDEX_ORDER[@]}"; do
+    if [ "${INDEX_ORDER[$i]}" = "$1" ]; then
+      echo $((i + 1))
+      return
+    fi
+  done
+}
+
 write_file() {
   local src="$1"
   local dst="$2"
@@ -113,7 +176,11 @@ write_file() {
   fi
 
   if [ -z "$title" ]; then
-    title=$(basename "$src" .md | sed -E 's/^[0-9]+-//; s/-/ /g')
+    title=$(awk 'BEGIN{n=0} /^---[[:space:]]*$/ && fm!="no"{n++; next} {fm="no"} NF{ if (/^# /) { sub(/^# +/, ""); print } exit }' "$src")
+  fi
+
+  if [ -z "$title" ]; then
+    title=$(basename "$src" .md | sed -E 's/^[0-9]+[- ]//; s/-/ /g')
     title="$(printf '%s' "$title" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
     if [ "$has_fm" = "yes" ]; then
       echo "  [warn] no title in $(basename "$src"); using \"$title\"" >&2
@@ -126,10 +193,14 @@ write_file() {
   elif [ -n "$order_from_fm" ]; then
     order=$((10#$order_from_fm + order_offset))
   else
-    local base
-    base=$(basename "$src" .md)
-    if [[ "$base" =~ ^([0-9]+)- ]]; then
-      order=$((10#${BASH_REMATCH[1]} * 10 + order_offset))
+    local num slug position
+    num=$(split_basename "$(basename "$src" .md)" | sed -n 1p)
+    slug=$(split_basename "$(basename "$src" .md)" | sed -n 2p)
+    position=$(index_position "$slug")
+    if [ -n "$num" ]; then
+      order=$((10#$num * 10 + order_offset))
+    elif [ -n "$position" ]; then
+      order=$((position * 10 + order_offset))
     else
       order=$((order_offset))
     fi
@@ -151,11 +222,14 @@ write_file() {
     echo "---"
     echo ""
     if [ "$has_fm" = "yes" ]; then
-      awk 'BEGIN{n=0} /^---[[:space:]]*$/{n++; next} n>=2{print}' "$src" \
-        | sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g'
+      awk 'BEGIN{n=0} /^---[[:space:]]*$/{n++; next} n>=2{print}' "$src"
     else
-      sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g' "$src"
-    fi
+      cat "$src"
+    fi \
+      | awk '!started && NF { started = 1; if (/^# /) { dropped = 1; next } }
+             dropped == 1 && !NF { next }
+             { dropped = 2; print }' \
+      | sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g'
   } > "$dst"
 
   sed -i.bak -E \
@@ -163,20 +237,29 @@ write_file() {
     -e "s|/artefacts/([a-z-]+)/|/playbooks/$SLUG/artefacts/\\1/|g" \
     "$dst"
   rm -f "$dst.bak"
+
+  # Runs after the URL rewrites so its /playbooks/<slug>/artefacts/ links
+  # are not rewritten a second time.
+  node scripts/obsidian-links.mjs "$SLUG" "$SRC" "$ATTACHMENTS" "$src" "$dst"
 }
 
 echo "Syncing $SLUG"
 echo "  source: $SRC"
 echo "  target: $DST"
 
-# Wipe existing .md files (preserve .njk and 11tydata.js)
-find "$DST" -name "*.md" -delete
+# Wipe existing .md files (preserve .njk, 11tydata.js and .marp.md decks)
+# and copied images
+find "$DST" -name "*.md" ! -name "*.marp.md" -delete
+rm -rf "$IMAGES"
 
 # Process framework chapters at the top level of the source
 shopt -s nullglob
+load_index_order
 for src in "$SRC"/*.md; do
   base=$(basename "$src" .md)
   [ "$base" = "_index" ] && continue
+  # Decks are managed by hand, not synced as playbook pages
+  [[ "$base" == *.marp ]] && continue
   # Skip vault utility files (case-insensitive match). CHANGELOG is content.
   lowered=$(printf '%s' "$base" | tr '[:upper:]' '[:lower:]')
   case "$lowered" in
@@ -186,15 +269,20 @@ for src in "$SRC"/*.md; do
       ;;
   esac
 
-  if [[ "$base" =~ ^([0-9]+)-(.+)$ ]]; then
-    slug_part="${BASH_REMATCH[2]}"
-  else
-    slug_part="$base"
+  slug_part=$(split_basename "$base" | sed -n 2p)
+  # Index notes become the hand-authored index.njk landing instead
+  if is_index_slug "$slug_part"; then
+    echo "  [skip] $base.md (index note; landing is hand-authored)"
+    continue
   fi
-  # Slugs must be lowercase for URL hygiene
-  slug_part=$(printf '%s' "$slug_part" | tr '[:upper:]' '[:lower:]')
 
-  write_file "$src" "$DST/$slug_part.md" "" 0
+  # A note can declare itself an artefact through its permalink
+  if [[ "$(extract_field "permalink" "$src")" == */artefacts/* ]]; then
+    mkdir -p "$DST/artefacts"
+    write_file "$src" "$DST/artefacts/$slug_part.md" "artefacts" 100
+  else
+    write_file "$src" "$DST/$slug_part.md" "" 0
+  fi
 done
 
 # Process artefacts (offset of 100 keeps them after the framework in sortByOrder)
@@ -204,18 +292,13 @@ if [ -d "$SRC/artefacts" ]; then
     base=$(basename "$src" .md)
     [ "$base" = "_index" ] && continue
 
-    if [[ "$base" =~ ^([0-9]+)-(.+)$ ]]; then
-      slug_part="${BASH_REMATCH[2]}"
-    else
-      slug_part="$base"
-    fi
-
+    slug_part=$(split_basename "$base" | sed -n 2p)
     write_file "$src" "$DST/artefacts/$slug_part.md" "artefacts" 100
   done
 fi
 
 echo
 echo "Sync complete. Run:"
-echo "  git status -- $DST"
-echo "  git diff -- $DST"
+echo "  git status -- $DST $IMAGES"
+echo "  git diff -- $DST $IMAGES"
 echo "to review changes."
