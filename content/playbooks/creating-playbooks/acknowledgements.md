@@ -17,6 +17,5 @@ The thinking here stands on:
 - **W. Edwards Deming**, for the reminder that an aspiration without a method is a slogan.
 - **The RFC and ADR traditions**, for lightweight decision records carried with the artefact.
 - **GDS's guidance model for the Service Manual** (Harrison and Miller, 2018), for the two-reader problem, progressive disclosure via exposing the why, and the defence of discretion against the demand for one-size-fits-all certainty.
-- **Public Digital**, whose recommendations to Cambridge Assessment on treating a playbook as a product, distributed authorship, and publishing in the open supplied three candidate plays and independent confirmation of several others.
 
 Errors of interpretation are mine.

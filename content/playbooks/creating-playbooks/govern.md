@@ -33,18 +33,6 @@ This is the play the whole system exists to serve.
 
 **When not to:** when the play is untested rather than dead. An untested play gets a status flag and a test, not a funeral.
 
-## Play: legitimise the writing *(candidate)*
-
-**When:** the collection serves an organisation and the plays must come from where the work is, not from a central author.
-
-**The action:** give people explicit permission to take time from their day-to-day work to write about how they are working, and make the permission visible so nobody has to spend it privately. Over time, ownership of what good looks like moves to the communities of practice closest to each domain, with the central team curating rather than authoring.
-
-**Signals:** plays arrive from people whose job title is not "playbook". The central team's share of authorship falls over time.
-
-**When not to:** before the extraction discipline is established. Permission to write without the discipline to extract produces the espoused playbook at scale, with more authors committing it faster.
-
-*This play is a candidate, drawn from Public Digital's advice to Cambridge Assessment on dedicated teams, distributed authorship, and communities of practice. It stays at candidate status until it carries instances of mine. It is also evidence for the hypothesis in the worked examples: govern is an organisational commitment, and this play is what the commitment looks like.*
-
 ## Antipattern: the museum piece
 
 Written once, never revised against evidence, no feedback loop. Stale plays are worse than no plays because they carry false authority. The tell: every play has the same date on it.

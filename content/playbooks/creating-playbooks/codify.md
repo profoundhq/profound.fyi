@@ -29,18 +29,6 @@ tags:
 
 **When not to:** when the tension is trivial. Do not manufacture forces to fill the template.
 
-## Play: link, don't recreate *(candidate)*
-
-**When:** a play or its supporting guidance already exists elsewhere, written well, by someone who maintains it.
-
-**The move:** link to it and write only what is local: your entry conditions, your instance, what differs in your context. Recreated content is content you now govern forever, and the original will drift from your copy the week after you paste it.
-
-**Signals:** the collection stays small relative to what it covers. Broken outbound links surface in review, which is cheaper than silently stale copies.
-
-**When not to:** when the external source is unstable, paywalled, or likely to vanish. Then a dated summary with attribution beats a link that will rot.
-
-*This play is a candidate, drawn from Public Digital's recommendation to Cambridge Assessment to reuse existing work rather than re-create it. It stays at candidate status until it carries instances of mine.*
-
 ## Play: write for two readers *(candidate)*
 
 **When:** the collection serves both people new to the practice and experienced practitioners, which is nearly always.

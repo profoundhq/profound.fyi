@@ -23,7 +23,7 @@ Added Format and Access section: default-to-public play, reading path separated 
 
 ## 2026-07-09 (evening)
 
-Incorporated Public Digital's recommendations to Cambridge Assessment as reference material. Three candidate plays added, each marked candidate because the instances are Public Digital's, not mine: answer the second question (sense), link, don't recreate (shape), and legitimise the writing (govern). Added the recruitment force to default-to-public and print to the projections list. Public Digital added to acknowledgements and as the sixth worked example.
+Added the recruitment force to default-to-public and print to the projections list.
 
 ## 2026-07-09 (night)
 

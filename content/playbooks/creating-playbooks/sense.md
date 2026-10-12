@@ -19,18 +19,6 @@ tags:
 
 **When not to:** after one success. One success is an anecdote.
 
-## Play: answer the second question *(candidate)*
-
-**When:** someone asks you a question you have already answered for someone else.
-
-**The move:** write the answer down where the third asker will find it. This is a demand signal where notice-the-third-time is a supply signal, and they produce different content. Questions asked twice produce guidance and reference. Moves run three times produce plays. A healthy collection carries both and does not confuse them.
-
-**Signals:** the questions stop arriving, or arrive as follow-ups to the written answer rather than from scratch.
-
-**When not to:** when the question is really a request for a decision, not for guidance. Writing down an answer you are not authorised to give creates shadow policy.
-
-*This play is a candidate. It comes from Public Digital's advice to Cambridge Assessment ("if someone asks the same question twice, write something about that thing asap") rather than from my own runs, and it stays at candidate status until it earns instances of mine.*
-
 ## Antipattern: premature codification
 
 Writing the play after running the move once. The play gets written from hope rather than evidence, its entry conditions are guessed, and its signals are aspirations. Premature codification is how playbooks fill with plays that never transfer, and it is the most tempting failure for a new collection because early on the pressure is to have volume.
