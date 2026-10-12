@@ -11,3 +11,8 @@
   to = "https://profound.fyi/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/ffc-2026"
+  to = "/talks/fast-flow-conf-2026/"
+  status = 302
