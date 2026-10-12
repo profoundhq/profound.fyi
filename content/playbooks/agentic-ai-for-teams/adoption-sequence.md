@@ -7,8 +7,6 @@ tags:
 ---
 
 
-# The Adoption Sequence
-
 Adoption should be sequenced deliberately, not left to emerge organically. The following sequence is adapted from Bryan Finster's work on delivery improvement and applied to the specific context of Agentic AI adoption.
 
 ## Step 1: Clarify the work

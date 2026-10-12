@@ -7,8 +7,6 @@ tags:
 ---
 
 
-# Maturity Models
-
 Agentic AI adoption operates at three distinct levels that interact but are not the same thing: individual practitioner adoption, team-level modes and practices, and organisational readiness. A highly capable individual developer using agents in an organisationally immature context is a liability. An organisationally mature context with individually inexperienced developers is an opportunity. And between the two sits the team, where most of the practical work of adoption is actually done, and where many failures that look individual or organisational are, in fact, team-level.
 
 The individual-stage framing is adapted from Steve Yegge's "Evolution of the Programmer" and Daniel Jones's "11 Stages of Agentic Coding," reframed for the organisational-readiness purpose of this framework. The team-level framing follows a descriptive rather than progressive pattern, structurally similar to Team Topologies' use of team types and interaction modes rather than a maturity ladder.

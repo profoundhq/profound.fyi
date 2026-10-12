@@ -7,8 +7,6 @@ tags:
 ---
 
 
-# Role Positions
-
 Agentic AI changes how every role on the team operates. But the practice is emergent. Nobody has yet produced the definitive account of how roles reshape around agentic workflows - the equivalent of Kniberg and Ivarsson's description of Spotify's squad model, derived from observation of what actually works at scale.
 
 What we can identify are the **forces** acting on each role: durable pressures that every team will face regardless of tooling, industry, or organisational context. What we cannot yet prescribe are the structural answers. Those will emerge differently in every organisation, and teams that adopt someone else's role template without running their own experiments will repeat the cargo-culting pattern that made "the Spotify Model" a cautionary tale.

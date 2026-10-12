@@ -7,8 +7,6 @@ tags:
 ---
 
 
-# Open Questions
-
 A credible framework acknowledges what it does not yet know. The following questions are genuinely open. They represent areas where the framework has positions but those positions are hypotheses, not conclusions.
 
 ## Does Agentic AI change team topology?

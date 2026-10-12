@@ -10,7 +10,7 @@ Most organisations cannot describe how they actually deliver value, only how the
 
 The playbooks are guides to practices that have worked in more than one organisation. The tools, like [Communication styles](/tools/communication-styles/), help a team talk about how it works. Most of the ideas come from Deming, Team Topologies, DORA, and the Improvement Kata. Some get tried out in talks first.
 
-It is opinionated. New material is added when it has proven itself in practice.
+It is opinionated. Each page says how much evidence is behind it.
 
 Maintained by [Benedict Steele](https://www.linkedin.com/in/benedictsteele/).
 
