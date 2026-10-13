@@ -7,10 +7,9 @@ eleventyExcludeFromCollections: true
 {%- for entry in collections.sitemapPages %}
   <url>
     <loc>{{ site.url }}{{ entry.url }}</loc>
-    {%- if entry.data.updated %}
-    <lastmod>{{ entry.data.updated | htmlDateString }}</lastmod>
-    {%- elif entry.date %}
-    <lastmod>{{ entry.date | htmlDateString }}</lastmod>
+    {%- set lastmod = entry.data.updated or entry.data.date %}
+    {%- if lastmod %}
+    <lastmod>{{ lastmod | htmlDateString }}</lastmod>
     {%- endif %}
   </url>
 {%- endfor %}

@@ -33,7 +33,7 @@
         slide.classList.toggle('is-current', i === current);
       });
       if (inline && !presenting()) {
-        track.scrollTo({ left: current * track.clientWidth, behavior: 'smooth' });
+        track.scrollTo({ left: current * track.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       }
       update();
     }

@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import { Marp } from "@marp-team/marp-core";
+import { excerpt, structuredData } from "./lib/site-meta.js";
+import { accessibleTables } from "./lib/markdown-tables.js";
 
 // Marp settings that Eleventy strips out as frontmatter and that need
 // handing back to Marp as global directives.
@@ -7,7 +9,9 @@ const MARP_DIRECTIVES = ["theme", "paginate", "size", "header", "footer", "math"
 const MARP_THEME = fs.readFileSync("_includes/marp/profound.css", "utf8");
 
 function renderMarp(markdown, directives = {}) {
-  const marp = new Marp({ inlineSVG: true });
+  // script: false because the helper would be inline, which the CSP blocks.
+  // Pages load the same file as /js/marp-browser.js instead.
+  const marp = new Marp({ inlineSVG: true, script: false });
   marp.themeSet.add(MARP_THEME);
   const set = Object.entries(directives).filter(
     ([key, value]) => MARP_DIRECTIVES.includes(key) && value !== undefined,
@@ -16,13 +20,25 @@ function renderMarp(markdown, directives = {}) {
     .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
     .join("\n");
   const { html, css } = marp.render(`---\n${globals}\n---\n${markdown}`);
-  return `<style>${css}</style>\n${html}`;
+  // A slide's <h1> would be a second page heading, so it becomes an <h2>
+  // that the theme styles the same.
+  const slides = html.replace(/<h1\b/g, '<h2 class="slide-title"').replace(/<\/h1>/g, "</h2>");
+  return `<style>${css}</style>\n${slides}\n<script src="/js/marp-browser.js" defer></script>`;
 }
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "css": "css" });
   eleventyConfig.addPassthroughCopy({ "js": "js" });
-  eleventyConfig.addPassthroughCopy({ "images": "images" });
+  eleventyConfig.addPassthroughCopy({ "fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy({ "public": "/" });
+  eleventyConfig.addPassthroughCopy({ "node_modules/@marp-team/marp-core/lib/browser.js": "js/marp-browser.js" });
+  // The .html files in images/ are local tools for rendering icons and OG images
+  eleventyConfig.addPassthroughCopy({ "images": "images" }, { filter: ["**", "!*.html"] });
+
+  eleventyConfig.amendLibrary("md", (md) => md.use(accessibleTables));
+
+  eleventyConfig.addFilter("excerpt", excerpt);
+  eleventyConfig.addFilter("structuredData", structuredData);
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Intl.DateTimeFormat("en-GB", {

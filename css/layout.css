@@ -85,6 +85,11 @@
   font-size: var(--type-small);
 }
 
+.site-footer-links {
+  display: flex;
+  gap: var(--space-4);
+}
+
 .site-footer .site-inner {
   display: flex;
   flex-wrap: wrap;
