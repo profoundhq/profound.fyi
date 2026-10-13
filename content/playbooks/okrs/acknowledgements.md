@@ -1,7 +1,7 @@
 ---
 title: "Acknowledgements and References"
 order: 80
-updated: 2026-10-12
+updated: 2026-10-13
 tags:
   - okrs
 ---
@@ -52,9 +52,9 @@ The mapping of the three constraints to the four signals via the two functions. 
 
 ## Provenance and licensing
 
-This playbook is part of **Profound**, a collection of playbooks and instruments for understanding a system of work. Maintained by Benedict Steele at Hyperdimensional Limited.
+This playbook is part of **Profound**, a collection of playbooks and tools for understanding a system of work. Maintained by Benedict Steele.
 
-Licensed under Creative Commons BY-NC-SA 4.0. Copy, share, adapt freely - provided attribution is given, non-commercial intent is preserved, and derivative work is shared under the same terms.
+Licensed under Creative Commons BY-SA 4.0. You can copy, share, and adapt it for any purpose, including commercial use, if you give credit and share your changes under the same licence.
 
 The playbook will be updated as the underlying thinking develops. Material changes will be reflected in the changelog.
 

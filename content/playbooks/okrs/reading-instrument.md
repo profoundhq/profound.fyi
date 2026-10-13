@@ -1,7 +1,7 @@
 ---
 title: "The Reading Instrument"
 order: 90
-updated: 2026-10-12
+updated: 2026-10-13
 tags:
   - okrs
 ---
@@ -94,6 +94,6 @@ This instrument does not work in isolation. It works in conversation. A leadersh
 
 *An artefact of the OKRs playbook. Profound - a collection of playbooks and instruments for understanding a system of work.*
 
-*Licensed under CC BY-NC-SA 4.0.*
+*Licensed under CC BY-SA 4.0.*
 
 *Last updated 15 May 2026*
