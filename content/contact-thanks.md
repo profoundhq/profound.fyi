@@ -1,10 +1,10 @@
 ---
 layout: layouts/page.njk
-title: Message sent
+title: Thanks for writing
 permalink: /contact/thanks/
 eleventyExcludeFromCollections: true
 ---
 
-Thanks for getting in touch. I'll reply to the email address you gave.
+Your message is on its way to me. I'll reply to the email address you gave, usually within a few days.
 
-In the meantime, have a look at the [playbooks](/playbooks/) or the [writing](/writing/).
+While you wait, there's plenty to read in the [playbooks](/playbooks/) and the [writing](/writing/).
