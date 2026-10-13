@@ -1,5 +1,5 @@
-<aside class="playbook-sidebar">
-  <h3><a href="/playbooks/{{ playbook }}/">{{ playbookTitle }}</a></h3>
+<nav class="playbook-sidebar" aria-label="{{ playbookTitle }}">
+  <p class="playbook-sidebar-title"><a href="/playbooks/{{ playbook }}/">{{ playbookTitle }}</a></p>
 
   {% set framework = siblings | filterBySection("framework") %}
   {% set artefacts = siblings | filterBySection("artefacts") %}
@@ -17,10 +17,10 @@
 
   {% if artefacts | length %}
   {% set artefactsUrl = "/playbooks/" + playbook + "/artefacts/" %}
-  <h4 class="playbook-sidebar-group">
+  <p class="playbook-sidebar-group">
     <a href="{{ artefactsUrl }}"
        {% if page.url == artefactsUrl %}aria-current="page"{% endif %}>Artefacts</a>
-  </h4>
+  </p>
   <ol>
     {% for sibling in artefacts %}
       <li>
@@ -32,4 +32,4 @@
     {% endfor %}
   </ol>
   {% endif %}
-</aside>
+</nav>

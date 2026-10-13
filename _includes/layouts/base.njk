@@ -3,10 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <title>{% if title and title != site.title %}{{ title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  {% set pageDescription = description or site.description %}
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  {% set pageDescription = description or summary or front or (page.rawInput | excerpt) or site.description %}
   {% set canonical = site.url + page.url %}
   {% if title and title != site.title %}
     {% if playbookTitle and title != playbookTitle %}
@@ -33,51 +37,22 @@
   <meta name="twitter:title" content="{{ ogTitle }}">
   <meta name="twitter:description" content="{{ pageDescription }}">
   <meta name="twitter:image" content="{{ ogImage }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <title>{{ ogTitle if title and title != site.title else site.title }}</title>
+  <link rel="preload" href="/fonts/plex-sans-5/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
-  {% if site.gaId %}
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      personalization_storage: 'denied',
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    try {
-      if (localStorage.getItem('profound-consent') === 'granted') {
-        gtag('consent', 'update', {
-          ad_storage: 'granted',
-          analytics_storage: 'granted',
-          ad_user_data: 'granted',
-          ad_personalization: 'granted',
-          personalization_storage: 'granted'
-        });
-      }
-    } catch (e) {}
-    gtag('js', new Date());
-    gtag('config', '{{ site.gaId }}');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
-  {% endif %}
+  <script type="application/ld+json">{{ { url: page.url, title: title, description: pageDescription, updated: updated, date: date, playbook: playbook, playbookTitle: playbookTitle, site: site } | structuredData | safe }}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   {% include "partials/site-header.njk" %}
-  <main>{{ content | safe }}</main>
+  <main id="main" tabindex="-1">{{ content | safe }}</main>
   {% include "partials/site-footer.njk" %}
   {% if site.gaId %}
   {% include "partials/consent-banner.njk" %}
-  <script src="/js/consent.js" defer></script>
+  <script src="/js/consent.js" data-ga-id="{{ site.gaId }}" defer></script>
   {% endif %}
 </body>
 </html>

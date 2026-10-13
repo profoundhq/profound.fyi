@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
 <article class="page">
-  {% if showTitle != false %}<h1>{{ title }}</h1>{% endif %}
+  <h1{% if showTitle == false %} class="visually-hidden"{% endif %}>{{ title }}</h1>
   {{ content | safe }}
   {% if updated %}<p class="entry-meta">Last updated {{ updated | readableDate }}</p>{% endif %}
 </article>

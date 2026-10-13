@@ -19,7 +19,8 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
-h1 { font-size: 64px; }
+/* Slide <h1>s render as h2.slide-title, because the page has its own <h1> */
+h2.slide-title { font-size: 64px; }
 h2 { font-size: 46px; }
 h3 { font-size: 36px; }
 
@@ -45,7 +46,7 @@ section.lead {
   justify-content: center;
 }
 
-section.lead h1 {
+section.lead h2.slide-title {
   font-size: 80px;
 }
 

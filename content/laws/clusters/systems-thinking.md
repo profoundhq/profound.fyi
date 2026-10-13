@@ -8,6 +8,6 @@ entries: [sociotechnical-systems, ashbys-law-of-requisite-variety, beers-viable-
 
 *Ways of seeing systems whole.*
 
-### Why these together
+## Why these together
 
 Tavistock named the sociotechnical insight. Cybernetics formalised it (Ashby, Beer). Forrester gave it modelling tools. Senge popularised it. Cynefin distinguishes the problem types. ToC focuses on constraints. Wicked Problems acknowledges the limits. Together they cover the main schools of systems thinking as they apply to software organisations.

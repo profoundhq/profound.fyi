@@ -277,7 +277,7 @@ function renderResults(target, totals, style) {
     const restorePrompt = document.querySelector(".cs-restore-prompt");
     if (restorePrompt) restorePrompt.hidden = true;
     updateCounter(form);
-    form.scrollIntoView({ behavior: "smooth", block: "start" });
+    form.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   });
   actions.appendChild(reset);
   target.appendChild(actions);
@@ -290,7 +290,7 @@ function renderResults(target, totals, style) {
   if (restorePrompt) restorePrompt.hidden = true;
 
   target.hidden = false;
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 }
 
 // --- URL helpers ----------------------------------------------------------
