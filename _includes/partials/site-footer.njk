@@ -1,6 +1,10 @@
 <footer class="site-footer">
   <div class="site-inner">
     <span>Made with 🧡 🌳 🫖 &amp; 🤖 by Benedict Steele</span>
-    <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.</span>
+    <span>Licensed under <a href="{{ site.license }}" rel="license noopener noreferrer">CC BY-SA 4.0</a>.</span>
+    <span class="site-footer-links">
+      <a href="/privacy/">Privacy</a>
+      {% if site.gaId %}<button type="button" class="link-button" data-consent-open hidden>Cookie settings</button>{% endif %}
+    </span>
   </div>
 </footer>

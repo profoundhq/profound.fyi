@@ -57,6 +57,9 @@ export function transform(text) {
     if (isTier && slugs.length) head += `\nentries: [${slugs.join(", ")}]`;
   }
 
+  // The page title is the <h1>, so a cluster's first heading must be an <h2>
+  if (isCluster) lines = lines.map((line) => line.replace(/^###\s/, "## "));
+
   const body = lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
   return `---\n${head}\n---\n\n${body}\n`;
 }

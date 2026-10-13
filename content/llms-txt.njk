@@ -1,0 +1,25 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+Written by {{ site.author }}. Licensed under CC BY-SA 4.0 unless a playbook states otherwise.
+
+## Playbooks
+{% for playbook in collections.playbooks %}
+- [{{ playbook.data.title }}]({{ site.url }}{{ playbook.url }}){% if playbook.data.description %}: {{ playbook.data.description | safe }}{% endif %}
+{%- endfor %}
+
+## Reference
+
+- [Laws of Software Engineering]({{ site.url }}/laws/): Laws, principles, patterns, and practices, with how to use each one and how it gets misused.
+- [Tools]({{ site.url }}/tools/): Self-assessments and instruments.
+- [Speaking]({{ site.url }}/talks/): Talks and slides.
+
+## About
+
+- [About]({{ site.url }}/about/): What this site is.
+- [Bio]({{ site.url }}/bio/): The author.
