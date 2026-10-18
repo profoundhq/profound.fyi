@@ -12,7 +12,7 @@ The playbooks are guides to practices that have worked in more than one organisa
 
 It is opinionated. Each page says how much evidence is behind it.
 
-Maintained by [Benedict Steele](https://www.linkedin.com/in/benedictsteele/).
+Maintained by [Benedict Steele](https://www.linkedin.com/in/benedictsteele/). To get in touch, use the [contact form](/contact/).
 
 <div class="about-pointers">
   <div class="about-pointer">
