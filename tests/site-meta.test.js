@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import markdownIt from "markdown-it";
-import { excerpt, breadcrumbs, visibleBreadcrumbs, structuredData } from "../lib/site-meta.js";
+import { excerpt, breadcrumbs, visibleBreadcrumbs, structuredData, lawSummary } from "../lib/site-meta.js";
 import { accessibleTables } from "../lib/markdown-tables.js";
 
 const site = { title: "Profound", author: "A", license: "https://l", url: "https://x.test" };
@@ -74,4 +74,48 @@ test("tables get column scopes, a hidden caption, and a scrollable region", () =
   assert.match(html, /<caption class="visually-hidden">Costs &amp; risks<\/caption>\n<thead>/);
   assert.match(html, /<div class="table-scroll" role="region" aria-label="Costs &amp; risks" tabindex="0">\n<table>/);
   assert.match(html, /<\/table>\n<\/div>/);
+});
+
+const howTo = (text) => `**How to use it.** ${text}\n\n**How it gets misused.** Something else.\n`;
+
+test("lawSummary adds the first 'How to use it' sentence to a short front", () => {
+  assert.equal(
+    lawSummary({ front: "Visible mess invites more mess.", body: howTo("Fix small things visibly. Tolerated mess teaches the next person what is acceptable.") }),
+    "Visible mess invites more mess. Fix small things visibly.",
+  );
+});
+
+test("lawSummary keeps a short front alone when the addition would run long", () => {
+  const front = "Work expands to fill the time you give it.";
+  assert.equal(lawSummary({ front, body: howTo(`${"Very ".repeat(30)}long.`) }), front);
+  assert.equal(lawSummary({ front, body: "No usage note here." }), front);
+});
+
+test("lawSummary cuts a long front at its first colon or full stop", () => {
+  assert.equal(
+    lawSummary({ front: "Five rules for designing object-oriented code: each class does one thing, code should be open to extension but closed to modification, subclasses should be substitutable, interfaces should be small, and code should depend on abstractions rather than specifics." }),
+    "Five rules for designing object-oriented code.",
+  );
+  assert.equal(
+    lawSummary({ front: "Twelve practices for building software-as-a-service applications that are portable, scalable, and operable. Codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, and admin processes." }),
+    "Twelve practices for building software-as-a-service applications that are portable, scalable, and operable.",
+  );
+});
+
+test("lawSummary leaves a front of reasonable length as it is", () => {
+  const front = "A front that is already a comfortable length for a search result snippet, so nothing changes.";
+  assert.equal(lawSummary({ front, body: howTo("Do a thing.") }), front);
+});
+
+test("lawSummary falls back to a word-boundary cut when there is no clean break", () => {
+  const out = lawSummary({ front: "word ".repeat(60).trim() });
+  assert.ok(out.length <= 160);
+  assert.ok(out.endsWith("word..."));
+});
+
+test("lawSummary keeps as many whole sentences as fit", () => {
+  assert.equal(
+    lawSummary({ front: "A way of seeing DevOps as a whole. Optimise flow from idea to production. Amplify feedback from production back to development. Build a culture of continuous experimentation and learning." }),
+    "A way of seeing DevOps as a whole. Optimise flow from idea to production. Amplify feedback from production back to development.",
+  );
 });
