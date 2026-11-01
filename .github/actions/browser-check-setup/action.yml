@@ -1,0 +1,21 @@
+name: Set up the browser check
+description: Node from .nvmrc, the project's dependencies, and Playwright with Chromium for scripts/check-csp.mjs
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
+    # Playwright is not a project dependency, so Netlify builds never
+    # download a browser. CI installs a pinned version for the run only.
+    - name: Install Playwright and Chromium
+      shell: bash
+      env:
+        PLAYWRIGHT_VERSION: 1.63.0
+      run: |
+        npm install --no-save "playwright@$PLAYWRIGHT_VERSION"
+        npx playwright install --with-deps chromium

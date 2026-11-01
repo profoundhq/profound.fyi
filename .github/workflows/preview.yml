@@ -1,0 +1,54 @@
+# Checks each Netlify deploy preview in Chromium once Netlify says it is
+# ready, so the check sees the real site with Netlify's own headers.
+#
+# GitHub runs status-triggered workflows from main, never from the pull
+# request, so this job never runs code from the PR with its write token.
+# It reports back as a commit status on the PR's commit, because a run
+# triggered this way is not attached to the PR on its own.
+name: Preview check
+
+on: status
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  preview:
+    name: Browser CSP check (preview)
+    if: github.event.context == 'netlify/profoundfyi/deploy-preview' && github.event.state == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PREVIEW_URL: ${{ github.event.target_url }}
+      SHA: ${{ github.event.sha }}
+      GH_TOKEN: ${{ github.token }}
+      CONTEXT: browser-check/preview
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Accept only this site's preview URLs
+        run: |
+          if [[ ! "$PREVIEW_URL" =~ ^https://deploy-preview-[0-9]+--profoundfyi\.netlify\.app/?$ ]]; then
+            echo "::error::Unexpected preview URL: $PREVIEW_URL"
+            exit 1
+          fi
+      - name: Report the check as running
+        run: gh api "repos/$GITHUB_REPOSITORY/statuses/$SHA" -f state=pending -f context="$CONTEXT" -f target_url="$RUN_URL" -f description="Checking the preview in Chromium"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/browser-check-setup
+      - name: Check the preview for CSP violations
+        id: check
+        run: npm run check:csp -- "$PREVIEW_URL"
+      - name: Report the result
+        if: always()
+        env:
+          OUTCOME: ${{ steps.check.outcome }}
+        run: |
+          if [ "$OUTCOME" = "success" ]; then
+            state=success; description="No CSP violations on the preview"
+          else
+            state=failure; description="The preview check failed. See the run for details"
+          fi
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$SHA" -f state="$state" -f context="$CONTEXT" -f target_url="$RUN_URL" -f description="$description"

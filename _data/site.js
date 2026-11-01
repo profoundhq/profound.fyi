@@ -9,6 +9,9 @@ export default {
   locale: "en_GB",
   gaId: process.env.GA_ID || "",
   currentYear: new Date().getFullYear(),
+  // The commit this build came from, published at /version.json so a check
+  // can tell when a deploy has gone live. Netlify sets COMMIT_REF.
+  commit: process.env.COMMIT_REF || process.env.GITHUB_SHA || "local",
   // security.txt must expire, so each build renews it for a year
   buildYearAhead: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().replace(/\.\d+Z$/, "Z"),
 };
