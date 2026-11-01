@@ -1,0 +1,10 @@
+{%- set trail = { url: page.url, title: title, playbook: playbook, playbookTitle: playbookTitle, parent: crumbParent, siteUrl: site.url } | visibleBreadcrumbs -%}
+{%- if trail.length -%}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {%- for crumb in trail %}
+    <li>{% if loop.last %}<span aria-current="page">{{ crumb.name }}</span>{% else %}<a href="{{ crumb.url }}">{{ crumb.name }}</a>{% endif %}</li>
+    {%- endfor %}
+  </ol>
+</nav>
+{%- endif -%}

@@ -60,6 +60,13 @@ export default {
 - Collections: `sitemapPages` (everything with a URL except `sitemap.xml`/`robots.txt`), `playbooks` (sorted by `order` from each `index.*`), `tools` (sorted by `order` from each `.njk`)
 - Tag-based collections (auto-built from `tags: [...]` in 11tydata files): `writing`, `talks`
 
+### Page metadata (`lib/site-meta.js`, used by `layouts/base.njk`)
+
+- `description` falls back to `summary`, then `front`, then the first prose paragraph (`excerpt` filter), then `site.description`
+- `robots` in frontmatter emits `<meta name="robots">` (e.g. `robots: noindex` on `404.md`). A `noindex` page gets no JSON-LD
+- Breadcrumbs: `partials/breadcrumbs.njk` shows the trail, and the JSON-LD `BreadcrumbList` repeats it, only on pages at least two levels below home, so the two always match. Set `crumbParent: { name, url }` (site-relative) to add a step between section and page, as `content/laws/entries/entries.11tydata.js` does for tiers
+- Root files: `robots.txt` (with `Content-Signal`), `llms.txt`, `/.well-known/security.txt` (renews `Expires` each build), and `/.well-known/gpc.json` are Nunjucks templates in `content/`. Static files in `public/` copy to the site root. Security headers and the CSP live in `netlify.toml`, so any new third-party script, frame, or font origin needs adding there
+
 ### CSS / JS
 
 - CSS is hand-authored, split into `tokens.css` → `base.css` → `layout.css` → `components.css` (loaded in that order from `layouts/base.njk`). No build step.

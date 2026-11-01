@@ -663,12 +663,6 @@
 
 /* Software Laws ----------------------------------------------------------- */
 
-.laws-crumb {
-  color: var(--colour-muted);
-  font-size: var(--type-small);
-  margin-bottom: var(--space-2);
-}
-
 /* Laws pages can be wider than the text measure so card grids have room.
    Prose inside them keeps to the measure. */
 .page.laws {

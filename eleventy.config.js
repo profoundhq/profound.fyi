@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import { Marp } from "@marp-team/marp-core";
-import { excerpt, structuredData } from "./lib/site-meta.js";
+import { excerpt, structuredData, visibleBreadcrumbs } from "./lib/site-meta.js";
 import { accessibleTables } from "./lib/markdown-tables.js";
 
 // Marp settings that Eleventy strips out as frontmatter and that need
@@ -39,6 +39,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("excerpt", excerpt);
   eleventyConfig.addFilter("structuredData", structuredData);
+  eleventyConfig.addFilter("visibleBreadcrumbs", visibleBreadcrumbs);
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Intl.DateTimeFormat("en-GB", {
