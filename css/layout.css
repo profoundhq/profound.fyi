@@ -121,3 +121,36 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+.breadcrumbs {
+  margin-bottom: var(--space-5);
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li + li::before {
+  content: "/" / "";
+  margin-inline-end: var(--space-2);
+}
+
+/* Keeps each link at least 24px tall, the minimum target size. The current
+   page gets the same padding so every step sits on one baseline. */
+.breadcrumbs a,
+.breadcrumbs [aria-current] {
+  display: inline-block;
+  padding-block: var(--space-1);
+}
+
+.breadcrumbs [aria-current] {
+  color: var(--colour-fg);
+}

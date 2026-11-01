@@ -1,10 +1,8 @@
 ---
 layout: layouts/base.njk
 ---
-{% set tierSlug = (tier | lower) + "s" %}
 {% set icon = slug | lawIcon %}
 <article class="page laws law-entry">
-  <p class="laws-crumb"><a href="/laws/">Laws of Software Engineering</a> · <a href="/laws/tiers/{{ tierSlug }}/">{{ tier }}</a></p>
 
   <div class="law-pair">
     <section class="law-face law-face-front">

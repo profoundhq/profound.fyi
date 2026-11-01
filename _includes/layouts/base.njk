@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -43,12 +44,16 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
-  <script type="application/ld+json">{{ { url: page.url, title: title, description: pageDescription, updated: updated, date: date, playbook: playbook, playbookTitle: playbookTitle, site: site } | structuredData | safe }}</script>
+  {% set jsonLd = { url: page.url, title: title, description: pageDescription, updated: updated, date: date, playbook: playbook, playbookTitle: playbookTitle, parent: crumbParent, robots: robots, site: site } | structuredData %}
+  {% if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   {% include "partials/site-header.njk" %}
-  <main id="main" tabindex="-1">{{ content | safe }}</main>
+  <main id="main" tabindex="-1">
+    {% include "partials/breadcrumbs.njk" %}
+    {{ content | safe }}
+  </main>
   {% include "partials/site-footer.njk" %}
   {% if site.gaId %}
   {% include "partials/consent-banner.njk" %}

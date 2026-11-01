@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import markdownIt from "markdown-it";
-import { excerpt, breadcrumbs, structuredData } from "../lib/site-meta.js";
+import { excerpt, breadcrumbs, visibleBreadcrumbs, structuredData } from "../lib/site-meta.js";
 import { accessibleTables } from "../lib/markdown-tables.js";
 
 const site = { title: "Profound", author: "A", license: "https://l", url: "https://x.test" };
@@ -36,7 +36,32 @@ test("breadcrumbs do not repeat a landing or section page", () => {
 test("structured data is a WebSite on the home page and an Article elsewhere", () => {
   assert.equal(JSON.parse(structuredData({ url: "/", site })) ["@graph"][0]["@type"], "WebSite");
   const types = JSON.parse(structuredData({ url: "/about/", title: "About", site }))["@graph"].map((n) => n["@type"]);
-  assert.deepEqual(types, ["Article", "BreadcrumbList"]);
+  assert.deepEqual(types, ["Article"]);
+});
+
+test("only nested pages carry a breadcrumb trail, so it matches what the page shows", () => {
+  const top = JSON.parse(structuredData({ url: "/about/", title: "About", site }))["@graph"].map((n) => n["@type"]);
+  assert.deepEqual(top, ["Article"]);
+  const nested = JSON.parse(structuredData({ url: "/laws/solid/", title: "SOLID", site }))["@graph"].map((n) => n["@type"]);
+  assert.deepEqual(nested, ["Article", "BreadcrumbList"]);
+});
+
+test("visibleBreadcrumbs returns the trail only when it has more than two steps", () => {
+  assert.deepEqual(visibleBreadcrumbs({ url: "/about/", title: "About", siteUrl: "https://x.test" }), []);
+  const trail = visibleBreadcrumbs({ url: "/laws/solid/", title: "SOLID", siteUrl: "https://x.test" });
+  assert.deepEqual(trail.map((c) => [c.name, c.url]), [["Home", "/"], ["Laws", "/laws/"], ["SOLID", "/laws/solid/"]]);
+});
+
+test("a parent step sits between the section and the page", () => {
+  const parent = { name: "Principles", url: "/laws/tiers/principles/" };
+  const trail = visibleBreadcrumbs({ url: "/laws/solid/", title: "SOLID", parent, siteUrl: "https://x.test" });
+  assert.deepEqual(trail.map((c) => c.url), ["/", "/laws/", "/laws/tiers/principles/", "/laws/solid/"]);
+  const graph = JSON.parse(structuredData({ url: "/laws/solid/", title: "SOLID", parent, site }))["@graph"];
+  assert.equal(graph[1].itemListElement[2].item, "https://x.test/laws/tiers/principles/");
+});
+
+test("a noindex page gets no structured data", () => {
+  assert.equal(structuredData({ url: "/404.html", title: "Page not found", robots: "noindex", site }), "");
 });
 
 test("structured data cannot close its script element", () => {

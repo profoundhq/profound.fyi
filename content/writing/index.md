@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Writing
+description: Where to find Benedict Steele's writing, which for now lives on LinkedIn as articles.
 tags: []
 eleventyExcludeFromCollections: true
 permalink: /writing/
