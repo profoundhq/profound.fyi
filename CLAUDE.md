@@ -10,6 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
 - `scripts/sync-laws.sh [source-path]` — sync Software Laws from the vault (`Projects/Profound/Software Laws`) into `content/laws/` (one-way). Each note goes through `scripts/laws-transform.mjs`: layouts map to `laws-*`, the card's `## Front` moves into a `front:` field, and tier link lists become an ordered `entries:` field. Icons are `images/laws/<slug>.svg` (extracted from the printed deck; entries without one show a lettered disc)
 - `npm test` — Node test runner over `tests/`
+- `GA_ID=G-91HQ81WR67 npm run build && npm run check:csp` — loads the talk page and the home page (accepting analytics) in Chromium with the headers from `netlify.toml`, and fails on any CSP violation. Needs network access and Playwright (not a dependency). `npm test` also fails if a template adds a third-party `<script>` or `<iframe>` host the CSP does not allow
 
 Node 20 is required (`.nvmrc`). Netlify builds on push to `main` (`netlify.toml`).
 
@@ -65,7 +66,7 @@ export default {
 - `description` falls back to `summary`, then `front`, then the first prose paragraph (`excerpt` filter), then `site.description`
 - `robots` in frontmatter emits `<meta name="robots">` (e.g. `robots: noindex` on `404.md`). A `noindex` page gets no JSON-LD
 - Breadcrumbs: `partials/breadcrumbs.njk` shows the trail, and the JSON-LD `BreadcrumbList` repeats it, only on pages at least two levels below home, so the two always match. Set `crumbParent: { name, url }` (site-relative) to add a step between section and page, as `content/laws/entries/entries.11tydata.js` does for tiers
-- Root files: `robots.txt` (with `Content-Signal`), `llms.txt`, `/.well-known/security.txt` (renews `Expires` each build), and `/.well-known/gpc.json` are Nunjucks templates in `content/`. Static files in `public/` copy to the site root. Security headers and the CSP live in `netlify.toml`, so any new third-party script, frame, or font origin needs adding there
+- Root files: `robots.txt` (with `Content-Signal`), `llms.txt`, `/.well-known/security.txt` (renews `Expires` each build), and `/.well-known/gpc.json` are Nunjucks templates in `content/`. Static files in `public/` copy to the site root. Security headers and the CSP live in `netlify.toml`, so any new third-party script, frame, or font origin needs adding there. `lib/netlify-headers.js` reads them for the tests and `check:csp`
 
 ### CSS / JS
 
