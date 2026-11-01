@@ -1,6 +1,8 @@
 [build]
   publish = "_site"
-  command = "npm run build"
+  # Tests run first, so a failing test stops the deploy and the live site
+  # keeps its last good version
+  command = "npm test && npm run build"
 
 [build.environment]
   NODE_VERSION = "20"

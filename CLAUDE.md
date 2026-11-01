@@ -9,10 +9,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run clean` — removes `_site/`
 - `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
 - `scripts/sync-laws.sh [source-path]` — sync Software Laws from the vault (`Projects/Profound/Software Laws`) into `content/laws/` (one-way). Each note goes through `scripts/laws-transform.mjs`: layouts map to `laws-*`, the card's `## Front` moves into a `front:` field, and tier link lists become an ordered `entries:` field. Icons are `images/laws/<slug>.svg` (extracted from the printed deck; entries without one show a lettered disc)
-- `npm test` — Node test runner over `tests/`
+- `npm test` — Node test runner over `tests/`. Netlify runs it before every build (`npm test && npm run build`), so a failing test blocks the deploy. The script lists files with shell globs because Node 20 (what Netlify uses) does not expand `**` in `node --test`
 - `GA_ID=G-91HQ81WR67 npm run build && npm run check:csp` — loads the talk page and the home page (accepting analytics) in Chromium with the headers from `netlify.toml`, and fails on any CSP violation. Needs network access and Playwright (not a dependency). `npm test` also fails if a template adds a third-party `<script>` or `<iframe>` host the CSP does not allow
 
-Node 20 is required (`.nvmrc`). Netlify builds on push to `main` (`netlify.toml`).
+Node 20 is required (`.nvmrc`, and `NODE_VERSION` in `netlify.toml`). Test changes to the test script on Node 20, since newer Node accepts patterns that Node 20 rejects. Netlify builds on push to `main` (`netlify.toml`).
 
 ## Architecture
 
