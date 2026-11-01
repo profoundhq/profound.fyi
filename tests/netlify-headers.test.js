@@ -75,3 +75,11 @@ test("the site's CSP allows every third-party script and frame in the source", a
   assert.ok(found >= 2, "expected to find the Speaker Deck frame and the GA script");
   assert.deepEqual(blocked, []);
 });
+
+// Netlify serves unknown extensions as application/octet-stream, and with
+// nosniff the browser has no reason to treat the manifest as one
+test("the web app manifest is served with its own media type", async () => {
+  const fs = await import("node:fs");
+  const rules = parseHeaders(fs.readFileSync("netlify.toml", "utf8"));
+  assert.equal(headersFor(rules, "/site.webmanifest")["Content-Type"], "application/manifest+json");
+});
