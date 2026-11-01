@@ -13,7 +13,7 @@ speakers:
     url: https://www.linkedin.com/in/benedictsteele/
 ---
 
-## Abstract
+## Original abstract
 
 A couple of years ago, we (a public sector regulator) read Team Topologies. Ran the workshops. Fell in love with the book. Teams identified themselves as stream-aligned, platform, and enabling. We had the labels, the energy, and the intent.
 
