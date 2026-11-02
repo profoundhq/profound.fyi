@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { transform, slugifyFilename, slugFromBasename } from "../scripts/obsidian-links.mjs";
+import { transform, slugifyFilename, slugFromBasename, rewriteSiteUrls } from "../scripts/obsidian-links.mjs";
 
 const notes = new Map([
   ["core-thesis", "/playbooks/demo/core-thesis/"],
@@ -83,4 +83,33 @@ test("slugs strip hyphen or space prefixes and hyphenate spaces", () => {
   assert.equal(slugFromBasename("02 The Core Thesis"), "the-core-thesis");
   assert.equal(slugFromBasename("10-core-thesis"), "core-thesis");
   assert.equal(slugFromBasename("CHANGELOG"), "changelog");
+});
+
+// Site links in a note, rewritten to this playbook's current URLs
+const site = (body) => rewriteSiteUrls(body, "demo", "https://profound.fyi");
+
+test("old-style /artefacts/ and /framework/ links move under the playbook", () => {
+  assert.equal(site("[Pack](/artefacts/underwriting-pack/)"), "[Pack](/playbooks/demo/artefacts/underwriting-pack/)");
+  assert.equal(site("[Thesis](/framework/10-core-thesis/)"), "[Thesis](/playbooks/demo/core-thesis/)");
+});
+
+test("a link that already has the playbook path is left alone, not doubled", () => {
+  assert.equal(site("[Pack](/playbooks/demo/artefacts/underwriting-pack/)"), "[Pack](/playbooks/demo/artefacts/underwriting-pack/)");
+});
+
+test("a full profound.fyi link becomes a site link, so it is never doubled and works on previews", () => {
+  assert.equal(
+    site("The [Underwriting Pack](https://profound.fyi/playbooks/demo/artefacts/underwriting-pack/) drafts it."),
+    "The [Underwriting Pack](/playbooks/demo/artefacts/underwriting-pack/) drafts it.",
+  );
+  assert.equal(site("[Pack](https://profound.fyi/artefacts/underwriting-pack/)"), "[Pack](/playbooks/demo/artefacts/underwriting-pack/)");
+});
+
+test("links to other sites and relative links are untouched", () => {
+  assert.equal(site("[x](https://example.com/artefacts/x/)"), "[x](https://example.com/artefacts/x/)");
+  assert.equal(site("[x](notes/artefacts/x/)"), "[x](notes/artefacts/x/)");
+});
+
+test("site URLs inside code are untouched", () => {
+  assert.equal(site("Run `curl /artefacts/x/` first."), "Run `curl /artefacts/x/` first.");
 });
