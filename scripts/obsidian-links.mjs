@@ -5,6 +5,8 @@
 //   node scripts/obsidian-links.mjs <slug> <source-path> <attachments-path> <source-file> <file>
 //
 // Handles:
+//   site links: /artefacts/x/, /framework/NN-x/, and full https://profound.fyi
+//   links become /playbooks/<slug>/... (see rewriteSiteUrls)
 //   [[Note]], [[Note|Alias]], [[Note#Heading]]  -> [text](/playbooks/<slug>/note/)
 //   ![[image.png]], ![[image.png|alt]]          -> ![alt](/images/playbooks/<slug>/image.png)
 //   ![alt](relative/image.png)                  -> same, with the file copied across
@@ -154,6 +156,29 @@ export function transform(body, { resolveNote, resolveImage, warn = () => {} }) 
   );
 }
 
+// Site links written in a note, moved to this playbook's current URLs:
+//   /artefacts/x/            -> /playbooks/<slug>/artefacts/x/
+//   /framework/NN-x/         -> /playbooks/<slug>/x/
+//   https://profound.fyi/... -> /... (then the rules above)
+// Only whole link targets are rewritten, so a URL that already has the
+// playbook path is never rewritten a second time. The earlier sed rules
+// matched /artefacts/ anywhere and doubled /playbooks/<slug>/ in full URLs.
+export function rewriteSiteUrls(body, slug, siteUrl) {
+  const rewrite = (url) => {
+    let target = siteUrl && url.startsWith(`${siteUrl}/`) ? url.slice(siteUrl.length) : url;
+    if (!target.startsWith("/")) return url;
+    target = target
+      .replace(/^\/framework\/[0-9]+-([a-z-]+)\//, `/playbooks/${slug}/$1/`)
+      .replace(/^\/artefacts\/([a-z-]+)\//, `/playbooks/${slug}/artefacts/$1/`);
+    return target;
+  };
+  return mapProse(body, (prose) =>
+    prose
+      .replace(/\]\(([^)\s]+)\)/g, (match, url) => `](${rewrite(url)})`)
+      .replace(/(href=")([^"]+)(")/g, (match, open, url, close) => `${open}${rewrite(url)}${close}`),
+  );
+}
+
 function findFile(dir, name) {
   const wanted = path.basename(name).toLowerCase();
   const stack = [dir];
@@ -167,6 +192,8 @@ function findFile(dir, name) {
     }
   }
 }
+
+const SITE_URL = "https://profound.fyi";
 
 function main([slug, src, attachments, sourceFile, file]) {
   const index = buildNoteIndex(src, slug);
@@ -191,7 +218,7 @@ function main([slug, src, attachments, sourceFile, file]) {
   const fm = text.match(/^---\n[\s\S]*?\n---\n/);
   const head = fm ? fm[0] : "";
   const body = text.slice(head.length);
-  fs.writeFileSync(file, head + transform(body, { resolveNote, resolveImage, warn }));
+  fs.writeFileSync(file, head + transform(rewriteSiteUrls(body, slug, SITE_URL), { resolveNote, resolveImage, warn }));
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

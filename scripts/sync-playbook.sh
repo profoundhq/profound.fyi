@@ -26,8 +26,10 @@
 #                 permalink contains /artefacts/, otherwise omitted
 #   - Drops a leading H1, since the layout renders the title.
 #   - Body transforms: em-dash -> hyphen, "agentic AI" -> "Agentic AI".
-#   - URL rewrites: /framework/NN-slug/ -> /playbooks/<slug>/slug/,
-#     /artefacts/x/ -> /playbooks/<slug>/artefacts/x/.
+#   - URL rewrites (scripts/obsidian-links.mjs): /framework/NN-slug/ ->
+#     /playbooks/<slug>/slug/, /artefacts/x/ -> /playbooks/<slug>/artefacts/x/,
+#     and full https://profound.fyi links become site links. Only whole link
+#     targets are rewritten, so a correct URL is never doubled.
 #   - Obsidian syntax (scripts/obsidian-links.mjs): [[wikilinks]] become
 #     site links, and ![[image.png]] embeds and relative Markdown images are
 #     copied into images/playbooks/<slug>/. Unresolved links are warned about
@@ -232,14 +234,7 @@ write_file() {
       | sed -e 's/—/-/g' -e 's/agentic AI/Agentic AI/g'
   } > "$dst"
 
-  sed -i.bak -E \
-    -e "s|/framework/[0-9]+-([a-z-]+)/|/playbooks/$SLUG/\\1/|g" \
-    -e "s|/artefacts/([a-z-]+)/|/playbooks/$SLUG/artefacts/\\1/|g" \
-    "$dst"
-  rm -f "$dst.bak"
-
-  # Runs after the URL rewrites so its /playbooks/<slug>/artefacts/ links
-  # are not rewritten a second time.
+  # Site URL rewrites and Obsidian syntax, in one tested step
   node scripts/obsidian-links.mjs "$SLUG" "$SRC" "$ATTACHMENTS" "$src" "$dst"
 }
 
