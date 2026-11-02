@@ -35,7 +35,7 @@ Eleventy 3 (ESM, Nunjucks) static site. Layout in `eleventy.config.js`:
 - Output: `_site/`
 - Passthrough copies: `css/`, `js/`, `images/`
 
-### Three content shapes
+### Content shapes
 
 | Shape | Path pattern | Layout | Notes |
 | --- | --- | --- | --- |
