@@ -44,11 +44,17 @@ for (const page of pages) {
 const index = JSON.parse(read(".well-known/agent-skills/index.json"));
 for (const skill of index.skills) {
   const file = new URL(skill.url).pathname;
+  if (!fs.existsSync(path.join(site, file))) {
+    problems.push(`${skill.name}: the index points at ${file}, which the build did not produce`);
+    continue;
+  }
   const bytes = read(file);
   const digest = `sha256:${createHash("sha256").update(bytes).digest("hex")}`;
   check(digest === skill.digest, `${skill.name}: index digest ${skill.digest} does not match ${file} (${digest})`);
   const { data } = matter(bytes.toString());
   check(data.name === skill.name, `${skill.name}: SKILL.md name is ${data.name}`);
+  // The template's permalink and the code's name are set apart, so check they agree
+  check(file === `/.well-known/agent-skills/${skill.name}/SKILL.md`, `${skill.name}: served at ${file}, not under its own name`);
   check(data.description?.length > 0 && data.description.length <= 1024, `${skill.name}: description must be 1 to 1024 characters`);
 }
 

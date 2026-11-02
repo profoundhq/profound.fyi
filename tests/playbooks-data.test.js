@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import matter from "gray-matter";
-import { parseFields, extractPlays, buildPlaybooks, pageMarkdown, playbooksJson, playbookSkill, playbookSkillFiles } from "../lib/playbooks-data.js";
+import { parseFields, extractPlays, buildPlaybooks, pageMarkdown, playbooksJson, playbookSkill, playbookSkillFiles, skillPath, skillArchive } from "../lib/playbooks-data.js";
 
 const site = { url: "https://x.test", license: "https://creativecommons.org/licenses/by-sa/4.0/", author: "A. Author" };
 
@@ -122,10 +122,10 @@ const skillOf = (slug) => {
   return { book, md: playbookSkill(book, site) };
 };
 
-test("each playbook's skill is named after it and its description opens with the playbook's own words", () => {
+test("each playbook's skill is named after it, with the site prefix, and its description opens with the playbook's own words", () => {
   const { md } = skillOf("enabling-teams");
   const { data } = matter(md);
-  assert.equal(data.name, "enabling-teams");
+  assert.equal(data.name, "profound-enabling-teams");
   assert.ok(data.description.startsWith("Seven plays for people whose job is to help other teams gain a capability and then leave."));
   assert.match(data.description, /Agree the exit signal first/, "names its plays, so an assistant can match on them");
   assert.ok(data.description.length <= 1024);
@@ -141,7 +141,7 @@ test("a skill for a playbook of plays lists each play with its evidence and its 
 test("a skill for a framework says it is not a list of plays and starts from the first page", () => {
   const { md } = skillOf("okrs");
   const { data, content } = matter(md);
-  assert.equal(data.name, "okrs");
+  assert.equal(data.name, "profound-okrs");
   assert.match(content, /not a set of plays/);
   assert.match(content, /Start with \[The core thesis\]/);
   assert.match(content, /- \[Two functions\]\(https:\/\/x\.test\/playbooks\/okrs\/two-functions\.md\), `references\/two-functions\.md`: Objectives radiate intent/);
@@ -151,7 +151,14 @@ test("a skill for a framework says it is not a list of plays and starts from the
 test("playbookSkillFiles bundles SKILL.md and one reference file per page, named as the skill says", () => {
   const { book, md } = skillOf("okrs");
   const files = playbookSkillFiles(book, site);
-  assert.deepEqual(files.map((f) => f.name), ["okrs/SKILL.md", "okrs/references/the-core-thesis.md", "okrs/references/two-functions.md"]);
+  assert.deepEqual(files.map((f) => f.name), ["profound-okrs/SKILL.md", "profound-okrs/references/the-core-thesis.md", "profound-okrs/references/two-functions.md"]);
   assert.equal(files[0].data, md);
   assert.equal(matter(files[2].data).data.title, "Two functions");
+});
+
+test("a playbook skill's URL and download use its prefixed name", () => {
+  const { book } = skillOf("okrs");
+  assert.equal(skillPath(book), "/.well-known/agent-skills/profound-okrs/SKILL.md");
+  assert.equal(skillArchive(book), "/downloads/profound-okrs-skill.zip");
+  assert.equal(JSON.parse(playbooksJson([book], site)).playbooks[0].skill, "https://x.test/.well-known/agent-skills/profound-okrs/SKILL.md");
 });

@@ -24,8 +24,8 @@ test("crc32 matches the standard check values", () => {
 
 test("zip writes an archive that a standard reader extracts byte for byte", { skip: !hasPython && "python3 not available" }, () => {
   const files = [
-    { name: "software-laws/SKILL.md", data: "---\nname: software-laws\n---\n# Héllo\n" },
-    { name: "software-laws/references/laws.md", data: "# Laws\n" },
+    { name: "profound-software-laws/SKILL.md", data: "---\nname: profound-software-laws\n---\n# Héllo\n" },
+    { name: "profound-software-laws/references/laws.md", data: "# Laws\n" },
   ];
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "zip-test-"));
   const file = path.join(dir, "out.zip");

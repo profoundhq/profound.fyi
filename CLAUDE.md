@@ -79,21 +79,23 @@ export default {
 
 - `/laws.json` — every law (`content/laws-json.njk`)
 - `/laws/<slug>.md` — each law as Markdown with frontmatter (`content/laws-markdown.njk`), linked from the law page head with `rel="alternate"` via `markdownUrl` in `entries.11tydata.js`
-- `/.well-known/agent-skills/software-laws/SKILL.md` and `/.well-known/agent-skills/index.json` — the skill and its discovery index with a sha256 digest of the exact `SKILL.md` bytes. The `SKILL.md` template trims whitespace so the bytes match. The description is quoted YAML because it contains `: `
-- `/downloads/software-laws-skill.zip` — `SKILL.md` plus `references/laws.md` (every law in full), written by an `eleventy.after` hook with `lib/zip.js` (no archive dependency), for installing in Claude
+- `/.well-known/agent-skills/profound-software-laws/SKILL.md` and `/.well-known/agent-skills/index.json` — the skill and its discovery index with a sha256 digest of the exact `SKILL.md` bytes. The `SKILL.md` template trims whitespace so the bytes match. The description is quoted YAML because it contains `: `
+- `/downloads/profound-software-laws-skill.zip` — `SKILL.md` plus `references/laws.md` (every law in full), written by an `eleventy.after` hook with `lib/zip.js` (no archive dependency), for installing in Claude
 
 The Laws home page links these from `layouts/laws-home.njk`, not `content/laws/index.md`, which the vault sync overwrites. CORS and Markdown content types for these files are in `netlify.toml`.
 
-### Playbooks as data and the agent skill (`lib/playbooks-data.js`)
+### Playbooks as data and the agent skills (`lib/playbooks-data.js`)
 
 The `playbookRecords` collection (in `eleventy.config.js`) reads every playbook Markdown page, not decks or landing pages, using Eleventy's real URLs. Plays come from two places: a page that is itself a play (Enabling Teams, Jobs to Be Done) and `## Play:` sections (Creating Playbooks). Fields are the labelled paragraphs **When**, **The action** (or the older **The move**), **Forces**, **Signals**, **When not to**, **Instance**, and **Status**. A play with an Instance is `evidence: "instance"`, otherwise `"none"`. Template placeholders such as `[name the action]` are skipped. A playbook with no plays is a `framework`.
 
 - `/playbooks/<slug>/<page>.md` (and `/artefacts/` pages) — each page as Markdown with absolute links (`content/playbooks-markdown.njk`), linked from the page head via `markdownUrl` in `playbooks.11tydata.js`
 - `/playbooks.json` — every playbook, page, and play, with evidence counts
-- `/.well-known/agent-skills/<playbook>/SKILL.md` — one skill per playbook, named after it (`content/agent-skill-playbooks.njk`), all listed in the same discovery index as the laws skill (`lib/agent-skills.js`). The description opens with the playbook's `description` from its landing `index.njk`. A playbook of plays gets steps that check When not to and present a play with no instance as untested. A framework gets steps for reading a situation through it
-- `/downloads/<playbook>-skill.zip` — the skill plus one reference file per page, named as the skill's index says
+- `/.well-known/agent-skills/profound-<playbook>/SKILL.md` — one skill per playbook, named `profound-<playbook>` (`content/agent-skill-playbooks.njk`), all listed in the same discovery index as the laws skill (`lib/agent-skills.js`). The description opens with the playbook's `description` from its landing `index.njk`. A playbook of plays gets steps that check When not to and present a play with no instance as untested. A framework gets steps for reading a situation through it
+- `/downloads/profound-<playbook>-skill.zip` — the skill plus one reference file per page, named as the skill's index says
 
 The Playbooks home page (`content/playbooks/index.njk`) links each playbook's skill and these files.
+
+Every skill name carries the `profound-` prefix so it does not clash with other skills an assistant has installed. The name appears in the skill's frontmatter, its URL folder, its ZIP folder, and the page links. `check:built` fails if a skill is not served under its own name.
 
 ### Page metadata (`lib/site-meta.js`, used by `layouts/base.njk`)
 

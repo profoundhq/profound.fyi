@@ -70,6 +70,9 @@ test("skillMarkdown has valid frontmatter and an index line for every law", () =
   const { name, description } = data;
   assert.equal(typeof description, "string");
   assert.equal(name, SKILL.name);
+  assert.equal(name, "profound-software-laws");
+  assert.equal(SKILL.path, "/.well-known/agent-skills/profound-software-laws/SKILL.md");
+  assert.equal(SKILL.archive, "/downloads/profound-software-laws-skill.zip");
   assert.match(name, /^[a-z0-9-]{1,64}$/);
   assert.ok(description.length <= 1024, `description is ${description.length} characters`);
   for (const law of laws) assert.ok(md.includes(`[${law.title}](${law.markdownUrl})`), law.slug);

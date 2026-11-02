@@ -5,7 +5,7 @@ import { excerpt, structuredData, visibleBreadcrumbs } from "./lib/site-meta.js"
 import { accessibleTables } from "./lib/markdown-tables.js";
 import matter from "gray-matter";
 import { lawsJson, lawMarkdown, lawsReference, skillMarkdown, SKILL } from "./lib/laws-data.js";
-import { buildPlaybooks, pageMarkdown, playbooksJson, playbookSkill, playbookSkillFiles, skillPath, skillArchive } from "./lib/playbooks-data.js";
+import { buildPlaybooks, pageMarkdown, playbooksJson, playbookSkill, playbookSkillFiles, skillName, skillPath, skillArchive } from "./lib/playbooks-data.js";
 import { skillIndex } from "./lib/agent-skills.js";
 import { zip } from "./lib/zip.js";
 import site from "./_data/site.js";
@@ -74,7 +74,7 @@ export default function (eleventyConfig) {
     skillIndex(
       [
         { name: SKILL.name, path: SKILL.path, content: skillMarkdown(laws, site) },
-        ...books.map((book) => ({ name: book.slug, path: skillPath(book), content: playbookSkill(book, site) })),
+        ...books.map((book) => ({ name: skillName(book), path: skillPath(book), content: playbookSkill(book, site) })),
       ],
       site,
     ),
