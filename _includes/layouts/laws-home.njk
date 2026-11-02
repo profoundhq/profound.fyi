@@ -5,4 +5,8 @@ layout: layouts/base.njk
   <h1>{{ title }}</h1>
   {{ content | safe }}
   <p>{% include "partials/law-draw.njk" %}</p>
+
+  <h2>Use the laws with an AI assistant</h2>
+  <p>The <a href="/downloads/profound-software-laws-skill.zip">profound-software-laws skill</a> teaches an assistant to apply these entries to a real situation, including how each one gets misused. Add it in Claude under Settings, then Capabilities, then Skills. Agents can also find it at <a href="/.well-known/agent-skills/index.json">/.well-known/agent-skills/</a>.</p>
+  <p>Every entry is available as <a href="/laws.json">JSON</a>, and each page has a Markdown version at the same address ending in <code>.md</code>, such as <a href="/laws/brookss-law.md">/laws/brookss-law.md</a>.</p>
 </article>

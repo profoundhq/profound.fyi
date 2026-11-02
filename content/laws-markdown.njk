@@ -1,0 +1,9 @@
+---
+pagination:
+  data: lawRecords
+  size: 1
+  alias: law
+permalink: "/laws/{{ law.slug }}.md"
+eleventyExcludeFromCollections: true
+---
+{{ law | lawMarkdown(lawRecords) | safe -}}

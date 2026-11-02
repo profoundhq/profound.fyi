@@ -9,7 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run clean` — removes `_site/`
 - `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
 - `scripts/sync-laws.sh [source-path]` — sync Software Laws from the vault (`Projects/Profound/Software Laws`) into `content/laws/` (one-way). Each note goes through `scripts/laws-transform.mjs`: layouts map to `laws-*`, the card's `## Front` moves into a `front:` field, and tier link lists become an ordered `entries:` field. Icons are `images/laws/<slug>.svg` (extracted from the printed deck; entries without one show a lettered disc)
-- `npm test` — Node test runner over `tests/`. Netlify runs it before every build (`npm test && npm run build`), so a failing test blocks the deploy. The script lists files with shell globs because Node 20 (what Netlify uses) does not expand `**` in `node --test`
+- `npm test` — Node test runner over `tests/`. Netlify runs it before every build (`npm test && npm run build && npm run check:built`), so a failing test blocks the deploy. The script lists files with shell globs because Node 20 (what Netlify uses) does not expand `**` in `node --test`
+- `npm run check:built` — after a build, checks the machine-readable files: every law and playbook page's Markdown parses, `/laws.json` and `/playbooks.json` are complete, and each agent skill's digest in the index matches its served `SKILL.md`. Netlify and CI both run it
 - `GA_ID=G-91HQ81WR67 npm run build && npm run check:csp` — loads five key pages (talk, home with analytics accepted, deck, tool, law) in Chromium with the headers from `netlify.toml`, and fails on any CSP violation. `npm run check:csp -- <url>` checks a deployed site instead, such as a deploy preview. The analytics hit is intercepted, so checks never count as visits. Needs network access and Playwright (not a dependency, CI installs it). `npm test` also fails if a template adds a third-party `<script>` or `<iframe>` host the CSP does not allow
 
 ## CI and deploys
@@ -35,7 +36,7 @@ Eleventy 3 (ESM, Nunjucks) static site. Layout in `eleventy.config.js`:
 - Output: `_site/`
 - Passthrough copies: `css/`, `js/`, `images/`
 
-### Three content shapes
+### Content shapes
 
 | Shape | Path pattern | Layout | Notes |
 | --- | --- | --- | --- |
@@ -71,6 +72,30 @@ export default {
 - `marpDeck` shortcode: `{% marpDeck "content/playbooks/<slug>/<name>.marp.md", "/playbooks/<slug>/<name>/" %}` embeds a deck inline on another Nunjucks page as a slide viewer (scrolls and swipes without JS, `js/deck.js` adds buttons, counter, and present mode). Print styles apply only on a deck's own page
 - Collections: `sitemapPages` (everything with a URL except `sitemap.xml`/`robots.txt`), `playbooks` (sorted by `order` from each `index.*`), `tools` (sorted by `order` from each `.njk`)
 - Tag-based collections (auto-built from `tags: [...]` in 11tydata files): `writing`, `talks`
+
+### Laws as data and the agent skill (`lib/laws-data.js`)
+
+`_data/lawRecords.js` reads every synced law entry and cluster once per build into records (front, how to use it, how it gets misused, tier and its definition, related, clusters, URLs). It throws if an entry lacks either note or has an unknown tier, so a bad sync fails the build. From those records:
+
+- `/laws.json` — every law (`content/laws-json.njk`)
+- `/laws/<slug>.md` — each law as Markdown with frontmatter (`content/laws-markdown.njk`), linked from the law page head with `rel="alternate"` via `markdownUrl` in `entries.11tydata.js`
+- `/.well-known/agent-skills/profound-software-laws/SKILL.md` and `/.well-known/agent-skills/index.json` — the skill and its discovery index with a sha256 digest of the exact `SKILL.md` bytes. The `SKILL.md` template trims whitespace so the bytes match. The description is quoted YAML because it contains `: `
+- `/downloads/profound-software-laws-skill.zip` — `SKILL.md` plus `references/laws.md` (every law in full), written by an `eleventy.after` hook with `lib/zip.js` (no archive dependency), for installing in Claude
+
+The Laws home page links these from `layouts/laws-home.njk`, not `content/laws/index.md`, which the vault sync overwrites. CORS and Markdown content types for these files are in `netlify.toml`.
+
+### Playbooks as data and the agent skills (`lib/playbooks-data.js`)
+
+The `playbookRecords` collection (in `eleventy.config.js`) reads every playbook Markdown page, not decks or landing pages, using Eleventy's real URLs. Plays come from two places: a page that is itself a play (Enabling Teams, Jobs to Be Done) and `## Play:` sections (Creating Playbooks). Fields are the labelled paragraphs **When**, **The action** (or the older **The move**), **Forces**, **Signals**, **When not to**, **Instance**, and **Status**. A play with an Instance is `evidence: "instance"`, otherwise `"none"`. Template placeholders such as `[name the action]` are skipped. A playbook with no plays is a `framework`.
+
+- `/playbooks/<slug>/<page>.md` (and `/artefacts/` pages) — each page as Markdown with absolute links (`content/playbooks-markdown.njk`), linked from the page head via `markdownUrl` in `playbooks.11tydata.js`
+- `/playbooks.json` — every playbook, page, and play, with evidence counts
+- `/.well-known/agent-skills/profound-<playbook>/SKILL.md` — one skill per playbook, named `profound-<playbook>` (`content/agent-skill-playbooks.njk`), all listed in the same discovery index as the laws skill (`lib/agent-skills.js`). The description opens with the playbook's `description` from its landing `index.njk`. A playbook of plays gets steps that check When not to and present a play with no instance as untested. A framework gets steps for reading a situation through it
+- `/downloads/profound-<playbook>-skill.zip` — the skill plus one reference file per page, named as the skill's index says
+
+The Playbooks home page (`content/playbooks/index.njk`) links each playbook's skill and these files.
+
+Every skill name carries the `profound-` prefix so it does not clash with other skills an assistant has installed. The name appears in the skill's frontmatter, its URL folder, its ZIP folder, and the page links. `check:built` fails if a skill is not served under its own name.
 
 ### Page metadata (`lib/site-meta.js`, used by `layouts/base.njk`)
 

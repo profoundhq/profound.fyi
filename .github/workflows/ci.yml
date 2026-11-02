@@ -52,5 +52,7 @@ jobs:
         run: |
           GA_ID=$(sed -n 's/^ *GA_ID = "\(.*\)"$/\1/p' netlify.toml)
           GA_ID="$GA_ID" npm run build
+      - name: Check the built laws data and agent skill
+        run: npm run check:built
       - name: Check for CSP violations
         run: npm run check:csp

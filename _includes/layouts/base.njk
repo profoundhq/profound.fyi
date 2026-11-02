@@ -11,6 +11,7 @@
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="describedby" href="/llms.txt" type="text/markdown">
+  {% if markdownUrl %}<link rel="alternate" type="text/markdown" href="{{ site.url }}{{ markdownUrl }}" title="{{ title }} (Markdown)">{% endif %}
   {% set pageDescription = description or summary or front or (page.rawInput | excerpt) or site.description %}
   {% set canonical = site.url + page.url %}
   {% if title and title != site.title %}

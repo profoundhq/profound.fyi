@@ -1,0 +1,9 @@
+---
+pagination:
+  data: collections.playbookPageEntries
+  size: 1
+  alias: entry
+permalink: "{{ entry.permalink }}"
+eleventyExcludeFromCollections: true
+---
+{{ entry | playbookPageMarkdown | safe -}}

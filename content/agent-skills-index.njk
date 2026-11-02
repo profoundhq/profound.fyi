@@ -1,0 +1,5 @@
+---
+permalink: /.well-known/agent-skills/index.json
+eleventyExcludeFromCollections: true
+---
+{{ lawRecords | agentSkillsIndex(collections.playbookRecords) | safe }}
