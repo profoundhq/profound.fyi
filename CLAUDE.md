@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
 - `scripts/sync-laws.sh [source-path]` — sync Software Laws from the vault (`Projects/Profound/Software Laws`) into `content/laws/` (one-way). Each note goes through `scripts/laws-transform.mjs`: layouts map to `laws-*`, the card's `## Front` moves into a `front:` field, and tier link lists become an ordered `entries:` field. Icons are `images/laws/<slug>.svg` (extracted from the printed deck; entries without one show a lettered disc)
 - `npm test` — Node test runner over `tests/`. Netlify runs it before every build (`npm test && npm run build && npm run check:built`), so a failing test blocks the deploy. The script lists files with shell globs because Node 20 (what Netlify uses) does not expand `**` in `node --test`
-- `npm run check:built` — after a build, checks the machine-readable laws files: every `/laws/<slug>.md` parses, `/laws.json` is complete, and the agent skill index digest matches the served `SKILL.md`. Netlify and CI both run it
+- `npm run check:built` — after a build, checks the machine-readable files: every law and playbook page's Markdown parses, `/laws.json` and `/playbooks.json` are complete, and each agent skill's digest in the index matches its served `SKILL.md`. Netlify and CI both run it
 - `GA_ID=G-91HQ81WR67 npm run build && npm run check:csp` — loads five key pages (talk, home with analytics accepted, deck, tool, law) in Chromium with the headers from `netlify.toml`, and fails on any CSP violation. `npm run check:csp -- <url>` checks a deployed site instead, such as a deploy preview. The analytics hit is intercepted, so checks never count as visits. Needs network access and Playwright (not a dependency, CI installs it). `npm test` also fails if a template adds a third-party `<script>` or `<iframe>` host the CSP does not allow
 
 ## CI and deploys
@@ -83,6 +83,17 @@ export default {
 - `/downloads/software-laws-skill.zip` — `SKILL.md` plus `references/laws.md` (every law in full), written by an `eleventy.after` hook with `lib/zip.js` (no archive dependency), for installing in Claude
 
 The Laws home page links these from `layouts/laws-home.njk`, not `content/laws/index.md`, which the vault sync overwrites. CORS and Markdown content types for these files are in `netlify.toml`.
+
+### Playbooks as data and the agent skill (`lib/playbooks-data.js`)
+
+The `playbookRecords` collection (in `eleventy.config.js`) reads every playbook Markdown page, not decks or landing pages, using Eleventy's real URLs. Plays come from two places: a page that is itself a play (Enabling Teams, Jobs to Be Done) and `## Play:` sections (Creating Playbooks). Fields are the labelled paragraphs **When**, **The action** (or the older **The move**), **Forces**, **Signals**, **When not to**, **Instance**, and **Status**. A play with an Instance is `evidence: "instance"`, otherwise `"none"`. Template placeholders such as `[name the action]` are skipped. A playbook with no plays is a `framework`.
+
+- `/playbooks/<slug>/<page>.md` (and `/artefacts/` pages) — each page as Markdown with absolute links (`content/playbooks-markdown.njk`), linked from the page head via `markdownUrl` in `playbooks.11tydata.js`
+- `/playbooks.json` — every playbook, page, and play, with evidence counts
+- `/.well-known/agent-skills/profound-playbooks/SKILL.md` — listed in the same discovery index as the laws skill (`lib/agent-skills.js` builds it). The skill tells assistants to present a play with no instance as untested
+- `/downloads/profound-playbooks-skill.zip` — the skill plus every play and framework page in full
+
+The Playbooks home page (`content/playbooks/index.njk`) links these.
 
 ### Page metadata (`lib/site-meta.js`, used by `layouts/base.njk`)
 

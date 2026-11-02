@@ -89,12 +89,16 @@ test("the web app manifest is served with its own media type", async () => {
 test("machine-readable files allow any origin and declare their types", async () => {
   const fs = await import("node:fs");
   const rules = parseHeaders(fs.readFileSync("netlify.toml", "utf8"));
-  for (const file of ["/laws.json", "/laws/brookss-law.md", "/.well-known/agent-skills/index.json", "/.well-known/agent-skills/software-laws/SKILL.md"]) {
+  for (const file of ["/laws.json", "/laws/brookss-law.md", "/playbooks.json", "/playbooks/okrs/two-functions.md", "/playbooks/creating-playbooks/artefacts/play-template.md", "/.well-known/agent-skills/index.json", "/.well-known/agent-skills/software-laws/SKILL.md", "/.well-known/agent-skills/profound-playbooks/SKILL.md"]) {
     assert.equal(headersFor(rules, file)["Access-Control-Allow-Origin"], "*", file);
   }
   assert.equal(headersFor(rules, "/laws/brookss-law.md")["Content-Type"], "text/markdown; charset=utf-8");
   assert.equal(headersFor(rules, "/.well-known/agent-skills/software-laws/SKILL.md")["Content-Type"], "text/markdown; charset=utf-8");
+  for (const file of ["/playbooks/okrs/two-functions.md", "/playbooks/creating-playbooks/artefacts/play-template.md"]) {
+    assert.equal(headersFor(rules, file)["Content-Type"], "text/markdown; charset=utf-8", file);
+  }
   assert.equal(headersFor(rules, "/laws/brookss-law/")["Access-Control-Allow-Origin"], undefined, "HTML pages stay closed");
+  assert.equal(headersFor(rules, "/playbooks/okrs/two-functions/")["Access-Control-Allow-Origin"], undefined, "playbook HTML stays closed");
 });
 
 test("every page advertises the agent skills index", async () => {

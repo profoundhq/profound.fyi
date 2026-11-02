@@ -2,4 +2,4 @@
 permalink: /.well-known/agent-skills/index.json
 eleventyExcludeFromCollections: true
 ---
-{{ lawRecords | skillMarkdown | skillIndex | safe }}
+{{ lawRecords | agentSkillsIndex(collections.playbookRecords) | safe }}

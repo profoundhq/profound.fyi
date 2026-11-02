@@ -1,6 +1,6 @@
-// Checks the machine-readable files in _site after a build: every law's
-// Markdown parses, laws.json is complete, and the agent skill's digest
-// matches the bytes served. Run after `npm run build`. CI runs it.
+// Checks the machine-readable files in _site after a build: every law and
+// playbook page's Markdown parses, laws.json and playbooks.json are
+// complete, and each agent skill's digest matches the bytes served. Run after `npm run build`. CI runs it.
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -26,6 +26,21 @@ for (const file of markdown) {
   }
 }
 
+const playbooks = JSON.parse(read("playbooks.json"));
+const pages = playbooks.playbooks.flatMap((b) => b.pages);
+const plays = playbooks.playbooks.flatMap((b) => b.plays);
+check(playbooks.plays.total === plays.length, `playbooks.json says ${playbooks.plays.total} plays but lists ${plays.length}`);
+check(plays.every((p) => p.when && p.action), "a play in playbooks.json has no When or action");
+for (const page of pages) {
+  const file = new URL(page.markdownUrl).pathname;
+  try {
+    const { data } = matter(read(file).toString());
+    check(data.title === page.title, `${file}: title is ${data.title}`);
+  } catch (error) {
+    problems.push(`${file}: missing, or frontmatter does not parse (${error.reason ?? error.message})`);
+  }
+}
+
 const index = JSON.parse(read(".well-known/agent-skills/index.json"));
 for (const skill of index.skills) {
   const file = new URL(skill.url).pathname;
@@ -41,4 +56,4 @@ if (problems.length) {
   console.error(problems.join("\n"));
   process.exit(1);
 }
-console.log(`Built files check out: ${markdown.length} law Markdown files, laws.json, and ${index.skills.length} agent skill with a matching digest.`);
+console.log(`Built files check out: ${markdown.length} law and ${pages.length} playbook Markdown files, laws.json, playbooks.json (${plays.length} plays), and ${index.skills.length} agent skills with matching digests.`);

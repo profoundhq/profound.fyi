@@ -1,0 +1,6 @@
+---
+permalink: /.well-known/agent-skills/profound-playbooks/SKILL.md
+eleventyExcludeFromCollections: true
+---
+{#- No whitespace around the output: index.json holds a digest of these exact bytes -#}
+{{ collections.playbookRecords | playbooksSkill | safe -}}

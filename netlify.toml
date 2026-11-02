@@ -64,3 +64,22 @@
   for = "/.well-known/agent-skills/*.md"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
+
+# Playbook pages as Markdown sit two or three folders deep. Both rules are
+# explicit, whether or not Netlify's * matches across folders.
+[[headers]]
+  for = "/playbooks.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/playbooks/*/*.md"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/playbooks/*/artefacts/*.md"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "text/markdown; charset=utf-8"

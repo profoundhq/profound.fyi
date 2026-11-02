@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import matter from "gray-matter";
-import { listing, splitSections, buildLaws, lawMarkdown, lawsReference, skillMarkdown, skillIndex, lawsJson, SKILL } from "../lib/laws-data.js";
+import { listing, splitSections, buildLaws, lawMarkdown, lawsReference, skillMarkdown, lawsJson, SKILL } from "../lib/laws-data.js";
 
 const site = { url: "https://x.test", license: "https://creativecommons.org/licenses/by-sa/4.0/", author: "A. Author" };
 
@@ -76,16 +76,6 @@ test("skillMarkdown has valid frontmatter and an index line for every law", () =
   assert.doesNotMatch(md, /;/, "house style: no semicolons");
 });
 
-test("skillIndex lists the skill with a digest of the exact bytes served", () => {
-  const content = "---\nname: software-laws\n---\nBody\n";
-  const index = JSON.parse(skillIndex(content, site));
-  assert.equal(index.$schema, "https://schemas.agentskills.io/discovery/0.2.0/schema.json");
-  const [entry] = index.skills;
-  assert.equal(entry.name, "software-laws");
-  assert.equal(entry.type, "skill-md");
-  assert.equal(entry.url, "https://x.test/.well-known/agent-skills/software-laws/SKILL.md");
-  assert.equal(entry.digest, `sha256:${createHash("sha256").update(content).digest("hex")}`);
-});
 
 test("lawsJson describes its source and holds every record", () => {
   const laws = buildLaws({ entries, clusters, siteUrl: site.url });

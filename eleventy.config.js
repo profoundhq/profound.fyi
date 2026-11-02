@@ -3,7 +3,10 @@ import path from "node:path";
 import { Marp } from "@marp-team/marp-core";
 import { excerpt, structuredData, visibleBreadcrumbs } from "./lib/site-meta.js";
 import { accessibleTables } from "./lib/markdown-tables.js";
-import { lawsJson, lawMarkdown, lawsReference, skillMarkdown, skillIndex, SKILL } from "./lib/laws-data.js";
+import matter from "gray-matter";
+import { lawsJson, lawMarkdown, lawsReference, skillMarkdown, SKILL } from "./lib/laws-data.js";
+import { buildPlaybooks, pageMarkdown, playbooksJson, playbooksReference, playbooksSkill, PLAYBOOKS_SKILL } from "./lib/playbooks-data.js";
+import { skillIndex } from "./lib/agent-skills.js";
 import { zip } from "./lib/zip.js";
 import site from "./_data/site.js";
 import lawRecords from "./_data/lawRecords.js";
@@ -31,6 +34,14 @@ function renderMarp(markdown, directives = {}) {
   return `<style>${css}</style>\n${slides}\n<script src="/js/marp-browser.js" defer></script>`;
 }
 
+// Playbook Markdown pages, not decks or landing pages, with their source
+function playbookItems(collectionApi) {
+  return collectionApi
+    .getAll()
+    .filter((item) => item.data.playbook && item.inputPath.endsWith(".md") && !item.inputPath.endsWith(".marp.md"))
+    .map((item) => ({ url: item.url, data: item.data, body: matter(fs.readFileSync(item.inputPath, "utf8")).content }));
+}
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "css": "css" });
   eleventyConfig.addPassthroughCopy({ "js": "js" });
@@ -48,22 +59,52 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("lawsJson", (laws) => lawsJson(laws, site));
   eleventyConfig.addFilter("lawMarkdown", (law, laws) => lawMarkdown(law, laws, site));
   eleventyConfig.addFilter("skillMarkdown", (laws) => skillMarkdown(laws, site));
-  eleventyConfig.addFilter("skillIndex", (content) => skillIndex(content, site));
+  eleventyConfig.addFilter("playbooksJson", (books) => playbooksJson(books, site));
+  eleventyConfig.addFilter("playbookPageMarkdown", (entry) => pageMarkdown(entry.page, entry.book, site));
+  eleventyConfig.addFilter("playbooksSkill", (books) => playbooksSkill(books, site));
+  eleventyConfig.addFilter("agentSkillsIndex", (laws, books) =>
+    skillIndex(
+      [
+        { name: SKILL.name, path: SKILL.path, content: skillMarkdown(laws, site) },
+        { name: PLAYBOOKS_SKILL.name, path: PLAYBOOKS_SKILL.path, content: playbooksSkill(books, site) },
+      ],
+      site,
+    ),
+  );
+
+  // Every playbook Markdown page (not decks or landing pages) as records,
+  // from the collection so URLs are the real ones. Kept for the archive
+  // hook below, which runs after collections are gone.
+  let playbookRecords = [];
+  eleventyConfig.addCollection("playbookRecords", (collectionApi) => {
+    playbookRecords = buildPlaybooks(playbookItems(collectionApi), site.url);
+    return playbookRecords;
+  });
+  // One entry per page, for the Markdown pagination template
+  eleventyConfig.addCollection("playbookPageEntries", (collectionApi) =>
+    buildPlaybooks(playbookItems(collectionApi), site.url).flatMap((book) => book.pages.map((page) => ({ book, page, permalink: new URL(page.markdownUrl).pathname }))),
+  );
 
   // The installable skill: SKILL.md plus every law in full, for assistants
   // that take a skill as a ZIP upload. Written after the build because
   // templates produce text, not binary files.
   eleventyConfig.on("eleventy.after", ({ directories }) => {
     const laws = lawRecords();
-    const file = path.join(directories.output, SKILL.archive);
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(
-      file,
-      zip([
+    const archives = [
+      [SKILL, [
         { name: `${SKILL.name}/SKILL.md`, data: skillMarkdown(laws, site) },
         { name: `${SKILL.name}/references/laws.md`, data: lawsReference(laws, site) },
-      ]),
-    );
+      ]],
+      [PLAYBOOKS_SKILL, [
+        { name: `${PLAYBOOKS_SKILL.name}/SKILL.md`, data: playbooksSkill(playbookRecords, site) },
+        { name: `${PLAYBOOKS_SKILL.name}/references/playbooks.md`, data: playbooksReference(playbookRecords, site) },
+      ]],
+    ];
+    for (const [skill, files] of archives) {
+      const file = path.join(directories.output, skill.archive);
+      fs.mkdirSync(path.dirname(file), { recursive: true });
+      fs.writeFileSync(file, zip(files));
+    }
   });
   eleventyConfig.addFilter("structuredData", structuredData);
   eleventyConfig.addFilter("visibleBreadcrumbs", visibleBreadcrumbs);
