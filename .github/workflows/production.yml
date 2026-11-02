@@ -1,0 +1,43 @@
+# After a push to main, waits until profound.fyi serves that commit, then
+# checks the live site in Chromium. Netlify reports nothing to GitHub for
+# production deploys, so /version.json tells this job when the deploy is
+# live. A failed run means the live site broke, or Netlify never deployed.
+name: Production check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-check
+  cancel-in-progress: true
+
+jobs:
+  production:
+    name: Browser CSP check (production)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Wait for Netlify to deploy this commit
+        run: |
+          for attempt in $(seq 1 90); do
+            live=$(curl -fsS "https://profound.fyi/version.json?check=$attempt" | jq -r .commit || true)
+            if [ "$live" = "$GITHUB_SHA" ]; then
+              echo "profound.fyi is serving $GITHUB_SHA"
+              exit 0
+            fi
+            echo "Live commit is ${live:-unknown}, waiting for $GITHUB_SHA"
+            sleep 10
+          done
+          echo "::error::profound.fyi did not serve $GITHUB_SHA within 15 minutes. Check the Netlify deploy log."
+          exit 1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/browser-check-setup
+      - name: Check the live site for CSP violations
+        run: npm run check:csp -- https://profound.fyi

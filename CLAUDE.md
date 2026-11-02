@@ -9,10 +9,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run clean` — removes `_site/`
 - `scripts/sync-playbook.sh <slug> <source-path> [attachments-path]` — sync a playbook from an external Obsidian vault (`~/Obsidian/Steeley`) into `content/playbooks/<slug>/` (one-way; in-repo edits are overwritten on next sync). Converts `[[wikilinks]]` and copies image embeds into `images/playbooks/<slug>/` via `scripts/obsidian-links.mjs`. Leaves `*.marp.md` decks alone
 - `scripts/sync-laws.sh [source-path]` — sync Software Laws from the vault (`Projects/Profound/Software Laws`) into `content/laws/` (one-way). Each note goes through `scripts/laws-transform.mjs`: layouts map to `laws-*`, the card's `## Front` moves into a `front:` field, and tier link lists become an ordered `entries:` field. Icons are `images/laws/<slug>.svg` (extracted from the printed deck; entries without one show a lettered disc)
-- `npm test` — Node test runner over `tests/`
-- `GA_ID=G-91HQ81WR67 npm run build && npm run check:csp` — loads the talk page and the home page (accepting analytics) in Chromium with the headers from `netlify.toml`, and fails on any CSP violation. Needs network access and Playwright (not a dependency). `npm test` also fails if a template adds a third-party `<script>` or `<iframe>` host the CSP does not allow
+- `npm test` — Node test runner over `tests/`. Netlify runs it before every build (`npm test && npm run build`), so a failing test blocks the deploy. The script lists files with shell globs because Node 20 (what Netlify uses) does not expand `**` in `node --test`
+- `GA_ID=G-91HQ81WR67 npm run build && npm run check:csp` — loads five key pages (talk, home with analytics accepted, deck, tool, law) in Chromium with the headers from `netlify.toml`, and fails on any CSP violation. `npm run check:csp -- <url>` checks a deployed site instead, such as a deploy preview. The analytics hit is intercepted, so checks never count as visits. Needs network access and Playwright (not a dependency, CI installs it). `npm test` also fails if a template adds a third-party `<script>` or `<iframe>` host the CSP does not allow
 
-Node 20 is required (`.nvmrc`). Netlify builds on push to `main` (`netlify.toml`).
+## CI and deploys
+
+Netlify builds and deploys `main` on its own. GitHub Actions only checks, it never deploys and holds no Netlify credentials:
+
+- `.github/workflows/ci.yml` — on every PR and on `main`: `npm test` on Node 20 and 22, then a build and `check:csp`
+- `.github/workflows/preview.yml` — when Netlify reports a deploy preview ready, runs `check:csp` against the preview URL and reports `browser-check/preview` as a status on the PR's commit. It runs from `main`, so changes to it only take effect after merging
+- `.github/workflows/production.yml` — after a push to `main`, waits until `/version.json` shows that commit (Netlify sets `COMMIT_REF`), then runs `check:csp` against profound.fyi
+- `.github/actions/browser-check-setup` — shared setup: Node from `.nvmrc`, `npm ci`, and a pinned Playwright with Chromium
+
+Actions are pinned to commit SHAs. Branch protection on `main` is what makes the checks a merge gate.
+
+Node 20 is required (`.nvmrc`, and `NODE_VERSION` in `netlify.toml`). Test changes to the test script on Node 20, since newer Node accepts patterns that Node 20 rejects. Netlify builds on push to `main` (`netlify.toml`).
 
 ## Architecture
 
