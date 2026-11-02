@@ -83,3 +83,22 @@ test("the web app manifest is served with its own media type", async () => {
   const rules = parseHeaders(fs.readFileSync("netlify.toml", "utf8"));
   assert.equal(headersFor(rules, "/site.webmanifest")["Content-Type"], "application/manifest+json");
 });
+
+// Agents fetch these from anywhere, including from browser pages on other
+// sites, so they need open CORS and a Markdown media type where it applies
+test("machine-readable files allow any origin and declare their types", async () => {
+  const fs = await import("node:fs");
+  const rules = parseHeaders(fs.readFileSync("netlify.toml", "utf8"));
+  for (const file of ["/laws.json", "/laws/brookss-law.md", "/.well-known/agent-skills/index.json", "/.well-known/agent-skills/software-laws/SKILL.md"]) {
+    assert.equal(headersFor(rules, file)["Access-Control-Allow-Origin"], "*", file);
+  }
+  assert.equal(headersFor(rules, "/laws/brookss-law.md")["Content-Type"], "text/markdown; charset=utf-8");
+  assert.equal(headersFor(rules, "/.well-known/agent-skills/software-laws/SKILL.md")["Content-Type"], "text/markdown; charset=utf-8");
+  assert.equal(headersFor(rules, "/laws/brookss-law/")["Access-Control-Allow-Origin"], undefined, "HTML pages stay closed");
+});
+
+test("every page advertises the agent skills index", async () => {
+  const fs = await import("node:fs");
+  const rules = parseHeaders(fs.readFileSync("netlify.toml", "utf8"));
+  assert.match(headersFor(rules, "/")["Link"], /<\/\.well-known\/agent-skills\/index\.json>; rel="agent-skills"; type="application\/json"/);
+});

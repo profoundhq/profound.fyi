@@ -1,7 +1,12 @@
 import fs from "node:fs";
+import path from "node:path";
 import { Marp } from "@marp-team/marp-core";
 import { excerpt, structuredData, visibleBreadcrumbs } from "./lib/site-meta.js";
 import { accessibleTables } from "./lib/markdown-tables.js";
+import { lawsJson, lawMarkdown, lawsReference, skillMarkdown, skillIndex, SKILL } from "./lib/laws-data.js";
+import { zip } from "./lib/zip.js";
+import site from "./_data/site.js";
+import lawRecords from "./_data/lawRecords.js";
 
 // Marp settings that Eleventy strips out as frontmatter and that need
 // handing back to Marp as global directives.
@@ -38,6 +43,28 @@ export default function (eleventyConfig) {
   eleventyConfig.amendLibrary("md", (md) => md.use(accessibleTables));
 
   eleventyConfig.addFilter("excerpt", excerpt);
+
+  // Machine-readable laws and the agent skill (lib/laws-data.js)
+  eleventyConfig.addFilter("lawsJson", (laws) => lawsJson(laws, site));
+  eleventyConfig.addFilter("lawMarkdown", (law, laws) => lawMarkdown(law, laws, site));
+  eleventyConfig.addFilter("skillMarkdown", (laws) => skillMarkdown(laws, site));
+  eleventyConfig.addFilter("skillIndex", (content) => skillIndex(content, site));
+
+  // The installable skill: SKILL.md plus every law in full, for assistants
+  // that take a skill as a ZIP upload. Written after the build because
+  // templates produce text, not binary files.
+  eleventyConfig.on("eleventy.after", ({ directories }) => {
+    const laws = lawRecords();
+    const file = path.join(directories.output, SKILL.archive);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(
+      file,
+      zip([
+        { name: `${SKILL.name}/SKILL.md`, data: skillMarkdown(laws, site) },
+        { name: `${SKILL.name}/references/laws.md`, data: lawsReference(laws, site) },
+      ]),
+    );
+  });
   eleventyConfig.addFilter("structuredData", structuredData);
   eleventyConfig.addFilter("visibleBreadcrumbs", visibleBreadcrumbs);
 

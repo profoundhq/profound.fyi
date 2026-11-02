@@ -1,8 +1,8 @@
 [build]
   publish = "_site"
-  # Tests run first, so a failing test stops the deploy and the live site
-  # keeps its last good version
-  command = "npm test && npm run build"
+  # Tests run first and the built files are checked last, so either failing
+  # stops the deploy and the live site keeps its last good version
+  command = "npm test && npm run build && npm run check:built"
 
 [build.environment]
   NODE_VERSION = "20"
@@ -28,7 +28,7 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Resource-Policy = "same-origin"
-    Link = "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    Link = "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\"; type=\"application/json\""
     Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; font-src 'self'; frame-src https://speakerdeck.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
 
 [[headers]]
@@ -41,3 +41,26 @@
   for = "/site.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json"
+
+# Machine-readable files for agents and other sites. Open CORS lets
+# browser-based agents fetch them. HTML pages keep the defaults above.
+[[headers]]
+  for = "/laws.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/laws/*.md"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/.well-known/agent-skills/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/.well-known/agent-skills/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
