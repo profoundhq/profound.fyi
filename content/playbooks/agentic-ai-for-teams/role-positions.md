@@ -32,7 +32,7 @@ However roles evolve, the specification hierarchy described in the Specification
 |**Surface**|Structured conversations (Example Mapping or equivalent) that surface assumptions through concrete examples|Who initiates these? Who has the domain knowledge to challenge assumptions? Is this happening at the right cadence for your agent-assisted delivery speed?|
 |**Specify**|Translate shared understanding into executable BDD scenarios and architectural contracts|Who authors each spec layer? Are the people writing specs the ones who understand the domain, or the ones who understand the tooling? What happens when those are different people?|
 |**Implement**|Agent generates code and TDD-level tests against the spec hierarchy|What level of supervision does your team's current capability require? How do you know?|
-|**Verify**|Confirm agent output satisfies specs; mutation testing; independent oracle tests on critical paths|Who verifies that agent-generated tests aren't simply confirming the agent's own assumptions? Is anyone checking for what the spec didn't anticipate?|
+|**Verify**|Confirm agent output satisfies specs, mutation testing, and independent oracle tests on critical paths|Who verifies that agent-generated tests aren't simply confirming the agent's own assumptions? Is anyone checking for what the spec didn't anticipate?|
 |**Evolve**|Update specs when test failures, production incidents, or user research reveal gaps|Who owns this? Does it actually happen, or do specs rot? Is there a standing retrospective question about spec drift?|
 
 ## Forces acting on product management

@@ -6,13 +6,13 @@ tags:
   - okrs
 ---
 
-The playbook draws on several traditions. None of the arguments are original; the synthesis is.
+The playbook draws on several traditions. None of the arguments are original. The synthesis is.
 
 ## Primary debts
 
 **W. Edwards Deming** - *Out of the Crisis* (1986) and *The New Economics* (1993). The System of Profound Knowledge is the lens behind the entire playbook. Most of what is uncomfortable in the argument is uncomfortable because Deming was right about it in 1986 and the management literature has been catching up slowly ever since.
 
-**John Doerr** - *Measure What Matters* (2018). The canonical OKR text. The commit-aspire distinction is Doerr's; the playbook treats it as more important than most rollouts do.
+**John Doerr** - *Measure What Matters* (2018). The canonical OKR text. The commit-aspire distinction is Doerr's. The playbook treats it as more important than most rollouts do.
 
 **Christina Wodtke** - *Radical Focus* (2016). The argument that OKRs require rhythm to survive comes from Wodtke. So does the position, mostly implicit here, that one Objective per team per quarter is what discipline actually looks like.
 
@@ -22,7 +22,7 @@ The playbook draws on several traditions. None of the arguments are original; th
 
 **Bart den Haak** - *Moving the Needle With Lean OKRs* (2021). The fullest treatment of OKRs as alignment-through-contribution rather than alignment-through-decomposition.
 
-**Daniel Pink** - *Drive* (2009). The synthesis of self-determination theory and motivation research that underpins the psychology section. The argument that extrinsic incentives degrade complex performance is Pink's; the application to OKR practice is the playbook's.
+**Daniel Pink** - *Drive* (2009). The synthesis of self-determination theory and motivation research that underpins the psychology section. The argument that extrinsic incentives degrade complex performance is Pink's. The application to OKR practice is the playbook's.
 
 ## Indirect debts
 
@@ -38,7 +38,7 @@ The playbook draws on several traditions. None of the arguments are original; th
 
 The playbook sits broadly within the **sociotechnical tradition**. Eric Trist, Fred Emery, the Tavistock Institute, and the line of work that connects them to modern Team Topologies and DORA. The position that systems of work are inseparable from systems of people, and that you cannot redesign one without the other, is the sociotechnical commitment that runs through the argument.
 
-It also sits adjacent to the **DevOps and continuous delivery tradition** - Jez Humble, Dave Farley, Gene Kim and the State of DevOps reports. The OKR question of how measurement shapes behaviour rhymes with the DevOps question of how feedback loops shape capability.
+It also sits adjacent to the **DevOps and continuous delivery tradition** - Jez Humble, Dave Farley, Gene Kim and the State of DevOps reports. The OKR question of how measurement influences behaviour rhymes with the DevOps question of how feedback loops influence capability.
 
 ## What is original
 

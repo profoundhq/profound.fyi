@@ -47,8 +47,8 @@ The four signals from the previous section are all failures of one or both funct
 
 - **Used as a stick** breaks both. The Objective stops radiating intent and starts carrying performance commitment. The KRs stop anchoring decisions and start anchoring blame. The artefact is no longer doing its work, but doing the work the management system has demanded instead.
 - **Used for control** breaks intent-radiation. The Objective does not carry the team's intent because the team did not write it. It carries someone else's intent, dressed in the team's voice.
-- **Set and forgotten** breaks anchoring. The KR cannot anchor a decision if nobody is consulting it when decisions are made. The artefact has the right shape and the wrong rhythm.
-- **Used and ignored** breaks anchoring in a worse way. The KR is consulted ceremonially but ignored operationally. The artefact has the right shape and the wrong relationship to the work.
+- **Set and forgotten** breaks anchoring. The KR cannot anchor a decision if nobody is consulting it when decisions are made. The artefact has the right form and the wrong rhythm.
+- **Used and ignored** breaks anchoring in a worse way. The KR is consulted ceremonially but ignored operationally. The artefact has the right form and the wrong relationship to the work.
 
 A useful test, when you find an OKR system that is not working: ask which of the two functions has broken. The answer determines which constraint is missing.
 

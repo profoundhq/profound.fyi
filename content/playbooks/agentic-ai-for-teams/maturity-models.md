@@ -43,7 +43,7 @@ These eleven stages span the full spectrum from non-agentic tool use through to 
 
 These eleven stages group into five tiers. The first tier is explicitly pre-agentic - it describes AI-assisted development, not agentic development. The remaining four tiers represent progressively deeper agency.
 
-**Pre-agentic (stages 1–3):** AI is a tool on the desk. The developer does all the work; AI provides suggestions, completions, and explanations. No trust delegation occurs. No autonomous action is taken. This is where most developers and organisations currently operate, and it does not require the engineering guardrails or organisational readiness that later tiers demand. Calling this "Agentic AI adoption" is premature - it is AI-assisted development, and the organisational risks are correspondingly lower.
+**Pre-agentic (stages 1–3):** AI is a tool on the desk. The developer does all the work. AI provides suggestions, completions, and explanations. No trust delegation occurs. No autonomous action is taken. This is where most developers and organisations currently operate, and it does not require the engineering guardrails or organisational readiness that later tiers demand. Calling this "Agentic AI adoption" is premature - it is AI-assisted development, and the organisational risks are correspondingly lower.
 
 **Supervised agentic (stages 4–6):** AI proposes autonomous actions - multi-file changes, project-wide refactors - but the human approves every action before it executes. Trust is growing but bounded by explicit approval gates. This is the threshold where engineering foundations (tests, CI/CD, observability) begin to matter: the agent can now propose changes that, if approved carelessly, have consequences beyond a single line.
 
@@ -51,7 +51,7 @@ These eleven stages group into five tiers. The first tier is explicitly pre-agen
 
 **Orchestrated agentic (stages 9–10):** The developer orchestrates multiple agents, either manually or through pre-built tooling. The human role is direction, evaluation, and exception handling.
 
-**System-building (stage 11):** The developer is building the orchestration layer itself, shaping how agents work together for their specific context.
+**System-building (stage 11):** The developer is building the orchestration layer itself, defining how agents work together for their specific context.
 
 ### The critical transition
 
@@ -67,9 +67,9 @@ The team-level framing here deliberately avoids a stage ladder. Teams do not pro
 
 ### Team agentic modes
 
-Four modes describe the qualitative shape of a team's relationship with agents. A team may operate in different modes for different work streams, and moving between modes is a deliberate choice rather than an achievement.
+Four modes describe the qualitative form of a team's relationship with agents. A team may operate in different modes for different work streams, and moving between modes is a deliberate choice rather than an achievement.
 
-**Solo-mediated.** Each team member operates their own agent independently. Team coordination happens through traditional mechanisms: pull requests, standups, and code review. Agents are private to each developer; there is no shared agent context. This mode is accessible to any team; the coordination overhead is familiar, and the organisational requirements are minimal.
+**Solo-mediated.** Each team member operates their own agent independently. Team coordination happens through traditional mechanisms: pull requests, standups, and code review. Agents are private to each developer, and there is no shared agent context. This mode is accessible to any team: the coordination overhead is familiar, and the organisational requirements are minimal.
 
 **Shared-context.** The team operates a shared substrate for agents: shared CLAUDE.md or equivalent, shared spec hierarchy, shared prompt library, shared architectural context. Agents are still invoked individually, but they work from a common knowledge base that reflects the team's collective understanding. This mode requires the team to agree on what belongs in the shared context and to maintain it over time.
 
@@ -133,11 +133,11 @@ Adding the team dimension surfaces two further interactions and one bounding rel
 
 **Teams mediate individual and organisational dimensions.** A team of stage-6 individuals in a stage-4 organisation can operate in any mode the team chooses - solo-mediated, shared-context, pair-with-agent - provided the team has done the work of establishing its own practices. The same individuals in the same organisation, operating as loosely associated individuals without team-level agreements, will fall back on solo-mediated and will under-realise the organisational capability available to them. This is a common failure mode: organisations that have invested in infrastructure but not in team-level coordination see lower adoption than their infrastructure warrants.
 
-The inverse case is also worth naming. A stage-11 individual operating a custom orchestrator like Gas Town inside a stage-2 organisation produces a different failure mode: code volume far in excess of what the team's review and the organisation's deployment controls can absorb. This is not a coordination problem; it is the bounding relationship operating in reverse, with individual capability outrunning organisational containment. The framework's prediction is that the resulting code will reach production faster than incidents can produce learning, and that the organisation will spend the next quarter cleaning up consequences rather than capturing benefits.
+The inverse case is also worth naming. A stage-11 individual operating a custom orchestrator like Gas Town inside a stage-2 organisation produces a different failure mode: code volume far in excess of what the team's review and the organisation's deployment controls can absorb. This is not a coordination problem. It is the bounding relationship operating in reverse, with individual capability outrunning organisational containment. The framework's prediction is that the resulting code will reach production faster than incidents can produce learning, and that the organisation will spend the next quarter cleaning up consequences rather than capturing benefits.
 
 **Team capability is bounded by organisational infrastructure.** Some team modes and practices are accessible regardless of organisational maturity. Solo-mediated and shared-context modes can be adopted by any team whose organisation permits agent use at all. Basic practices - agent-aware code review, retrospectives covering agent-authored work - are similarly accessible. But orchestrated multi-agent mode requires organisational infrastructure that the team cannot provision itself: CI capacity, merge tooling, observability, a compute budget for parallel agent sessions, and policy clarity about what agents are permitted to do. Coordinated agent invocation as a practice requires a CI capable of handling the volume. Shared context stewardship requires governance clarity about what belongs in the shared context and who owns it.
 
-The bounding claim, stated plainly: team modes and practices that depend on infrastructure the team cannot provision are bounded by organisational maturity. Modes and practices internal to the team's own agreements are not. A team can adopt shared spec authorship at any organisational stage; it cannot adopt orchestrated multi-agent at stage 2.
+The bounding claim, stated plainly: team modes and practices that depend on infrastructure the team cannot provision are bounded by organisational maturity. Modes and practices internal to the team's own agreements are not. A team can adopt shared spec authorship at any organisational stage, but it cannot adopt orchestrated multi-agent at stage 2.
 
 This matters because of a predictable misdiagnosis. Teams that attempt to operate in an orchestrated multi-agent mode in stage-2 organisations will fail, and the failure will appear as "the team can't coordinate." The actual cause is the lack of organisational infrastructure. Investing in team coaching or reorganising the team will not fix it. The organisation has to move from stage 2 to stage 3 before the team mode becomes accessible at all.
 

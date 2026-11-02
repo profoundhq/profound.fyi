@@ -15,7 +15,7 @@ The distinction is Argyris's. What people say they do and what they actually do 
 
 **When:** a candidate has enough uses behind it that you are ready to write the play.
 
-**The move:** before drafting anything, write the instances out raw. What actually happened, who did what, what resistance it hit, what memory wants to smooth over. Get the narrative down ugly and specific. Then extract the play from the narrative. Never draft the play first and reach back for instances as decoration.
+**The action:** before drafting anything, write the instances out raw. What actually happened, who did what, what resistance it hit, what memory wants to smooth over. Get the narrative down ugly and specific. Then extract the play from the narrative. Never draft the play first and reach back for instances as decoration.
 
 **Signals:** the play contains at least one detail you would rather leave out. Plays extracted from real practice have grain. Plays extracted from the official story read smooth, and readers who know the territory can feel the difference.
 
@@ -25,7 +25,7 @@ The distinction is Argyris's. What people say they do and what they actually do 
 
 **When:** the raw narrative includes an attempt that did not land, a workaround, or a condition that made the move less impressive.
 
-**The move:** the failure detail becomes a force or an entry condition in the play, not a cut. If the improvement took three attempts, or landed only because someone senior sponsored it, the reader's version will hit the same wall. A play that only works with air cover should say so.
+**The action:** the failure detail becomes a force or an entry condition in the play, not a cut. If the improvement took three attempts, or landed only because someone senior sponsored it, the reader's version will hit the same wall. A play that only works with air cover should say so.
 
 **Signals:** readers stop asking "but what about" questions, because the play already answered them.
 

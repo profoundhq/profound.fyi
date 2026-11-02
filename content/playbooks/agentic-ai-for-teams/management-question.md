@@ -21,7 +21,7 @@ If you were already practising genuine Theory Y - real autonomy, outcome focus, 
 
 If you were practising Theory X dressed as Theory Y, Agentic AI hands you better surveillance tools and reveals the contradiction. The manager now has data on exactly how much each developer is producing, exactly what the agents are doing, and exactly where time is being spent. The temptation to use this data for control rather than learning is immense. And developers will feel it.
 
-This dynamic plays out at the team level as well as the organisational level. A team that adopts shared-context or orchestrated multi-agent modes makes its internal coordination visible in ways that solo work does not. Whether that visibility is used for mutual learning or for mutual surveillance is a team-culture question, and it tends to reflect the organisational culture above it. Teams are where Theory X and Theory Y are lived day-to-day; the organisation sets the conditions, but the team determines the actual practice.
+This dynamic plays out at the team level as well as the organisational level. A team that adopts shared-context or orchestrated multi-agent modes makes its internal coordination visible in ways that solo work does not. Whether that visibility is used for mutual learning or for mutual surveillance is a team-culture question, and it tends to reflect the organisational culture above it. Teams are where Theory X and Theory Y are lived day-to-day. The organisation sets the conditions, but the team determines the actual practice.
 
 ## Governance without engineering foundations is performative
 

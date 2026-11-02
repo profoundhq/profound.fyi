@@ -10,7 +10,7 @@ A structured way to read your organisation's OKR practice as evidence of what yo
 
 This is an instrument, not a survey. It produces conversation, not a score. Two people using it on the same organisation may reach different readings, and the disagreement is part of the value - the places where readings diverge are usually the places where the system is least clear about itself.
 
-Use this in a workshop, a leadership conversation, or a piece of discovery work. The instrument is not designed for individual completion; the value is in the discussion the questions provoke.
+Use this in a workshop, a leadership conversation, or a piece of discovery work. The instrument is not designed for individual completion. The value is in the discussion the questions provoke.
 
 ## How to use it
 
@@ -76,7 +76,7 @@ Multiple signals can be present at once. They often are.
 
 The missing constraint is the place to start. Adding constraints in the wrong order does not work - building rhythm without safety produces forced cheerful theatre, building visibility without safety produces surveillance.
 
-**What philosophy is being expressed.** This is the question that the conversation should keep returning to. The pattern of answers does not just diagnose; it reveals the worldview that the OKR system is operating under. The worldview is usually not the one anyone would defend out loud.
+**What philosophy is being expressed.** This is the question that the conversation should keep returning to. The pattern of answers does not just diagnose. It reveals the worldview that the OKR system is operating under. The worldview is usually not the one anyone would defend out loud.
 
 The reading is most useful when it makes the worldview visible. That visibility is what allows the question - *is this the philosophy we would choose if we were choosing deliberately?* - to be asked at all.
 

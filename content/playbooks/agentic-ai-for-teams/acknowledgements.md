@@ -21,7 +21,7 @@ The spec-driven development position in Part 5 draws on emerging industry practi
 
 The spec evolution practices in Part 5 draw on analysis by Lilia Abdulina and Vitaly Sharovatov (BeyondQuality) regarding the severed feedback loop in AI-accelerated development, and on Bryan Finster's persistent task memory mechanisms in his agentic-dev-team implementation.
 
-The mutation-testing framing in the "verifying the verifier" section of Part 5 draws on the extensive academic literature beginning with DeMillo, Lipton, and Sayward (1978) and operationalised in contemporary tools; its application as a routine quality gate for AI-authored tests is a specific adaptation for the agentic workflow context. The eval-driven development position extends this into a broader verification discipline informed by the TDAD (Test-Driven Agent Development) paper.
+The mutation-testing framing in the "verifying the verifier" section of Part 5 draws on the extensive academic literature beginning with DeMillo, Lipton, and Sayward (1978) and operationalised in contemporary tools. Its application as a routine quality gate for AI-authored tests is a specific adaptation for the agentic workflow context. The eval-driven development position extends this into a broader verification discipline informed by the TDAD (Test-Driven Agent Development) paper.
 
 The management philosophy discussion in Part 6 draws on Douglas McGregor's Theory X and Theory Y.
 
@@ -37,4 +37,4 @@ Steve Yegge's Gas Town and Beads projects informed the multi-agent coordination 
 
 ## Thanks
 
-This framework was shaped by years of working alongside brilliant practitioners at Armakuni. For the conversations, the challenges, and the shared commitment to returning joy and creativity to the world of software: Zenon Hannick, Andrea Laforgia, Tom Oram, Billie Thompson, Ash Sehra, Victoria Tuck, Faye Benfield, Mark Bradley, Ricardo Vargas, Darren Jones, Shane Harger, Ben Dodd, Tim Savage, and all the other brilliant minds at Armakuni, present and past.
+This framework grew out of years of working alongside brilliant practitioners at Armakuni. For the conversations, the challenges, and the shared commitment to returning joy and creativity to the world of software: Zenon Hannick, Andrea Laforgia, Tom Oram, Billie Thompson, Ash Sehra, Victoria Tuck, Faye Benfield, Mark Bradley, Ricardo Vargas, Darren Jones, Shane Harger, Ben Dodd, Tim Savage, and all the other brilliant minds at Armakuni, present and past.
