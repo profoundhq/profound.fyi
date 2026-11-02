@@ -1,6 +1,10 @@
 ---
-permalink: /.well-known/agent-skills/profound-playbooks/SKILL.md
+pagination:
+  data: collections.playbookRecords
+  size: 1
+  alias: book
+permalink: "/.well-known/agent-skills/{{ book.slug }}/SKILL.md"
 eleventyExcludeFromCollections: true
 ---
 {#- No whitespace around the output: index.json holds a digest of these exact bytes -#}
-{{ collections.playbookRecords | playbooksSkill | safe -}}
+{{ book | playbookSkill | safe -}}

@@ -8,12 +8,12 @@ const sha = (s) => `sha256:${createHash("sha256").update(s).digest("hex")}`;
 
 test("skillIndex lists every skill with a digest of the exact bytes served", () => {
   const laws = '---\nname: software-laws\ndescription: "Laws: when they hold."\n---\nBody\n';
-  const plays = '---\nname: profound-playbooks\ndescription: "Plays."\n---\nBody\n';
+  const plays = '---\nname: okrs\ndescription: "Plays."\n---\nBody\n';
   const index = JSON.parse(
     skillIndex(
       [
         { name: "software-laws", path: "/.well-known/agent-skills/software-laws/SKILL.md", content: laws },
-        { name: "profound-playbooks", path: "/.well-known/agent-skills/profound-playbooks/SKILL.md", content: plays },
+        { name: "okrs", path: "/.well-known/agent-skills/okrs/SKILL.md", content: plays },
       ],
       site,
     ),
@@ -23,7 +23,7 @@ test("skillIndex lists every skill with a digest of the exact bytes served", () 
     index.skills.map((s) => [s.name, s.type, s.url, s.digest, s.description]),
     [
       ["software-laws", "skill-md", "https://x.test/.well-known/agent-skills/software-laws/SKILL.md", sha(laws), "Laws: when they hold."],
-      ["profound-playbooks", "skill-md", "https://x.test/.well-known/agent-skills/profound-playbooks/SKILL.md", sha(plays), "Plays."],
+      ["okrs", "skill-md", "https://x.test/.well-known/agent-skills/okrs/SKILL.md", sha(plays), "Plays."],
     ],
   );
 });

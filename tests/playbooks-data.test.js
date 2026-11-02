@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import matter from "gray-matter";
-import { parseFields, extractPlays, buildPlaybooks, pageMarkdown, playbooksJson, playbooksSkill } from "../lib/playbooks-data.js";
+import { parseFields, extractPlays, buildPlaybooks, pageMarkdown, playbooksJson, playbookSkill, playbookSkillFiles } from "../lib/playbooks-data.js";
 
 const site = { url: "https://x.test", license: "https://creativecommons.org/licenses/by-sa/4.0/", author: "A. Author" };
 
@@ -83,9 +83,9 @@ test("an explicit Status field wins over the heading marker", () => {
 });
 
 const items = [
-  { url: "/playbooks/enabling-teams/agree-the-exit/", inputPath: "x", data: { title: "Agree the exit signal first", order: 100, playbook: "enabling-teams", playbookTitle: "Enabling Teams", license: { name: "CC BY-SA 4.0", url: site.license } }, body: pagePlay },
-  { url: "/playbooks/okrs/two-functions/", inputPath: "y", data: { title: "Two functions", order: 40, playbook: "okrs", playbookTitle: "OKRs", license: { name: "CC BY-SA 4.0", url: site.license } }, body: "Objectives radiate intent. See [the thesis](/playbooks/okrs/the-core-thesis/).\n\n![diagram](/images/okrs/x.svg)\n" },
-  { url: "/playbooks/okrs/the-core-thesis/", inputPath: "z", data: { title: "The core thesis", order: 20, playbook: "okrs", playbookTitle: "OKRs", license: { name: "CC BY-SA 4.0", url: site.license } }, body: "OKRs do two jobs.\n" },
+  { url: "/playbooks/enabling-teams/agree-the-exit/", inputPath: "x", data: { title: "Agree the exit signal first", order: 100, playbook: "enabling-teams", playbookTitle: "Enabling Teams", playbookDescription: "Seven plays for people whose job is to help other teams gain a capability and then leave.", license: { name: "CC BY-SA 4.0", url: site.license } }, body: pagePlay },
+  { url: "/playbooks/okrs/two-functions/", inputPath: "y", data: { title: "Two functions", order: 40, playbook: "okrs", playbookTitle: "OKRs", playbookDescription: "How to read your OKRs as evidence of what your management system believes.", license: { name: "CC BY-SA 4.0", url: site.license } }, body: "Objectives radiate intent. See [the thesis](/playbooks/okrs/the-core-thesis/).\n\n![diagram](/images/okrs/x.svg)\n" },
+  { url: "/playbooks/okrs/the-core-thesis/", inputPath: "z", data: { title: "The core thesis", order: 20, playbook: "okrs", playbookTitle: "OKRs", playbookDescription: "How to read your OKRs as evidence of what your management system believes.", license: { name: "CC BY-SA 4.0", url: site.license } }, body: "OKRs do two jobs.\n" },
 ];
 
 test("buildPlaybooks groups pages by playbook in order and calls a playbook without plays a framework", () => {
@@ -116,12 +116,42 @@ test("playbooksJson counts plays and how many have evidence", () => {
   assert.deepEqual(doc.plays, { total: 1, withInstance: 1 });
 });
 
-test("playbooksSkill parses as YAML, lists every play with its evidence, and lists frameworks apart", () => {
-  const md = playbooksSkill(buildPlaybooks(items, site.url), site);
-  const { data, content } = matter(md);
-  assert.equal(data.name, "profound-playbooks");
+
+const skillOf = (slug) => {
+  const book = buildPlaybooks(items, site.url).find((b) => b.slug === slug);
+  return { book, md: playbookSkill(book, site) };
+};
+
+test("each playbook's skill is named after it and its description opens with the playbook's own words", () => {
+  const { md } = skillOf("enabling-teams");
+  const { data } = matter(md);
+  assert.equal(data.name, "enabling-teams");
+  assert.ok(data.description.startsWith("Seven plays for people whose job is to help other teams gain a capability and then leave."));
+  assert.match(data.description, /Agree the exit signal first/, "names its plays, so an assistant can match on them");
   assert.ok(data.description.length <= 1024);
-  assert.match(content, /\[Agree the exit signal first\]\(https:\/\/x\.test\/playbooks\/enabling-teams\/agree-the-exit\.md\) \(instance recorded\)/);
-  assert.match(content, /## Frameworks[\s\S]*OKRs/);
+});
+
+test("a skill for a playbook of plays lists each play with its evidence and its offline reference file", () => {
+  const { md } = skillOf("enabling-teams");
+  assert.match(md, /- \[Agree the exit signal first\]\(https:\/\/x\.test\/playbooks\/enabling-teams\/agree-the-exit\.md\) \(instance recorded\), `references\/agree-the-exit\.md`: A team has asked for help/);
+  assert.match(md, /When not to/);
   assert.doesNotMatch(md, /;/, "house style: no semicolons");
+});
+
+test("a skill for a framework says it is not a list of plays and starts from the first page", () => {
+  const { md } = skillOf("okrs");
+  const { data, content } = matter(md);
+  assert.equal(data.name, "okrs");
+  assert.match(content, /not a set of plays/);
+  assert.match(content, /Start with \[The core thesis\]/);
+  assert.match(content, /- \[Two functions\]\(https:\/\/x\.test\/playbooks\/okrs\/two-functions\.md\), `references\/two-functions\.md`: Objectives radiate intent/);
+  assert.doesNotMatch(md, /;/);
+});
+
+test("playbookSkillFiles bundles SKILL.md and one reference file per page, named as the skill says", () => {
+  const { book, md } = skillOf("okrs");
+  const files = playbookSkillFiles(book, site);
+  assert.deepEqual(files.map((f) => f.name), ["okrs/SKILL.md", "okrs/references/the-core-thesis.md", "okrs/references/two-functions.md"]);
+  assert.equal(files[0].data, md);
+  assert.equal(matter(files[2].data).data.title, "Two functions");
 });

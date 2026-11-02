@@ -12,10 +12,11 @@ permalink: /playbooks/
   <li class="tools-grid-card">
     <h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
     {% if entry.data.description %}<p>{{ entry.data.description }}</p>{% endif %}
+    <p><a href="/downloads/{{ entry.data.playbook }}-skill.zip">Download the <span class="visually-hidden">{{ entry.data.title }} </span>agent skill</a></p>
   </li>
 {% endfor %}
 </ul>
 
 <h2>Use the playbooks with an AI assistant</h2>
-<p>The <a href="/downloads/profound-playbooks-skill.zip">profound-playbooks skill</a> teaches an assistant to match a situation to a play, check when not to use it, and say plainly whether a real instance of the play is recorded. Add it in Claude under Settings, then Capabilities, then Skills. Agents can also find it at <a href="/.well-known/agent-skills/index.json">/.well-known/agent-skills/</a>.</p>
+<p>Each playbook has an agent skill. A skill for a playbook of plays teaches an assistant to match a situation to a play, check when not to use it, and say plainly whether a real instance of the play is recorded. A skill for a framework teaches it to read a situation through the framework. Add a skill in Claude under Settings, then Capabilities, then Skills. Agents can also find them at <a href="/.well-known/agent-skills/index.json">/.well-known/agent-skills/</a>.</p>
 <p>Every playbook and play is available as <a href="/playbooks.json">JSON</a>, and each page has a Markdown version at the same address ending in <code>.md</code>, such as <a href="/playbooks/okrs/two-functions.md">/playbooks/okrs/two-functions.md</a>.</p>

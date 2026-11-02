@@ -5,7 +5,7 @@ import { excerpt, structuredData, visibleBreadcrumbs } from "./lib/site-meta.js"
 import { accessibleTables } from "./lib/markdown-tables.js";
 import matter from "gray-matter";
 import { lawsJson, lawMarkdown, lawsReference, skillMarkdown, SKILL } from "./lib/laws-data.js";
-import { buildPlaybooks, pageMarkdown, playbooksJson, playbooksReference, playbooksSkill, PLAYBOOKS_SKILL } from "./lib/playbooks-data.js";
+import { buildPlaybooks, pageMarkdown, playbooksJson, playbookSkill, playbookSkillFiles, skillPath, skillArchive } from "./lib/playbooks-data.js";
 import { skillIndex } from "./lib/agent-skills.js";
 import { zip } from "./lib/zip.js";
 import site from "./_data/site.js";
@@ -34,12 +34,20 @@ function renderMarp(markdown, directives = {}) {
   return `<style>${css}</style>\n${slides}\n<script src="/js/marp-browser.js" defer></script>`;
 }
 
-// Playbook Markdown pages, not decks or landing pages, with their source
+// Playbook Markdown pages, not decks or landing pages, with their source and
+// their playbook's description from its landing page
 function playbookItems(collectionApi) {
-  return collectionApi
-    .getAll()
+  const all = collectionApi.getAll();
+  const descriptions = Object.fromEntries(
+    all.filter((item) => item.data.playbook && item.inputPath.endsWith("/index.njk")).map((item) => [item.data.playbook, item.data.description]),
+  );
+  return all
     .filter((item) => item.data.playbook && item.inputPath.endsWith(".md") && !item.inputPath.endsWith(".marp.md"))
-    .map((item) => ({ url: item.url, data: item.data, body: matter(fs.readFileSync(item.inputPath, "utf8")).content }));
+    .map((item) => ({
+      url: item.url,
+      data: { ...item.data, playbookDescription: descriptions[item.data.playbook] },
+      body: matter(fs.readFileSync(item.inputPath, "utf8")).content,
+    }));
 }
 
 export default function (eleventyConfig) {
@@ -61,12 +69,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("skillMarkdown", (laws) => skillMarkdown(laws, site));
   eleventyConfig.addFilter("playbooksJson", (books) => playbooksJson(books, site));
   eleventyConfig.addFilter("playbookPageMarkdown", (entry) => pageMarkdown(entry.page, entry.book, site));
-  eleventyConfig.addFilter("playbooksSkill", (books) => playbooksSkill(books, site));
+  eleventyConfig.addFilter("playbookSkill", (book) => playbookSkill(book, site));
   eleventyConfig.addFilter("agentSkillsIndex", (laws, books) =>
     skillIndex(
       [
         { name: SKILL.name, path: SKILL.path, content: skillMarkdown(laws, site) },
-        { name: PLAYBOOKS_SKILL.name, path: PLAYBOOKS_SKILL.path, content: playbooksSkill(books, site) },
+        ...books.map((book) => ({ name: book.slug, path: skillPath(book), content: playbookSkill(book, site) })),
       ],
       site,
     ),
@@ -85,7 +93,7 @@ export default function (eleventyConfig) {
     buildPlaybooks(playbookItems(collectionApi), site.url).flatMap((book) => book.pages.map((page) => ({ book, page, permalink: new URL(page.markdownUrl).pathname }))),
   );
 
-  // The installable skill: SKILL.md plus every law in full, for assistants
+  // The installable skills: each SKILL.md with its reference files, for assistants
   // that take a skill as a ZIP upload. Written after the build because
   // templates produce text, not binary files.
   eleventyConfig.on("eleventy.after", ({ directories }) => {
@@ -95,10 +103,7 @@ export default function (eleventyConfig) {
         { name: `${SKILL.name}/SKILL.md`, data: skillMarkdown(laws, site) },
         { name: `${SKILL.name}/references/laws.md`, data: lawsReference(laws, site) },
       ]],
-      [PLAYBOOKS_SKILL, [
-        { name: `${PLAYBOOKS_SKILL.name}/SKILL.md`, data: playbooksSkill(playbookRecords, site) },
-        { name: `${PLAYBOOKS_SKILL.name}/references/playbooks.md`, data: playbooksReference(playbookRecords, site) },
-      ]],
+      ...playbookRecords.map((book) => [{ archive: skillArchive(book) }, playbookSkillFiles(book, site)]),
     ];
     for (const [skill, files] of archives) {
       const file = path.join(directories.output, skill.archive);

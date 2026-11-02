@@ -90,10 +90,10 @@ The `playbookRecords` collection (in `eleventy.config.js`) reads every playbook 
 
 - `/playbooks/<slug>/<page>.md` (and `/artefacts/` pages) — each page as Markdown with absolute links (`content/playbooks-markdown.njk`), linked from the page head via `markdownUrl` in `playbooks.11tydata.js`
 - `/playbooks.json` — every playbook, page, and play, with evidence counts
-- `/.well-known/agent-skills/profound-playbooks/SKILL.md` — listed in the same discovery index as the laws skill (`lib/agent-skills.js` builds it). The skill tells assistants to present a play with no instance as untested
-- `/downloads/profound-playbooks-skill.zip` — the skill plus every play and framework page in full
+- `/.well-known/agent-skills/<playbook>/SKILL.md` — one skill per playbook, named after it (`content/agent-skill-playbooks.njk`), all listed in the same discovery index as the laws skill (`lib/agent-skills.js`). The description opens with the playbook's `description` from its landing `index.njk`. A playbook of plays gets steps that check When not to and present a play with no instance as untested. A framework gets steps for reading a situation through it
+- `/downloads/<playbook>-skill.zip` — the skill plus one reference file per page, named as the skill's index says
 
-The Playbooks home page (`content/playbooks/index.njk`) links these.
+The Playbooks home page (`content/playbooks/index.njk`) links each playbook's skill and these files.
 
 ### Page metadata (`lib/site-meta.js`, used by `layouts/base.njk`)
 
