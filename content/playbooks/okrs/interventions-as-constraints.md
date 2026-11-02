@@ -10,7 +10,7 @@ The temptation, having read the system, is to fix it. Add a training programme. 
 
 These rarely work. The system is producing the pattern not because it has the wrong tools but because it is operating under constraints that make the pattern the path of least resistance. The pattern is not a bug. It is the system at equilibrium.
 
-What does work is changing the constraints. Not the tools, not the templates, not the framework. The shape of what is and is not possible inside the system.
+What does work is changing the constraints. Not the tools, not the templates, not the framework. The limits of what is and is not possible inside the system.
 
 Three constraints decide whether OKRs do their two functions. When all three are present, the healthier patterns become more likely. When any one is missing, one of the four signals from the previous section will appear, reliably, regardless of how good the OKR teaching has been.
 
@@ -64,11 +64,11 @@ The honest version of safety advice: *this is hard, and the alternative is harde
 
 The vocabulary matters. The three forces are not interventions in the usual sense. They are not actions you take and then complete. They are conditions you maintain.
 
-A constraint is a shape that the system operates inside. It does not determine what the system does; it shapes what is and is not possible. Visibility does not force teams to make decisions visibly - it makes invisible decisions harder to sustain. Rhythm does not force OKRs into the operating cadence - it makes their absence from the cadence more visible. Safety does not force honest OKR drafting - it removes the incentive for dishonest drafting.
+A constraint is a boundary that the system operates inside. It does not determine what the system does. It defines what is and is not possible. Visibility does not force teams to make decisions visibly - it makes invisible decisions harder to sustain. Rhythm does not force OKRs into the operating cadence - it makes their absence from the cadence more visible. Safety does not force honest OKR drafting - it removes the incentive for dishonest drafting.
 
-The shift from "fixes" to "constraints" is the shift from mechanical thinking to systemic thinking. A fix is a one-time action; a constraint is an ongoing condition. A fix targets a symptom; a constraint shifts what the system tends toward. A fix can be completed; a constraint has to be maintained.
+The shift from "fixes" to "constraints" is the shift from mechanical thinking to systemic thinking. A fix is a one-time action, but a constraint is an ongoing condition. A fix targets a symptom, but a constraint shifts what the system tends toward. A fix can be completed, but a constraint has to be maintained.
 
-This is also why "rollout" is the wrong word for OKR adoption. You do not roll out a constraint. You commit to it, you maintain it, you defend it when it is challenged, you notice when it has eroded and you rebuild it. The work does not end. It changes shape.
+This is also why "rollout" is the wrong word for OKR adoption. You do not roll out a constraint. You commit to it, you maintain it, you defend it when it is challenged, you notice when it has eroded and you rebuild it. The work does not end. It changes form.
 
 ## When the constraints conflict
 
@@ -76,7 +76,7 @@ The three constraints sometimes pull against each other. Three tensions worth ho
 
 **Visibility and safety.** Making decisions and scoring visible can feel like surveillance. The more visible the work, the more exposed the people doing it. Mitigation: visibility should be of the work, not the worker. A scoring system that shows the KR scored 60% is visibility. A scoring system that shows *who* missed the 60% is surveillance.
 
-**Rhythm and drift.** Frequent OKR review can degenerate into constant OKR rewriting. KRs become moving targets that cannot be planned against. Mitigation: review rhythm is for surfacing progress and blockers, not for changing the OKRs. Changes happen at retro cycles. The check-in confirms what the OKR is; the retro changes what it should be.
+**Rhythm and drift.** Frequent OKR review can degenerate into constant OKR rewriting. KRs become moving targets that cannot be planned against. Mitigation: review rhythm is for surfacing progress and blockers, not for changing the OKRs. Changes happen at retro cycles. The check-in confirms what the OKR is. The retro changes what it should be.
 
 **Safety and accountability.** Decoupling from performance review can feel like decoupling from accountability altogether. Mitigation: accountability for how the team works - showing up, peer collaboration, learning behaviour - is separable from accountability for what the team hit. Performance management belongs to the first. OKRs belong to the second. Conflating them is what produces the stick problem in the first place.
 

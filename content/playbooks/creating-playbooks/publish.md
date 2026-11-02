@@ -13,7 +13,7 @@ tags:
 
 **When:** a play meets the evidence bar but you still feel it is not ready. That feeling is normal and mostly not information.
 
-**The move:** publish with the provisional status visible. Treat the first three external uses as the test suite. Ask the users what the play failed to tell them, and fold the answers back in.
+**The action:** publish with the provisional status visible. Treat the first three external uses as the test suite. Ask the users what the play failed to tell them, and fold the answers back in.
 
 **Signals:** the play changes within a month of publication. A play that survives first contact unchanged was probably not tested, just tolerated.
 
@@ -23,7 +23,7 @@ tags:
 
 **When:** the collection is large enough that readers cannot hold it in their heads. Roughly ten plays.
 
-**The move:** organise findability around the reader's situation, not your topic taxonomy. A reader under pressure is searching for "my team keeps committing to work it cannot finish", not for the chapter your play lives in. If the entry conditions are written well, they are the index. Surface them.
+**The action:** organise findability around the reader's situation, not your topic taxonomy. A reader under pressure is searching for "my team keeps committing to work it cannot finish", not for the chapter your play lives in. If the entry conditions are written well, they are the index. Surface them.
 
 **Signals:** readers find plays you did not point them at.
 

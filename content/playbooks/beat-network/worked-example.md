@@ -6,7 +6,7 @@ tags:
   - beat-network
 ---
 
-A Beat Network for an organisation adopting a product operating model might contain three sets of changes: Topology (how teams are shaped and bounded), Sensing (how the organisation knows what is happening), and Capability (how people develop the skills the new model requires). Below is a sketch of how the first few beats and gates might look.
+A Beat Network for an organisation adopting a product operating model might contain three sets of changes: Topology (how teams are structured and bounded), Sensing (how the organisation knows what is happening), and Capability (how people develop the skills the new model requires). Below is a sketch of how the first few beats and gates might look.
 
 ![Three lines of change, Topology, Sensing, and Capability, with gates where T4 and C3 wait on S3 and C2 waits on T3](/images/playbooks/beat-network/beat-network-worked-example.svg)
 

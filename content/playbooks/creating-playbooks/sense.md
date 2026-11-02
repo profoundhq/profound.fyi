@@ -13,7 +13,7 @@ tags:
 
 **When:** you have run the same move in roughly the same situation three times and it worked each time, or you catch yourself explaining the same approach to a third person.
 
-**The move:** write a one-line note naming the situation and the move. Nothing more. Park it in a single list of play candidates.
+**The action:** write a one-line note naming the situation and the move. Nothing more. Park it in a single list of play candidates.
 
 **Signals:** the candidate list grows faster than the playbook. Most candidates never graduate, and that is correct.
 

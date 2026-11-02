@@ -12,26 +12,26 @@ tags:
 
 The underwriting pack is the document an engineering leader hands to a board, audit committee, executive risk function, or investor when AI adoption has become a strategic conversation rather than a tactical one. It translates the framework's findings into categories that the governance audience already uses.
 
-It is deliberately short. A 15-minute read is the design constraint. A board reading 40 pages will skim; a board reading 4 pages will remember. The pack refers outward to detailed evidence rather than containing it.
+It is deliberately short. A 15-minute read is the design constraint. A board reading 40 pages will skim. A board reading 4 pages will remember. The pack refers outward to detailed evidence rather than containing it.
 
-It is also deliberately templated. The same structure populated with different evidence produces a pack for any engagement. This matters because the pack is not a one-time deliverable; it is the standing instrument through which engineering risk is reported to governance on an ongoing basis. A pack that cannot be produced quarterly cannot be maintained.
+It is also deliberately templated. The same structure populated with different evidence produces a pack for any engagement. This matters because the pack is not a one-time deliverable. It is the standing instrument through which engineering risk is reported to governance on an ongoing basis. A pack that cannot be produced quarterly cannot be maintained.
 
 ## Design principles
 
 **Lead with the headline.** The first page answers the question a board member cares about: Are we safe to continue? If not, what should we do? Everything else supports that answer.
 
-**Translate, do not restate.** Engineering-specific terminology (change failure rate, deployment frequency, test coverage, observability maturity) gets translated into governance categories (operational continuity, financial exposure, regulatory exposure, reputational exposure) at the boundary. The underlying evidence remains technically accurate; the presentation is board-legible.
+**Translate, do not restate.** Engineering-specific terminology (change failure rate, deployment frequency, test coverage, observability maturity) gets translated into governance categories (operational continuity, financial exposure, regulatory exposure, reputational exposure) at the boundary. The underlying evidence remains technically accurate, and the presentation is board-legible.
 
 **Show evidence, not assertion.** Every claim in the pack cites specific, named evidence the reader can inspect if they want to. "Test coverage is 34% on critical paths" is evidence. "Our testing is mature" is an assertion. Boards see through assertions quickly.
 
-**Make escalation obvious.** The escalation policy has to look like a change-approval matrix because boards already know how to read those. Introducing a new artefact shape at the escalation point is an accessibility failure.
+**Make escalation obvious.** The escalation policy has to look like a change-approval matrix because boards already know how to read those. Introducing a new artefact format at the escalation point is an accessibility failure.
 
-**Commit to what you will report.** The measurement commitment names specific metrics, specific thresholds, and a specific cadence. Vague commitments to "monitor the situation" are worse than no commitment; they signal that measurement is not yet taken seriously.
+**Commit to what you will report.** The measurement commitment names specific metrics, specific thresholds, and a specific cadence. Vague commitments to "monitor the situation" are worse than no commitment, because they signal that measurement is not yet taken seriously.
 
 
 ## Worked example
 
-*This example shows a completed pack for a hypothetical engineering organisation (Acme Financial, retail banking, mid-adoption). Names and numbers are illustrative but the shape is production-realistic.*
+*This example shows a completed pack for a hypothetical engineering organisation (Acme Financial, retail banking, mid-adoption). Names and numbers are illustrative but the structure is production-realistic.*
 
 ### 1. Position
 
@@ -74,11 +74,11 @@ Risks expressed in governance-legible categories, each with a current exposure a
 **Financial exposure.**
 *Risk:* Agent-authored changes to financial calculation or settlement logic produce incorrect monetary outcomes.
 *Current exposure:* Medium-low. Payments service is subject to reconciliation controls that would detect aggregate discrepancies within 24 hours, but individual transaction errors could affect customers before detection.
-*Mitigation in progress:* Agents are not currently permitted on payment-path code changes; this policy remains in force for this review period regardless of other progress.
+*Mitigation in progress:* Agents are not currently permitted on payment-path code changes. This policy remains in force for this review period regardless of other progress.
 
 **Regulatory exposure.**
 *Risk:* Agent use in systems subject to regulatory oversight (customer data, credit decisions) produces outcomes that cannot be explained to regulators.
-*Current exposure:* Low-medium. Current stage 2 operation means every agent action has a human approver who can be held accountable; the accountability chain is intact.
+*Current exposure:* Low-medium. Current stage 2 operation means every agent action has a human approver who can be held accountable, so the accountability chain is intact.
 *Mitigation in progress:* Audit trail development (target Q4 2026) will be required before stage 3 operation is permitted in regulated code paths. Stage 3 operation will remain excluded from regulated code until audit trail controls are independently validated.
 
 **Reputational exposure.**
@@ -103,7 +103,7 @@ Agent activity is classified into four tiers, each with specified approval requi
 
 ### 5. Measurement commitment
 
-The following metrics will be reported to the board at the end of each quarter. Thresholds marked *amber* trigger a discussion at the subsequent board meeting; thresholds marked *red* trigger an immediate pause on any expansion of agent autonomy pending review.
+The following metrics will be reported to the board at the end of each quarter. Thresholds marked *amber* trigger a discussion at the subsequent board meeting. Thresholds marked *red* trigger an immediate pause on any expansion of agent autonomy pending review.
 
 **Delivery metrics (DORA).**
 
@@ -209,7 +209,7 @@ As of [period], [organisation or unit] sits at **individual stage [n], team [mod
 
 **Populate with evidence the organisation already has.** The pack is not a new measurement programme. It is a reformatting of information that already exists in CI dashboards, incident reports, survey results, and policy documents. If the organisation cannot populate the pack from existing sources, that itself is a finding - the readiness diagnostic has surfaced a visibility gap.
 
-**Do not populate gaps with aspiration.** An empty cell is honest. A cell filled with a target dressed as a current value destroys the pack's credibility with governance audiences, permanently. If a metric is not currently measured, say so; commit to measuring it by a specific date if appropriate.
+**Do not populate gaps with aspiration.** An empty cell is honest. A cell filled with a target dressed as a current value destroys the pack's credibility with governance audiences, permanently. If a metric is not currently measured, say so, and commit to measuring it by a specific date if appropriate.
 
 **Refresh quarterly, not annually.** The pack is a standing instrument. Boards that see it once are unlikely to see it again, and the organisation loses the benefit of establishing a rhythm around AI-risk reporting. Quarterly is the minimum cadence at which the pack remains meaningful.
 

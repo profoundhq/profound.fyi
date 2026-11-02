@@ -15,7 +15,7 @@ This playbook is for one specific situation: the organisation has already introd
 Use this playbook when the following are all true:
 
 - Agent-authored code is in production across multiple services.
-- At least one of: DORA metrics have visibly degraded since adoption; incidents attributable to agent-authored changes have occurred; engineering leadership has lost confidence in the current adoption trajectory.
+- At least one of: DORA metrics have visibly degraded since adoption, incidents attributable to agent-authored changes have occurred, or engineering leadership has lost confidence in the current adoption trajectory.
 - The organisation is not yet asking to stop using AI entirely - it wants to recover, not retreat.
 - The engagement has leadership support to reduce agent autonomy temporarily. Without this support, the playbook cannot be executed.
 
@@ -23,7 +23,7 @@ Do *not* use this playbook when:
 
 - Adoption is going well but slower than expected. That is tuning, not recovery.
 - The organisation wants to abandon AI adoption. Recovery is a route back to productive adoption, not a way of managing retreat.
-- The engineering leader wants the playbook executed but the CTO or equivalent does not support reducing agent autonomy. The political precondition for recovery is not yet met; the engagement is about establishing that support first.
+- The engineering leader wants the playbook executed but the CTO or equivalent does not support reducing agent autonomy. The political precondition for recovery is not yet met, so the engagement is about establishing that support first.
 
 If the situation doesn't match, use the [standard adoption sequence](/playbooks/agentic-ai-for-teams/adoption-sequence/) instead.
 
@@ -50,11 +50,11 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 *Publish the stabilisation timeline.* Engineering leadership announces the stabilisation step, its expected duration, and what will trigger exit. Silent reductions in agent autonomy damage trust and invite workaround behaviour. Visible stabilisation with a named end date is tolerable.
 
-*Stand up an incident-reduction cell.* A small cross-team group (typically 3-5 people) with explicit authority to prioritise fixing agent-attributable issues in production ahead of new feature work. This cell remains in place for the stabilisation step only; its purpose is to clear the immediate backlog, not to become a permanent structure.
+*Stand up an incident-reduction cell.* A small cross-team group (typically 3-5 people) with explicit authority to prioritise fixing agent-attributable issues in production ahead of new feature work. This cell remains in place for the stabilisation step only. Its purpose is to clear the immediate backlog, not to become a permanent structure.
 
 **Common resistance patterns and responses.**
 
-*"This will kill our velocity."* Velocity is already damaged; it is presenting as incidents rather than as visible throughput. Making the damage visible is the point.
+*"This will kill our velocity."* Velocity is already damaged. It is presenting as incidents rather than as visible throughput. Making the damage visible is the point.
 
 *"We've invested in these tools and this reverses it."* The investment is not in the tools. It is in the capability. Stabilisation preserves the capability by protecting the capability's operating conditions.
 
@@ -83,9 +83,9 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 *Run a four-axis diagnostic.* For each axis, collect specific evidence, not impressions.
 
-**Axis 1: Which delivery metrics degraded and when.** DORA metrics before adoption vs current. Specifically: the shape of the degradation curve matters. Metrics that dropped gradually suggest capability erosion. Metrics that dropped sharply suggest a specific triggering change (a new tool, a policy change, a team restructure).
+**Axis 1: Which delivery metrics degraded and when.** DORA metrics before adoption vs current. Specifically: the profile of the degradation curve matters. Metrics that dropped gradually suggest capability erosion. Metrics that dropped sharply suggest a specific triggering change (a new tool, a policy change, a team restructure).
 
-**Axis 2: Which team practices were displaced.** Interview team leads and senior engineers. What did teams used to do that they no longer do? Typical displacements: code review became perfunctory because volume exceeded capacity; retrospectives stopped covering agent-authored work; specifications were abandoned in favour of prompts; pair programming was dropped because "the agent is the pair."
+**Axis 2: Which team practices were displaced.** Interview team leads and senior engineers. What did teams used to do that they no longer do? Typical displacements: code review became perfunctory because volume exceeded capacity, retrospectives stopped covering agent-authored work, specifications were abandoned in favour of prompts, and pair programming was dropped because "the agent is the pair."
 
 **Axis 3: What organisational learning has been lost.** This is the hardest axis to measure directly. Proxies: has the number of architectural decision records dropped? Are post-incident reviews producing durable artefacts? Can the team explain why current designs are the way they are, or only how to modify them? Loss of organisational learning is the underlying damage that continues to produce symptoms long after acute incidents are resolved.
 
@@ -93,13 +93,13 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 *Produce a diagnostic report.* Four axes, concrete evidence per axis, three to five prioritised findings with named owners. The report is the handoff artefact to step 3.
 
-*Present the diagnostic to leadership.* Not a summary. The full diagnostic. Leadership sometimes wants the comfortable version; the playbook does not permit this. Present evidence directly.
+*Present the diagnostic to leadership.* Not a summary. The full diagnostic. Leadership sometimes wants the comfortable version. The playbook does not permit this. Present evidence directly.
 
 **Common resistance patterns and responses.**
 
 *"We don't have time for a three-week diagnostic."* The alternative is recovery work that addresses symptoms rather than causes, and the need to repeat recovery within two quarters. The three-week investment is the cheap path.
 
-*"We already know what's wrong."* Often true at a high level; rarely true at the specificity needed to design interventions. Collect evidence anyway; the specifics are where the interventions live.
+*"We already know what's wrong."* Often true at a high level, but rarely true at the specificity needed to design interventions. Collect evidence anyway. The specifics are where the interventions live.
 
 *"Can we skip axis 3? It's soft."* Axis 3 is the hardest and the most important. Organisations that skip it tend to recover DORA metrics without recovering capability, and relapse.
 
@@ -109,7 +109,7 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 - Leadership has reviewed and accepted the findings (or formally disputed them, which is itself a useful input).
 - Owners named for each priority finding.
 
-**What failure looks like.** A diagnostic that produces generic findings ("communication could be better", "we need more testing") has failed. Specific findings are actionable; generic findings are not. If the diagnostic is producing genericity, the interview protocol needs sharpening - typically the interviewers are not pushing past first answers.
+**What failure looks like.** A diagnostic that produces generic findings ("communication could be better", "we need more testing") has failed. Specific findings are actionable. Generic findings are not. If the diagnostic is producing genericity, the interview protocol needs sharpening - typically the interviewers are not pushing past first answers.
 
 **Handoff to step 3.** Step 3 begins when leadership has accepted the diagnostic and named owners for priority findings.
 
@@ -124,15 +124,15 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 **Named interventions.** The specific interventions depend on the diagnostic findings. The following are the most common and the order in which they are typically addressed.
 
-*Restore spec authorship as a team practice.* For each service with specification debt, the team owning that service spends time reconstructing the specifications from the existing code and recent behavioural decisions. This is often painful; the team discovers that they do not fully understand their own service. That discovery is the point. Until the team can articulate the spec, they cannot supervise agent work against it.
+*Restore spec authorship as a team practice.* For each service with specification debt, the team owning that service spends time reconstructing the specifications from the existing code and recent behavioural decisions. This is often painful: the team discovers that they do not fully understand their own service. That discovery is the point. Until the team can articulate the spec, they cannot supervise agent work against it.
 
 *Restore retrospectives covering agent-authored work.* Teams explicitly add "agent-authored work" as a standing retrospective agenda item. What worked, what misled, what needs to change in the shared context or the spec. This is the mechanism by which individual agent interactions become team learning. Without it, the team keeps hitting the same classes of problem.
 
-*Restore substantive code review.* Not line-by-line review; that will never scale. Review focused on spec adherence, architectural coherence, and system-level consequences. Teams often need coaching on what this looks like. Senior engineers demonstrate the shape of good review in pairing sessions. The practice has to be learned; it does not emerge spontaneously from a policy statement.
+*Restore substantive code review.* Not line-by-line review, which will never scale. Review focused on spec adherence, architectural coherence, and system-level consequences. Teams often need coaching on what this looks like. Senior engineers demonstrate what good review looks like in pairing sessions. The practice has to be learned. It does not emerge spontaneously from a policy statement.
 
-*Restore pair-with-agent for knowledge transfer.* For any team where juniors arrived during the AI-amplified period and did not benefit from the traditional apprenticeship, set up pair-with-agent pairings with seniors observing. This is a structural investment in the next cohort of senior engineers; skipping it accumulates the damage.
+*Restore pair-with-agent for knowledge transfer.* For any team where juniors arrived during the AI-amplified period and did not benefit from the traditional apprenticeship, set up pair-with-agent pairings with seniors observing. This is a structural investment in the next cohort of senior engineers. Skipping it accumulates the damage.
 
-*Address the top organisational-infrastructure finding.* If the diagnostic identified an organisational infrastructure gap (typically test coverage on critical paths, pipeline test gating, or observability completeness), begin the work of closing it. This is usually a multi-quarter investment; the objective of step 3 is to start it, not complete it.
+*Address the top organisational-infrastructure finding.* If the diagnostic identified an organisational infrastructure gap (typically test coverage on critical paths, pipeline test gating, or observability completeness), begin the work of closing it. This is usually a multi-quarter investment. The objective of step 3 is to start it, not complete it.
 
 *Hold at stage 2 across all teams.* Agent autonomy remains at stage 2 throughout this step. Any pressure to restore autonomy before practices are restored is refused. The relaxation is for step 4.
 
@@ -142,7 +142,7 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 *"The spec reconstruction feels like academic make-work."* It will, until the first time a team catches a defect during spec reconstruction that would otherwise have reached production. After that it feels different. The first instance usually arrives in the second or third week of step 3.
 
-*"Junior developers are bored."* Juniors paired with agents under senior observation are not bored; they are learning. Juniors running agents on their own are bored and developing bad habits. The difference is the senior's presence.
+*"Junior developers are bored."* Juniors paired with agents under senior observation are not bored. They are learning. Juniors running agents on their own are bored and developing bad habits. The difference is the senior's presence.
 
 **Evidence of completion.** Exit to step 4 requires:
 
@@ -161,7 +161,7 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 **Entry criteria.** Team practices restored. Organisational infrastructure work underway. Leadership ready to re-introduce agent autonomy selectively.
 
-**Expected duration.** Two to three weeks initially; ongoing for two to four quarters as re-adoption proceeds.
+**Expected duration.** Two to three weeks initially, then ongoing for two to four quarters as re-adoption proceeds.
 
 **Objective.** Re-introduce agent autonomy on the evidence-gated basis the standard adoption sequence prescribes, now with the advantage that the organisation has lived through the failure mode and the case for evidence gating no longer requires abstract persuasion.
 
@@ -171,7 +171,7 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 *Define the re-adoption hypothesis explicitly.* "We believe that allowing team [X] to operate in [mode] on [work stream] will improve [specific metric] without degrading [specific metric]." Written down. Measured. Reviewed after two sprint cycles.
 
-*Run the first re-adoption with explicit review.* Engineering leadership reviews progress weekly for the first month. Not micromanagement; an acknowledgement that this is the test case for the recovery's validity. Problems surface quickly under this attention.
+*Run the first re-adoption with explicit review.* Engineering leadership reviews progress weekly for the first month. Not micromanagement, but an acknowledgement that this is the test case for the recovery's validity. Problems surface quickly under this attention.
 
 *If the first re-adoption succeeds, expand deliberately.* Second team, third team. Each expansion is its own hypothesis with its own measurement. Pace is determined by the rate at which organisational infrastructure continues to close gaps, not by the appetite for agent use.
 
@@ -181,7 +181,7 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 
 *"Can we go faster now that we've done the work?"* Maybe. The data will tell you. The data has to tell you, because the whole point of recovery is that intuition about readiness was wrong the last time.
 
-*"The first re-adoption is being cautious to the point of ceremony."* Caution is the feature, not the bug. The next re-adoption will be faster because the first one established the shape.
+*"The first re-adoption is being cautious to the point of ceremony."* Caution is the feature, not the bug. The next re-adoption will be faster because the first one established the pattern.
 
 *"Other teams are frustrated that they have to wait."* True, and a reasonable frustration. The order in which teams re-adopt is determined by their step 3 readiness, not by tenure or organisational politics.
 
@@ -192,7 +192,7 @@ The time-box is deliberately longer than the urgency usually feels. Recovery und
 - No agent-attributable incidents have occurred in re-adopted teams for at least one quarter.
 - The underwriting pack produced at the start of recovery shows material improvement on measured gaps.
 
-**What failure looks like.** Re-adoption produces a repeat of the original symptoms within the first two cycles. The honest diagnosis is usually that steps 1-3 were executed as theatre rather than as genuine recovery; the organisation did not internalise what had to change. Escalation path: return to step 1, with a shorter stabilisation this time but a more demanding diagnostic, and honest leadership conversation about whether recovery is viable without structural change.
+**What failure looks like.** Re-adoption produces a repeat of the original symptoms within the first two cycles. The honest diagnosis is usually that steps 1-3 were executed as theatre rather than as genuine recovery: the organisation did not internalise what had to change. Escalation path: return to step 1, with a shorter stabilisation this time but a more demanding diagnostic, and honest leadership conversation about whether recovery is viable without structural change.
 
 
 ## Running the playbook alongside the underwriting pack
@@ -204,18 +204,18 @@ The recovery playbook produces evidence that the underwriting pack reports. Conc
 - Step 3 restoration work appears as "mitigation in progress" against each risk.
 - Step 4 re-adoption measurement populates the "measurement commitment" deliverables.
 
-Running these as a single instrument rather than two parallel programmes is the efficiency. Boards see one pack; engineering leaders work one playbook; the pack is the communication layer over the playbook's evidence.
+Running these as a single instrument rather than two parallel programmes is the efficiency. Boards see one pack, and engineering leaders work one playbook. The pack is the communication layer over the playbook's evidence.
 
 
 ## Notes on using the playbook
 
-**The playbook is the engagement plan, not a supplement to it.** Clients sometimes ask for the playbook to be embedded in a larger transformation programme. Resist this. The playbook has specific entry criteria and a specific exit point; embedding it in a broader programme typically corrupts the entry criteria and postpones the exit.
+**The playbook is the engagement plan, not a supplement to it.** Clients sometimes ask for the playbook to be embedded in a larger transformation programme. Resist this. The playbook has specific entry criteria and a specific exit point. Embedding it in a broader programme typically corrupts the entry criteria and postpones the exit.
 
 **Leadership commitment is the precondition, not the output.** Do not start step 1 without explicit leadership support to reduce agent autonomy. If that support is uncertain, the engagement begins with a political and educational step before the playbook itself can start.
 
-**The time-boxes are minimums, not targets.** Engagements that finish faster than the ranges above have usually cut a corner. Engagements that finish slower often have a deeper structural issue; treat overruns as findings in themselves.
+**The time-boxes are minimums, not targets.** Engagements that finish faster than the ranges above have usually cut a corner. Engagements that finish slower often have a deeper structural issue. Treat overruns as findings in themselves.
 
-**Recovery is not one-shot.** Organisations that recover and then slide back into the same pattern are common. The re-adoption step's standing review is not decoration; it is the early-warning system for a second recovery cycle. Treat the first year after recovery exits as maintenance of recovery, not as a return to normal operations.
+**Recovery is not one-shot.** Organisations that recover and then slide back into the same pattern are common. The re-adoption step's standing review is not decoration. It is the early-warning system for a second recovery cycle. Treat the first year after recovery exits as maintenance of recovery, not as a return to normal operations.
 
 **Provisional status.** This playbook is drafted from the logic of the remediation sequence in the framework, validated against adjacent practice in delivery improvement and crisis response work, but not yet tested across multiple independent engagements. Treat its specifics as defensible hypotheses rather than proven patterns, and expect refinement with use.
 

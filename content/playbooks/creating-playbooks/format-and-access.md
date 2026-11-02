@@ -15,7 +15,7 @@ Access is not an infrastructure detail to sort out after the writing. It determi
 
 **When:** starting a collection, or reviewing one that has drifted private by habit rather than decision.
 
-**The move:** publish openly unless a specific play has a specific reason not to. Make the exception per play, not per collection. Client-confidential instances get anonymised at extraction, not locked away at publication.
+**The action:** publish openly unless a specific play has a specific reason not to. Make the exception per play, not per collection. Client-confidential instances get anonymised at extraction, not locked away at publication.
 
 **Signals:** people outside the org cite, steal, and challenge your plays. External challenge is a test suite you do not have to recruit. A public collection also works as a recruitment instrument: candidates arrive already knowing how you work, and authors take pride in work that is out there.
 
@@ -25,7 +25,7 @@ Access is not an infrastructure detail to sort out after the writing. It determi
 
 **When:** choosing where the collection lives.
 
-**The move:** the canonical form is plain text under version control, because that is what makes the govern stage cheap: diffs, history, proposals, owners. But the reading path is rendered pages at a stable URL that anyone can open with nothing more than a browser. No login where public, single sign-on at most where internal, never a repository clone.
+**The action:** the canonical form is plain text under version control, because that is what makes the govern stage cheap: diffs, history, proposals, owners. But the reading path is rendered pages at a stable URL that anyone can open with nothing more than a browser. No login where public, single sign-on at most where internal, never a repository clone.
 
 **Signals:** the least technical person in the org can get from "I have a situation" to reading the right play without asking anyone for help or access.
 
@@ -35,7 +35,7 @@ Access is not an infrastructure detail to sort out after the writing. It determi
 
 **When:** the improvement-to-standard loop is live.
 
-**The move:** offer at least one proposal route that requires no tooling beyond what everyone already uses. A form, an email address, a comment thread. The maintainer translates it into the canonical mechanism. Git-fluent people can raise changes directly, but git fluency is never the price of participation.
+**The action:** offer at least one proposal route that requires no tooling beyond what everyone already uses. A form, an email address, a comment thread. The maintainer translates it into the canonical mechanism. Git-fluent people can raise changes directly, but git fluency is never the price of participation.
 
 **Signals:** proposals arrive from people who could not have raised a merge request. If every proposal comes from the technical few, the loop is only sampling part of the org, and the plays will drift toward the practices of the people who can operate the door.
 

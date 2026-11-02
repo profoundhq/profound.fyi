@@ -13,7 +13,7 @@ tags:
 
 **When:** drafting any play.
 
-**The move:** state the entry conditions first. What would a reader be seeing that tells them this play applies. Then the move, then the signals, then the conditions under which the play does not apply. Use the [Play Template](/playbooks/creating-playbooks/artefacts/play-template/) so the form stays consistent across the collection.
+**The action:** state the entry conditions first. What would a reader be seeing that tells them this play applies. Then the move, then the signals, then the conditions under which the play does not apply. Use the [Play Template](/playbooks/creating-playbooks/artefacts/play-template/) so the form stays consistent across the collection.
 
 **Signals:** a reader in the middle of a situation can decide within a minute whether this play is for them.
 
@@ -23,7 +23,7 @@ tags:
 
 **When:** a play resolves a real tension, which is most of the time.
 
-**The move:** say what pulls in each direction and what the play trades away. Cost before payback, dependencies on sponsorship, skills the team must already have. The forces section is the part naive playbook writers always skip, and its absence is arguably the root antipattern: a play stated without the forces it resolves is an instruction.
+**The action:** say what pulls in each direction and what the play trades away. Cost before payback, dependencies on sponsorship, skills the team must already have. The forces section is the part naive playbook writers always skip, and its absence is arguably the root antipattern: a play stated without the forces it resolves is an instruction.
 
 **Signals:** a reader can predict where their run of the play will hurt, before it does.
 
@@ -33,7 +33,7 @@ tags:
 
 **When:** the collection serves both people new to the practice and experienced practitioners, which is nearly always.
 
-**The move:** structure every play so the expert can stop early and the novice can keep reading. The entry conditions and move at the top are the expert's version, they will know how to run it. The forces, signals, and instance below are the novice's version, showing how the principle lands in practice. Never write two documents, write one with a stopping point.
+**The action:** structure every play so the expert can stop early and the novice can keep reading. The entry conditions and move at the top are the expert's version, they will know how to run it. The forces, signals, and instance below are the novice's version, showing how the principle lands in practice. Never write two documents, write one with a stopping point.
 
 **Signals:** experienced readers describe plays as quick references, newer readers describe the same plays as teaching material.
 
