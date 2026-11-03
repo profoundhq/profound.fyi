@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+---
+{% set siblings = collections[catalogue] | sortByOrder %}
+<article class="page">
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+
+  {% set previousPage = siblings | getPreviousCollectionItem %}
+  {% set nextPage = siblings | getNextCollectionItem %}
+  <nav class="prev-next" aria-label="{{ catalogueTitle }}">
+    {% if previousPage %}
+      <a class="prev" href="{{ previousPage.url }}"><span class="label">Previous</span>{{ previousPage.data.title }}</a>
+    {% else %}<span class="prev"></span>{% endif %}
+    {% if nextPage %}
+      <a class="next" href="{{ nextPage.url }}"><span class="label">Next</span>{{ nextPage.data.title }}</a>
+    {% else %}<span class="next"></span>{% endif %}
+  </nav>
+
+  <p class="license-notice">
+    {% if describedBy == "sorrel" %}Description by Sorrel Harriet, lightly edited.{% else %}Description added for this site, not reviewed by Sorrel Harriet.{% endif %}
+    From the <a href="{{ crumbParent.url }}">{{ catalogueTitle }}</a>, compiled by Sorrel Harriet.
+    Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
+  </p>
+</article>
