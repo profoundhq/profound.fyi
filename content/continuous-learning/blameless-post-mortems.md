@@ -11,6 +11,10 @@ related:
   - game-days-and-simulations
   - observability-tools
   - retrospectives
+seeAlsoLaws:
+  - blameless-retrospectives
+  - just-culture
+  - the-new-view
 updated: 2026-11-03
 tags:
   - continuous-learning

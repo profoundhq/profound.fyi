@@ -13,6 +13,14 @@ layout: layouts/base.njk
   </ul>
   {% endif %}
 
+  {% set lawEntries = collections.laws | lawsBySlug(seeAlsoLaws) %}
+  {% if lawEntries | length %}
+  <h2>See also in Laws</h2>
+  <ul class="law-grid">
+    {% for entry in lawEntries %}{% include "partials/law-card.njk" %}{% endfor %}
+  </ul>
+  {% endif %}
+
   {% set previousPage = siblings | getPreviousCollectionItem %}
   {% set nextPage = siblings | getNextCollectionItem %}
   <nav class="prev-next" aria-label="{{ catalogueTitle }}">

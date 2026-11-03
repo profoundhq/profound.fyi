@@ -11,6 +11,8 @@ related:
   - pairing
   - peer-review
   - shared-source-code-repository
+seeAlsoLaws:
+  - linuss-law
 updated: 2026-11-03
 tags:
   - continuous-learning

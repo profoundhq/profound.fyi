@@ -10,6 +10,8 @@ crumbParent:
 related:
   - blameless-post-mortems
   - swarming
+seeAlsoLaws:
+  - observability
 updated: 2026-11-03
 tags:
   - continuous-learning

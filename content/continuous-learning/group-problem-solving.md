@@ -11,6 +11,8 @@ related:
   - brainstorming
   - improvement-blitzes
   - swarming
+seeAlsoLaws:
+  - the-five-whys
 updated: 2026-11-03
 tags:
   - continuous-learning

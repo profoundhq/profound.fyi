@@ -11,6 +11,8 @@ related:
   - experiments
   - group-problem-solving
   - workshops
+seeAlsoLaws:
+  - improvement-kata
 updated: 2026-11-03
 tags:
   - continuous-learning

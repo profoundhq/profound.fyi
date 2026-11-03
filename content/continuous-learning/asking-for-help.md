@@ -12,6 +12,8 @@ related:
   - mentoring
   - special-interest-channels
   - watercooler-chats
+seeAlsoLaws:
+  - psychological-safety
 updated: 2026-11-03
 tags:
   - continuous-learning

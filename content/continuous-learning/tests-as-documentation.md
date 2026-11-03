@@ -10,6 +10,8 @@ crumbParent:
 related:
   - documenting
   - shared-source-code-repository
+seeAlsoLaws:
+  - test-driven-development
 updated: 2026-11-03
 tags:
   - continuous-learning

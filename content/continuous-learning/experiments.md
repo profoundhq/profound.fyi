@@ -11,6 +11,8 @@ related:
   - hack-days
   - improvement-blitzes
   - learning-backlog
+seeAlsoLaws:
+  - improvement-kata
 updated: 2026-11-03
 tags:
   - continuous-learning

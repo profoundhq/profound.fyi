@@ -45,3 +45,22 @@ test("the catalogue credits both authors", () => {
   assert.match(index, /Sorrel Harriet and Benedict Steele/);
   assert.doesNotMatch(index, /not been reviewed/);
 });
+
+const lawsDir = join(import.meta.dirname, "..", "content", "laws", "entries");
+const lawSlugs = new Set(
+  readdirSync(lawsDir)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => matter(readFileSync(join(lawsDir, file), "utf8")).data.slug),
+);
+
+test("every Laws cross-link names a Laws entry", () => {
+  const broken = [...entries].flatMap(([slug, data]) =>
+    (data.seeAlsoLaws ?? []).filter((law) => !lawSlugs.has(law)).map((law) => `${slug} -> ${law}`),
+  );
+  assert.deepEqual(broken, []);
+});
+
+test("pairing and mobbing point to their Laws entries", () => {
+  assert.ok(entries.get("pairing").seeAlsoLaws?.includes("pair-programming"));
+  assert.ok(entries.get("mobbing").seeAlsoLaws?.includes("mob-programming"));
+});

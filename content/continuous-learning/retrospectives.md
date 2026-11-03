@@ -12,6 +12,9 @@ related:
   - learning-backlog
   - reflective-questioning
   - team-health-checks
+seeAlsoLaws:
+  - blameless-retrospectives
+  - feedback-loops
 updated: 2026-11-03
 tags:
   - continuous-learning

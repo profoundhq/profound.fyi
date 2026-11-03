@@ -10,6 +10,8 @@ crumbParent:
 related:
   - blameless-post-mortems
   - dojos
+seeAlsoLaws:
+  - pre-mortem
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -11,6 +11,9 @@ related:
   - dojos
   - pairing
   - swarming
+seeAlsoLaws:
+  - mob-programming
+  - bus-factor
 updated: 2026-11-03
 tags:
   - continuous-learning

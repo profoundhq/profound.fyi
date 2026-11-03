@@ -10,6 +10,9 @@ crumbParent:
 related:
   - code-review
   - mobbing
+seeAlsoLaws:
+  - pair-programming
+  - bus-factor
 updated: 2026-11-03
 tags:
   - continuous-learning
