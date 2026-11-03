@@ -10,7 +10,7 @@ tags:
 
 **Five well-known "playbooks" and playbook-adjacent documents run through the [Is It a Playbook](/playbooks/creating-playbooks/artefacts/is-it-a-playbook/) test. The label is doing marketing work in most of them, and the failures are more instructive than the passes.**
 
-Each example gets the five questions, a verdict from the neighbour table, and the lesson it carries for anyone building a collection. The point is not to score points off other people's documents. It is that the test only earns trust by being run in public on things readers already know.
+Each example gets the five questions, a verdict from the neighbour table, and the lesson it carries for anyone building a collection. The test only earns trust by being run in public on documents readers already know.
 
 
 ## Atlassian Team Playbook

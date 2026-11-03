@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**Governance is one loop and one habit: local improvements become the new standard cheaply, and plays retire in the open. Everything heavier than that is theatre.**
+Governance is one loop and one habit: local improvements become the new standard cheaply, and plays retire in the open. Everything heavier than that is theatre.
 
 ## Play: local improvement to new standard
 
@@ -27,7 +27,7 @@ This is the play the whole system exists to serve.
 
 **When:** a play's last-tested date is old, or its signals have stopped firing, or the situation it addressed no longer occurs.
 
-**The action:** mark it retired, say why, and leave it visible. Retirement is a first-class outcome, not a failure. A retired play with its reasons attached teaches almost as much as a live one.
+**The action:** mark it retired, say why, and leave it visible. Retirement is a first-class outcome. A retired play with its reasons attached teaches almost as much as a live one.
 
 **Signals:** the collection has retired plays in it. A playbook that has never retired anything has no governance, whatever its process documents say.
 
@@ -35,7 +35,7 @@ This is the play the whole system exists to serve.
 
 ## Antipattern: the museum piece
 
-Written once, never revised against evidence, no feedback loop. Stale plays are worse than no plays because they carry false authority. The tell: every play has the same date on it.
+Written once, never revised against evidence, no feedback loop. Stale plays are worse than no plays because they carry false authority. It shows when every play carries the same date.
 
 ## Antipattern: governance theatre
 

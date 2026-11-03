@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**Most play candidates should never become plays. The sensing discipline is noticing repetition without rushing to codify it.**
+Most play candidates should never become plays. The sensing discipline is noticing repetition without rushing to codify it.
 
 ## Play: notice the third time
 
