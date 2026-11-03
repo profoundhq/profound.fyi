@@ -4,10 +4,13 @@ title: "Blameless post-mortems"
 description: "After an incident or failure, the people involved meet to reconstruct what happened, why their actions made sense at the time, and what to change."
 permalink: /continuous-learning/blameless-post-mortems/
 order: 30
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - game-days-and-simulations
+  - observability-tools
+  - retrospectives
 updated: 2026-11-03
 tags:
   - continuous-learning

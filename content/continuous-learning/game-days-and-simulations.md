@@ -4,10 +4,12 @@ title: "Game days and simulations"
 description: "A team rehearses a realistic scenario, such as a system outage or a security incident, in a controlled setting."
 permalink: /continuous-learning/game-days-and-simulations/
 order: 160
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - blameless-post-mortems
+  - dojos
 updated: 2026-11-03
 tags:
   - continuous-learning

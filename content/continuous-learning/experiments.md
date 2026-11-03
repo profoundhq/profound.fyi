@@ -4,10 +4,13 @@ title: "Experiments"
 description: "Treating a change as an experiment, with a hypothesis, a small test, and a way to measure the result."
 permalink: /continuous-learning/experiments/
 order: 150
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - hack-days
+  - improvement-blitzes
+  - learning-backlog
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,13 @@ title: "Wiki or knowledge base"
 description: "A shared, searchable store of information that anyone can read and update."
 permalink: /continuous-learning/wiki-or-knowledge-base/
 order: 460
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - chatrooms-and-chatbots
+  - creating-shared-resources
+  - documenting
 updated: 2026-11-03
 tags:
   - continuous-learning

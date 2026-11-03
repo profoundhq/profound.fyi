@@ -4,10 +4,12 @@ title: "Shared source code repository"
 description: "Making code visible across teams so anyone can read it, learn from it, and contribute, an approach often called inner source."
 permalink: /continuous-learning/shared-source-code-repository/
 order: 360
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - code-review
+  - tests-as-documentation
 updated: 2026-11-03
 tags:
   - continuous-learning

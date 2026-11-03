@@ -4,10 +4,13 @@ title: "Giving and receiving feedback"
 description: "Telling someone how their work or behaviour affected you, and hearing the same about yourself."
 permalink: /continuous-learning/giving-and-receiving-feedback/
 order: 170
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - demos
+  - peer-review
+  - reflective-questioning
 updated: 2026-11-03
 tags:
   - continuous-learning

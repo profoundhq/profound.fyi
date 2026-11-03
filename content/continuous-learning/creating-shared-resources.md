@@ -4,10 +4,12 @@ title: "Creating shared resources"
 description: "Teams build learning materials together, such as guides, templates, checklists, diagrams, or example code."
 permalink: /continuous-learning/creating-shared-resources/
 order: 110
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - guided-experiences
+  - wiki-or-knowledge-base
 updated: 2026-11-03
 tags:
   - continuous-learning

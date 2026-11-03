@@ -4,10 +4,14 @@ title: "Asking for help"
 description: "Sounds straightforward, yet people often avoid asking for help, for many reasons."
 permalink: /continuous-learning/asking-for-help/
 order: 20
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - chatrooms-and-chatbots
+  - mentoring
+  - special-interest-channels
+  - watercooler-chats
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,12 @@ title: "Group coaching"
 description: "A coach works with a small group of people, often with similar roles or challenges, who are not necessarily in the same team."
 permalink: /continuous-learning/group-coaching/
 order: 180
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - one-to-one-coaching
+  - team-coaching
 updated: 2026-11-03
 tags:
   - continuous-learning

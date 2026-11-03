@@ -4,10 +4,12 @@ title: "Observability tools"
 description: "Logs, metrics, traces, and dashboards show how systems behave in production."
 permalink: /continuous-learning/observability-tools/
 order: 280
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - blameless-post-mortems
+  - swarming
 updated: 2026-11-03
 tags:
   - continuous-learning

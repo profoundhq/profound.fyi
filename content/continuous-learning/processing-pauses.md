@@ -4,10 +4,12 @@ title: "Processing pauses"
 description: "A processing pause means taking time to think, or simply to be, after an emotionally or cognitively demanding experience."
 permalink: /continuous-learning/processing-pauses/
 order: 320
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - reflective-questioning
+  - walk-and-talks
 updated: 2026-11-03
 tags:
   - continuous-learning

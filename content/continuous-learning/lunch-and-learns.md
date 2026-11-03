@@ -4,10 +4,13 @@ title: "Lunch and learns"
 description: "If you are expecting people to give up their lunchtime, choose the activities and format sensitively so people have the chance to eat and draw breath."
 permalink: /continuous-learning/lunch-and-learns/
 order: 250
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - book-clubs
+  - lightning-talks
+  - workshops
 updated: 2026-11-03
 tags:
   - continuous-learning

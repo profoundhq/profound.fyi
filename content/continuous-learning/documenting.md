@@ -4,10 +4,13 @@ title: "Documenting"
 description: "Writing down how things work, why decisions were taken, and how to do common tasks."
 permalink: /continuous-learning/documenting/
 order: 130
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - blogging
+  - tests-as-documentation
+  - wiki-or-knowledge-base
 updated: 2026-11-03
 tags:
   - continuous-learning

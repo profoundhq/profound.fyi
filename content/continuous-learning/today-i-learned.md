@@ -4,10 +4,13 @@ title: "Today I learned"
 description: "People share small things they have learned, in a dedicated channel, a shared document, or a regular slot in a meeting."
 permalink: /continuous-learning/today-i-learned/
 order: 420
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - blogging
+  - lightning-talks
+  - special-interest-channels
 updated: 2026-11-03
 tags:
   - continuous-learning

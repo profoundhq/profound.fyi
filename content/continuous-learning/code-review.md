@@ -4,10 +4,13 @@ title: "Code review"
 description: "Someone other than the author reads a change before it is merged."
 permalink: /continuous-learning/code-review/
 order: 80
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - pairing
+  - peer-review
+  - shared-source-code-repository
 updated: 2026-11-03
 tags:
   - continuous-learning

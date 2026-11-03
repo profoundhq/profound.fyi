@@ -4,10 +4,13 @@ title: "Learning backlog"
 description: "A visible list of things a person or team wants to learn, managed alongside the work backlog."
 permalink: /continuous-learning/learning-backlog/
 order: 230
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - experiments
+  - online-courses
+  - retrospectives
 updated: 2026-11-03
 tags:
   - continuous-learning

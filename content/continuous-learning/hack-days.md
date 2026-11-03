@@ -4,10 +4,13 @@ title: "Hack days"
 description: "A day or two set aside for people to work on ideas of their own choosing, often in small cross-team groups."
 permalink: /continuous-learning/hack-days/
 order: 210
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - demos
+  - experiments
+  - unconference
 updated: 2026-11-03
 tags:
   - continuous-learning

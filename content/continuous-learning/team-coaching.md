@@ -4,10 +4,12 @@ title: "Team coaching"
 description: "A coach works with a whole team to improve how it works together, including communication, decision-making, and delivery practices."
 permalink: /continuous-learning/team-coaching/
 order: 390
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - group-coaching
+  - team-health-checks
 updated: 2026-11-03
 tags:
   - continuous-learning

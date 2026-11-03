@@ -4,10 +4,13 @@ title: "Unconference"
 description: "A participant-led event where attendees set the agenda on the day."
 permalink: /continuous-learning/unconference/
 order: 430
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - communities-of-practice
+  - conferences
+  - hack-days
 updated: 2026-11-03
 tags:
   - continuous-learning

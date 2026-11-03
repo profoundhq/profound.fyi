@@ -4,10 +4,13 @@ title: "Communities of practice"
 description: "People who share a craft or interest across team boundaries meet regularly to learn from each other, for example testers, designers, or people working with a particular technology."
 permalink: /continuous-learning/communities-of-practice/
 order: 90
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - book-clubs
+  - special-interest-channels
+  - unconference
 updated: 2026-11-03
 tags:
   - continuous-learning

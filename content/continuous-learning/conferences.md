@@ -4,10 +4,12 @@ title: "Conferences"
 description: "Attending or speaking at conferences exposes people to ideas, tools, and peers beyond their own organisation."
 permalink: /continuous-learning/conferences/
 order: 100
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - lightning-talks
+  - unconference
 updated: 2026-11-03
 tags:
   - continuous-learning

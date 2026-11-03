@@ -4,10 +4,13 @@ title: "Online courses"
 description: "Self-paced or scheduled courses delivered online, from short tutorials to full certifications."
 permalink: /continuous-learning/online-courses/
 order: 290
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - guided-experiences
+  - learning-backlog
+  - reading
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,13 @@ title: "Book clubs"
 description: "A group reads the same book and meets regularly to discuss it."
 permalink: /continuous-learning/book-clubs/
 order: 50
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - communities-of-practice
+  - lunch-and-learns
+  - reading
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,13 @@ title: "Swarming"
 description: "The team stops starting new work and concentrates on finishing a single item, often an urgent problem or a blocked piece of work."
 permalink: /continuous-learning/swarming/
 order: 380
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - group-problem-solving
+  - mobbing
+  - observability-tools
 updated: 2026-11-03
 tags:
   - continuous-learning

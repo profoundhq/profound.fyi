@@ -4,10 +4,12 @@ title: "Team health checks"
 description: "A team regularly rates itself against a set of factors, such as pace, quality, fun, learning, and support, and discusses the results."
 permalink: /continuous-learning/team-health-checks/
 order: 400
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - retrospectives
+  - team-coaching
 updated: 2026-11-03
 tags:
   - continuous-learning

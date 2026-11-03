@@ -4,10 +4,12 @@ title: "Watercooler chats"
 description: "Informal, unplanned conversations between colleagues."
 permalink: /continuous-learning/watercooler-chats/
 order: 450
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - asking-for-help
+  - walk-and-talks
 updated: 2026-11-03
 tags:
   - continuous-learning

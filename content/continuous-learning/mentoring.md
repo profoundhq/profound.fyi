@@ -4,10 +4,13 @@ title: "Mentoring"
 description: "A more experienced person supports someone's development through regular conversations, sharing advice, experience, and connections."
 permalink: /continuous-learning/mentoring/
 order: 260
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - one-to-one-coaching
+  - asking-for-help
+  - work-shadowing
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,12 @@ title: "Pairing"
 description: "Pairing means working in partnership with someone, in real time, towards the same goal."
 permalink: /continuous-learning/pairing/
 order: 300
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - code-review
+  - mobbing
 updated: 2026-11-03
 tags:
   - continuous-learning

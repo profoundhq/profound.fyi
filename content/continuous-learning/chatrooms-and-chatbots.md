@@ -4,10 +4,13 @@ title: "Chatrooms and chatbots"
 description: "Chat tools let people ask questions and share what they know in the flow of work."
 permalink: /continuous-learning/chatrooms-and-chatbots/
 order: 70
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - asking-for-help
+  - special-interest-channels
+  - wiki-or-knowledge-base
 updated: 2026-11-03
 tags:
   - continuous-learning

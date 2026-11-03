@@ -1,7 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Continuous Learning Catalogue
-description: "A catalogue of 48 social and technical practices that support learning at work, compiled by Sorrel Harriet."
+description: "A catalogue of 48 social and technical practices that support learning at work, by Sorrel Harriet and Benedict Steele."
 permalink: /continuous-learning/
 tags: []
 updated: 2026-11-03
@@ -66,8 +66,6 @@ Each practice has its own page.
 
 ## Source and licence
 
-Compiled by Sorrel Harriet as the [Continuous Learning Toolkit](https://github.com/sharriet/continuous-learning-toolkit) and republished here with permission under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
-
-Sorrel wrote the descriptions of Asking for help, Guided experiences, Lightning talks, Lunch and learns, Pairing, Processing pauses, Reflective questioning, and Walk and talks. They have been lightly edited: names in sentence case, spelling and punctuation in line with this site, and minor rewording for length. The other 40 practices were named in the original but not described. Their descriptions were added for this site in November 2026 and have not been reviewed by Sorrel.
+By Sorrel Harriet and Benedict Steele, based on Sorrel's [Continuous Learning Toolkit](https://github.com/sharriet/continuous-learning-toolkit), and published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Linked resources belong to their authors. Check each one's copyright and terms of use before reusing it.

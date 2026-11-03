@@ -4,10 +4,12 @@ title: "Reading"
 description: "Reading books, articles, papers, and documentation to learn independently."
 permalink: /continuous-learning/reading/
 order: 330
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - book-clubs
+  - online-courses
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,12 @@ title: "Brainstorming"
 description: "A group generates many ideas quickly before judging any of them."
 permalink: /continuous-learning/brainstorming/
 order: 60
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - group-problem-solving
+  - workshops
 updated: 2026-11-03
 tags:
   - continuous-learning

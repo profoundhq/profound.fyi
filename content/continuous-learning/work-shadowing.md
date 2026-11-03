@@ -4,10 +4,12 @@ title: "Work shadowing"
 description: "Spending time observing someone in a different role or team as they do their work."
 permalink: /continuous-learning/work-shadowing/
 order: 470
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - guided-experiences
+  - mentoring
 updated: 2026-11-03
 tags:
   - continuous-learning

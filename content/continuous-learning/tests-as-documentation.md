@@ -4,10 +4,12 @@ title: "Tests as documentation"
 description: "Well-written automated tests describe how a system is expected to behave, with examples that stay current because they run."
 permalink: /continuous-learning/tests-as-documentation/
 order: 410
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - documenting
+  - shared-source-code-repository
 updated: 2026-11-03
 tags:
   - continuous-learning

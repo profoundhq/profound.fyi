@@ -4,10 +4,12 @@ title: "Walk and talks"
 description: "A walk and talk is a conversation away from the desk."
 permalink: /continuous-learning/walk-and-talks/
 order: 440
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - processing-pauses
+  - watercooler-chats
 updated: 2026-11-03
 tags:
   - continuous-learning

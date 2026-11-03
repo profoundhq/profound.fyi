@@ -4,10 +4,13 @@ title: "Demos"
 description: "A team shows working software or other outputs to stakeholders and colleagues, usually at the end of an iteration."
 permalink: /continuous-learning/demos/
 order: 120
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - giving-and-receiving-feedback
+  - hack-days
+  - lightning-talks
 updated: 2026-11-03
 tags:
   - continuous-learning

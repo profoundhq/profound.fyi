@@ -4,10 +4,12 @@ title: "Peer review"
 description: "Colleagues review each other's work, such as documents, designs, plans, or analysis, before it is finalised."
 permalink: /continuous-learning/peer-review/
 order: 310
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - code-review
+  - giving-and-receiving-feedback
 updated: 2026-11-03
 tags:
   - continuous-learning

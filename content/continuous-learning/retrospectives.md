@@ -4,10 +4,14 @@ title: "Retrospectives"
 description: "A team regularly pauses to reflect on how it has been working and agree what to change."
 permalink: /continuous-learning/retrospectives/
 order: 350
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - blameless-post-mortems
+  - learning-backlog
+  - reflective-questioning
+  - team-health-checks
 updated: 2026-11-03
 tags:
   - continuous-learning

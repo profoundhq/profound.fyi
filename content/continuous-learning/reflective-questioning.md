@@ -4,10 +4,14 @@ title: "Reflective questioning"
 description: "A powerful learning skill that anyone can use to prompt reflection in others."
 permalink: /continuous-learning/reflective-questioning/
 order: 340
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - one-to-one-coaching
+  - giving-and-receiving-feedback
+  - processing-pauses
+  - retrospectives
 updated: 2026-11-03
 tags:
   - continuous-learning

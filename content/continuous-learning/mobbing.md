@@ -4,10 +4,13 @@ title: "Mobbing"
 description: "The whole team works on the same thing, at the same time, at the same computer."
 permalink: /continuous-learning/mobbing/
 order: 270
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - dojos
+  - pairing
+  - swarming
 updated: 2026-11-03
 tags:
   - continuous-learning

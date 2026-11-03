@@ -6,6 +6,13 @@ layout: layouts/base.njk
   <h1>{{ title }}</h1>
   {{ content | safe }}
 
+  {% if related and related.length %}
+  <h2>Related practices</h2>
+  <ul>
+    {% for slug in related %}{% for item in siblings %}{% if item.fileSlug == slug %}<li><a href="{{ item.url }}">{{ item.data.title }}</a></li>{% endif %}{% endfor %}{% endfor %}
+  </ul>
+  {% endif %}
+
   {% set previousPage = siblings | getPreviousCollectionItem %}
   {% set nextPage = siblings | getNextCollectionItem %}
   <nav class="prev-next" aria-label="{{ catalogueTitle }}">
@@ -18,8 +25,7 @@ layout: layouts/base.njk
   </nav>
 
   <p class="license-notice">
-    {% if describedBy == "sorrel" %}Description by Sorrel Harriet, lightly edited.{% else %}Description added for this site, not reviewed by Sorrel Harriet.{% endif %}
-    From the <a href="{{ crumbParent.url }}">{{ catalogueTitle }}</a>, compiled by Sorrel Harriet.
+    From the <a href="{{ crumbParent.url }}">{{ catalogueTitle }}</a> by Sorrel Harriet and Benedict Steele.
     Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
   </p>
 </article>

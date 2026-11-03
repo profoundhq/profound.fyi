@@ -4,10 +4,13 @@ title: "Workshops"
 description: "A facilitated session where participants work actively on a topic or problem together, instead of listening to a presentation."
 permalink: /continuous-learning/workshops/
 order: 480
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - brainstorming
+  - improvement-blitzes
+  - lunch-and-learns
 updated: 2026-11-03
 tags:
   - continuous-learning

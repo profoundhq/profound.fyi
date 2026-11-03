@@ -4,10 +4,12 @@ title: "Dojos"
 description: "A dojo is a dedicated space and time to practise skills on realistic problems, away from delivery pressure."
 permalink: /continuous-learning/dojos/
 order: 140
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - game-days-and-simulations
+  - mobbing
 updated: 2026-11-03
 tags:
   - continuous-learning

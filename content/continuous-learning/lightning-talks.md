@@ -4,10 +4,14 @@ title: "Lightning talks"
 description: "A lightning talk is a short talk, usually lasting two to five minutes."
 permalink: /continuous-learning/lightning-talks/
 order: 240
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - conferences
+  - demos
+  - lunch-and-learns
+  - today-i-learned
 updated: 2026-11-03
 tags:
   - continuous-learning

@@ -4,10 +4,13 @@ title: "Guided experiences"
 description: "A guided experience is a curated sequence of tasks that takes a person through a multistage process, possibly spanning several systems."
 permalink: /continuous-learning/guided-experiences/
 order: 200
-describedBy: sorrel
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - creating-shared-resources
+  - online-courses
+  - work-shadowing
 updated: 2026-11-03
 tags:
   - continuous-learning

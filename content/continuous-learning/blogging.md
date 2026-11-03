@@ -4,10 +4,12 @@ title: "Blogging"
 description: "Writing, internally or in public, about what you are working on and learning."
 permalink: /continuous-learning/blogging/
 order: 40
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - documenting
+  - today-i-learned
 updated: 2026-11-03
 tags:
   - continuous-learning

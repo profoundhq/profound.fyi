@@ -4,10 +4,13 @@ title: "1-1 coaching"
 description: "A coach works with one person over a series of conversations to help them think through goals, problems, and their own ways of working."
 permalink: /continuous-learning/one-to-one-coaching/
 order: 10
-describedBy: site
 crumbParent:
   name: Continuous Learning Catalogue
   url: /continuous-learning/
+related:
+  - group-coaching
+  - mentoring
+  - reflective-questioning
 updated: 2026-11-03
 tags:
   - continuous-learning
