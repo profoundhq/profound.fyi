@@ -20,4 +20,4 @@ A team regularly rates itself against a set of factors, such as pace, quality, f
 - [Squad health check model](https://engineering.atspotify.com/2014/09/squad-health-check-model) (Spotify Engineering)
 - [Team cognitive load assessment](https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment) (Matthew Skelton, Team Topologies)
 - [DevEx: what actually drives productivity](https://queue.acm.org/detail.cfm?id=3595878) (Abi Noda, Margaret-Anne Storey, Nicole Forsgren, and Michaela Greiler, ACM Queue, 2023)
-- [Measuring learning culture](https://github.com/sharriet/measuring-learning-culture) (Sorrel Harriet)
+- [Learning culture survey](/tools/learning-culture/) (Sorrel Harriet, a tool on this site)
