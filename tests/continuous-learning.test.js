@@ -64,3 +64,15 @@ test("pairing and mobbing point to their Laws entries", () => {
   assert.ok(entries.get("pairing").seeAlsoLaws?.includes("pair-programming"));
   assert.ok(entries.get("mobbing").seeAlsoLaws?.includes("mob-programming"));
 });
+
+test("every external link on a practice page is an absolute https URL", () => {
+  const bad = readdirSync(dir)
+    .filter((file) => file.endsWith(".md") && file !== "index.md")
+    .flatMap((file) =>
+      [...matter(readFileSync(join(dir, file), "utf8")).content.matchAll(/\]\(([^)]+)\)/g)]
+        .map(([, url]) => url)
+        .filter((url) => !url.startsWith("/") && !url.startsWith("https://"))
+        .map((url) => `${file}: ${url}`),
+    );
+  assert.deepEqual(bad, []);
+});

@@ -17,3 +17,5 @@ tags:
 ---
 
 A facilitated session where participants work actively on a topic or problem together, instead of listening to a presentation. Workshops suit learning that needs discussion, practice, or a group decision. Plan the outcomes and activities in advance, and leave time to reflect at the end. Capture and share what came out of the session so it lasts beyond the room.
+
+- [Liberating Structures](https://www.liberatingstructures.com/) (facilitation patterns for group work)

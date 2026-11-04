@@ -16,3 +16,5 @@ tags:
 ---
 
 A processing pause means taking time to think, or simply to be, after an emotionally or cognitively demanding experience. Processing pauses can be worked in and around meetings, workshops, and other situations where you have to react or solve problems in the moment. During a pause you might write things down, reflect on what just happened, or check in with yourself and how you are feeling.
+
+- [Reflector's Toolkit](https://www.ed.ac.uk/reflection/reflectors-toolkit) (University of Edinburgh)

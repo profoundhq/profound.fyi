@@ -18,3 +18,5 @@ tags:
 ---
 
 Logs, metrics, traces, and dashboards show how systems behave in production. Exploring them helps people learn how a system actually works, which is often different from how they think it works. Encourage people to ask questions of the data as well as reacting to alerts. Pairing newer team members with experienced ones during investigations spreads the skill of reading the signals.
+
+- [Want to build a feedback culture? First focus on observability](https://www.youtube.com/watch?v=hWJabHSiDXI) (Sorrel Harriet, DevOpsDays London 2023)

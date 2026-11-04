@@ -16,3 +16,5 @@ tags:
 ---
 
 A group generates many ideas quickly before judging any of them. Separating generating ideas from evaluating them helps people build on each other's thinking. The loudest voices and the first ideas can dominate a group, so consider having people write ideas silently before sharing them, sometimes called brainwriting. Be clear about what will happen to the ideas afterwards, or people stop contributing.
+
+- [Liberating Structures](https://www.liberatingstructures.com/) (facilitation patterns for group work)

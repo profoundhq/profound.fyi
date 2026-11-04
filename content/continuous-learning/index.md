@@ -64,6 +64,6 @@ Each practice has its own page.
 
 ## Source and licence
 
-By Sorrel Harriet and Benedict Steele, based on Sorrel's [Continuous Learning Toolkit](https://github.com/sharriet/continuous-learning-toolkit), and published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+By Sorrel Harriet and Benedict Steele, based on Sorrel's [Continuous Learning Toolkit](https://github.com/sharriet/continuous-learning-toolkit) and [tools4learning](https://github.com/sharriet/tools4learning), and published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Linked resources belong to their authors. Check each one's copyright and terms of use before reusing it.
