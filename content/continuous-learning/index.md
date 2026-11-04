@@ -9,8 +9,6 @@ updated: 2026-11-03
 
 A catalogue of social and technical practices that can support continuous, in-work learning, with an emphasis on learning together. Explore it on your own or with your team.
 
-This is a catalogue, and it is not a playbook. Each entry says what a practice is and what to watch out for. None of them yet says when the practice applies, when to avoid it, or how you would know it is working.
-
 ## Practices
 
 Each practice has its own page.
