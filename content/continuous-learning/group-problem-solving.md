@@ -19,3 +19,5 @@ tags:
 ---
 
 People with different perspectives work on a problem together, using a structured method such as root cause analysis, the five whys, or A3 thinking. Working through a real problem builds shared understanding and problem-solving skill at the same time. A facilitator helps the group stay with the problem instead of jumping to solutions. Involve the people who do the work, since they usually know most about the problem.
+
+- [Causal loop construction: the basics](https://thesystemsthinker.com/causal-loop-construction-the-basics/) (The Systems Thinker)

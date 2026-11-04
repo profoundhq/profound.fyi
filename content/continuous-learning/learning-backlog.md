@@ -17,3 +17,5 @@ tags:
 ---
 
 A visible list of things a person or team wants to learn, managed alongside the work backlog. Making learning goals explicit means they can be prioritised and given time instead of being squeezed into the margins. Review the backlog regularly, for example at retrospectives, and link items to upcoming work where you can. Protect time for it, or it becomes a wish list.
+
+- [Personal learning backlog template](https://miro.com/miroverse/personal-learning-backlog/) (Sorrel Harriet, Miroverse)

@@ -20,3 +20,4 @@ tags:
 A powerful learning skill that anyone can use to prompt reflection in others. Used in teams, it encourages reflective inquiry and can also help build trust and diversity of thought. Many tools exist to help develop reflective questioning.
 
 - [The 4As reflective questioning framework](https://www.laas.consulting/resources/4As-reflective-questioning-framework.pdf) (LAAS Consulting, PDF)
+- [Reflector's Toolkit](https://www.ed.ac.uk/reflection/reflectors-toolkit) (University of Edinburgh)
