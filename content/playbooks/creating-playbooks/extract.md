@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**People describe their espoused theory, not their theory in use. Extraction is the work of getting past the official story to what actually happened.**
+People describe their espoused theory, not their theory in use. Extraction is the work of getting past the official story to what actually happened.
 
 The distinction is Argyris's. What people say they do and what they actually do are different theories, and the gap between them is largest exactly where practice is most skilled, because skilled practice has gone tacit. Interview a practitioner about how they work and you get the espoused version: cleaner, more principled, and less true than the practice itself.
 
