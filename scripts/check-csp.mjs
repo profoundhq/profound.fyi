@@ -19,6 +19,7 @@ const PAGES = [
   ["analytics", "/", "consent"],
   ["deck", "/playbooks/beat-network/overview/"],
   ["tool", "/tools/communication-styles/"],
+  ["survey tool", "/tools/learning-culture/?a=44444444444444444444444444444444444444444444444"],
   ["law", "/laws/solid/"],
 ];
 
