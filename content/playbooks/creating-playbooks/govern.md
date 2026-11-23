@@ -19,7 +19,7 @@ This is the play the whole system exists to serve.
 
 **Signals:** the standard actually shifts, meaning other teams' behaviour changes, not just the document. Proposals come from teams you did not prompt. The gap between the official play and what teams really do stays small.
 
-**When not to:** when the variation only worked because of conditions the proposing team has and others do not. Then it is a fork, not an improvement, and the honest answer is a second play with different entry conditions.
+**When not to:** when the variation only worked because of conditions the proposing team has and others do not. Then it is a fork, not an improvement, and the honest answer is a second play for a different situation.
 
 **The failure this prevents:** the moment updating a play costs more than ignoring it, people route around the playbook and it forks into an official version and a real one. That is the espoused playbook arriving by a different door.
 
@@ -41,4 +41,4 @@ Written once, never revised against evidence, no feedback loop. Stale plays are 
 
 Heavyweight process for a lightweight artefact. Review boards, approval chains, quarterly cadences for a document that should change the week the evidence arrives.
 
-The proportionate mechanism is small: every play carries an owner, a status, and a last-tested date. Anyone can propose a change by evidence. The change path is cheaper than the workaround. That is the whole system, and it borrows deliberately from RFC and ADR practice: decisions carried with the artefact, not in a committee's minutes.
+The proportionate mechanism is small: every play carries an owner, a status, and a last-tested date. Anyone can propose a change by evidence. The change path is cheaper than the workaround. That is the whole system, and it borrows deliberately from how engineers record decisions in RFCs and architecture decision records: decisions carried with the artefact, not in a committee's minutes.

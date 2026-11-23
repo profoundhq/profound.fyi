@@ -7,9 +7,9 @@ tags:
 ---
 
 
-People describe their espoused theory, not their theory in use. Extraction is the work of getting past the official story to what actually happened.
+People describe how they think they work, not how they actually work. Extraction is the work of getting past the official story to what actually happened.
 
-The distinction is Argyris's. What people say they do and what they actually do are different theories, and the gap between them is largest exactly where practice is most skilled, because skilled practice has gone tacit. Interview a practitioner about how they work and you get the espoused version: cleaner, more principled, and less true than the practice itself.
+Chris Argyris called these two accounts espoused theory and theory in use. They differ, and the gap between them is largest exactly where practice is most skilled, because skilled people stop noticing what they do. Interview a practitioner about how they work and you get the espoused version: cleaner, more principled, and less true than the practice itself.
 
 ## Play: extract from what happened, not what we say happens
 
@@ -23,9 +23,9 @@ The distinction is Argyris's. What people say they do and what they actually do 
 
 ## Play: keep the failure in
 
-**When:** the raw narrative includes an attempt that did not land, a workaround, or a condition that made the move less impressive.
+**When:** the raw narrative includes an attempt that did not land, a workaround, or a condition that made the action less impressive.
 
-**The action:** the failure detail becomes a force or an entry condition in the play, not a cut. If the improvement took three attempts, or landed only because someone senior sponsored it, the reader's version will hit the same wall. A play that only works with air cover should say so.
+**The action:** the failure detail becomes a force, or part of when the play applies, not a cut. If the improvement took three attempts, or landed only because someone senior sponsored it, the reader's version will hit the same wall. A play that only works with air cover should say so.
 
 **Signals:** readers stop asking "but what about" questions, because the play already answered them.
 
@@ -33,4 +33,4 @@ The distinction is Argyris's. What people say they do and what they actually do 
 
 ## Antipattern: the espoused playbook
 
-Codifying how work is supposed to happen rather than how it happens. The most common failure and the hardest to see from inside, because the official story is the one everyone already agrees on. The tell: nobody is embarrassed by anything in it.
+Codifying how work is supposed to happen rather than how it happens. The most common failure and the hardest to see from inside, because the official story is the one everyone already agrees on. You can see it when nobody is embarrassed by anything in it.

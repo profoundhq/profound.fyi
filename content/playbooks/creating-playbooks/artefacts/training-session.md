@@ -70,7 +70,7 @@ Rooms open. Each room's test worksheet names its assigned internal document. The
 Debrief in plenary (4 of the 15): one verdict per room, spokesperson, worksheet zoomed. The facilitator's only job is protecting the honest verdict. A document that turns out to be a good runbook is a pass, not a fail. The point is the label, not the genre.
 
 **Activity 2: write a play (23 min).**
-Solo first (10 min), everyone stays in plenary but muted, working in their own play frame. Each person picks an action from their own practice, something done at least three times that worked, and fills the template. Entry conditions first, then when-not-to, then the rest. The extraction rule is written at the top of every play frame: what happened, not what should happen, and keep the embarrassing detail in.
+Solo first (10 min), everyone stays in plenary but muted, working in their own play frame. Each person picks an action from their own practice, something done at least three times that worked, and fills the template. Say when it applies first, then when not to use it, then the rest. The extraction rule is written at the top of every play frame: what happened, not what should happen, and keep the embarrassing detail in.
 
 Pairs in breakouts (8 min): rooms of 4 open, pair up, read your partner's play frame. The reader's only question: "could I run this on Monday without asking you anything?" Every question the reader has to ask is a gap. Readers add small stickies to the play frame marking gaps. Writers do not defend, they collect.
 
@@ -88,7 +88,7 @@ Silent sweep (5 min): back in plenary, muted, everyone revises their play agains
 
 **Commitments (5 min).** Each person adds a card to the commitments row: the next thing they will do with this, by when. The honest options: start a candidate list, finish this play and show it to the person it names, or run the test on a document they own. Cards stay visible, they are not collected or read out.
 
-**Close (3 min).** The facilitator names the two or three most-voted plays by title only, then points at the canonical collection and ends with: "Today's plays are candidates. They graduate when someone who isn't you runs one and it works. Go find that person. The board stays open for a week."
+**Close (3 min).** The facilitator names the two or three most-voted plays by title only, then points at the published collection and ends with: "Today's plays are candidates. They graduate when someone who isn't you runs one and it works. Go find that person. The board stays open for a week."
 
 ## After the session
 

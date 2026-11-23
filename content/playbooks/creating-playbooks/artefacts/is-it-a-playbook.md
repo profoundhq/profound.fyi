@@ -14,9 +14,9 @@ A test for whether what you are writing is a playbook or something else wearing 
 
 Take any section of the document and ask:
 
-**1. Can I decompose it into plays?** A play has four parts: entry conditions, an action, signals, and a when-not-to. If the content resists that decomposition, it is not a playbook. Prose that explains, argues, or persuades is an essay. Prose that lists steps without conditions is a procedure.
+**1. Can I decompose it into plays?** A play has four parts: when it applies, what to do, signals, and when not to use it. If the content resists that decomposition, it is not a playbook. Prose that explains, argues, or persuades is an essay. Prose that lists steps without conditions is a procedure.
 
-**2. Does each play say when it applies?** Not the topic it covers. The situation a reader would be standing in. "For teams adopting OKRs" is a topic. "When your quarterly goals are set but nobody can say which work serves them" is an entry condition. If the reader cannot match their situation to the play in under a minute, the situating has failed.
+**2. Does each play say when it applies?** Not the topic it covers. The situation a reader would be standing in. "For teams adopting OKRs" is a topic. "When your quarterly goals are set but nobody can say which work serves them" is a situation. If the reader cannot match their situation to the play in under a minute, the situating has failed.
 
 **3. Does each play say when it does not apply?** This is the sharpest single discriminator. Checklists, procedures, and methodologies almost never contain a when-not-to, because they assume their own applicability. A play knows it is contextual. No when-not-to sections anywhere in the document is close to a proof that it is not a playbook.
 
@@ -40,13 +40,13 @@ What the document actually is when it fails the test, and where each one belongs
 |**Essay / position piece**|It argues a view, decomposition into plays fails entirely|You are changing minds, not equipping hands|
 |**Values statement**|Aspirations without actions or signals|Almost never on its own. Values without plays are slogans|
 
-The methodology row deserves its own warning. A methodology is what a playbook becomes when the when-not-to sections are deleted and the plays are made mandatory. That is a one-way door, and commercial pressure pushes through it because certainty sells better than judgement.
+The methodology row deserves its own warning. A methodology is what a playbook becomes when the when-not-to sections are deleted and the plays are made mandatory. Once a playbook goes that way it is hard to turn back, and commercial pressure pushes it there because certainty sells better than judgement.
 
 ## Fast heuristics
 
 Rules of thumb when you do not want to run the full test.
 
-**The random page test.** Open the document anywhere. Within one page you should hit an entry condition or a signal. If you hit three paragraphs of context-free advice, it is an essay.
+**The random page test.** Open the document anywhere. Within one page you should hit a description of a situation, or a signal. If you hit three paragraphs of context-free advice, it is an essay.
 
 **The steal test.** Could a team take exactly one play, run it without adopting anything else in the document, and get value? Playbooks are stealable one play at a time. Methodologies are not.
 

@@ -40,7 +40,7 @@ Thirteen plays for building government digital services, each with a checklist a
 
 **Verdict:** a playbook for one situation. Closer to an adoption sequence than a collection of situated plays.
 
-**The lesson:** when the entry conditions are global to the document rather than local to each play, you have written a programme, and readers cannot steal one play without inheriting the programme's assumptions.
+**The lesson:** when one situation covers the whole document instead of each play naming its own, you have written a programme, and readers cannot steal one play without inheriting the programme's assumptions.
 
 
 ## The DDaT Playbook (UK Cabinet Office)
@@ -53,7 +53,7 @@ Procurement and delivery policy for public sector digital, published under the p
 4. **Observable signals?** Compliance checkpoints, not practice signals.
 5. **Judgement required?** Explicitly minimised. The document exists to constrain judgement.
 
-**Verdict:** a methodology-adjacent policy framework wearing the label. This is the one-way door in government form: when-not-to deleted, plays made mandatory, certainty sold as the feature.
+**Verdict:** a methodology-adjacent policy framework wearing the label. This is the methodology trap in government form: when-not-to deleted, plays made mandatory, certainty sold as the feature.
 
 **The lesson:** the label sets the reader's contract, and here the mismatch has consequences. A supplier reading "playbook" expects situated judgement and gets compliance requirements. Nothing wrong with policy. Something wrong with the costume.
 

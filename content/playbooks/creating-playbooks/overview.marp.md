@@ -70,7 +70,7 @@ Any of these can be the right tool. Label it honestly.
 | --- | --- | --- |
 | Sense | Wait until you have seen it three times | Writing a play from one lucky success |
 | Extract | Write it from what really happened | Writing how work should go, not how it goes |
-| Codify | Say when every play applies | Following a recipe in the wrong situation |
+| Codify | Start with the situation | Following a recipe in the wrong situation |
 | Publish | Publish before you feel ready | Announcing a new way and expecting teams to comply |
 | Format and access | Anyone can read it, and suggest changes without git | Only people who know git can change it |
 | Govern | Let a better local way become the standard | A playbook nobody updates |
