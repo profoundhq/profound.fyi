@@ -9,7 +9,7 @@ tags:
 
 To codify a play is to write it around the reader's situation, not the author's topic. Say when the play applies first, before saying what to do.
 
-## Play: say when every play applies
+## Play: start with the situation
 
 **When:** drafting any play.
 
