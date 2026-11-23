@@ -472,6 +472,99 @@
   margin-top: var(--space-5);
 }
 
+/* Learning culture survey (reuses the cs- form, scale, and result styles) -- */
+
+.lc-dimension + .lc-dimension {
+  margin-top: var(--space-7);
+}
+
+.lc-dimension-summary {
+  max-width: var(--measure);
+  color: var(--colour-muted);
+  margin-bottom: var(--space-5);
+}
+
+.lc-item {
+  border: 1px solid var(--colour-rule);
+  border-radius: 4px;
+  padding: var(--space-4);
+}
+
+.lc-item fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.lc-statement {
+  padding: 0;
+  margin-bottom: var(--space-3);
+  font-size: var(--type-small);
+}
+
+.lc-number {
+  color: var(--colour-muted);
+}
+
+.lc-scale-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.lc-scale-row .cs-scale {
+  gap: var(--space-1);
+  padding: 0;
+}
+
+.lc-scale-end {
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
+/* On narrow screens the scale takes the full width, with its end labels underneath */
+@media (max-width: 479px) {
+  .lc-scale-row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .lc-scale-row .cs-scale {
+    order: -1;
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+}
+
+.lc-scores {
+  display: grid;
+  gap: var(--space-5);
+  margin: var(--space-5) 0 var(--space-6);
+  max-width: var(--measure);
+}
+
+.lc-score {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2);
+}
+
+.lc-score dt { font-weight: 600; }
+.lc-score dd { margin: 0; }
+.lc-score .cs-subscore-bar { height: 8px; border-radius: 4px; }
+
+.lc-score-summary {
+  grid-column: 1 / -1;
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
+.lc-lowest-answer {
+  color: var(--colour-muted);
+}
+
 /* Section index intro paragraph -------------------------------------------- */
 
 .section-intro {

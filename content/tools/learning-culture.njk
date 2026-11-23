@@ -1,0 +1,83 @@
+---
+layout: layouts/page.njk
+title: "Learning culture survey"
+description: "47 statements about how your work supports your learning, scored across four dimensions. By Sorrel Harriet."
+permalink: /tools/learning-culture/
+order: 20
+---
+
+<section class="cs-intro">
+  <p>Forty-seven statements about how your work supports your learning. It takes about ten minutes. Answer for your work as it is now, not as you would like it to be.</p>
+  <p>Your answers stay in your browser. Nothing is sent anywhere.</p>
+</section>
+
+<p class="cs-restore-prompt" hidden><a href="#" data-lc-restore>Restore your last answers</a></p>
+
+<form id="lc-form" class="cs-form" novalidate>
+  {% for dim in learningCulture.dimensions %}
+  <section class="lc-dimension" aria-labelledby="lc-dim-{{ dim.id }}">
+    <h2 id="lc-dim-{{ dim.id }}">{{ dim.name }}</h2>
+    <p class="lc-dimension-summary">{{ dim.summary }}</p>
+    <ol class="cs-items" start="{{ dim.questions[0].id }}">
+      {% for q in dim.questions %}
+      <li class="lc-item">
+        <fieldset>
+          <legend class="lc-statement"><span class="lc-number">{{ q.id }}.</span> {{ q.text }}</legend>
+          <div class="lc-scale-row">
+            <span class="lc-scale-end" aria-hidden="true">Disagree</span>
+            <div class="cs-scale">
+              {% for label in learningCulture.scale %}
+              <label class="cs-scale-option">
+                <input type="radio" name="q{{ q.id }}" value="{{ loop.index }}">
+                <span class="visually-hidden">{{ label }}</span>
+                <span class="cs-scale-dot" aria-hidden="true"></span>
+              </label>
+              {% endfor %}
+            </div>
+            <span class="lc-scale-end" aria-hidden="true">Agree</span>
+          </div>
+        </fieldset>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+
+  <div class="cs-form-footer">
+    <p class="cs-counter" aria-live="polite"><span data-lc-counter>0</span> of {{ learningCulture.total }} answered</p>
+    <button type="submit" class="cs-submit" data-lc-submit disabled aria-describedby="lc-submit-help">See your profile</button>
+    <p id="lc-submit-help" class="cs-submit-help">Answer all {{ learningCulture.total }} statements to see your profile.</p>
+  </div>
+</form>
+
+<section id="lc-results" class="cs-results" aria-live="polite" hidden>
+  <h2>Your learning culture profile</h2>
+  <p>Each score is an average from 1 (strongly disagree) to 5 (strongly agree). There is no benchmark. Compare your scores with your team's, or with your own next time.</p>
+  <dl class="lc-scores" data-lc-scores></dl>
+
+  <h3>Where to start</h3>
+  <p data-lc-weakest></p>
+  <ul class="lc-practices" data-lc-practice-list></ul>
+  {% for dim in learningCulture.dimensions %}
+  <template data-lc-practices="{{ dim.id }}">
+    {% for slug in dim.practices %}{% for item in collections["continuous-learning"] %}{% if item.fileSlug == slug %}
+    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {% endif %}{% endfor %}{% endfor %}
+  </template>
+  {% endfor %}
+
+  <h3>The statements that scored lowest</h3>
+  <ol class="lc-lowest" data-lc-lowest></ol>
+
+  <h3>Using it with a team</h3>
+  <p>Culture is shared, so one person's answers say little on their own. Ask everyone to take the survey alone, then share their four scores at a retrospective. Look at the spread as well as the average. A wide spread on one dimension is often worth more discussion than a low average.</p>
+  <p>Your answers are saved in this page's address, so you can bookmark it and compare next time. Anyone you send the link to will see your answers.</p>
+
+  <p class="cs-actions"><a href="#" data-lc-reset>Start over</a></p>
+</section>
+
+<footer class="cs-credit">
+  <p>Survey by Sorrel Harriet, from <a href="https://github.com/sharriet/measuring-learning-culture">Measuring learning culture</a>, licensed under CC BY-SA 4.0 with permission. The statements draw on Anna Dillon, <a href="https://blog.logicearth.com/en-gb/how-to-assess-learning-culture">How to assess learning culture</a> (2021), Bauer, Rehrl, and Harteis, <a href="https://www.researchgate.net/profile/Christian-Harteis/publication/258447330_Measurement_of_learning_culture_a_motivational_approach/links/5acb32b94585151e80a996a8/Measurement-of-learning-culture-a-motivational-approach.pdf">Measurement of learning culture: a motivational approach</a> (2007), and Garvin, Edmondson, and Gino, <a href="https://hbr.org/2008/03/is-yours-a-learning-organization">Is yours a learning organization?</a> (Harvard Business Review, 2008). One statement, about switching between tasks, is scored in reverse.</p>
+</footer>
+
+<script type="module" src="/js/learning-culture/app.js"></script>

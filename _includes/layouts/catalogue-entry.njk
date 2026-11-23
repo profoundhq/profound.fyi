@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+---
+{% set siblings = collections[catalogue] | sortByOrder %}
+<article class="page">
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+
+  {% if related and related.length %}
+  <h2>Related practices</h2>
+  <ul>
+    {% for slug in related %}{% for item in siblings %}{% if item.fileSlug == slug %}<li><a href="{{ item.url }}">{{ item.data.title }}</a></li>{% endif %}{% endfor %}{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% set lawEntries = collections.laws | lawsBySlug(seeAlsoLaws) %}
+  {% if lawEntries | length %}
+  <h2>See also in Laws</h2>
+  <ul class="law-grid">
+    {% for entry in lawEntries %}{% include "partials/law-card.njk" %}{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% set previousPage = siblings | getPreviousCollectionItem %}
+  {% set nextPage = siblings | getNextCollectionItem %}
+  <nav class="prev-next" aria-label="{{ catalogueTitle }}">
+    {% if previousPage %}
+      <a class="prev" href="{{ previousPage.url }}"><span class="label">Previous</span>{{ previousPage.data.title }}</a>
+    {% else %}<span class="prev"></span>{% endif %}
+    {% if nextPage %}
+      <a class="next" href="{{ nextPage.url }}"><span class="label">Next</span>{{ nextPage.data.title }}</a>
+    {% else %}<span class="next"></span>{% endif %}
+  </nav>
+
+  <p class="license-notice">
+    From the <a href="{{ crumbParent.url }}">{{ catalogueTitle }}</a> by Sorrel Harriet and Benedict Steele.
+    Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
+  </p>
+</article>
