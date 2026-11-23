@@ -15,7 +15,7 @@ Being something else is fine, as long as the label is correct. The label sets th
 
 ## The anatomy of a play
 
-A play has four parts, and none of them is optional:
+A play has four parts, and all four are required:
 
 - **When.** The situation a reader would be standing in, not the topic the play covers.
 - **The action.** What to actually do. Short. The action is usually the smallest part of a well-written play.
