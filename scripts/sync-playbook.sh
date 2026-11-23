@@ -34,6 +34,11 @@
 #     site links, and ![[image.png]] embeds and relative Markdown images are
 #     copied into images/playbooks/<slug>/. Unresolved links are warned about
 #     and left as plain text.
+#   - updated - the note's `date:` field. Without one, a page whose text has
+#     not changed keeps its old date, and a new or changed page gets today.
+#   - Keeps images in images/playbooks/<slug>/ that a deck (.marp.md) or the
+#     landing (.njk) uses, since those are added in the repo, not the vault.
+#     Every other image is cleared and refilled from the notes' embeds.
 #   - Prints git status afterwards so you can review the diff.
 #
 # What it does NOT do:
@@ -166,7 +171,7 @@ write_file() {
   local has_fm
   has_fm=$(awk 'NF{print (/^---[[:space:]]*$/ ? "yes" : "no"); exit}' "$src")
 
-  local title order_from_fm updated
+  local title="" order_from_fm="" updated=""
   if [ "$has_fm" = "yes" ]; then
     title=$(extract_field "title" "$src")
     order_from_fm=$(extract_order "$src")
@@ -208,8 +213,11 @@ write_file() {
     fi
   fi
 
-  # Default updated to today if not in source (e.g., CHANGELOG with no frontmatter)
+  # Without a date in the note, a page is dated today. keep_previous_date
+  # below puts the old date back if the page's text has not changed.
+  local dated_in_vault="yes"
   if [ -z "$updated" ]; then
+    dated_in_vault="no"
     updated=$(date +%Y-%m-%d)
   fi
 
@@ -236,16 +244,54 @@ write_file() {
 
   # Site URL rewrites and Obsidian syntax, in one tested step
   node scripts/obsidian-links.mjs "$SLUG" "$SRC" "$ATTACHMENTS" "$src" "$dst"
+
+  [ "$dated_in_vault" = "no" ] && keep_previous_date "$dst"
+  return 0
+}
+
+# If the page existed before this sync with the same text apart from its
+# updated line, keep its old date. Otherwise every run would stamp today on
+# every page whose note has no date field.
+keep_previous_date() {
+  local dst="$1" prev="$PREV/${1#"$DST"/}" old
+  [ -f "$prev" ] || return 0
+  if cmp -s <(grep -v '^updated: ' "$dst") <(grep -v '^updated: ' "$prev"); then
+    old=$(grep -m1 '^updated: ' "$prev" || true)
+    [ -n "$old" ] && cp "$prev" "$dst"
+  fi
+  return 0
 }
 
 echo "Syncing $SLUG"
 echo "  source: $SRC"
 echo "  target: $DST"
 
+# Keep the pages as they were, to compare dates against, and the images that
+# decks or the landing page use, since the vault does not hold those
+PREV=$(mktemp -d)
+KEEP=$(mktemp -d)
+trap 'rm -rf "$PREV" "$KEEP"' EXIT
+(cd "$DST" && find . -name "*.md" ! -name "*.marp.md") | while IFS= read -r f; do
+  mkdir -p "$PREV/$(dirname "$f")"
+  cp "$DST/$f" "$PREV/$f"
+done
+while IFS= read -r used; do
+  rel="${used#/images/playbooks/$SLUG/}"
+  if [ -f "$IMAGES/$rel" ]; then
+    mkdir -p "$KEEP/$(dirname "$rel")"
+    cp "$IMAGES/$rel" "$KEEP/$rel"
+  fi
+done < <(find "$DST" \( -name "*.marp.md" -o -name "*.njk" \) -exec grep -ohE "/images/playbooks/$SLUG/[^)\"' ]+" {} + 2>/dev/null | sort -u)
+
 # Wipe existing .md files (preserve .njk, 11tydata.js and .marp.md decks)
-# and copied images
+# and copied images, then put back the images decks use
 find "$DST" -name "*.md" ! -name "*.marp.md" -delete
 rm -rf "$IMAGES"
+if [ -n "$(ls -A "$KEEP")" ]; then
+  mkdir -p "$IMAGES"
+  cp -R "$KEEP/." "$IMAGES/"
+  echo "  kept images used by decks: $(cd "$KEEP" && find . -type f | sed 's|^\./||' | tr '\n' ' ')"
+fi
 
 # Process framework chapters at the top level of the source
 shopt -s nullglob
