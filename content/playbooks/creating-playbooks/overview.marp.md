@@ -30,7 +30,7 @@ Both happen when a playbook has no way to change as teams find better ways of wo
 
 ## You need a standard to see what got better
 
-Writing a play down helps teams work the same way. But improving relies on someone deviating and trying something novel.
+Writing a play down helps teams work the same way. But often improvement relies on someone trying a way that isn't written down yet.
 
 Toyota's car plants handle this by writing down the current best way to do each job, then letting anyone test a better way against it. When a team tries a change, they compare it with the written way to see if it is better.
 
