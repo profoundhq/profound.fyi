@@ -15,39 +15,37 @@ footer: profound.fyi
 
 # Creating Playbooks
 
-Codifying practice so it transfers, improves, and retires
+Writing down what works, so other teams can use it, improve it, and drop it when it stops working
 
 ---
 
-## Most playbooks die one of two deaths
+## Most playbooks fail in one of two ways
 
-- **The museum piece:** written once and never revised against evidence. Stale plays carry false authority, and every play has the same date on it.
-- **The enforcement tool:** made mandatory, with the when-not-to deleted. Teams comply in public and ignore it in private.
+- **Nobody updates it.** It was written once, every page has the same date, and people go on trusting it long after it stopped being true.
+- **Everyone has to follow it.** It becomes a rulebook with no room for judgement. Teams say they follow it and quietly do something else.
 
-Both come from leaving the tension between standardising and improving unresolved.
+Both happen when a playbook has no way to change as teams find better ways of working.
 
 ---
 
-## The standard is the baseline that makes improvement visible
+## You need a standard to see what got better
 
-Codification standardises. Improvement requires variation.
+Writing a play down makes teams work the same way. Getting better needs someone to try something different.
 
-Toyota's answer is to treat the standard as a baseline. You cannot see a local improvement without a standard to see it against.
+Toyota's car plants handle this by writing down the current best way to do each job, then treating it as a starting point, not a rule. When a team tries a change, they compare it with the written way to see if it is better.
 
-This holds only if every play is provisional and a local improvement can become the new standard cheaply.
+That only works if any play can change, and a better way can replace the old one without a fight.
 
 ---
 
 <!-- _class: steps -->
 
-## A play is a situated action
+## Every play answers four questions
 
-1. **Entry conditions** The situation the reader is standing in
-2. **The action** What to do. Usually the smallest part
-3. **Signals** How you would know it is working, within weeks
-4. **When not to** Where the play does not apply. Mandatory
-
-When you see these conditions, this action tends to work, and here is how you would know.
+1. **When** What situation is this for?
+2. **The action** What do you do? Often the shortest part
+3. **Signals** How will you know, within weeks, that it is working?
+4. **When not to** Where does it not apply? Every play needs this
 
 ---
 
@@ -66,27 +64,27 @@ Any of these can be the right tool. Label it honestly.
 
 <!-- _class: pairs -->
 
-## Each stage has a play, and the failure it prevents
+## Each stage has a play, and a mistake it prevents
 
-| Stage | Play | Failure it prevents |
+| Stage | Play | Mistake it prevents |
 | --- | --- | --- |
-| Sense | Notice the third time | Premature codification |
-| Extract | Extract from what happened | The espoused playbook |
-| Codify | Situate every play | The context-free recipe |
-| Publish | Publish before you are confident | The broadcast |
-| Format and access | Separate the reading path from the change path | The wizard's tax |
-| Govern | Local improvement to new standard | The museum piece |
+| Sense | Wait until you have seen it three times | Writing a play from one lucky success |
+| Extract | Write it from what really happened | Writing how work should go, not how it goes |
+| Codify | Say when every play applies | Following a recipe in the wrong situation |
+| Publish | Publish before you feel ready | Announcing a new way and expecting teams to comply |
+| Format and access | Anyone can read it, and suggest changes without git | Only people who know git can change it |
+| Govern | Let a better local way become the standard | A playbook nobody updates |
 
 ---
 
-## Extract the play from what actually happened
+## Write the play from what actually happened
 
-People describe their espoused theory. What they actually do is their theory in use. The gap is widest where practice is most skilled, because skilled practice has gone tacit.
+Ask people how they work and they describe how it is supposed to go. What they do is often different. The gap is biggest for the most skilled people, because they no longer notice what they do.
 
-- Write the instances out raw first, then extract the play from them.
-- Keep the failure in. If it took three attempts, that becomes a force in the play.
+- First write down what happened each time, warts and all. Then write the play from those notes.
+- Keep the failures in. If it took three attempts, say so, and say what made it hard.
 
-A real play contains at least one detail you would rather leave out.
+An honest play usually includes something you would rather leave out.
 
 ---
 
@@ -98,21 +96,21 @@ The change path must cost less than the workaround.
 
 ---
 
-## Nobody should need wizardry to read or change a play
+## Anyone should be able to read a play and suggest a change
 
-1. **Default to public.** Make exceptions play by play.
-2. **Reading needs only a browser.** Keep the source under version control and the reading path at a stable URL.
-3. **Proposing needs no tooling.** A form, an email, or a comment counts.
+1. **Make it public by default.** Keep a play private only when there is a reason to.
+2. **Reading needs only a browser.** Keep the source in version control, and give each page a link that does not change.
+3. **Suggesting a change needs no special tools.** A form, an email, or a comment is enough.
 
-If the people closest to the work are not the ones proposing changes, it has failed.
+If the people doing the work are not the ones suggesting changes, something is in their way.
 
 ---
 
-## Start small, from real instances
+## Start small, with something that really happened
 
-1. Start a candidate list today, with one line for each action you keep repeating.
-2. Write one play from a real instance, using the template. Put the entry conditions first.
-3. Publish before you are confident. The first three uses are the test.
+1. Start a list today. Add a line each time you see your team repeat something that works.
+2. Write one play about a time it really happened, using the template. Start with when it applies.
+3. Publish before you feel ready. The first three times someone uses it are the real test.
 
 ---
 
@@ -124,4 +122,4 @@ If the people closest to the work are not the ones proposing changes, it has fai
 
 [profound.fyi/playbooks/creating-playbooks](https://profound.fyi/playbooks/creating-playbooks/)
 
-These slides are a projection. The plays live, and change, at the source.
+The playbook online is kept up to date. These slides may not be.
