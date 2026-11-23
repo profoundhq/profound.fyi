@@ -21,7 +21,7 @@ Most play candidates should never become plays. The sensing discipline is notici
 
 ## Antipattern: premature codification
 
-Writing the play after taking the action once. The play gets written from hope rather than evidence, its When is guessed, and its signals are aspirations. Premature codification is how playbooks fill with plays that never transfer, and it is the most tempting failure for a new collection because early on the pressure is to have volume.
+Writing the play after taking the action once. The play gets written from hope rather than evidence, it guesses when it applies, and its signals are aspirations. Premature codification is how playbooks fill with plays that never transfer, and it is the most tempting failure for a new collection because early on the pressure is to have volume.
 
 The counter-discipline is a two-list system. Candidates live in one place, plays in another, and the bar between them is explicit: multiple uses, observed or run first-hand, with at least one instance you can narrate in detail. Three plays that transfer beat fifteen that do not.
 

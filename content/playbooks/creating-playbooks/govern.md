@@ -19,7 +19,7 @@ This is the play the whole system exists to serve.
 
 **Signals:** the standard actually shifts, meaning other teams' behaviour changes, not just the document. Proposals come from teams you did not prompt. The gap between the official play and what teams really do stays small.
 
-**When not to:** when the variation only worked because of conditions the proposing team has and others do not. Then it is a fork, not an improvement, and the honest answer is a second play with a different When.
+**When not to:** when the variation only worked because of conditions the proposing team has and others do not. Then it is a fork, not an improvement, and the honest answer is a second play for a different situation.
 
 **The failure this prevents:** the moment updating a play costs more than ignoring it, people route around the playbook and it forks into an official version and a real one. That is the espoused playbook arriving by a different door.
 

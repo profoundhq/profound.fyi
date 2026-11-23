@@ -17,13 +17,13 @@ Publishing a play is when its testing starts. And readers look for plays by thei
 
 **Signals:** the play changes within a month of publication. A play that survives first contact unchanged was probably not tested, just tolerated.
 
-**When not to:** when the play carries real risk if misapplied and its When is not yet sharp enough to prevent that.
+**When not to:** when the play carries real risk if misapplied and it does not yet say clearly enough when it applies to prevent that.
 
 ## Play: index by situation
 
 **When:** the collection is large enough that readers cannot hold it in their heads. Roughly ten plays.
 
-**The action:** organise findability around the reader's situation, not your topic taxonomy. A reader under pressure is searching for "my team keeps committing to work it cannot finish", not for the chapter your play lives in. If each play's When is written well, the Whens are the index. Surface them.
+**The action:** organise findability around the reader's situation, not your topic taxonomy. A reader under pressure is searching for "my team keeps committing to work it cannot finish", not for the chapter your play lives in. If each play says clearly when it applies, those situations are the index. Surface them.
 
 **Signals:** readers find plays you did not point them at.
 

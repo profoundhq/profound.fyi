@@ -40,7 +40,7 @@ Thirteen plays for building government digital services, each with a checklist a
 
 **Verdict:** a playbook for one situation. Closer to an adoption sequence than a collection of situated plays.
 
-**The lesson:** when the When is global to the document rather than local to each play, you have written a programme, and readers cannot steal one play without inheriting the programme's assumptions.
+**The lesson:** when one situation covers the whole document instead of each play naming its own, you have written a programme, and readers cannot steal one play without inheriting the programme's assumptions.
 
 
 ## The DDaT Playbook (UK Cabinet Office)

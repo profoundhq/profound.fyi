@@ -19,11 +19,11 @@ Three uses is the default bar throughout this playbook for both codification and
 
 ## What a library owes its forks
 
-When a variation is a fork rather than an improvement, the honest answer is a second play with a different When. But a collection full of near-duplicate plays with subtle condition differences has a findability problem and possibly a credibility one. Where the line sits between honest forking and fragmentation, I do not know yet.
+When a variation is a fork rather than an improvement, the honest answer is a second play for a different situation. But a collection full of near-duplicate plays with subtle condition differences has a findability problem and possibly a credibility one. Where the line sits between honest forking and fragmentation, I do not know yet.
 
 ## Playbooks and AI-assisted practice
 
-Plays are, in effect, situated prompts: a When, an action, and signals. Whether a well-codified play library becomes directly operable by agents, and what that does to the extraction discipline when the practice being codified is itself partly agentic, is an open question I am actively inside rather than observing.
+Plays are, in effect, prompts with a situation, an action, and signals. Whether a well-codified play library becomes directly operable by agents, and what that does to the extraction discipline when the practice being codified is itself partly agentic, is an open question I am actively inside rather than observing.
 
 ## Measurement
 

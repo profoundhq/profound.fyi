@@ -70,7 +70,7 @@ Rooms open. Each room's test worksheet names its assigned internal document. The
 Debrief in plenary (4 of the 15): one verdict per room, spokesperson, worksheet zoomed. The facilitator's only job is protecting the honest verdict. A document that turns out to be a good runbook is a pass, not a fail. The point is the label, not the genre.
 
 **Activity 2: write a play (23 min).**
-Solo first (10 min), everyone stays in plenary but muted, working in their own play frame. Each person picks an action from their own practice, something done at least three times that worked, and fills the template. The When first, then when-not-to, then the rest. The extraction rule is written at the top of every play frame: what happened, not what should happen, and keep the embarrassing detail in.
+Solo first (10 min), everyone stays in plenary but muted, working in their own play frame. Each person picks an action from their own practice, something done at least three times that worked, and fills the template. Say when it applies first, then when not to use it, then the rest. The extraction rule is written at the top of every play frame: what happened, not what should happen, and keep the embarrassing detail in.
 
 Pairs in breakouts (8 min): rooms of 4 open, pair up, read your partner's play frame. The reader's only question: "could I run this on Monday without asking you anything?" Every question the reader has to ask is a gap. Readers add small stickies to the play frame marking gaps. Writers do not defend, they collect.
 

@@ -7,13 +7,13 @@ tags:
 ---
 
 
-To codify a play is to write it around the reader's situation, not the author's topic. The When comes first and earn their place before the action does.
+To codify a play is to write it around the reader's situation, not the author's topic. Say when the play applies first, before saying what to do.
 
 ## Play: say when every play applies
 
 **When:** drafting any play.
 
-**The action:** write the When first: what a reader would be seeing that tells them this play applies. Then the action, then the signals, then the conditions under which the play does not apply. Use the [Play Template](/playbooks/creating-playbooks/artefacts/play-template/) so the form stays consistent across the collection.
+**The action:** start with when it applies: what a reader would be seeing that tells them this play applies. Then the action, then the signals, then the conditions under which the play does not apply. Use the [Play Template](/playbooks/creating-playbooks/artefacts/play-template/) so the form stays consistent across the collection.
 
 **Signals:** a reader in the middle of a situation can decide within a minute whether this play is for them.
 
@@ -33,19 +33,19 @@ To codify a play is to write it around the reader's situation, not the author's 
 
 **When:** the collection serves both people new to the practice and experienced practitioners, which is nearly always.
 
-**The action:** structure every play so the expert can stop early and the novice can keep reading. The When and the action at the top are the expert's version, they will know how to run it. The forces, signals, and instance below are the novice's version, showing how the principle lands in practice. Never write two documents, write one with a stopping point.
+**The action:** structure every play so the expert can stop early and the novice can keep reading. The situation and the action at the top are the expert's version, they will know how to run it. The forces, signals, and instance below are the novice's version, showing how the principle lands in practice. Never write two documents, write one with a stopping point.
 
 **Signals:** experienced readers describe plays as quick references, newer readers describe the same plays as teaching material.
 
-**When not to:** when the play is genuinely expert-only, with a When a novice could not recognise. Then say so at the top instead of diluting it.
+**When not to:** when the play is genuinely expert-only, in a situation a novice could not recognise. Then say so at the top instead of diluting it.
 
 *This play is a candidate, drawn from GDS's guidance model for the Service Manual ("expose the why" with progressive disclosure), grounded in their user research rather than my runs.*
 
 ## Antipattern: the context-free recipe
 
-Plays with no When, so readers cannot tell when they apply. The recipe gets run in the wrong situation, fails, and the failure gets blamed on the reader or the play rather than the mismatch.
+Plays that never say when they apply, so readers cannot tell whether they fit. The recipe gets run in the wrong situation, fails, and the failure gets blamed on the reader or the play rather than the mismatch.
 
-This antipattern is not only an author failure. Readers, stakeholders, and auditors demand certainty, and the pressure to delete "it depends" is external and sustained. When the NAO criticised GDS guidance for leaving scope for interpretation, GDS's answer was the right one: there is no one-size-fits-all approach, guidance must stay open to interpretation so teams can apply it to their context, and asking teams to use their discretion is trusting them to do their job. Expect that pressure, and hold the When and the when-not-to against it, because they are exactly what the pressure wants removed.
+This antipattern is not only an author failure. Readers, stakeholders, and auditors demand certainty, and the pressure to delete "it depends" is external and sustained. When the NAO criticised GDS guidance for leaving scope for interpretation, GDS's answer was the right one: there is no one-size-fits-all approach, guidance must stay open to interpretation so teams can apply it to their context, and asking teams to use their discretion is trusting them to do their job. Expect that pressure, and keep saying when a play applies and when it does not, because they are exactly what the pressure wants removed.
 
 ## Antipattern: the everything playbook
 
