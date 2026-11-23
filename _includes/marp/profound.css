@@ -92,3 +92,40 @@ section.steps li strong {
 section.steps ol + p {
   color: #555;
 }
+
+/* A pairing as a table: <!-- _class: pairs --> over a Markdown table.
+   Rules between rows only, so it reads as a list of pairs, not a grid */
+section.pairs table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+/* As specific as the default theme's zebra rule, so it wins */
+section.pairs table tr,
+section.pairs table tr:nth-child(2n) {
+  background: none;
+  border: none;
+}
+
+section.pairs th,
+section.pairs td {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 12px 16px 12px 0;
+  text-align: left;
+}
+
+section.pairs th {
+  border-bottom: 3px solid #1a1a1a;
+  color: #555;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+section.pairs td:first-child {
+  font-weight: 600;
+}

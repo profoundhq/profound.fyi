@@ -20,6 +20,8 @@ function renderMarp(markdown, directives = {}) {
   // script: false because the helper would be inline, which the CSP blocks.
   // Pages load the same file as /js/marp-browser.js instead.
   const marp = new Marp({ inlineSVG: true, script: false });
+  // Deck tables get the same caption and header scopes as page tables
+  marp.use(accessibleTables);
   marp.themeSet.add(MARP_THEME);
   const set = Object.entries(directives).filter(
     ([key, value]) => MARP_DIRECTIVES.includes(key) && value !== undefined,
