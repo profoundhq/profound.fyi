@@ -19,30 +19,30 @@ Codifying practice so it transfers, improves, and retires
 
 ---
 
-## Most playbooks die one of two deaths
+## Most playbooks fail in one of two ways
 
-- **The museum piece:** written once and never revised against evidence. Stale plays carry false authority, and every play has the same date on it.
-- **The enforcement tool:** made mandatory, with the when-not-to deleted. Teams comply in public and ignore it in private.
+- **Nobody updates it.** It was written once, every page has the same date, and people go on trusting it long after it stopped being true.
+- **Everyone has to follow it.** It becomes a rulebook with no room for judgement. Teams say they follow it and quietly do something else.
 
-Both come from leaving the tension between standardising and improving unresolved.
+Both happen when a playbook has no way to change as teams find better ways of working.
 
 ---
 
-## The standard is the baseline that makes improvement visible
+## You need a standard to see what got better
 
-Codification standardises. Improvement requires variation.
+Writing a play down makes teams work the same way. Getting better needs someone to try something different.
 
-Toyota's answer is to treat the standard as a baseline. You cannot see a local improvement without a standard to see it against.
+Toyota's car plants handle this by writing down the current best way to do each job, then treating it as a starting point, not a rule. When a team tries a change, they compare it with the written way to see if it is better.
 
-This holds only if every play is provisional and a local improvement can become the new standard cheaply.
+That only works if any play can change, and a better way can replace the old one without a fight.
 
 ---
 
 <!-- _class: steps -->
 
-## A play is a situated action
+## A play says when to act, what to do, and how to tell it worked
 
-1. **Entry conditions** The situation the reader is standing in
+1. **When** The situation the reader is standing in
 2. **The action** What to do. Usually the smallest part
 3. **Signals** How you would know it is working, within weeks
 4. **When not to** Where the play does not apply. Mandatory
