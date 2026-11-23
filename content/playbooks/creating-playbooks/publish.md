@@ -7,7 +7,7 @@ tags:
 ---
 
 
-Publishing a play is when its testing starts. And readers look for plays by their situation, not by your categories.
+Publishing a play is when its testing starts. And readers look for plays by the situation they are in.
 
 ## Play: publish before you are confident
 
@@ -23,7 +23,7 @@ Publishing a play is when its testing starts. And readers look for plays by thei
 
 **When:** the collection is large enough that readers cannot hold it in their heads. Roughly ten plays.
 
-**The action:** organise findability around the reader's situation, not your topic taxonomy. A reader under pressure is searching for "my team keeps committing to work it cannot finish", not for the chapter your play lives in. If each play says clearly when it applies, those situations are the index. Surface them.
+**The action:** organise the collection around the reader's situation. A reader under pressure is searching for "my team keeps committing to work it cannot finish", not for the chapter your play lives in. If each play says clearly when it applies, those situations are the index. Surface them.
 
 **Signals:** readers find plays you did not point them at.
 
@@ -33,6 +33,6 @@ Publishing a play is when its testing starts. And readers look for plays by thei
 
 Publishing as pushing. The central team announces the new way, teams comply visibly and ignore it privately.
 
-Good practice spreads by pull. Toyota's word for spreading an improvement is yokoten. It often gets mistranslated as "copy the improvement everywhere", but it means go and see, then adapt: the receiving team pulls the improvement and re-derives it for their context. So the publishing job is to make what worked clear enough that other teams can find it and steal it well, including the conditions it worked under. A team looking to steal an improvement is searching by their situation, which is why this antipattern and the index-by-situation play are two sides of the same coin.
+Good practice spreads by pull. Toyota's word for spreading an improvement is yokoten. It often gets mistranslated as "copy the improvement everywhere", but it means go and see, then adapt: the receiving team pulls the improvement and re-derives it for their context. So the publishing job is to make what worked clear enough that other teams can find it and steal it well, including the conditions it worked under. A team looking to steal an improvement is searching by their situation, which is why this antipattern and the index-by-situation play go together.
 
 If you are pushing plays at people, you have built a compliance system with better typography.

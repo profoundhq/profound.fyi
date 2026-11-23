@@ -11,7 +11,7 @@ tags:
 
 That definition rules a lot out. Checklists, methodologies, and values statements are not playbooks. If a document cannot be broken into plays that each say when they apply and how you would know they work, it is something else wearing the label. The Is It a Playbook test in the Artefacts section makes this operational.
 
-Something else is fine. Mislabelling it is not. The label sets the reader's contract, and a reader who runs your essay as a play will fail with it.
+Being something else is fine, as long as the label is correct. The label sets the reader's contract, and a reader who runs your essay as a play will fail with it.
 
 ## The anatomy of a play
 
@@ -19,7 +19,7 @@ A play has four parts, and none of them is optional:
 
 - **When.** The situation a reader would be standing in, not the topic the play covers.
 - **The action.** What to actually do. Short. The action is usually the smallest part of a well-written play.
-- **Signals.** How you would know it is working. Observable within weeks, not aspirational. "Alignment" is not a signal.
+- **Signals.** How you would know it is working. You can see them within weeks. "Alignment" is not a signal.
 - **When not to.** The conditions under which the play does not apply. A play without a when-not-to is an instruction, and instructions do not transfer.
 
 ## What a playbook is not

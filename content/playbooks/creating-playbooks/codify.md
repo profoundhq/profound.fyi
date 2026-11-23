@@ -17,13 +17,13 @@ To codify a play is to write it around the reader's situation, not the author's 
 
 **Signals:** a reader in the middle of a situation can decide within a minute whether this play is for them.
 
-**When not to:** never. This one is closer to a rule than a play, and I am keeping it as a play anyway because the discipline of writing its parts out is the point.
+**When not to:** never. This one is closer to a rule than a play, and I am keeping it as a play anyway because writing its parts out is useful in itself.
 
 ## Play: name the forces
 
 **When:** a play resolves a real tension, which is most of the time.
 
-**The action:** say what pulls in each direction and what the play trades away. Cost before payback, dependencies on sponsorship, skills the team must already have. The forces section is the part naive playbook writers always skip, and its absence is arguably the root antipattern: a play stated without the forces it resolves is an instruction.
+**The action:** say what pulls in each direction and what the play trades away. Cost before payback, dependencies on sponsorship, skills the team must already have. The forces section is the part naive playbook writers always skip, and leaving it out is probably the root antipattern: a play stated without the forces it resolves is an instruction.
 
 **Signals:** a reader can predict where their run of the play will hurt, before it does.
 
@@ -37,7 +37,7 @@ To codify a play is to write it around the reader's situation, not the author's 
 
 **Signals:** experienced readers describe plays as quick references, newer readers describe the same plays as teaching material.
 
-**When not to:** when the play is genuinely expert-only, in a situation a novice could not recognise. Then say so at the top instead of diluting it.
+**When not to:** when the play is expert-only, in a situation a novice could not recognise. Then say so at the top instead of diluting it.
 
 *This play is a candidate, drawn from GDS's guidance model for the Service Manual ("expose the why" with progressive disclosure), grounded in their user research rather than my runs.*
 

@@ -7,7 +7,7 @@ tags:
 ---
 
 
-People describe how they think they work, not how they actually work. Extraction is the work of getting past the official story to what actually happened.
+Ask people how they work and you get the official story. Extraction is the work of getting past it to what actually happened.
 
 Chris Argyris called these two accounts espoused theory and theory in use. They differ, and the gap between them is largest exactly where practice is most skilled, because skilled people stop noticing what they do. Interview a practitioner about how they work and you get the espoused version: cleaner, more principled, and less true than the practice itself.
 
@@ -25,11 +25,11 @@ Chris Argyris called these two accounts espoused theory and theory in use. They 
 
 **When:** the raw narrative includes an attempt that did not land, a workaround, or a condition that made the action less impressive.
 
-**The action:** the failure detail becomes a force, or part of when the play applies, not a cut. If the improvement took three attempts, or landed only because someone senior sponsored it, the reader's version will hit the same wall. A play that only works with air cover should say so.
+**The action:** the failure detail goes into the play as a force, or as part of when it applies. Do not cut it. If the improvement took three attempts, or landed only because someone senior sponsored it, the reader's version will hit the same wall. A play that only works with air cover should say so.
 
 **Signals:** readers stop asking "but what about" questions, because the play already answered them.
 
-**When not to:** when the detail identifies people or clients who did not agree to appear. Anonymise the who, keep the what.
+**When not to:** when the detail identifies people or clients who did not agree to appear. Anonymise the people and keep what happened.
 
 ## Antipattern: the espoused playbook
 

@@ -37,7 +37,7 @@ What the document actually is when it fails the test, and where each one belongs
 |**Methodology**|A total system claiming broad applicability, adopt it wholesale|Rarely. Be suspicious of anything you cannot adopt one play at a time|
 |**Pattern language**|Plays exist but the value is in their relationships and generative sequence|The reader is designing something, not responding to a situation|
 |**Style guide**|Rules about form and consistency, not actions in situations|The problem is coherence across many authors|
-|**Essay / position piece**|It argues a view, decomposition into plays fails entirely|You are changing minds, not equipping hands|
+|**Essay / position piece**|It argues a view, decomposition into plays fails entirely|It persuades the reader but gives them nothing to do|
 |**Values statement**|Aspirations without actions or signals|Almost never on its own. Values without plays are slogans|
 
 The methodology row deserves its own warning. A methodology is what a playbook becomes when the when-not-to sections are deleted and the plays are made mandatory. Once a playbook goes that way it is hard to turn back, and commercial pressure pushes it there because certainty sells better than judgement.
