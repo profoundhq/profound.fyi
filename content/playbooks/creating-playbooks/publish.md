@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**Publication is the start of a play's testing, not the end of its writing. And findability is a situation problem before it is a taxonomy problem.**
+Publication starts a play's testing. And findability is a situation problem before it is a taxonomy problem.
 
 ## Play: publish before you are confident
 
@@ -33,6 +33,6 @@ tags:
 
 Publishing as pushing. The central team announces the new way, teams comply visibly and ignore it privately.
 
-Amplification is pull. The yokoten that gets mistranslated as "copy the improvement everywhere" is actually go and see, then adapt: the receiving team pulls the improvement and re-derives it for their context. So the publishing job is not a broadcast channel. It is making what worked legible enough that other teams can find it and steal it well, including the conditions it worked under. A team looking to steal an improvement is searching by their situation, which is why this antipattern and the index-by-situation play are two sides of the same coin.
+Amplification is pull. The yokoten that gets mistranslated as "copy the improvement everywhere" is actually go and see, then adapt: the receiving team pulls the improvement and re-derives it for their context. So the publishing job is to make what worked legible enough that other teams can find it and steal it well, including the conditions it worked under. A team looking to steal an improvement is searching by their situation, which is why this antipattern and the index-by-situation play are two sides of the same coin.
 
 If you are pushing plays at people, you have built a compliance system with better typography.

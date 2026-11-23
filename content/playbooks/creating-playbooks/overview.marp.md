@@ -21,10 +21,10 @@ Codifying practice so it transfers, improves, and retires
 
 ## Most playbooks die one of two deaths
 
-- **The museum piece:** written once and never revised against evidence. Stale plays carry false authority. The tell: every play has the same date on it.
-- **The enforcement tool:** made mandatory, with the when-not-to deleted. The tell: teams comply in public and ignore it in private.
+- **The museum piece:** written once and never revised against evidence. Stale plays carry false authority, and every play has the same date on it.
+- **The enforcement tool:** made mandatory, with the when-not-to deleted. Teams comply in public and ignore it in private.
 
-Both deaths have one cause. Nobody resolved the tension between standardising and improving.
+Both come from leaving the tension between standardising and improving unresolved.
 
 ---
 
@@ -32,7 +32,7 @@ Both deaths have one cause. Nobody resolved the tension between standardising an
 
 Codification standardises. Improvement requires variation.
 
-The resolution is Toyota's. The standard is not the ceiling. You cannot see a local improvement without a standard to see it against.
+Toyota's answer is to treat the standard as a baseline. You cannot see a local improvement without a standard to see it against.
 
 This holds only if every play is provisional and a local improvement can become the new standard cheaply.
 
@@ -47,7 +47,7 @@ This holds only if every play is provisional and a local improvement can become 
 3. **Signals** How you would know it is working, within weeks
 4. **When not to** Where the play does not apply. Mandatory
 
-When you see these conditions, this move tends to work, and here is how you would know.
+When you see these conditions, this action tends to work, and here is how you would know.
 
 ---
 
@@ -58,23 +58,24 @@ Does it break into plays? Does each play say when it applies, when it does not, 
 - **Checklist:** items to verify, with no situation
 - **Runbook:** deterministic steps, with judgement minimised
 - **Methodology:** adopted wholesale, with the when-not-to deleted
-- **Values statement:** aspirations without moves or signals
+- **Values statement:** aspirations without actions or signals
 
-Something else is fine. Mislabelling it is not.
+Any of these can be the right tool. Label it honestly.
 
 ---
 
-<!-- _class: steps -->
+<!-- _class: pairs -->
 
-## Every stage pairs its plays with an antipattern
+## Each stage has a play, and the failure it prevents
 
-1. **Sense** Wait until a move recurs a third time
-2. **Extract** Write down what actually happened
-3. **Codify** Put entry conditions first and name the forces
-4. **Publish** Publish before you are confident
-5. **Govern** Make improvements standard and retire in the open
-
-The antipatterns: premature codification, the espoused playbook, the context-free recipe, the broadcast, and the museum piece.
+| Stage | Play | Failure it prevents |
+| --- | --- | --- |
+| Sense | Notice the third time | Premature codification |
+| Extract | Extract from what happened | The espoused playbook |
+| Codify | Situate every play | The context-free recipe |
+| Publish | Publish before you are confident | The broadcast |
+| Format and access | Separate the reading path from the change path | The wizard's tax |
+| Govern | Local improvement to new standard | The museum piece |
 
 ---
 
@@ -85,20 +86,15 @@ People describe their espoused theory. What they actually do is their theory in 
 - Write the instances out raw first, then extract the play from them.
 - Keep the failure in. If it took three attempts, that becomes a force in the play.
 
-The tell: a real play contains at least one detail you would rather leave out.
+A real play contains at least one detail you would rather leave out.
 
 ---
 
-<!-- _class: steps -->
-
 ## A local improvement becomes the new standard
 
-1. **Vary** A team varies a play locally
-2. **Prove** The variation survives three uses and beats the standard on its signals
-3. **Decide** The owner adopts, adapts, or declines with reasons
-4. **Shift** Other teams' behaviour changes too
+![w:960 A loop of four steps around the standard play: vary, prove, decide, and shift](/images/playbooks/creating-playbooks/improvement-loop.svg)
 
-The change path must cost less than the workaround. Otherwise the playbook forks into an official version and a real one.
+The change path must cost less than the workaround.
 
 ---
 
@@ -108,13 +104,13 @@ The change path must cost less than the workaround. Otherwise the playbook forks
 2. **Reading needs only a browser.** Keep the source under version control and the reading path at a stable URL.
 3. **Proposing needs no tooling.** A form, an email, or a comment counts.
 
-The tell that this has failed: the people closest to the work are not the people proposing changes.
+If the people closest to the work are not the ones proposing changes, it has failed.
 
 ---
 
-## Three plays that transfer beat fifteen that do not
+## Start small, from real instances
 
-1. Start a candidate list today, with one line per repeated move.
+1. Start a candidate list today, with one line for each action you keep repeating.
 2. Write one play from a real instance, using the template. Put the entry conditions first.
 3. Publish before you are confident. The first three uses are the test.
 

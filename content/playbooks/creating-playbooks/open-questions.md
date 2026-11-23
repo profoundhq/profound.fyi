@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**These are the parts I have not resolved. They are here because a playbook that admits its gaps is more trustworthy than one that pads them.**
+These are the parts I have not resolved. They are here because a playbook that admits its gaps is more trustworthy than one that pads them.
 
 ## Solo versus organisational collections
 

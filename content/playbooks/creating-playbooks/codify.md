@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**Codifying is structuring a play around its reader's situation, not its author's topic. The entry conditions come first and earn their place before the move does.**
+Codifying is structuring a play around its reader's situation, not its author's topic. The entry conditions come first and earn their place before the action does.
 
 ## Play: situate every play
 
@@ -49,6 +49,6 @@ This antipattern is not only an author failure. Readers, stakeholders, and audit
 
 ## Antipattern: the everything playbook
 
-Scope creep until the playbook is a methodology. A methodology is what a playbook becomes when the when-not-to sections are deleted and the plays are made mandatory. That is a one-way door, and commercial pressure pushes through it because certainty sells better than judgement.
+Scope creep until the playbook is a methodology, the one-way door described in the Is It a Playbook test.
 
 The counter-discipline: a playbook earns each play. If a play cannot meet the evidence bar, it does not go in, and the gap gets a sentence admitting it rather than a padded pseudo-play.

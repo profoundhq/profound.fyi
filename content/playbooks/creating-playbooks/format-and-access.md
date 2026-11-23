@@ -7,9 +7,9 @@ tags:
 ---
 
 
-**A playbook nobody can reach fails the same way a museum piece does, just earlier. Default to public, guarantee org-wide access as the floor, and never make reading or proposing depend on technical wizardry.**
+A playbook nobody can reach fails the same way a museum piece does, just earlier. Default to public, guarantee org-wide access as the floor, and never make reading or proposing depend on technical wizardry.
 
-Access is not an infrastructure detail to sort out after the writing. It determines whether the amplification loop can run at all. A local improvement cannot become the new standard if the person who made it cannot find the play, read it, or propose the change without learning a toolchain first.
+Access determines whether the amplification loop can run at all, so it cannot wait until after the writing. A local improvement cannot become the new standard if the person who made it cannot find the play, read it, or propose the change without learning a toolchain first.
 
 ## Play: default to public
 
@@ -45,7 +45,7 @@ Access is not an infrastructure detail to sort out after the writing. It determi
 
 Governance affordances chosen for the maintainer's convenience becoming a gate on the collection. Version control is the right canonical store, and it is also a fluency test that most of an organisation fails. When reading requires cloning and proposing requires a pull request, the playbook has quietly become the property of the people who can operate it. GitLab's handbook works this way and works well, but only because git fluency is a hiring condition there. That is an entry condition of their model, not a transferable practice, and copying the mechanism without the condition builds the tax without the benefit.
 
-The tell: the people closest to the work are not the people proposing changes.
+You can see it happening when the people closest to the work are not the people proposing changes.
 
 ## Formats and projections
 

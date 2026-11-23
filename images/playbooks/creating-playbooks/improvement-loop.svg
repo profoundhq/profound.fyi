@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 470" font-family="IBM Plex Sans, -apple-system, Helvetica, Arial, sans-serif">
+<title>How a local improvement becomes the new standard</title>
+<desc>A loop of four steps around the standard play. 1, Vary: a team varies a play locally. 2, Prove: the variation survives three uses and beats the standard on its own signals. 3, Decide: the owner adopts, adapts, or declines it, with reasons. 4, Shift: other teams adopt it as the new standard. Then the loop starts again.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1a1a1a"/></marker></defs>
+<rect width="1120" height="470" fill="#fff"/>
+<ellipse cx="560" cy="240" rx="150" ry="66" fill="#f6f6f3"/>
+<text x="560" y="236" font-size="28" font-weight="600" fill="#1a1a1a" text-anchor="middle">The standard play</text>
+<text x="560" y="268" font-size="19" fill="#555" text-anchor="middle">the baseline improvement is seen against</text>
+<path d="M611.7 93.8 A230 150 0 0 1 784.1 206.3" fill="none" stroke="#1a1a1a" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M784.1 273.7 A230 150 0 0 1 611.7 386.2" fill="none" stroke="#1a1a1a" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M508.3 386.2 A230 150 0 0 1 335.9 273.7" fill="none" stroke="#1a1a1a" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M335.9 206.3 A230 150 0 0 1 508.3 93.8" fill="none" stroke="#1a1a1a" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="560.0" cy="90.0" r="11" fill="#1a1a1a"/>
+<circle cx="790.0" cy="240.0" r="11" fill="#1a1a1a"/>
+<circle cx="560.0" cy="390.0" r="11" fill="#1a1a1a"/>
+<circle cx="330.0" cy="240.0" r="11" fill="#1a1a1a"/>
+<text x="560" y="40" font-size="30" font-weight="600" fill="#1a1a1a" text-anchor="middle">1  Vary</text>
+<text x="560" y="70" font-size="22" fill="#555" text-anchor="middle">A team varies a play locally</text>
+<text x="816" y="218" font-size="30" font-weight="600" fill="#1a1a1a" text-anchor="start">2  Prove</text>
+<text x="816" y="248" font-size="22" fill="#555" text-anchor="start">Survives three uses</text>
+<text x="816" y="274" font-size="22" fill="#555" text-anchor="start">and beats the standard</text>
+<text x="816" y="300" font-size="22" fill="#555" text-anchor="start">on its own signals</text>
+<text x="560" y="434" font-size="30" font-weight="600" fill="#1a1a1a" text-anchor="middle">3  Decide</text>
+<text x="560" y="464" font-size="22" fill="#555" text-anchor="middle">The owner adopts, adapts, or declines it, with reasons</text>
+<text x="304" y="218" font-size="30" font-weight="600" fill="#1a1a1a" text-anchor="end">4  Shift</text>
+<text x="304" y="248" font-size="22" fill="#555" text-anchor="end">Other teams adopt it</text>
+<text x="304" y="274" font-size="22" fill="#555" text-anchor="end">as the new standard</text>
+</svg>

@@ -8,7 +8,7 @@ tags:
 ---
 
 
-A test to determine whether what you are writing is a playbook or something else wearing the label. Something else is fine. Mislabelling it is not, because readers arrive with playbook expectations and leave with instructions they will misapply.
+A test for whether what you are writing is a playbook or something else wearing the label. The label matters because readers arrive with playbook expectations and leave with instructions they will misapply.
 
 ## The five-question test
 
@@ -62,4 +62,4 @@ Rules of thumb when you do not want to run the full test.
 
 Run the five questions on each section separately, not the document as a whole. Most real documents are mixed: two genuine plays, an introduction that is really an essay, and a values statement in a play costume. The test does not tell you to throw the non-play material out. It tells you to either convert it into plays, move it into an explicitly different section, or publish it as the essay it wants to be.
 
-The one thing not to do is leave it mislabelled. The label sets the reader's contract, and a reader who runs your essay as a play will fail with it, and blame the right target.
+The one thing not to do is leave it mislabelled.
