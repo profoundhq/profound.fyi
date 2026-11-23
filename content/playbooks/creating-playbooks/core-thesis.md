@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**Writing practice down makes teams work the same way. Getting better needs someone to try something different. Most playbooks never settle that tension.**
+**Writing practice down helps teams work the same way. But improving relies on someone deviating and trying something novel. Most playbooks never settle that tension.**
 
 They fail in one of two ways. Either nobody updates them and they become museum pieces that nobody follows, or everyone must follow them and improvement has to fight them. Laminate your ways of working, and you get the second death quickly. The artefact meant to spread good practice becomes the thing teams route around.
 
