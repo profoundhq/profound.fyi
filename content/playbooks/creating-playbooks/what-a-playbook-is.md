@@ -28,4 +28,4 @@ A playbook is not your culture. "This is how we do things around here" is the de
 
 Keep those separate, or you end up writing down the story the organisation tells about itself. The purpose of the playbook system is what it does in practice. If what it does is provide compliance cover, that is its purpose, regardless of what the preface claims.
 
-A playbook also assumes a capable reader exercising judgement. If a document can be followed by someone without judgement, it is a runbook, which is often the right tool. Playbooks are for domains where the reader must first understand the situation.
+A playbook also assumes a capable reader exercising judgement. If a document can be followed by someone without judgement, it is a runbook, which is often the right tool. Playbooks are for messy work where you have to read the room first.

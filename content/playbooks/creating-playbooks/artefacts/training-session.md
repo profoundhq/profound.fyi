@@ -94,7 +94,7 @@ Silent sweep (5 min): back in plenary, muted, everyone revises their play agains
 
 Export the board to PDF before touching anything. The voted plays are the organisation's candidate list, started with demand evidence attached. If the session is part of establishing a collection, the most-voted plays are the first extraction targets, and their authors are the first people to receive the legitimise-the-writing permission for real.
 
-Leave the board open for a week with edit access, and say so in a follow-up message. Some of the best play revisions arrive on day three, once people have had time to notice the missing when-not-to. Then archive it read-only, because a workshop board is a projection too, and the plays that matter move into the collection with candidate status and their author's name.
+Leave the board open for a week with edit access, and say so in a follow-up message. Some of the best play revisions arrive on day three, once people have had time to notice the missing when-not-to. Then archive it read-only, because a workshop board is a copy too, and the plays that matter move into the collection with candidate status and their author's name.
 
 Run the session again in eight weeks with a different group. If none of the first session's plays have been run by a stranger by then, that says something about the organisation rather than the session, and the govern stage should pick it up.
 

@@ -17,7 +17,7 @@ Access decides whether the improvement loop can run at all, so it cannot wait un
 
 **The action:** publish openly unless a specific play has a specific reason not to. Make the exception per play, not per collection. Client-confidential instances get anonymised at extraction, not locked away at publication.
 
-**Signals:** people outside the org cite, steal, and challenge your plays. External challenge is a test suite you do not have to recruit. A public collection also works as a recruitment instrument: candidates arrive already knowing how you work, and authors take pride in work that is out there.
+**Signals:** people outside the org cite, steal, and challenge your plays. Outside pushback is free quality control. A public collection also works as a recruitment instrument: candidates arrive already knowing how you work, and authors take pride in work that is out there.
 
 **When not to:** when a play's situation or instances would expose client work, security posture, or people who did not agree to appear, and anonymising would gut the play. Then the play stays internal and the collection says a play exists there.
 
@@ -35,7 +35,7 @@ Access decides whether the improvement loop can run at all, so it cannot wait un
 
 **When:** the improvement-to-standard loop is live.
 
-**The action:** offer at least one proposal route that requires no tooling beyond what everyone already uses. A form, an email address, a comment thread. The maintainer turns it into a change under version control. Git-fluent people can raise changes directly, but git fluency is never the price of participation.
+**The action:** offer at least one proposal route that requires no tooling beyond what everyone already uses. A form, an email address, a comment thread. The maintainer turns it into a change under version control. Git-fluent people can raise changes directly, but knowing git should never be the entry fee.
 
 **Signals:** proposals arrive from people who could not have raised a merge request. If every proposal comes from the technical few, the loop is only sampling part of the org, and the plays will drift toward the practices of the people who can operate the door.
 
@@ -47,11 +47,11 @@ Tools picked for the maintainer's convenience that end up deciding who can take 
 
 You can see it happening when the people closest to the work are not the people proposing changes.
 
-## Formats and projections
+## Copies, decks, and printouts
 
-The master copy is text. Everything else is generated from it, and this page calls those copies projections: a PDF for the exec who wants to read offline, a slide deck for a briefing or a teach-in, cards for a workshop wall, and a print stylesheet, because demand for paper reliably surprises the people who build for screens. Projections help good practice spread, because they make plays easy for other teams to see and steal.
+The master copy is text. Everything else is a copy generated from it: a PDF for an executive who wants to read offline, a slide deck for a briefing, cards for a workshop wall, and a print layout, because people ask for paper more often than screen-first teams expect. Copies help good practice spread, because they make plays easy for other teams to see and borrow.
 
-Two rules keep projections honest. A projection never becomes the thing people edit, because the moment it does the collection forks into an official version and a circulating one. And a projection never carries the last-tested date or status, because it cannot honour them. A deck is stale the moment it is exported, and pretending otherwise lends false authority. Point every projection back at the playbook's own pages.
+Two rules keep copies honest. Nobody edits a copy, because the moment people edit the deck or the PDF, there are two competing versions. And a copy never carries the last-tested date or status, because it cannot keep them accurate. A deck is out of date the moment it is exported, and pretending otherwise gives it false authority. Point every copy back at the playbook's own pages.
 
 A deck can be part of a play's kit, where the action is itself a facilitated session and the slides are the facilitation material. That is different from the deck being the play, and the difference is who governs what: the kit travels with the play, the play lives in the collection.
 

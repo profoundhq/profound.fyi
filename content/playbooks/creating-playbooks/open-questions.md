@@ -19,7 +19,7 @@ Three uses is the default bar throughout this playbook for both codification and
 
 ## What a library owes its forks
 
-When a variation is a fork rather than an improvement, the honest answer is a second play for a different situation. But a collection full of near-duplicate plays with subtle condition differences has a findability problem and possibly a credibility one. Where the line sits between honest forking and fragmentation, I do not know yet.
+When a variation is a fork rather than an improvement, the honest answer is a second play for a different situation. But a collection full of near-duplicate plays with subtle condition differences has a findability problem and possibly a credibility one. Where the line sits between honest branching and messy sprawl, I do not know yet.
 
 ## Playbooks and AI-assisted practice
 
