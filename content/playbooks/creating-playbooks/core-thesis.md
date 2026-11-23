@@ -7,7 +7,7 @@ tags:
 ---
 
 
-**Writing practice down helps teams work the same way. But often improvement relies on someone trying a way that isn't written down yet. Most playbooks never settle that tension.**
+**Writing practice down helps teams work the same way. But improvement often relies on someone trying a way that isn't written down yet. Most playbooks never settle that tension.**
 
 When that tension stays unsettled, a playbook fails in one of two ways. Either nobody updates it, and it becomes a museum piece that people trust long after it has stopped being true. Or everyone has to follow it, and anyone with a better way has to fight it. Laminate your ways of working and you get the second failure fast. The document meant to spread good practice becomes the thing teams work around.
 
