@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { editHunks, replayHunks, noteFor, frontmatterChanges } from "../scripts/sync-back.mjs";
+import { editHunks, replayHunks, noteFor, frontmatterChanges, wholeNote } from "../scripts/sync-back.mjs";
 
 const replay = (base, ours, vault) => replayHunks(vault, editHunks(base, ours));
 
@@ -82,4 +82,24 @@ test("frontmatter changes are reported, not replayed", () => {
   const ours = '---\ntitle: "Sensing"\norder: 30\n---\nBody.\n';
   assert.deepEqual(frontmatterChanges(base, ours), ["title"]);
   assert.deepEqual(frontmatterChanges(base, base), []);
+});
+
+test("wholeNote keeps the note's frontmatter and H1, and links back to the vault's own files", () => {
+  const page = '---\ntitle: "Codify"\norder: 50\nupdated: 2026-10-12\ntags:\n  - demo\n---\n\nUse the [Play Template](/playbooks/demo/artefacts/play-template/) and see [Govern](/playbooks/demo/govern/#loop).\n';
+  const note = "---\ntitle: Codify\norder: 50\npermalink: /playbooks/demo/codify/\n---\n\n# Codify\n\nOld rewrite text.\n";
+  const notes = ["50-codify.md", "80-govern.md", "artefacts/20-play-template.md"];
+  assert.equal(
+    wholeNote(page, note, { slug: "demo", note: "50-codify.md", notes }),
+    "---\ntitle: Codify\norder: 50\npermalink: /playbooks/demo/codify/\n---\n\n# Codify\n\nUse the [Play Template](artefacts/20-play-template.md) and see [Govern](80-govern.md#loop).\n",
+  );
+});
+
+test("wholeNote links from an artefact up to a top-level note and to attachments", () => {
+  const page = '---\ntitle: "Training"\norder: 140\n---\n\nSee [the test](/playbooks/demo/artefacts/is-it-a-playbook/), [Govern](/playbooks/demo/govern/), and [the deck](/images/playbooks/demo/intro.pptx).\n';
+  const note = "# Training\n\nOld.\n";
+  const notes = ["80-govern.md", "artefacts/10-is-it-a-playbook.md", "artefacts/40-training.md"];
+  assert.equal(
+    wholeNote(page, note, { slug: "demo", note: "artefacts/40-training.md", notes }),
+    "# Training\n\nSee [the test](10-is-it-a-playbook.md), [Govern](../80-govern.md), and [the deck](intro.pptx).\n",
+  );
 });

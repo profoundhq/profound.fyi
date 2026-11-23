@@ -15,8 +15,15 @@
 // It never creates, deletes, or renames a note. Afterwards, running the
 // forward sync should produce no diff for the replayed pages.
 //
+// --whole writes whole notes instead, for when the vault has drifted too far
+// for edits to replay (a separate rewrite, say). Each note keeps its own
+// frontmatter and H1, and gets the repo page's body with site links turned
+// back into links to the vault's own note files. Notes that would not change
+// are left alone. Pages listed with --exclude (such as changelog) are skipped.
+//
 // Usage:
 //   node scripts/sync-back.mjs <slug> <source-path> --since <git-ref> [--apply] [--backup-dir <dir>]
+//   node scripts/sync-back.mjs <slug> <source-path> --whole [--exclude <page>,...] [--apply] [--backup-dir <dir>]
 
 import fs from "node:fs";
 import path from "node:path";
@@ -199,6 +206,29 @@ export function frontmatterChanges(baseText, oursText) {
   return [...new Set([...Object.keys(a), ...Object.keys(b)])].filter((key) => !same(a[key], b[key])).sort();
 }
 
+// A vault note rebuilt from its repo page: the note's own frontmatter and
+// leading H1, then the page's body. Site links to this playbook's pages
+// become relative links to the vault's note files, and links to its copied
+// attachments become relative links again, so the forward sync gives back
+// the page exactly.
+export function wholeNote(pageText, noteText, { slug, note, notes }) {
+  const page = matter(pageText);
+  const fm = noteText.match(FRONTMATTER)?.[0] ?? "";
+  const rest = noteText.slice(fm.length);
+  const h1 = rest.match(/^\s*(# .+)\n/)?.[1] ?? `# ${page.data.title}`;
+  const here = path.posix.dirname(note);
+  const linkRe = new RegExp(`\\]\\(/playbooks/${slug}/((?:artefacts/)?)([a-z0-9-]+)/(#[^)]*)?\\)`, "g");
+  const body = page.content
+    .replace(/^\n+/, "")
+    .replace(linkRe, (match, art, page, hash = "") => {
+      const target = noteFor(`${art}${page}.md`, notes);
+      if (!target) return match;
+      return `](${encodeURI(path.posix.relative(here, target))}${hash})`;
+    })
+    .replace(new RegExp(`\\]\\(/images/playbooks/${slug}/([^)]+)\\)`, "g"), "]($1)");
+  return `${fm}${fm ? "\n" : ""}${h1}\n\n${body}`;
+}
+
 function listNotes(src) {
   const notes = fs.readdirSync(src).filter((f) => f.endsWith(".md") && !f.endsWith(".marp.md"));
   const artefacts = path.join(src, "artefacts");
@@ -219,11 +249,15 @@ function main(argv) {
   };
   const apply = args.includes("--apply");
   if (apply) args.splice(args.indexOf("--apply"), 1);
+  const whole = args.includes("--whole");
+  if (whole) args.splice(args.indexOf("--whole"), 1);
   const since = flag("--since");
+  const exclude = (flag("--exclude") ?? "").split(",").filter(Boolean);
   const backupFlag = flag("--backup-dir");
   const [slug, src] = args;
-  if (!slug || !src || !since) {
+  if (!slug || !src || (!since && !whole)) {
     console.error("Usage: node scripts/sync-back.mjs <slug> <source-path> --since <git-ref> [--apply] [--backup-dir <dir>]");
+    console.error("       node scripts/sync-back.mjs <slug> <source-path> --whole [--exclude <page>,...] [--apply] [--backup-dir <dir>]");
     process.exit(2);
   }
   if (!fs.existsSync(src)) {
@@ -231,6 +265,7 @@ function main(argv) {
     process.exit(2);
   }
   const dst = `content/playbooks/${slug}`;
+  if (whole) process.exit(writeWhole({ slug, src, dst, exclude, apply, backupFlag }));
   const git = (...a) => execFileSync("git", a, { encoding: "utf8" });
   const changed = git("diff", "--name-only", since, "--", dst)
     .split("\n")
@@ -304,6 +339,66 @@ function main(argv) {
   if (!apply) console.log("Nothing was changed. Add --apply to write the notes.");
   else console.log(`Check: run scripts/sync-playbook.sh ${slug} "${src}" and expect no diff for the replayed pages.`);
   process.exit(tally.conflict || tally.ambiguous || tally.attention ? 1 : 0);
+}
+
+function writeWhole({ slug, src, dst, exclude, apply, backupFlag }) {
+  const notes = listNotes(src);
+  const backupRoot = backupFlag || path.join(src, "..", ".sync-back-backups", new Date().toISOString().replace(/[:.]/g, "-"), slug);
+  const pages = fs
+    .readdirSync(dst, { recursive: true })
+    .map(String)
+    .filter((f) => f.endsWith(".md") && !f.endsWith(".marp.md"))
+    .sort();
+  let written = 0;
+  let attention = 0;
+  console.log(`${apply ? "APPLYING" : "DRY RUN"}: whole notes from ${dst} into ${src}\n`);
+  for (const rel of pages) {
+    if (exclude.includes(path.basename(rel, ".md"))) {
+      console.log(`SKIPPED   ${rel} (excluded)`);
+      continue;
+    }
+    let note;
+    try {
+      note = noteFor(rel, notes);
+    } catch (error) {
+      console.log(`UNMATCHED ${rel}: ${error.message}`);
+      attention++;
+      continue;
+    }
+    if (!note) {
+      console.log(`UNMATCHED ${rel}: no vault note found for it, create it by hand`);
+      attention++;
+      continue;
+    }
+    const notePath = path.join(src, note);
+    const pageText = fs.readFileSync(path.join(dst, rel), "utf8");
+    const noteText = fs.readFileSync(notePath, "utf8");
+    const text = wholeNote(pageText, noteText, { slug, note, notes });
+    const vault = matter(noteText).data;
+    const page = matter(pageText).data;
+    const differs = ["title", "order"].filter((k) => vault[k] !== undefined && String(vault[k]) !== String(k === "order" && rel.startsWith("artefacts/") ? page[k] - 100 : page[k]));
+    if (differs.length) {
+      console.log(`  ${note}: frontmatter ${differs.join(", ")} differs from the site, fix it by hand`);
+      attention++;
+    }
+    if (text === noteText) {
+      console.log(`SAME      ${rel}  ->  ${note}`);
+      continue;
+    }
+    console.log(`${apply ? "WROTE" : "WOULD WRITE"} ${rel}  ->  ${note}`);
+    written++;
+    if (apply) {
+      const backup = path.join(backupRoot, note);
+      fs.mkdirSync(path.dirname(backup), { recursive: true });
+      if (!fs.existsSync(backup)) fs.copyFileSync(notePath, backup);
+      fs.writeFileSync(notePath, text);
+    }
+  }
+  console.log(`\n${apply ? "Wrote" : "Would write"}: ${written}   need you: ${attention}`);
+  if (apply && written) console.log(`Backups: ${backupRoot}`);
+  if (!apply) console.log("Nothing was changed. Add --apply to write the notes.");
+  else console.log(`Check: run scripts/sync-playbook.sh ${slug} "${src}" and expect no diff.`);
+  return attention ? 1 : 0;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main(process.argv.slice(2));
