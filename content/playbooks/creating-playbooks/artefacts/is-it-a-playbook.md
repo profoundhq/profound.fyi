@@ -16,7 +16,7 @@ Take any section of the document and ask:
 
 **1. Can I decompose it into plays?** A play has four parts: when it applies, what to do, signals, and when not to use it. If the content resists that decomposition, it is not a playbook. Prose that explains, argues, or persuades is an essay. Prose that lists steps without conditions is a procedure.
 
-**2. Does each play say when it applies?** Not the topic it covers. The situation a reader would be standing in. "For teams adopting OKRs" is a topic. "When your quarterly goals are set but nobody can say which work serves them" is a situation. If the reader cannot match their situation to the play in under a minute, the situating has failed.
+**2. Does each play say when it applies?** Not just the topic: the actual situation the reader is standing in. "For teams adopting OKRs" is a topic. "When your quarterly goals are set but nobody can say which work serves them" is a situation. If the reader cannot match their situation to the play in under a minute, the situating has failed.
 
 **3. Does each play say when it does not apply?** This is the sharpest single discriminator. Checklists, procedures, and methodologies almost never contain a when-not-to, because they assume their own applicability. A play knows it is contextual. No when-not-to sections anywhere in the document is close to a proof that it is not a playbook.
 

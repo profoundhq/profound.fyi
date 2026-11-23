@@ -15,7 +15,7 @@ To codify a play is to write it around the reader's situation, not the author's 
 
 **The action:** start with when it applies: what a reader would be seeing that tells them this play applies. Then the action, then the signals, then the conditions under which the play does not apply. Use the [Play Template](/playbooks/creating-playbooks/artefacts/play-template/) so the form stays consistent across the collection.
 
-**Signals:** a reader in the middle of a situation can decide within a minute whether this play is for them.
+**Signals:** someone in the middle of a messy week can tell within a minute whether this play is for them.
 
 **When not to:** never. This one is closer to a rule than a play, and I am keeping it as a play anyway because writing its parts out is useful in itself.
 

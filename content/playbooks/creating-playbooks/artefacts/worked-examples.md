@@ -25,7 +25,7 @@ The strongest structural match in the wild. A collection of named plays, each wi
 
 **Verdict:** a playbook, with the caveat that nearly every play is a facilitated workshop. That is only one kind of play.
 
-**The lesson:** best-in-class codification can coexist with invisible governance. There is no public evidence trail, no retirement, no visible mechanism for a team's local improvement to change the standard play. Codification quality and governance quality are separate achievements.
+**The lesson:** best-in-class codification can coexist with invisible governance. There is no public evidence trail, no retirement, no visible mechanism for a team's local improvement to change the standard play. Writing good plays and keeping them alive are separate skills.
 
 
 ## US Digital Services Playbook
@@ -96,4 +96,4 @@ First, codification quality and governance quality almost never co-occur. Atlass
 
 Second, that gap is either an opportunity or a warning. Either the field lacks a collection with situated plays and a working improvement loop, or doing both at once is harder than a lifecycle diagram admits, and the survivors specialised for a reason. This playbook is a bet on the first reading. The first external uses will start to settle which reading is right.
 
-*Hypothesis: the reason the two qualities separate is that codifying is an authorial skill and govern is an organisational commitment, and most collections have only one of an author or an organisation behind them.*
+*Hypothesis: writing and upkeep rarely happen together because writing is an author's skill and upkeep is an organisation's commitment, and most playbooks have only one of the two behind them.*

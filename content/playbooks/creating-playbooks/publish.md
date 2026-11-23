@@ -15,7 +15,7 @@ Publishing a play is when its testing starts. And readers look for plays by the 
 
 **The action:** publish with the provisional status visible. Treat the first three external uses as the test suite. Ask the users what the play failed to tell them, and fold the answers back in.
 
-**Signals:** the play changes within a month of publication. A play that survives first contact unchanged was probably not tested, just tolerated.
+**Signals:** the play changes within a month of publication. A play that survives its first month untouched was probably not tested. It was just politely ignored.
 
 **When not to:** when the play carries real risk if misapplied and it does not yet say clearly enough when it applies to prevent that.
 
