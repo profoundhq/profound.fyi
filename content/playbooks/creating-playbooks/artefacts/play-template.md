@@ -21,7 +21,7 @@ The form every play in a collection follows. Consistency of form is what lets re
 
 **The action:** [what to do. Short. If the action is the longest section, the play is probably a procedure in disguise.]
 
-**Forces:** [what pulls in each direction and what the play trades away. Cost before payback. Dependencies on sponsorship or skills. Omit only if the tension is genuinely trivial.]
+**Forces:** [what pulls in each direction and what the play trades away. Cost before payback. Dependencies on sponsorship or skills. Omit only if the tension is trivial.]
 
 **Signals:** [how the reader would know it is working. Observable within weeks. Not "alignment", not "buy-in".]
 

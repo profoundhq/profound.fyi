@@ -19,7 +19,7 @@ Access decides whether the improvement loop can run at all, so it cannot wait un
 
 **Signals:** people outside the org cite, steal, and challenge your plays. External challenge is a test suite you do not have to recruit. A public collection also works as a recruitment instrument: candidates arrive already knowing how you work, and authors take pride in work that is out there.
 
-**When not to:** when a play's situation or instances would expose client work, security posture, or people who did not agree to appear, and anonymising would gut the play. Then the play stays internal and the collection says a play exists there. A visible gap beats a secret door.
+**When not to:** when a play's situation or instances would expose client work, security posture, or people who did not agree to appear, and anonymising would gut the play. Then the play stays internal and the collection says a play exists there.
 
 ## Play: separate the reading path from the change path
 
@@ -43,7 +43,7 @@ Access decides whether the improvement loop can run at all, so it cannot wait un
 
 ## Antipattern: the wizard's tax
 
-Tools picked for the maintainer's convenience that end up deciding who can take part. Version control is the right home for the master copy, and it is also a fluency test that most of an organisation fails. When reading requires cloning and proposing requires a pull request, the playbook has quietly become the property of the people who can operate it. GitLab's handbook works this way and works well, but only because git fluency is a hiring condition there. That is a condition of their model, not a transferable practice, and copying the mechanism without the condition builds the tax without the benefit.
+Tools picked for the maintainer's convenience that end up deciding who can take part. Version control is the right home for the master copy, and it is also a fluency test that most of an organisation fails. When reading requires cloning and proposing requires a pull request, the playbook has become the property of the people who can operate it. GitLab's handbook works this way and works well, but only because git fluency is a hiring condition there. That is a condition of their model, not a transferable practice, and copying the mechanism without the condition builds the tax without the benefit.
 
 You can see it happening when the people closest to the work are not the people proposing changes.
 

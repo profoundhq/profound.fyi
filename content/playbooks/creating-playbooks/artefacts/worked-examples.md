@@ -23,7 +23,7 @@ The strongest structural match in the wild. A collection of named plays, each wi
 4. **Observable signals?** Partially. Some plays name what better looks like, many settle for the workshop having happened.
 5. **Judgement required?** Yes. Plays assume a facilitator reading the room.
 
-**Verdict:** a playbook, with the caveat that nearly every play is a facilitated workshop. That is one species of play, not the whole genus.
+**Verdict:** a playbook, with the caveat that nearly every play is a facilitated workshop. That is only one kind of play.
 
 **The lesson:** best-in-class codification can coexist with invisible governance. There is no public evidence trail, no retirement, no visible mechanism for a team's local improvement to change the standard play. Codification quality and governance quality are separate achievements.
 
@@ -55,7 +55,7 @@ Procurement and delivery policy for public sector digital, published under the p
 
 **Verdict:** a methodology-adjacent policy framework wearing the label. This is the methodology trap in government form: when-not-to deleted, plays made mandatory, certainty sold as the feature.
 
-**The lesson:** the label sets the reader's contract, and here the mismatch has consequences. A supplier reading "playbook" expects situated judgement and gets compliance requirements. Nothing wrong with policy. Something wrong with the costume.
+**The lesson:** the label sets the reader's contract, and here the mismatch has consequences. A supplier reading "playbook" expects situated judgement and gets compliance requirements. Policy is fine to publish. Calling it a playbook is the problem.
 
 
 ## GitLab Handbook
@@ -94,6 +94,6 @@ Two things, and they pull against each other.
 
 First, codification quality and governance quality almost never co-occur. Atlassian and the USDS codify plays competently and govern invisibly. GitLab governs superbly and has no plays. Nothing surveyed does both.
 
-Second, that gap is either an opportunity or a warning. Either the field genuinely lacks a collection with situated plays and a working improvement loop, or doing both at once is harder than a lifecycle diagram admits, and the survivors specialised for a reason. This playbook is a bet on the first reading. The first external uses will start to settle which reading is right.
+Second, that gap is either an opportunity or a warning. Either the field lacks a collection with situated plays and a working improvement loop, or doing both at once is harder than a lifecycle diagram admits, and the survivors specialised for a reason. This playbook is a bet on the first reading. The first external uses will start to settle which reading is right.
 
 *Hypothesis: the reason the two qualities separate is that codifying is an authorial skill and govern is an organisational commitment, and most collections have only one of an author or an organisation behind them.*

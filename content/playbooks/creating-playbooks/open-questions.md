@@ -15,7 +15,7 @@ This playbook's centre of gravity is organisational: multiple teams, multiple au
 
 ## The evidence threshold
 
-Three uses is the default bar throughout this playbook for both codification and improvement proposals. It is a heuristic, not a finding. Higher-risk plays probably deserve a higher bar and cheap reversible plays a lower one, but I have not worked out how to state that without making the bar negotiable in exactly the situations where negotiation is most tempting.
+Three uses is the default bar throughout this playbook for both codification and improvement proposals. It is a rule of thumb I have not tested. Higher-risk plays probably deserve a higher bar and cheap reversible plays a lower one, but I have not worked out how to state that without making the bar negotiable in exactly the situations where negotiation is most tempting.
 
 ## What a library owes its forks
 

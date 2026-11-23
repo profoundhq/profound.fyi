@@ -11,7 +11,7 @@ tags:
 
 They fail in one of two ways. Either nobody updates them and they become museum pieces that nobody follows, or everyone must follow them and improvement has to fight them. Laminate your ways of working, and you get the second death quickly. The artefact meant to spread good practice becomes the thing teams route around.
 
-Toyota's car plants settled this with standard work, a written description of the current best way to do each job. The standard is not the ceiling. It is the baseline that makes improvement visible. You cannot see a local improvement without a standard to see it against.
+Toyota's car plants deal with this through standard work, a written description of the current best way to do each job. Teams follow it, and anyone who finds a better way tests it against the standard. If the new way does better, it becomes the standard. Without a standard, there is nothing to test an improvement against.
 
 This only holds if two conditions are met. Every play is open to change, and says so. And there is a cheap, known path for a local improvement to become the new standard.
 

@@ -32,7 +32,7 @@ Both happen when a playbook has no way to change as teams find better ways of wo
 
 Writing a play down makes teams work the same way. Getting better needs someone to try something different.
 
-Toyota's car plants handle this by writing down the current best way to do each job, then treating it as a starting point, not a rule. When a team tries a change, they compare it with the written way to see if it is better.
+Toyota's car plants handle this by writing down the current best way to do each job, then letting anyone test a better way against it. When a team tries a change, they compare it with the written way to see if it is better.
 
 That only works if any play can change, and a better way can replace the old one without a fight.
 

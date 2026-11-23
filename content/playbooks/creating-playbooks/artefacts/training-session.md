@@ -67,7 +67,7 @@ Timer on the board. Cameras off, stand up, leave the desk. Say the return time t
 **Activity 1: run the test (15 min).**
 Rooms open. Each room's test worksheet names its assigned internal document. The room reads it, answers the five questions in the checklist, and writes a verdict: either what genre it actually is and why that is fine, or the one change that would make it a playbook.
 
-Debrief in plenary (4 of the 15): one verdict per room, spokesperson, worksheet zoomed. The facilitator's only job is protecting the honest verdict. A document that turns out to be a good runbook is a pass, not a fail. The point is the label, not the genre.
+Debrief in plenary (4 of the 15): one verdict per room, spokesperson, worksheet zoomed. The facilitator's only job is protecting the honest verdict. A document that turns out to be a good runbook passes. What matters is that it is labelled correctly.
 
 **Activity 2: write a play (23 min).**
 Solo first (10 min), everyone stays in plenary but muted, working in their own play frame. Each person picks an action from their own practice, something done at least three times that worked, and fills the template. Say when it applies first, then when not to use it, then the rest. The extraction rule is written at the top of every play frame: what happened, not what should happen, and keep the embarrassing detail in.
@@ -96,7 +96,7 @@ Export the board to PDF before touching anything. The voted plays are the organi
 
 Leave the board open for a week with edit access, and say so in a follow-up message. Some of the best play revisions arrive on day three, once people have had time to notice the missing when-not-to. Then archive it read-only, because a workshop board is a projection too, and the plays that matter move into the collection with candidate status and their author's name.
 
-Run the session again in eight weeks with a different group. If none of the first session's plays have been run by a stranger by then, that is a signal about the org, not the session, and it is exactly the signal the govern stage exists to read.
+Run the session again in eight weeks with a different group. If none of the first session's plays have been run by a stranger by then, that says something about the organisation rather than the session, and the govern stage should pick it up.
 
 
 *This guide is provisional and follows the collection's rules: the first three facilitations are the test suite. Remote timings especially, breakout transitions in Teams cost 60 to 90 seconds each and there are five of them, which is why this version carries five fewer minutes of activity than the session appears to contain.*
