@@ -7,7 +7,7 @@ tags:
 ---
 
 
-A playbook nobody can access fails the same way a museum piece does, just earlier. Default to public, guarantee org-wide access as the floor, and never make reading or proposing depend on technical wizardry.
+A playbook nobody can access fails before anyone has a chance to use it. Default to public, make sure everyone in the organisation can read it at the very least, and never make reading or proposing depend on technical wizardry.
 
 Access decides whether the improvement loop can run at all, so it cannot wait until after the writing. A local improvement cannot become the new standard if the person who made it cannot find the play, read it, or propose the change without learning a toolchain first.
 
