@@ -17,7 +17,7 @@ Chris Argyris called these two accounts espoused theory and theory in use. They 
 
 **The action:** before drafting anything, write the instances out raw. What actually happened, who did what, what resistance it hit, what memory wants to smooth over. Get the narrative down ugly and specific. Then extract the play from the narrative. Never draft the play first and reach back for instances as decoration.
 
-**Signals:** the play contains at least one detail you would rather leave out. Plays extracted from real practice have grain. Plays extracted from the official story read smooth, and readers who know the territory can feel the difference.
+**Signals:** the play contains at least one detail you would rather leave out. A play taken from real practice keeps the awkward parts: the false starts, the workarounds, the person who had to be talked round. A play taken from the official story leaves them out.
 
 **When not to:** when your only source is documentation or interviews. If you cannot observe or remember the actual runs, the candidate is not ready.
 
