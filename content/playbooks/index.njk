@@ -12,7 +12,10 @@ permalink: /playbooks/
   <li class="tools-grid-card">
     <h2><a href="{{ entry.url }}">{{ entry.data.title }}</a></h2>
     {% if entry.data.description %}<p>{{ entry.data.description }}</p>{% endif %}
-    <p><a href="/downloads/profound-{{ entry.data.playbook }}-skill.zip">Download the <span class="visually-hidden">{{ entry.data.title }} </span>agent skill</a></p>
+    <p class="card-actions">
+      <a class="card-primary" href="{{ entry.url }}">Read the playbook<span class="visually-hidden">: {{ entry.data.title }}</span></a>
+      <a class="card-secondary" href="/downloads/profound-{{ entry.data.playbook }}-skill.zip">Agent skill<span class="visually-hidden"> for {{ entry.data.title }}</span> (ZIP)</a>
+    </p>
   </li>
 {% endfor %}
 </ul>

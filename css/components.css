@@ -718,6 +718,28 @@
   color: var(--colour-fg);
 }
 
+/* A card's main link, and a quieter secondary one beside it */
+.tools-grid-card .card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.card-primary {
+  font-weight: 600;
+}
+
+.card-primary::after {
+  content: " \2192";
+}
+
+.card-secondary {
+  font-size: var(--type-small);
+  color: var(--colour-muted);
+}
+
 /* About page pointers ------------------------------------------------------ */
 
 .about-pointers {

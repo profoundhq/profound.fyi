@@ -31,6 +31,8 @@ const pages = playbooks.playbooks.flatMap((b) => b.pages);
 const plays = playbooks.playbooks.flatMap((b) => b.plays);
 check(playbooks.plays.total === plays.length, `playbooks.json says ${playbooks.plays.total} plays but lists ${plays.length}`);
 check(plays.every((p) => p.when && p.action), "a play in playbooks.json has no When or action");
+// Each playbook's description comes from its landing page, and opens its skill's description
+for (const book of playbooks.playbooks) check(book.description?.trim().length > 0, `${book.slug}: no description from its landing page`);
 for (const page of pages) {
   const file = new URL(page.markdownUrl).pathname;
   try {
@@ -56,6 +58,7 @@ for (const skill of index.skills) {
   // The template's permalink and the code's name are set apart, so check they agree
   check(file === `/.well-known/agent-skills/${skill.name}/SKILL.md`, `${skill.name}: served at ${file}, not under its own name`);
   check(data.description?.length > 0 && data.description.length <= 1024, `${skill.name}: description must be 1 to 1024 characters`);
+  check(data.description === data.description?.trim(), `${skill.name}: description starts or ends with a space`);
 }
 
 if (problems.length) {
