@@ -41,7 +41,8 @@ function renderMarp(markdown, directives = {}) {
 function playbookItems(collectionApi) {
   const all = collectionApi.getAll();
   const descriptions = Object.fromEntries(
-    all.filter((item) => item.data.playbook && item.inputPath.endsWith("/index.njk")).map((item) => [item.data.playbook, item.data.description]),
+    // Only the landing page itself: an artefacts/index.njk shares the playbook's data but has no description
+    all.filter((item) => item.data.playbook && item.url === `/playbooks/${item.data.playbook}/`).map((item) => [item.data.playbook, item.data.description]),
   );
   return all
     .filter((item) => item.data.playbook && item.inputPath.endsWith(".md") && !item.inputPath.endsWith(".marp.md"))
