@@ -7,6 +7,7 @@ layout: layouts/base.njk
   <article class="playbook-page">
     <h1>{{ title }}</h1>
     {{ content | safe }}
+    {% if page.url == "/playbooks/" + playbook + "/" %}{% include "partials/playbook-skill.njk" %}{% endif %}
 
     {% set previousPage = siblings | getPreviousCollectionItem %}
     {% set nextPage = siblings | getNextCollectionItem %}

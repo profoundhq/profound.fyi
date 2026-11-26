@@ -94,7 +94,7 @@ The `playbookRecords` collection (in `eleventy.config.js`) reads every playbook 
 - `/.well-known/agent-skills/profound-<playbook>/SKILL.md` — one skill per playbook, named `profound-<playbook>` (`content/agent-skill-playbooks.njk`), all listed in the same discovery index as the laws skill (`lib/agent-skills.js`). The description opens with the playbook's `description` from its landing `index.njk`. A playbook of plays gets steps that check When not to and present a play with no instance as untested. A framework gets steps for reading a situation through it
 - `/downloads/profound-<playbook>-skill.zip` — the skill plus one reference file per page, named as the skill's index says
 
-The Playbooks home page (`content/playbooks/index.njk`) links each playbook's skill and these files.
+Each playbook's landing page links its own skill and these files, from `partials/playbook-skill.njk`, which `layouts/playbook-page.njk` includes only on the landing page. The Playbooks home page (`content/playbooks/index.njk`) links each playbook and explains the skills once.
 
 Every skill name carries the `profound-` prefix so it does not clash with other skills an assistant has installed. The name appears in the skill's frontmatter, its URL folder, its ZIP folder, and the page links. `check:built` fails if a skill is not served under its own name.
 

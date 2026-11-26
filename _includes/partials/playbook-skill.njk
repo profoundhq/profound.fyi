@@ -1,0 +1,8 @@
+{# On a playbook's landing page: its agent skill and machine-readable forms #}
+{% for book in collections.playbookRecords %}{% if book.slug == playbook %}
+<section class="playbook-skill" aria-labelledby="playbook-skill-heading">
+  <h2 id="playbook-skill-heading">Use this playbook with an AI assistant</h2>
+  <p>The <a href="/downloads/profound-{{ playbook }}-skill.zip">profound-{{ playbook }} skill</a> {% if book.plays.length %}teaches an assistant to match a situation to one of this playbook's {{ book.plays.length }} plays, check when not to use it, and say plainly whether a real instance of the play is recorded.{% else %}teaches an assistant to read a situation through this playbook.{% endif %} Add it in Claude under Settings, then Capabilities, then Skills.</p>
+  <p>Each page also has a Markdown version at the same address ending in <code>.md</code>, and the whole playbook is in <a href="/playbooks.json">playbooks.json</a>.</p>
+</section>
+{% endif %}{% endfor %}

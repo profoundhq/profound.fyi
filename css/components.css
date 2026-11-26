@@ -718,7 +718,7 @@
   color: var(--colour-fg);
 }
 
-/* A card's main link, and a quieter secondary one beside it */
+/* A card's main link */
 .tools-grid-card .card-actions {
   display: flex;
   flex-wrap: wrap;
@@ -733,11 +733,6 @@
 
 .card-primary::after {
   content: " \2192";
-}
-
-.card-secondary {
-  font-size: var(--type-small);
-  color: var(--colour-muted);
 }
 
 /* About page pointers ------------------------------------------------------ */
